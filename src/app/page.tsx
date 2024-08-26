@@ -309,7 +309,7 @@ export default function Home() {
       </section>
 
       {/* Trusted Partners Section */}
-      {/* <div className="w-full bg-[#F1F1F1]">
+      <div className="w-full bg-[#F1F1F1]">
         <div className="max-w-[1440px] mx-auto pt-10 pb-8">
           <h6 className="font-poppins font-medium italic text-base text-[#212121] text-center uppercase">
             Trusted by Renowned Partners:
@@ -332,10 +332,10 @@ export default function Home() {
             })}
           </div>
         </div>
-      </div> */}
+      </div>
 
       {/* About Us Section */}
-      {/* <section className="min-h-screen max-w-[1440px] mx-auto pt-24 pl-20 relative">
+      <section className="min-h-screen max-w-[1440px] mx-auto pt-24 pl-20 relative">
         <div className="w-full h-full flex">
           <div className="flex-1 flex flex-col gap-12 justify-between">
             <div className="flex flex-col gap-3">
@@ -405,10 +405,10 @@ export default function Home() {
             </div>
           </div>
         </div>
-      </section> */}
+      </section>
       
       {/* Our Services Section */}
-      {/* <div className="w-full bg-[#000000]">
+      <div className="w-full bg-[#000000]">
         <section className="mt-36 min-h-screen max-w-[1440px] mx-auto px-24 pt-24 pb-24">
           <div className="flex flex-col items-center">
             <h1 className="font-sintony font-bold text-[2.75rem] leading-[4.125rem] text-white text-center">Our Services</h1>
@@ -458,10 +458,10 @@ export default function Home() {
             </div>
           </div>
         </section>
-      </div> */}
+      </div>
 
       {/* Industries We Serve Section */}
-      {/* <div className="w-full bg-[#F2F3F4]">
+      <div className="w-full bg-[#F2F3F4]">
         <section className="min-h-screen max-w-[1440px] mx-auto px-24 pt-24 pb-24">
           <div className="flex flex-col items-center">
             <h1 className="font-sintony font-bold text-[2.75rem] leading-[4.125rem] text-center">Industries We Serve</h1>
@@ -544,10 +544,10 @@ export default function Home() {
             </div>
           </div>
         </section>
-      </div> */}
+      </div>
 
       {/* Our Approach Section */}
-      {/* <div className="w-full bg-[#FAFAFA]">
+      <div className="w-full bg-[#FAFAFA]">
         <section className="min-h-screen max-w-[1440px] mx-auto pl-24 pt-24 pb-24 pr-20 relative overflow-hidden">
           <div className="flex flex-col">
             <h1 className="font-sintony font-bold text-[2.75rem] leading-[4.125rem]">Our Approach</h1>
@@ -576,10 +576,10 @@ export default function Home() {
             />
           </div>
         </section>
-      </div> */}
+      </div>
 
       {/* Locations we serve Section */}
-      {/* <div className="w-full bg-[#1A1A1A]">
+      <div className="w-full bg-[#1A1A1A]">
         <section className="w-full max-w-[1440px] mx-auto pl-24 pt-24 pb-12 pr-20">
           <div className="flex flex-col items-center justify-between">
             <h1 className="font-sintony font-bold text-[2.75rem] leading-[4.125rem] text-[#ffffff] text-center">Locations We Serve</h1>
@@ -617,10 +617,10 @@ export default function Home() {
             </div>
           </div>
         </section>
-      </div> */}
+      </div>
 
       {/* Case Studies Section */}
-      {/* <div className="w-full bg-[#C6485D]">
+      <div className="w-full bg-[#C6485D]">
         <section className="w-full max-w-[1440px] mx-auto pl-24 pt-20 pb-20 pr-24">
           <div className="flex flex-col items-center">
             <h1 className="font-sintony font-bold text-[2.75rem] leading-[4.125rem] text-[#ffffff] text-center">
@@ -662,10 +662,10 @@ export default function Home() {
             </div>
           </div>
         </section>
-      </div> */}
+      </div>
 
       {/* Client Outcomes & Impact Section */}
-      {/* <div className="w-full bg-[#FAFAFA]">
+      <div className="w-full bg-[#FAFAFA]">
         <section className="w-full max-w-[1440px] mx-auto pl-24 pt-20 pb-20 pr-24">
           <div className="flex flex-col items-center">
             <h1 className="font-sintony font-bold text-[2.75rem] leading-[4.125rem] text-[#1A1A1A] text-center">
@@ -712,10 +712,10 @@ export default function Home() {
             </div>
           </div>
         </section>
-      </div> */}
+      </div>
 
       {/* Trending Blogs & Article Section */}
-      {/* <div className="w-full">
+      <div className="w-full">
         <section className="w-full max-w-[1440px] mx-auto pl-24 pt-20 pb-24 pr-24">
           <div className="flex flex-col">
             <h1 className="font-sintony font-bold text-[2.75rem] leading-[4.125rem] text-[#1A1A1A]">
@@ -753,10 +753,10 @@ export default function Home() {
             </div>
           </div>
         </section>
-      </div> */}
+      </div>
 
       {/* Feature Section */}
-      {/* <div className="w-full bg-[#1A1A1A]">
+      <div className="w-full bg-[#1A1A1A]">
         <section className="w-full max-w-[1440px] mx-auto px-24 pt-20 pb-14">
           <h1 className="font-sintony font-bold text-[2.75rem] leading-[4.125rem] text-[#FFFFFF]">
             A single destination to manage all things frontline
@@ -779,7 +779,7 @@ export default function Home() {
             })}
           </div>
         </section>
-      </div> */}
+      </div>
     </div>
   );
 }
