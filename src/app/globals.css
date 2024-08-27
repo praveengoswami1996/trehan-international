@@ -66,4 +66,8 @@
   body {
     @apply bg-background text-foreground;
   }
+
+  .section-title {
+    @apply font-sintony font-bold text-4xl md:text-[2.75rem] md:leading-[4.125rem];
+  }
 }
