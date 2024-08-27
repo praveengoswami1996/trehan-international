@@ -265,10 +265,10 @@ export default function Home() {
       {/* Hero Section */}
       <section className="px-2 md:pl-24 pb-20 max-w-[1440px] mx-auto relative overflow-hidden">
         <div>
-          <h2 className="font-sintony text-2xl md:text-[2rem] md:leading-[3rem] font-normal text-[#C6485D]">
+          <h2 className="font-sintony text-[2rem] leading-[3rem] font-normal text-[#C6485D]">
             Precision Talent Acquisition
           </h2>
-          <h1 className="font-sintony text-4xl md:text-[3.25rem] ;leading-[4rem] md:leading-[4.88rem] mt-3 md:mt-0 font-bold">
+          <h1 className="font-sintony text-[3.25rem] leading-[4rem] md:leading-[4.88rem] mt-3 md:mt-0 font-bold">
             Where Expertise Meets Innovation
           </h1>
           <div className="mt-3 max-w-[39rem]">
@@ -278,13 +278,15 @@ export default function Home() {
             </p>
           </div>
 
-          <div className="mt-6 md:mt-10 flex flex-col md:flex-row gap-2 md:gap-3 w-full max-w-xl">
+          <div className="mt-6 md:mt-10 flex flex-col md:flex-row gap-3 w-full max-w-xl">
             <Input
               type="email"
               placeholder="Enter company email"
-              className="bg-[#F8F8F8] text-base"
+              className="bg-[#F8F8F8] text-base py-3 md:py-0"
             />
-            {renderButton()}
+            <Button type="submit">
+              Hire Right Talent
+            </Button>
           </div>
 
         </div>
