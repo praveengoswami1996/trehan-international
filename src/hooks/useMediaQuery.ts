@@ -1,19 +1,24 @@
 import { useState, useEffect } from 'react';
 
 const useMediaQuery = () => {
-  const [width, setWidth] = useState<number>(window.innerWidth);
+  const [width, setWidth] = useState<number>(0);
 
   useEffect(() => {
-    const handleResize = () => {
+    if (typeof window !== 'undefined') {
+      // Set initial width
       setWidth(window.innerWidth);
-    };
 
-    window.addEventListener('resize', handleResize);
+      const handleResize = () => {
+        setWidth(window.innerWidth);
+      };
 
-    // Cleanup event listener on component unmount
-    return () => {
-      window.removeEventListener('resize', handleResize);
-    };
+      window.addEventListener('resize', handleResize);
+
+      // Cleanup event listener on component unmount
+      return () => {
+        window.removeEventListener('resize', handleResize);
+      };
+    }
   }, []);
 
   return width;
