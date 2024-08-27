@@ -5,29 +5,10 @@ import React from "react";
 import Navbar from "./Navbar";
 import { Button } from "./ui/button";
 import { RiMenu4Fill } from "react-icons/ri";
-import { useMediaQuery } from 'react-responsive'
 import { useNavbarContext } from "@/contexts/NavbarContext";
 
 const Header = () => {
-  const isTabletOrMobile = useMediaQuery({ query: '(max-width: 768px)'})
-
   const { isNavbarOpen, toggleNavbar } = useNavbarContext();
-
-  const renderButton = () => {
-    if(isTabletOrMobile) {
-      return (
-        <Button size={"sm"}>
-          Contact us
-        </Button>
-      )
-    } else {
-      return (
-        <Button>
-          Contact us
-        </Button>
-      )
-    }
-  }
 
   return (
     <header className="py-4 border-b shadow-header fixed top-0 left-0 w-full bg-white z-50">
@@ -59,7 +40,9 @@ const Header = () => {
         </div>
       
         {/* Action Buttons */}
-        {renderButton()}
+        <Button>
+          Contact us
+        </Button>
       </div>
     </header>
   );

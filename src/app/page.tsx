@@ -2,11 +2,11 @@
 import { LSCMIcon, ANTIcon, AttestationIcon, EICIcon, FMIcon, HCIcon, IMIcon, InterHiringIcon, LocalHiringIcon, OGEIcon, QuotationIcon, RFBIcon } from "@/components/icons";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
+import useMediaQuery from "@/hooks/useMediaQuery";
 import { cn } from "@/lib/utils";
 import Image from "next/image";
 import { ComponentType } from "react";
 import { PiUser } from "react-icons/pi";
-import { useMediaQuery } from "react-responsive";
 
 const trustedPartners = [
   { id: "tp_001", src: "/partners/rt.png" },
@@ -182,11 +182,11 @@ interface ApproachItemProps {
 
 const AboutDataItem: React.FC<AboutDataItemProps> = ({ data, desc }) => {
   return (
-    <div>
+    <div className="flex flex-col items-center md:items-start">
       <h2 className="font-sintony font-bold text-[2rem] leading-[2.61rem]">
         { data }
       </h2>
-      <p className="text-[1.125rem] leading-[1.69rem] font-regular text-[#535353] max-w-[16rem]">{desc}</p>
+      <p className="w-full text-[1.125rem] leading-[1.69rem] font-regular text-[#535353] max-w-[16rem] text-center md:text-start">{desc}</p>
     </div>
   )
 }
@@ -242,13 +242,13 @@ const ApproachItem: React.FC<ApproachItemProps> = ({ data }) => {
 }
 
 export default function Home() {
-  const isMobileScreen = useMediaQuery({ query: '(max-width: 480px)' })
+  const screenWidth = useMediaQuery();
 
   const renderButton = () => {
-    if(isMobileScreen) {
+    if (screenWidth < 768) {
       return (
-        <Button type="submit" size={"sm"} className="w-fit">
-          Hire Right Talent
+        <Button size={"sm"}>
+          Get Started
         </Button>
       )
     } else {
@@ -268,7 +268,7 @@ export default function Home() {
           <h2 className="font-sintony text-2xl md:text-[2rem] md:leading-[3rem] font-normal text-[#C6485D]">
             Precision Talent Acquisition
           </h2>
-          <h1 className="font-sintony text-4xl md:text-[3.25rem] md:leading-[4.88rem] font-bold">
+          <h1 className="font-sintony text-4xl md:text-[3.25rem] ;leading-[4rem] md:leading-[4.88rem] mt-3 md:mt-0 font-bold">
             Where Expertise Meets Innovation
           </h1>
           <div className="mt-3 max-w-[39rem]">
@@ -278,14 +278,15 @@ export default function Home() {
             </p>
           </div>
 
-          <div className="mt-10 flex flex-col md:flex-row gap-2 md:gap-3 w-full max-w-xl">
+          <div className="mt-6 md:mt-10 flex flex-col md:flex-row gap-2 md:gap-3 w-full max-w-xl">
             <Input
               type="email"
               placeholder="Enter company email"
-              className="bg-[#F8F8F8] text-sm md:text-base"
+              className="bg-[#F8F8F8] text-base"
             />
             {renderButton()}
           </div>
+
         </div>
 
         <div className="hidden md:block absolute size-[33.25rem] right-8 top-32 overflow-hidden">
@@ -293,6 +294,7 @@ export default function Home() {
             src={"/bg-pattern.svg"}
             alt={"Background Pattern"}
             fill
+            priority
             className="object-cover object-center"
           />
           <div className="w-full h-full relative">
@@ -309,7 +311,7 @@ export default function Home() {
       </section>
 
       {/* Trusted Partners Section */}
-      {/* <div className="w-full bg-[#F1F1F1]">
+      <div className="w-full bg-[#F1F1F1]">
         <div className="max-w-[1440px] mx-auto pt-10 pb-8">
           <h6 className="font-poppins font-medium italic text-base text-[#212121] text-center uppercase">
             Trusted by Renowned Partners:
@@ -332,10 +334,10 @@ export default function Home() {
             })}
           </div>
         </div>
-      </div> */}
+      </div>
 
       {/* About Us Section */}
-      {/* <section className="min-h-screen max-w-[1440px] mx-auto pt-12 md:pt-24 px-2 md:pl-20 relative">
+      <section className="min-h-screen max-w-[1440px] mx-auto pt-12 md:pt-24 px-2 md:pl-20 relative">
         <div className="w-full h-full flex flex-col md:flex-row">
           <div className="flex-1 flex flex-col gap-12 justify-between">
             <div className="flex flex-col gap-3">
@@ -343,7 +345,7 @@ export default function Home() {
                 About us
               </h1>
               <div className="pl-4 py-0 relative before:absolute before:w-[5px] before:h-[95%] before:left-0 before:top-1/2 before:-translate-y-1/2 before:bg-amber-500">
-                <p className="text-sm md:text-[1.125rem] md:leading-[1.69rem] font-regular text-[#535353]">
+                <p className="text-base md:text-[1.125rem] md:leading-[1.69rem] font-regular text-[#535353]">
                   Trehan International is a recruitment consultancy with a focus on revolutionizing the field of recruitment. Over the past four decades, Trehan International has transformed into a prominent and highly respected recruitment consultancy in India and Southeast Asia.
                 </p>
               </div>
@@ -376,8 +378,8 @@ export default function Home() {
               />
             </div>
 
-            <div>
-              <Button variant={"outline"} className={"border-[#1A1A1A]"}>
+            <div className="flex justify-center md:justify-start">
+              <Button variant={"outline"} className={"w-fit border-[#1A1A1A]"}>
                 Know More About Us
               </Button>
             </div>
@@ -405,7 +407,7 @@ export default function Home() {
             </div>
           </div>
         </div>
-      </section> */}
+      </section>
       
       {/* Our Services Section */}
       {/* <div className="w-full bg-[#000000]">
