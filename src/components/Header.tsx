@@ -4,14 +4,13 @@ import Link from "next/link";
 import React from "react";
 import Navbar from "./Navbar";
 import { Button } from "./ui/button";
-import { RiMenu4Fill } from "react-icons/ri";
-import { useNavbarContext } from "@/contexts/NavbarContext";
+
 import useMediaQuery from "@/hooks/useMediaQuery";
+import MobileNavbar from "./MobileNavbar";
+
 
 const Header = () => {
-  const { isNavbarOpen, toggleNavbar } = useNavbarContext();
   const screenWidth = useMediaQuery();
-
 
   return (
     <header className="py-4 border-b shadow-header fixed top-0 left-0 w-full bg-white z-50">
@@ -19,19 +18,18 @@ const Header = () => {
         {/* Trehan International Brand Logo */}
         <div className="flex items-center justify-start gap-3">
           {/* Burger Menu Button */}
-          <button type="button" className="lg:hidden" onClick={() => toggleNavbar()}>
-            <RiMenu4Fill size={24} />
-          </button>
+          <MobileNavbar />
 
           <div className="flex-none">
             <Link href={"/"}>
               <Image
                 src={"/logo.svg"}
                 alt={"Trehan International Logo"}
-                width={153}
+                // width={153}
+                // height={68}
+                width={100}
                 height={68}
                 priority
-                style={{ width: 'auto', height: 'auto' }}
               />
             </Link>
           </div>
@@ -43,7 +41,7 @@ const Header = () => {
         </div>
       
         {/* Action Buttons */}
-        <Button>
+        <Button className="hidden md:inline">
           Contact us
         </Button>
       </div>

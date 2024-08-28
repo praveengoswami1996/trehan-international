@@ -285,7 +285,7 @@ const ApproachItem: React.FC<ApproachItemProps> = ({ data }) => {
 
 export default function Home() {
   return (
-    <div className="min-h-screen pt-32 md:pt-44 bg-white">
+    <div className="min-h-screen pt-24 md:pt-44 bg-white">
       {/* Hero Section */}
       <section className="px-2 md:pl-24 pb-20 max-w-[1440px] mx-auto relative overflow-hidden">
         <div>
