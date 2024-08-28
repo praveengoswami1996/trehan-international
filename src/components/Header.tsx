@@ -6,9 +6,12 @@ import Navbar from "./Navbar";
 import { Button } from "./ui/button";
 import { RiMenu4Fill } from "react-icons/ri";
 import { useNavbarContext } from "@/contexts/NavbarContext";
+import useMediaQuery from "@/hooks/useMediaQuery";
 
 const Header = () => {
   const { isNavbarOpen, toggleNavbar } = useNavbarContext();
+  const screenWidth = useMediaQuery();
+
 
   return (
     <header className="py-4 border-b shadow-header fixed top-0 left-0 w-full bg-white z-50">

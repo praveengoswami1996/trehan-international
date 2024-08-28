@@ -26,8 +26,8 @@ const addresses = [
 const Footer = () => {
   return (
     <footer className="w-full bg-white">
-      <div className="w-full max-w-[1440px] mx-auto px-24 pt-16 pb-0 flex flex-col gap-8 divide-y">
-        <div className="w-full flex justify-between">
+      <div className="w-full max-w-[1440px] mx-auto px-2 md:px-24 pt-16 pb-0 flex flex-col gap-8 divide-y">
+        <div className="w-full flex flex-col md:flex-row gap-6 justify-between">
           <div>
             <Link href={"/"}>
               <Image
@@ -62,11 +62,11 @@ const Footer = () => {
               </div>
             </div>
 
-            <div className="mt-5 flex w-full max-w-[24rem] p-1.5 rounded-sm bg-[#F4F4F4]">
+            <div className="mt-5 flex flex-col gap-1 md:flex-row w-full md:max-w-[24rem] p-1.5 rounded-sm bg-[#F4F4F4]">
               <Input
                 type="email"
                 placeholder="Enter company email"
-                className="bg-[#F8F8F8] border-none outline-none bg-transparent shadow-none text-sm font-light"
+                className="bg-[#F8F8F8] border-none outline-none bg-transparent shadow-none text-sm font-light py-3 md:py-0"
               />
               <Button type="submit" className="text-sm bg-[#1A1A1A] px-5 py-6">Send a Message</Button>
             </div>

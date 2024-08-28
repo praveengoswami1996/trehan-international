@@ -2,7 +2,6 @@
 import { LSCMIcon, ANTIcon, AttestationIcon, EICIcon, FMIcon, HCIcon, IMIcon, InterHiringIcon, LocalHiringIcon, OGEIcon, QuotationIcon, RFBIcon } from "@/components/icons";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
-import useMediaQuery from "@/hooks/useMediaQuery";
 import { cn } from "@/lib/utils";
 import Image from "next/image";
 import { ComponentType } from "react";
@@ -25,6 +24,49 @@ const ourServices = [
   { id: "our_services_002", src: "/services/services-2.png", label:"Turnkey Staffing Solutions" },
   { id: "our_services_003", src: "/services/services-3.png", label:"Executive Search & Selection" },
   { id: "our_services_004", src: "/services/services-4.png", label:"HR Management System (HRMS)" },
+]
+
+const industriesWeServe = [
+  {
+    id: "industry_001",
+    icon: EICIcon,
+    label: "Engineering, Infrastructure and Construction",
+  },
+  {
+    id: "industry_002",
+    icon: OGEIcon,
+    label: "Oil, Gas and Energy",
+  },
+  {
+    id: "industry_003",
+    icon: FMIcon,
+    label: "Facility Management",
+  },
+  {
+    id: "industry_004",
+    icon: IMIcon,
+    label: "Industrial Manufacturing",
+  },
+  {
+    id: "industry_005",
+    icon: HCIcon,
+    label: "Healthcare",
+  },
+  {
+    id: "industry_006",
+    icon: ANTIcon,
+    label: "Automotive and Transportation",
+  },
+  {
+    id: "industry_007",
+    icon: LSCMIcon,
+    label: "Logistic & Supply Chain Management",
+  },
+  {
+    id: "industry_008",
+    icon: RFBIcon,
+    label: "Retail, Food and Beverage",
+  },
 ]
 
 const ourApproachData = [
@@ -209,21 +251,21 @@ const IndustryItem: React.FC<IndustryItemProps> = ({ icon, label, position, labe
 const ApproachItem: React.FC<ApproachItemProps> = ({ data }) => {
   return (
     <div className="flex flex-col md:flex-row items-center">
-      <div className="flex-1">
-        <div className="w-full max-w-[30.5rem] h-[20rem] relative">
+      <div className="flex-1 w-full">
+        <div className="w-full max-w-[30.5rem] h-[15rem] md:h-[20rem] relative">
           <Image 
             src={data.imageURL}
             alt={data.label}
             fill
-            className="object-cover object-left-top"
+            className="object-cover object-center md:object-left-top bg-green-600"
           />
 
-          <div className="absolute -right-24 top-0 text-[6.25rem] text-[#599F99] font-sintony font-regular">
+          <div className="absolute right-4 -top-[4.5rem] md:-right-24 md:top-0 text-[6.25rem] text-[#599F99] font-sintony font-regular">
             {data.phase}
           </div>
         </div>
       </div>
-      <div className="flex-1 pl-24">
+      <div className="flex-1 pl-0 md:pl-24">
         <h2 className="font-sintony font-bold text-2xl leading-9 text-[#1A1A1A]">
           { data.label }
         </h2>
@@ -242,24 +284,6 @@ const ApproachItem: React.FC<ApproachItemProps> = ({ data }) => {
 }
 
 export default function Home() {
-  const screenWidth = useMediaQuery();
-
-  const renderButton = () => {
-    if (screenWidth < 768) {
-      return (
-        <Button size={"sm"}>
-          Get Started
-        </Button>
-      )
-    } else {
-      return (
-        <Button type="submit" className="w-fit">
-          Hire Right Talent
-        </Button>
-      )
-    }
-  }
-
   return (
     <div className="min-h-screen pt-32 md:pt-44 bg-white">
       {/* Hero Section */}
@@ -273,7 +297,7 @@ export default function Home() {
           </h1>
           <div className="mt-3 max-w-[39rem]">
             <p className="text-base md:text-[1.125rem] md:leading-[1.69rem] font-regular text-[#535353]">
-              At Trehan International, we believe that the perfect hire is more than just a candidate; it’s a strategic partner in your success. With our decades of industry expertise and a bespoke consultative approach, we connect you with exceptional talent that drives
+              At Trehan International, we believe that the perfect hire is more than just a candidate; it&apos;s a strategic partner in your success. With our decades of industry expertise and a bespoke consultative approach, we connect you with exceptional talent that drives
               innovation and growth. Trust in our refined processes, adaptable strategies, and unwavering commitment to compliance. Let us help you build a team that transforms your vision into reality.
             </p>
           </div>
@@ -412,14 +436,14 @@ export default function Home() {
       </section>
       
       {/* Our Services Section */}
-      {/* <div className="w-full bg-[#000000]">
-        <section className="mt-36 min-h-screen max-w-[1440px] mx-auto px-2 md:px-24 pt-24 pb-24">
+      <div className="w-full bg-[#000000]">
+        <section className="mt-12 md:mt-36 min-h-screen max-w-[1440px] mx-auto px-2 md:px-24 pt-12 md:pt-24 pb-24">
           <div className="flex flex-col items-center">
             <h1 className="section-title text-white text-center">Our Services</h1>
-            <p className="mt-3 text-[1.125rem] leading-[1.69rem] font-regular text-white text-center max-w-[22rem]">
+            <p className="mt-3 text-base md:text-[1.125rem] md:leading-[1.69rem] font-regular text-white text-center max-w-[22rem]">
               Building Workforce Excellence: Tailored Recruitment Solutions
             </p>
-            <div className="mt-10 w-full grid grid-cols-1 md:grid-cols-3 gap-8">
+            <div className="mt-10 w-full grid justify-items-center grid-cols-1 md:grid-cols-3 gap-8">
               {ourServices.map((item) => {
                 return (
                   <div key={item.id} className="w-full max-w-[24rem]">
@@ -464,18 +488,34 @@ export default function Home() {
             </div>
           </div>
         </section>
-      </div> */}
+      </div>
 
       {/* Industries We Serve Section */}
-      {/* <div className="w-full bg-[#F2F3F4]">
-        <section className="min-h-screen max-w-[1440px] mx-auto px-2 md:px-24 pt-12 md:pt-24 pb-24">
+      <div className="w-full bg-[#F2F3F4]">
+        <section className="min-h-screen max-w-[1440px] mx-auto px-2 md:px-24 pt-12 md:pt-24 pb-12 md:pb-24">
           <div className="flex flex-col items-center">
             <h1 className="section-title text-center">Industries We Serve</h1>
             <p className="mt-3 text-sm md:text-[1.125rem] md:leading-[1.69rem] font-regular text-center max-w-[60rem]">
               Trehan International is a recruitment consultancy with a focus on revolutionizing the field of recruitment. Over the past four decades, Trehan International has transformed into a prominent and highly respected recruitment consultancy in India and Southeast Asia.
             </p>
 
-            <div className="mt-28 w-full flex justify-center">
+            <div className="mt-10 w-full grid grid-cols-1 gap-5 md:hidden">
+              {industriesWeServe.map((item) => {
+                const Icon = item.icon;
+                return (
+                  <div key={item.id} className="flex flex-col items-center gap-2 bg-white p-5 rounded-md shadow-sm">
+                    <div className="flex-none p-5 rounded-full bg-[#E2AF45] flex items-center justify-center relative size-[6.25rem]" style={{ boxShadow: "0px 0px 60px 0px #00000026" }}>
+                      <Icon className="text-white"/>
+                    </div>
+                    <p className="font-sintony font-bold text-xl text-center">
+                      {item.label}
+                    </p>
+                  </div>
+                )
+              })}
+            </div>
+
+            <div className="hidden mt-28 w-full md:flex justify-center">
               <div className="w-[37.5rem] h-[37.5rem] relative flex items-center justify-center p-8">
                 <Image 
                   src={"/bg-pattern.svg"}
@@ -550,18 +590,18 @@ export default function Home() {
             </div>
           </div>
         </section>
-      </div> */}
+      </div>
 
       {/* Our Approach Section */}
-      {/* <div className="w-full bg-[#FAFAFA]">
-        <section className="min-h-screen max-w-[1440px] mx-auto px-2 md:pl-24 pt-24 pb-24 md:pr-20 relative overflow-hidden">
+      <div className="w-full bg-[#FAFAFA]">
+        <section className="min-h-screen max-w-[1440px] mx-auto px-2 md:pl-24 pt-12 md:pt-24 pb-24 md:pr-20 relative overflow-hidden">
           <div className="flex flex-col">
             <h1 className="section-title">Our Approach</h1>
-            <p className="mt-2.5 text-[1.125rem] leading-[1.69rem] font-regular">
+            <p className="mt-2.5 text-base md:text-[1.125rem] md:leading-[1.69rem] font-regular">
               We follow a 3 phase approach consisting
             </p>
 
-            <div className="mt-14 flex flex-col gap-20">
+            <div className="mt-14 flex flex-col gap-12 md:gap-20">
               {ourApproachData.map((item) => {
                 return (
                   <ApproachItem 
@@ -573,7 +613,7 @@ export default function Home() {
             </div>
           </div>
 
-          <div className="absolute size-[33.25rem] -right-[4.5rem] -top-[21rem] overflow-hidden">
+          <div className="hidden md:block absolute size-[33.25rem] -right-[4.5rem] -top-[21rem] overflow-hidden">
             <Image 
               src={"/bg-pattern.svg"}
               alt={"Background Pattern"}
@@ -582,14 +622,14 @@ export default function Home() {
             />
           </div>
         </section>
-      </div> */}
+      </div>
 
       {/* Locations we serve Section */}
-      {/* <div className="w-full bg-[#1A1A1A]">
+      <div className="w-full bg-[#1A1A1A]">
         <section className="w-full max-w-[1440px] mx-auto px-2 md:px-24 pt-12 md:pt-24 pb-12">
           <div className="flex flex-col items-center justify-between">
             <h1 className="section-title text-[#ffffff] text-center">Locations We Serve</h1>
-            <p className="mt-2.5 text-[1.125rem] leading-[1.69rem] font-regular text-[#ffffff] text-center max-w-2xl">
+            <p className="mt-2.5 text-base md:text-[1.125rem] md:leading-[1.69rem] font-regular text-[#ffffff] text-center max-w-2xl">
             Our extensive history across industrial verticals/sectors has provided us with a rich tapestry of knowledge, allowing...
             </p>
 
@@ -602,7 +642,7 @@ export default function Home() {
               />
             </div>
 
-            <div className="mt-12 flex items-center flex-wrap gap-6">
+            <div className="mt-12 flex items-center justify-center flex-wrap gap-x-6 gap-y-3">
               {locationsWeServe.map((location) => {
                 return (
                   <div key={location.id} className="flex items-center gap-2">
@@ -623,20 +663,20 @@ export default function Home() {
             </div>
           </div>
         </section>
-      </div> */}
+      </div>
 
       {/* Case Studies Section */}
-      {/* <div className="w-full bg-[#C6485D]">
-        <section className="w-full max-w-[1440px] mx-auto px-2 md:px-24 pt-20 pb-20">
+      <div className="w-full bg-[#C6485D]">
+        <section className="w-full max-w-[1440px] mx-auto px-2 md:px-24 pt-10 md:pt-20 pb-10 md:pb-20">
           <div className="flex flex-col items-center">
-            <h1 className="font-sintony font-bold text-[2.75rem] leading-[4.125rem] text-[#ffffff] text-center">
+            <h1 className="section-title text-[#ffffff] text-center">
               Case Studies
             </h1>
-            <p className="mt-2.5 text-[1.125rem] leading-[1.69rem] font-regular text-[#ffffff] text-center max-w-sm">
+            <p className="mt-2.5 text-base md:text-[1.125rem] md:leading-[1.69rem] font-regular text-[#ffffff] text-center max-w-sm">
               Talent Acquisition in Action: Our Sourcing Success Stories
             </p>
 
-            <div className="w-full mt-10 grid grid-cols-1 md:grid-cols-3 gap-8">
+            <div className="w-full mt-10 grid justify-items-center grid-cols-1 md:grid-cols-3 gap-8">
               {caseStudies.map((item) => {
                 return (
                   <div key={item.id} className="w-full max-w-[24rem] h-[26.125rem] bg-white rounded-md overflow-hidden flex flex-col">
@@ -668,16 +708,16 @@ export default function Home() {
             </div>
           </div>
         </section>
-      </div> */}
+      </div>
 
       {/* Client Outcomes & Impact Section */}
-      {/* <div className="w-full bg-[#FAFAFA]">
-        <section className="w-full max-w-[1440px] mx-auto px-2 md:px-24 pt-20 pb-20">
+      <div className="w-full bg-[#FAFAFA]">
+        <section className="w-full max-w-[1440px] mx-auto px-2 md:px-24 pt-10 md:pt-20 pb-10 md:pb-20">
           <div className="flex flex-col items-center">
-            <h1 className="font-sintony font-bold text-[2.75rem] leading-[4.125rem] text-[#1A1A1A] text-center">
+            <h1 className="section-title text-[#1A1A1A] text-center">
               Client Outcomes & Impact
             </h1>
-            <p className="mt-2.5 text-[1.125rem] leading-[1.69rem] font-regular text-[#535353] text-center max-w-[35rem]">
+            <p className="mt-2.5 text-base md:text-[1.125rem] md:leading-[1.69rem] font-regular text-[#535353] text-center max-w-[35rem]">
               Lorem ipsum dolor sit amet consectetur. Ac a tristique vitae et lobortis ut risus ac.
             </p>
 
@@ -718,18 +758,18 @@ export default function Home() {
             </div>
           </div>
         </section>
-      </div> */}
+      </div>
 
       {/* Trending Blogs & Article Section */}
-      {/* <div className="w-full">
-        <section className="w-full max-w-[1440px] mx-auto px-2 md:px-24 pt-20 pb-24">
+      <div className="w-full">
+        <section className="w-full max-w-[1440px] mx-auto px-2 md:px-24 pt-10 md:pt-20 pb-12 md:pb-24">
           <div className="flex flex-col">
-            <h1 className="font-sintony font-bold text-[2.75rem] leading-[4.125rem] text-[#1A1A1A]">
+            <h1 className="section-title text-[#1A1A1A]">
               Trending Blog & Articles
             </h1>
             <div className="flex flex-col md:flex-row items-start md:items-end justify-between gap-5">
-              <p className="mt-2.5 text-[1.125rem] leading-[1.69rem] font-regular text-[#535353] max-w-[35rem]">
-                Read the blog and article inside of consulti. We share tips and tricks to get more succes
+              <p className="mt-2.5 text-base md:text-[1.125rem] md:leading-[1.69rem] font-regular text-[#535353] max-w-[35rem]">
+                Read the blog and article inside of consulting. We share tips and tricks to get more success
               </p>
               <div>
                 <Button variant={"outline"} className={"border-[#1A1A1A] text-base font-bold text-[#000000] leading-5 bg-white"}>
@@ -738,7 +778,7 @@ export default function Home() {
               </div>
             </div>
 
-            <div className="w-full mt-12 grid grid-cols-1 md:grid-cols-3 gap-6">
+            <div className="w-full mt-12 grid justify-items-center grid-cols-1 md:grid-cols-3 gap-6">
               {trendingBlogs.map((item) => {
                 return (
                   <div key={item.id} className="w-full max-w-[24rem] bg-white overflow-hidden flex flex-col gap-5">
@@ -759,10 +799,10 @@ export default function Home() {
             </div>
           </div>
         </section>
-      </div> */}
+      </div>
 
       {/* Feature Section */}
-      {/* <div className="w-full bg-[#1A1A1A]">
+      <div className="w-full bg-[#1A1A1A]">
         <section className="w-full max-w-[1440px] mx-auto px-2 md:px-24 pt-10 md:pt-20 pb-14">
           <h1 className="section-title leading-[3rem] text-[#FFFFFF]">
             A single destination to manage all things frontline
@@ -785,7 +825,7 @@ export default function Home() {
             })}
           </div>
         </section>
-      </div> */}
+      </div>
     </div>
   );
 }
