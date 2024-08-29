@@ -285,14 +285,14 @@ const ApproachItem: React.FC<ApproachItemProps> = ({ data }) => {
 
 export default function Home() {
   return (
-    <div className="min-h-screen pt-24 md:pt-44 bg-white">
+    <div className="min-h-screen pt-28 md:pt-44 bg-white">
       {/* Hero Section */}
       <section className="px-2 md:pl-24 pb-20 max-w-[1440px] mx-auto relative overflow-hidden">
         <div>
-          <h2 className="font-sintony text-[2rem] leading-[3rem] font-normal text-[#C6485D]">
+          <h2 className="font-sintony text-[1.5rem] md:text-[2rem] leading-[2.2rem] md:leading-[3rem] font-normal text-[#C6485D]">
             Precision Talent Acquisition
           </h2>
-          <h1 className="font-sintony text-[3.25rem] leading-[4rem] md:leading-[4.88rem] mt-3 md:mt-0 font-bold">
+          <h1 className="font-sintony text-[2.4rem] md:text-[3.25rem] leading-[3rem] md:leading-[4.88rem] mt-3 md:mt-0 font-bold">
             Where Expertise Meets Innovation
           </h1>
           <div className="mt-3 max-w-[39rem]">
@@ -338,26 +338,45 @@ export default function Home() {
 
       {/* Trusted Partners Section */}
       <div className="w-full bg-[#F1F1F1]">
-        <div className="max-w-[1440px] mx-auto pt-10 pb-8">
+        <div className="max-w-[1440px] mx-auto pt-10 pb-6">
           <h6 className="font-poppins font-medium italic text-base text-[#212121] text-center uppercase">
             Trusted by Renowned Partners:
           </h6>
-          <div className="mt-6 flex items-center gap-5 overflow-hidden">
-            {trustedPartners.map((item) => {
-              return (
-                <div
-                  key={item.id}
-                  className="relative flex-none w-[10rem] h-[3.7rem] bg-white"
-                >
-                  <Image
-                    src={item.src}
-                    alt={"Trusted Partner Company Logo"}
-                    fill
-                    className="object-contain"
-                  />
-                </div>
-              );
-            })}
+          <div className="mt-6 w-full inline-flex flex-nowrap items-center overflow-hidden">
+            <div className="flex items-center justify-center [&_div]:mx-8 [&_img]:max-w-none animate-infinite-horizontal-scroll">
+              {trustedPartners.map((item) => {
+                return (
+                  <div
+                    key={item.id}
+                    className="relative flex-none w-[10rem] h-[3.7rem] bg-white"
+                  >
+                    <Image
+                      src={item.src}
+                      alt={"Trusted Partner Company Logo"}
+                      fill
+                      className="object-contain"
+                    />
+                  </div>
+                );
+              })}
+            </div>
+            <div className="flex items-center justify-center [&_div]:mx-8 [&_img]:max-w-none animate-infinite-horizontal-scroll" aria-hidden={true}>
+              {trustedPartners.map((item) => {
+                return (
+                  <div
+                    key={item.id}
+                    className="relative flex-none w-[10rem] h-[3.7rem] bg-white"
+                  >
+                    <Image
+                      src={item.src}
+                      alt={"Trusted Partner Company Logo"}
+                      fill
+                      className="object-contain"
+                    />
+                  </div>
+                );
+              })}
+            </div>
           </div>
         </div>
       </div>
@@ -457,13 +476,13 @@ export default function Home() {
                         priority
                       />
                     </div>
-                    <h4 className="mt-5 font-sintony font-bold text-white text-2xl leading-[2.25rem]">{item.label}</h4>
+                    <h4 className="mt-5 font-sintony font-bold text-white text-xl md:text-2xl md:leading-[2.25rem]">{item.label}</h4>
                   </div>
                 )
               })}
               <div
                 style={{  background: "linear-gradient(180deg, #FFFFFF 0%, #C8C8C8 100%)" }} 
-                className="h-[18.75rem] md:col-span-2 px-10 pt-8 pb-8 flex relative"
+                className="w-full h-[18.75rem] md:col-span-2 p-3 md:px-10 md:pt-8 md:pb-8 flex relative"
               >
                 <div className="flex flex-col justify-between">
                   <h3 className="font-sintony font-bold text-[2rem] leading-[3rem] text-[#000000] max-w-xl">
@@ -587,6 +606,12 @@ export default function Home() {
                   />
                 </div>
               </div>
+            </div>
+
+            <div className="mt-10 md:mt-28">
+              <Button variant={"outline"} className={"w-fit border-[#1A1A1A] bg-[#F2F3F4]"}>
+                Explore All
+              </Button>
             </div>
           </div>
         </section>
@@ -814,11 +839,11 @@ export default function Home() {
               return (
                 <div key={item.id} className="flex items-start gap-5"> 
                   <div>
-                    <Icon className="text-[#FFFFFF] size-12"/>
+                    <Icon className="text-[#FFFFFF] size-10 md:size-12"/>
                   </div>
                   <div>
-                    <h4 className="font-sintony font-bold text-2xl leading-9 text-[#ffffff]">{item.title}</h4>
-                    <p className="font-normal text-[#FFFFFF] text-[1.125rem] leading-[1.688rem]">{item.desc}</p>
+                    <h4 className="font-sintony font-bold text-xl md:text-2xl leading-9 text-[#ffffff]">{item.title}</h4>
+                    <p className="font-normal text-[#FFFFFF] text-base md:text-[1.125rem] md:leading-[1.688rem]">{item.desc}</p>
                   </div>
                 </div>
               )

@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { useNavbarContext } from "@/contexts/NavbarContext";
 import {
   Sheet,
@@ -35,6 +35,7 @@ import {
   CollapsibleContent,
   CollapsibleTrigger,
 } from "@/components/ui/collapsible";
+import useMediaQuery from "@/hooks/useMediaQuery";
 
 const navigationLinks = [
   {
@@ -162,14 +163,19 @@ const navigationLinks = [
 const MobileNavbar = () => {
   const { isNavbarOpen, toggleNavbar } = useNavbarContext();
   const [activeSubMenu, setActiveSubMenu] = useState<string>("");
+  const screenWidth = useMediaQuery();
+
+  useEffect(() => {
+    if (isNavbarOpen && (screenWidth > 1023)) {
+      toggleNavbar(); 
+  }}, [isNavbarOpen, toggleNavbar, screenWidth]);
 
   return (
-    <Sheet>
+    <Sheet open={isNavbarOpen} onOpenChange={toggleNavbar}>
       <SheetTrigger asChild>
         <button
           type="button"
           className="lg:hidden"
-          onClick={() => toggleNavbar()}
         >
           <RiMenu4Fill size={24} />
         </button>
@@ -181,7 +187,7 @@ const MobileNavbar = () => {
             Navigation Menu for smaller devices such as mobile and tablets.
           </SheetDescription>
         </SheetHeader>
-        <div className="h-full overflow-auto">
+        <div className="h-full overflow-auto scrollbar-hide">
           <div>
             <Link href={"/"}>
               <Image
@@ -212,7 +218,7 @@ const MobileNavbar = () => {
                   <CollapsibleContent>
                     <div className="flex flex-col divide-y pl-5">
                         {item.subLinks.map((item) => (
-                        <Link href={item.href} key={item.id} className="py-1 flex gap-3 items-center">
+                        <Link href={item.href} key={item.id} className="py-2 flex gap-3 items-center">
                             {item.label}
                             <span>
                                 <RxExternalLink />
