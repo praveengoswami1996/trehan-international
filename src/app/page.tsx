@@ -1,4 +1,3 @@
-"use client";
 import { LSCMIcon, ANTIcon, AttestationIcon, EICIcon, FMIcon, HCIcon, IMIcon, InterHiringIcon, LocalHiringIcon, OGEIcon, QuotationIcon, RFBIcon } from "@/components/icons";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
@@ -285,28 +284,28 @@ const ApproachItem: React.FC<ApproachItemProps> = ({ data }) => {
 
 export default function Home() {
   return (
-    <div className="min-h-screen pt-28 md:pt-44 bg-white">
+    <div className="min-h-screen pt-28 lg:pt-44 bg-white">
       {/* Hero Section */}
-      <section className="px-2 md:pl-24 pb-20 max-w-[1440px] mx-auto relative overflow-hidden">
+      <section className="px-2 lg:pl-24 pb-10 lg:pb-20 max-w-[1440px] mx-auto relative overflow-hidden">
         <div>
-          <h2 className="font-sintony text-[1.5rem] md:text-[2rem] leading-[2.2rem] md:leading-[3rem] font-normal text-[#C6485D]">
+          <h2 className="font-sintony text-[1.5rem] lg:text-[2rem] leading-[2.2rem] lg:leading-[3rem] font-normal text-[#C6485D]">
             Precision Talent Acquisition
           </h2>
-          <h1 className="font-sintony text-[2.4rem] md:text-[3.25rem] leading-[3rem] md:leading-[4.88rem] mt-3 md:mt-0 font-bold">
+          <h1 className="font-sintony text-[2.4rem] lg:text-[3.25rem] leading-[3rem] lg:leading-[4.88rem] mt-3 lg:mt-0 font-bold">
             Where Expertise Meets Innovation
           </h1>
           <div className="mt-3 max-w-[39rem]">
-            <p className="text-base md:text-[1.125rem] md:leading-[1.69rem] font-regular text-[#535353]">
+            <p className="text-base lg:text-[1.125rem] lg:leading-[1.69rem] font-regular text-[#535353]">
               At Trehan International, we believe that the perfect hire is more than just a candidate; it&apos;s a strategic partner in your success. With our decades of industry expertise and a bespoke consultative approach, we connect you with exceptional talent that drives
               innovation and growth. Trust in our refined processes, adaptable strategies, and unwavering commitment to compliance. Let us help you build a team that transforms your vision into reality.
             </p>
           </div>
 
-          <div className="mt-6 md:mt-10 flex flex-col md:flex-row gap-3 w-full max-w-xl">
+          <div className="mt-6 lg:mt-10 flex flex-col mobile-2xl:flex-row gap-3 w-full max-w-xl">
             <Input
               type="email"
               placeholder="Enter company email"
-              className="bg-[#F8F8F8] text-base py-3 md:py-0"
+              className="bg-[#F8F8F8] text-base py-3 lg:py-0"
             />
             <Button type="submit">
               Hire Right Talent
@@ -315,13 +314,33 @@ export default function Home() {
 
         </div>
 
-        <div className="hidden md:block absolute size-[33.25rem] right-8 top-32 overflow-hidden">
+        <div className="hidden lg:block absolute size-[33.25rem] right-8 top-32 overflow-hidden">
           <Image 
             src={"/bg-pattern.svg"}
             alt={"Background Pattern"}
             fill
             priority
             className="object-cover object-center"
+          />
+          <div className="w-full h-full relative">
+            <div className="absolute w-full h-full top-8">
+              <Image 
+                src={"/hero.svg"}
+                alt="Hero Image"
+                fill
+                className="object-contain object-top"
+              />
+            </div>
+          </div>
+        </div>
+
+        <div className="lg:hidden overflow-hidden relative size-[15rem]  mobile-sm:size-[19rem] mobile-md:size-[22rem] mobile-lg:size-[24rem] sm:size-[30rem] mx-auto mt-10">
+          <Image 
+            src={"/bg-pattern.svg"}
+            alt={"Background Pattern"}
+            fill
+            priority
+            className="object-contain object-center"
           />
           <div className="w-full h-full relative">
             <div className="absolute w-full h-full top-8">
@@ -414,7 +433,7 @@ export default function Home() {
                 desc={"Clients with us over 10 years"}
               />
               <AboutDataItem
-                data={"8%"}
+                data={"8"}
                 desc={"Placements in Diversified Industries"}
               />
               <AboutDataItem
