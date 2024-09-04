@@ -26,7 +26,7 @@ const addresses = [
 const Footer = () => {
   return (
     <footer className="w-full bg-white">
-      <div className="w-full max-w-[1440px] mx-auto px-2 md:px-24 pt-16 pb-0 flex flex-col gap-8 divide-y">
+      <div className="w-full max-w-[1440px] mx-auto px-2 md:px-24 pt-8 md:pt-16 pb-0 flex flex-col gap-8 divide-y">
         <div className="w-full flex flex-col md:flex-row gap-6 justify-between">
           <div>
             <Link href={"/"}>
