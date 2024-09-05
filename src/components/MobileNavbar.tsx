@@ -166,7 +166,7 @@ const MobileNavbar = () => {
   const screenWidth = useMediaQuery();
 
   useEffect(() => {
-    if (isNavbarOpen && (screenWidth > 1023)) {
+    if (isNavbarOpen && (screenWidth > 1279)) {
       toggleNavbar(); 
   }}, [isNavbarOpen, toggleNavbar, screenWidth]);
 
@@ -175,7 +175,7 @@ const MobileNavbar = () => {
       <SheetTrigger asChild>
         <button
           type="button"
-          className="lg:hidden"
+          className="xl:hidden"
         >
           <RiMenu4Fill size={24} />
         </button>

@@ -68,6 +68,6 @@
   }
 
   .section-title {
-    @apply font-sintony font-bold text-4xl md:text-[2.75rem] md:leading-[4.125rem];
+    @apply font-sintony font-bold text-4xl lg:text-[2.75rem] lg:leading-[4.125rem];
   }
 }

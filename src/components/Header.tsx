@@ -11,13 +11,13 @@ import MobileNavbar from "./MobileNavbar";
 const Header = () => {
   return (
     <header className="py-4 border-b shadow-header fixed top-0 left-0 w-full bg-white z-50">
-      <div className="max-w-[1440px] mx-auto px-3 xl:px-20 flex items-center justify-between gap-5">
+      <div className="max-w-[1440px] mx-auto px-3 sm:px-5 lg:px-10 xl:px-14 2xl:px-20 flex items-center justify-between gap-5">
         {/* Trehan International Brand Logo */}
-        <div className="w-full flex items-center justify-start gap-3">
+        <div className="flex items-center justify-start gap-3 ">
           {/* Burger Menu Button */}
           <MobileNavbar />
 
-          <div className="flex-none w-full">
+          <div className="flex-none">
             <Link href={"/"}>
               <div className="w-[110px] h-[60px] sm:w-[153px] sm:h-[68px] relative">
                 <Image

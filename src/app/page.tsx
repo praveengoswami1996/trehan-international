@@ -254,11 +254,11 @@ interface ApproachItemProps {
 
 const AboutDataItem: React.FC<AboutDataItemProps> = ({ data, desc }) => {
   return (
-    <div className="flex flex-col items-center md:items-start">
+    <div className="flex flex-col items-center xl:items-start">
       <h2 className="font-sintony font-bold text-[2rem] leading-[2.61rem]">
         {data}
       </h2>
-      <p className="w-full text-[1.125rem] leading-[1.69rem] font-regular text-[#535353] max-w-[16rem] text-center md:text-start">
+      <p className="w-full text-[1.125rem] leading-[1.69rem] font-regular text-[#535353] max-w-[16rem] text-center xl:text-start">
         {desc}
       </p>
     </div>
@@ -295,9 +295,9 @@ const IndustryItem: React.FC<IndustryItemProps> = ({
 
 const ApproachItem: React.FC<ApproachItemProps> = ({ data }) => {
   return (
-    <div className="flex flex-col md:flex-row items-center">
+    <div className="flex flex-col lg:flex-row items-center">
       <div className="flex-1 w-full">
-        <div className="w-full max-w-[30.5rem] h-[15rem] md:h-[20rem] relative">
+        <div className="w-full max-w-[30.5rem] h-[15rem] lg:h-[20rem] relative">
           <Image
             src={data.imageURL}
             alt={data.label}
@@ -310,8 +310,8 @@ const ApproachItem: React.FC<ApproachItemProps> = ({ data }) => {
           </div>
         </div>
       </div>
-      <div className="flex-1 pl-0 md:pl-24">
-        <h2 className="font-sintony font-bold text-2xl leading-9 text-[#1A1A1A]">
+      <div className="flex-1 pl-0 lg:pl-24">
+        <h2 className="mt-2 font-sintony font-bold text-2xl leading-9 text-[#1A1A1A]">
           {data.label}
         </h2>
         <p className="mt-2 text-base font-regular text-[#535353]">
@@ -335,9 +335,9 @@ const ApproachItem: React.FC<ApproachItemProps> = ({ data }) => {
 
 export default function Home() {
   return (
-    <div className="min-h-screen pt-28 lg:pt-44 bg-white">
+    <div className="min-h-screen pt-28 md:pt-32 lg:pt-36 xl:pt-44 bg-white">
       {/* Hero Section */}
-      <section className="px-2 md:px-5 lg:pl-24 pb-10 lg:pb-20 max-w-[1440px] mx-auto relative overflow-hidden">
+      <section className="px-2 sm:px-5 lg:pl-10 xl:pl-14 2xl:pl-24 pb-10 xl:pb-20 max-w-[1440px] mx-auto relative overflow-hidden">
         <div>
           <h2 className="font-sintony text-[1.5rem] lg:text-[2rem] leading-[2.2rem] lg:leading-[3rem] font-normal text-[#C6485D]">
             Precision Talent Acquisition
@@ -367,7 +367,7 @@ export default function Home() {
           </div>
         </div>
 
-        <div className="hidden lg:block absolute size-[33.25rem] right-8 top-32 overflow-hidden">
+        <div className="hidden xl:block absolute size-[33.25rem] right-8 top-32 overflow-hidden">
           <Image
             src={"/bg-pattern.svg"}
             alt={"Background Pattern"}
@@ -387,7 +387,7 @@ export default function Home() {
           </div>
         </div>
 
-        <div className="lg:hidden overflow-hidden relative size-[15rem]  mobile-sm:size-[19rem] mobile-md:size-[22rem] mobile-lg:size-[24rem] sm:size-[30rem] mx-auto mt-10">
+        <div className="xl:hidden overflow-hidden relative size-[15rem]  mobile-sm:size-[19rem] mobile-md:size-[22rem] mobile-lg:size-[24rem] sm:size-[30rem] mx-auto mt-10">
           <Image
             src={"/bg-pattern.svg"}
             alt={"Background Pattern"}
@@ -457,8 +457,8 @@ export default function Home() {
       </div>
 
       {/* About Us Section */}
-      <section className="min-h-screen max-w-[1440px] mx-auto pt-12 lg:pt-24 px-2 lg:pl-20 relative">
-        <div className="w-full h-full flex flex-col lg:flex-row">
+      <section className="min-h-screen max-w-[1440px] mx-auto pt-12 md:pt-16 xl:pt-24 px-2 sm:px-5 lg:pl-10 xl:pl-14 2xl:pl-20 relative">
+        <div className="w-full h-full flex flex-col xl:flex-row">
           <div className="flex-1 flex flex-col gap-12 justify-between">
             <div className="flex flex-col gap-3">
               <h1 className="section-title">About us</h1>
@@ -473,7 +473,7 @@ export default function Home() {
               </div>
             </div>
 
-            <div className="lg:hidden overflow-hidden relative size-[15rem]  mobile-sm:size-[19rem] mobile-md:size-[22rem] mobile-lg:size-[24rem] sm:size-[30rem] mx-auto flex items-center justify-center">
+            <div className="xl:hidden overflow-hidden relative size-[15rem]  mobile-sm:size-[19rem] mobile-md:size-[22rem] mobile-lg:size-[24rem] sm:size-[30rem] mx-auto flex items-center justify-center">
               <Image
                 src={"/bg-pattern.svg"}
                 alt="Background Pattern Image"
@@ -491,7 +491,7 @@ export default function Home() {
               </div>
             </div>
 
-            <div className="grid grid-cols-1 mobile-2xl:grid-cols-2 gap-y-10">
+            <div className="grid grid-cols-1 mobile-2xl:grid-cols-2 lg:grid-cols-3 xl:grid-cols-2 gap-y-10">
               <AboutDataItem data={"45+"} desc={"Years of Service"} />
               <AboutDataItem data={"200,000+"} desc={"Successful Placements"} />
               <AboutDataItem data={"10+"} desc={"Recruitment Centers"} />
@@ -509,15 +509,15 @@ export default function Home() {
               />
             </div>
 
-            <div className="flex justify-center lg:justify-start">
+            <div className="flex justify-center xl:justify-start">
               <Button variant={"outline"} className={"w-fit border-[#1A1A1A]"}>
                 Know More About Us
               </Button>
             </div>
           </div>
-          <div className="flex-1" />
+          <div className="xl:block flex-1" />
         </div>
-        <div className="hidden lg:block absolute w-1/2 h-full right-5 top-1/2 -translate-y-1/2 mt-20">
+        <div className="hidden xl:block absolute w-1/2 h-full right-5 top-1/2 -translate-y-1/2 mt-20">
           <div className="w-full h-full relative flex items-center justify-center">
             <Image
               src={"/bg-pattern.svg"}
@@ -540,7 +540,7 @@ export default function Home() {
 
       {/* Our Services Section */}
       <div className="w-full bg-[#000000]">
-        <section className="mt-12 md:mt-36 min-h-screen max-w-[1440px] mx-auto px-2 md:px-24 pt-12 md:pt-24 pb-24">
+        <section className="mt-12 md:mt-16 lg:mt-20 xl:mt-36 min-h-screen max-w-[1440px] mx-auto px-2 sm:px-5 lg:px-10 xl:px-14 2xl:px-24 pt-12 md:pt-16 xl:pt-24 pb-12 md:pb-16 xl:pb-24">
           <div className="flex flex-col items-center">
             <h1 className="section-title text-white text-center">
               Our Services
@@ -548,7 +548,7 @@ export default function Home() {
             <p className="mt-3 text-base md:text-[1.125rem] md:leading-[1.69rem] font-regular text-white text-center max-w-[22rem]">
               Building Workforce Excellence: Tailored Recruitment Solutions
             </p>
-            <div className="mt-10 w-full grid justify-items-center grid-cols-1 md:grid-cols-3 gap-8">
+            <div className="mt-10 w-full grid justify-items-center grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
               {ourServices.map((item) => {
                 return (
                   <div key={item.id} className="w-full max-w-[24rem]">
@@ -600,7 +600,7 @@ export default function Home() {
 
       {/* Industries We Serve Section */}
       <div className="w-full bg-[#F2F3F4]">
-        <section className="min-h-screen max-w-[1440px] mx-auto px-2 md:px-24 pt-12 md:pt-24 pb-12 md:pb-24">
+        <section className="min-h-screen max-w-[1440px] mx-auto px-2 sm:px-5 lg:px-10 xl:px-14 2xl:px-24 pt-12 md:pt-16 xl:pt-24 pb-12 md:pb-16 xl:pb-24">
           <div className="flex flex-col items-center">
             <h1 className="section-title text-center">
               Industries We Serve
@@ -629,7 +629,7 @@ export default function Home() {
                 </div>
             </div>
 
-            <div className="mt-10 w-full grid grid-cols-1 gap-5 lg:hidden">
+            <div className="mt-10 w-full grid grid-cols-1 sm:grid-cols-2 gap-5 lg:hidden">
               {industriesWeServe.map((item) => {
                 const Icon = item.icon;
                 return (
@@ -652,7 +652,7 @@ export default function Home() {
             </div>
 
             <div className="hidden mt-28 w-full lg:flex justify-center">
-              <div className="w-[37.5rem] h-[37.5rem] relative flex items-center justify-center p-8">
+              <div className="size-[34rem] xl:size-[37.5rem] relative flex items-center justify-center p-8 mx-auto">
                 <Image
                   src={"/bg-pattern.svg"}
                   alt="Background Pattern Image"
@@ -739,7 +739,7 @@ export default function Home() {
 
       {/* Our Approach Section */}
       <div className="w-full bg-[#FAFAFA]">
-        <section className="min-h-screen max-w-[1440px] mx-auto px-2 md:pl-24 pt-12 md:pt-24 pb-24 md:pr-20 relative overflow-hidden">
+        <section className="min-h-screen max-w-[1440px] mx-auto px-2 sm:px-5 lg:px-10 xl:px-14 2xl:pl-24 pt-12 md:pt-16 xl:pt-24 pb-12 md:pb-16 xl:pb-24 md:pr-20 relative overflow-hidden">
           <div className="flex flex-col">
             <h1 className="section-title">Our Approach</h1>
             <p className="mt-2.5 text-base md:text-[1.125rem] md:leading-[1.69rem] font-regular">
@@ -766,7 +766,7 @@ export default function Home() {
 
       {/* Locations we serve Section */}
       <div className="w-full bg-[#1A1A1A]">
-        <section className="w-full max-w-[1440px] mx-auto px-2 md:px-24 pt-12 md:pt-24 pb-12">
+        <section className="w-full max-w-[1440px] mx-auto px-2 sm:px-5 lg:px-10 xl:px-14 2xl:px-24 pt-12 md:pt-16 xl:pt-24 pb-12">
           <div className="flex flex-col items-center justify-between">
             <h1 className="section-title text-[#ffffff] text-center">
               Locations We Serve
@@ -810,7 +810,7 @@ export default function Home() {
 
       {/* Case Studies Section */}
       <div className="w-full bg-[#C6485D]">
-        <section className="w-full max-w-[1440px] mx-auto px-2 md:px-24 pt-10 md:pt-20 pb-10 md:pb-20">
+        <section className="w-full max-w-[1440px] mx-auto px-2 sm:px-5 lg:px-10 xl:pl-14 2xl:px-24 pt-12 md:pt-16 xl:pt-24 pb-12 md:pb-16 xl:pb-24">
           <div className="flex flex-col items-center">
             <h1 className="section-title text-[#ffffff] text-center">
               Case Studies
@@ -819,7 +819,7 @@ export default function Home() {
               Talent Acquisition in Action: Our Sourcing Success Stories
             </p>
 
-            <div className="w-full mt-10 grid justify-items-center grid-cols-1 md:grid-cols-3 gap-8">
+            <div className="w-full mt-10 grid justify-items-center grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
               {caseStudies.map((item) => {
                 return (
                   <div
@@ -868,7 +868,7 @@ export default function Home() {
 
       {/* Client Outcomes & Impact Section */}
       <div className="w-full bg-[#FAFAFA]">
-        <section className="w-full max-w-[1440px] mx-auto px-2 md:px-24 pt-10 md:pt-20 pb-10 md:pb-20">
+        <section className="w-full max-w-[1440px] mx-auto px-2 sm:px-5 lg:px-10 xl:px-14 2xl:px-24 pt-12 md:pt-16 xl:pt-24 pb-12 md:pb-16 xl:pb-24">
           <div className="flex flex-col items-center">
             <h1 className="section-title text-[#1A1A1A] text-center">
               Client Outcomes & Impact
@@ -923,7 +923,7 @@ export default function Home() {
 
       {/* Trending Blogs & Article Section */}
       <div className="w-full">
-        <section className="w-full max-w-[1440px] mx-auto px-2 md:px-24 pt-10 md:pt-20 pb-12 md:pb-24">
+        <section className="w-full max-w-[1440px] mx-auto px-2 sm:px-5 lg:px-10 xl:px-14 2xl:px-24 pt-12 md:pt-16 xl:pt-24 pb-12 md:pb-16 xl:pb-24">
           <div className="flex flex-col">
             <h1 className="section-title text-[#1A1A1A]">
               Trending Blog & Articles
@@ -945,7 +945,7 @@ export default function Home() {
               </div>
             </div>
 
-            <div className="w-full mt-12 grid justify-items-center grid-cols-1 md:grid-cols-3 gap-6">
+            <div className="w-full mt-12 grid justify-items-center grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
               {trendingBlogs.map((item) => {
                 return (
                   <div
@@ -973,12 +973,12 @@ export default function Home() {
 
       {/* Feature Section */}
       <div className="w-full bg-[#1A1A1A]">
-        <section className="w-full max-w-[1440px] mx-auto px-2 md:px-24 pt-10 md:pt-20 pb-14">
+        <section className="w-full max-w-[1440px] mx-auto px-2 sm:px-5 lg:px-10 xl:px-14 2xl:px-24 pt-12 md:pt-16 xl:pt-24 pb-14">
           <h1 className="section-title leading-[3rem] text-[#FFFFFF]">
             A single destination to manage all things frontline
           </h1>
 
-          <div className="mt-10 grid grid-cols-1 md:grid-cols-3 gap-12">
+          <div className="mt-10 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-12">
             {features.map((item) => {
               const Icon = item.icon;
               return (
