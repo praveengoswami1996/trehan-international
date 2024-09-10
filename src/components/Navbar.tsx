@@ -21,7 +21,7 @@ interface DropdownLink {
 
 const aboutLinks: DropdownLink[] = [
   { href: "/about-us", title: "About us", icon: DesignIcon6 },
-  { href: "#", title: "Life @ Trehan", icon: DesignIcon11 },
+  { href: "/about-us/career", title: "Life @ Trehan", icon: DesignIcon11 },
   { href: "#", title: "Our Openings", icon: DesignIcon11 }
 ];
 

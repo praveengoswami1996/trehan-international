@@ -13,6 +13,7 @@ import { cn } from "@/lib/utils";
 
 const BreadcrumbLabels = {
     '/about-us': 'About Us',
+    '/career': 'Career'
 } as const;
 
 type BreadcrumbKeys = keyof typeof BreadcrumbLabels;
