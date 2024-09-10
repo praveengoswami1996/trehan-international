@@ -1,4 +1,6 @@
+import type { Metadata } from "next";
 import IntroVideo from "@/components/AboutUs/IntroVideo";
+import WhyChooseTrehan from "@/components/AboutUs/WhyChooseTrehan";
 import BreadCrumbs from "@/components/BreadCrumbs";
 import FeatureSection from "@/components/FeatureSection";
 import { Button } from "@/components/ui/button";
@@ -249,6 +251,12 @@ const TimeLine: React.FC<TimeLineProps> = ({ storyContent }) => {
       })}
     </div>
   );
+};
+
+
+export const metadata: Metadata = {
+  title: "Trehan International | About Us",
+  description: "Recruitment Consultancy",
 };
 
 const AboutUs = () => {
@@ -548,7 +556,7 @@ const AboutUs = () => {
         <section className="w-full max-w-[1440px] mx-auto px-2 sm:px-5 lg:px-10 xl:pl-14 2xl:px-24 pt-12 md:pt-16 xl:pt-24 pb-12 md:pb-16 xl:pb-24">
           <div className="flex flex-col items-center">
             <h5 className="font-sintony font-bold text-xl leading-[1.875rem] text-center text-[#535353]">
-              Companies We&apos;vw Worked With
+              Companies We&apos;ve Worked With
             </h5>
             <div className="w-full mt-16 grid justify-items-center grid-cols-1 md:grid-cols-6 gap-16">
               {ourPartners.map((item) => {
@@ -572,7 +580,7 @@ const AboutUs = () => {
       </div>
 
       {/* Why Choose Trehan Internation Section */}
-      {/* <div>Show Why Choose Trehan International Section Here</div> */}
+      <WhyChooseTrehan />
 
       {/* Feature Section */}
       <FeatureSection />
