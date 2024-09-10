@@ -228,17 +228,22 @@ const Career = () => {
                         {item.jobDetails}
                       </p>
                     </div>
-                    <Link href={"#"} className="font-sintony font-bold text-base text-[#599F99]">
-                        Learn more & Apply
+                    <Link
+                      href={"/about-us/career/our-openings"}
+                      className="font-sintony font-bold text-base text-[#599F99]"
+                    >
+                      Learn more & Apply
                     </Link>
                   </div>
                 );
               })}
             </div>
             <div className="mt-10">
-                <Button variant={"outline"} className={"w-fit border-[#1A1A1A]"}>
-                View All Openings
+              <Link href={"/about-us/career/our-openings"}>
+                <Button type="button" variant={"outline"} className={"w-fit border-[#1A1A1A]"}>
+                    View All Openings
                 </Button>
+              </Link>
             </div>
           </div>
         </section>

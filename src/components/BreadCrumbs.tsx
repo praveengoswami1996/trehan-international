@@ -10,10 +10,12 @@ import {
 } from "@/components/ui/breadcrumb";
 import { SlashIcon } from "@radix-ui/react-icons";
 import { cn } from "@/lib/utils";
+import Link from "next/link";
 
 const BreadcrumbLabels = {
     '/about-us': 'About Us',
-    '/career': 'Career'
+    '/career': 'Career',
+    '/our-openings': 'Open Positions',
 } as const;
 
 type BreadcrumbKeys = keyof typeof BreadcrumbLabels;
@@ -29,7 +31,11 @@ const BreadCrumbs = () => {
     <Breadcrumb>
       <BreadcrumbList>
         <BreadcrumbItem>
-          <BreadcrumbLink href="/" className="text-base font-normal tracking-[0.02em]">Home</BreadcrumbLink>
+          <BreadcrumbLink asChild>
+            <Link href="/" className="text-base font-normal tracking-[0.02em]">
+              Home
+            </Link>
+          </BreadcrumbLink>
         </BreadcrumbItem>
         <BreadcrumbSeparator>
           <SlashIcon />
@@ -38,7 +44,9 @@ const BreadCrumbs = () => {
           return (
             <React.Fragment key={segment}>
               <BreadcrumbItem>
-                <BreadcrumbLink href={segment} className={cn("text-base font-normal tracking-[0.02em] text-[#1A1A1A]", index === urlSegments.length - 1 && "font-semibold")}>{BreadcrumbLabels[segment as BreadcrumbKeys]}</BreadcrumbLink>
+                <BreadcrumbLink asChild>
+                  <Link href={segment} className={cn("text-base font-normal tracking-[0.02em] text-[#1A1A1A]", index === urlSegments.length - 1 && "font-semibold")}>{BreadcrumbLabels[segment as BreadcrumbKeys]}</Link>
+                </BreadcrumbLink>
               </BreadcrumbItem>
               {index < urlSegments.length - 1 && (
                 <BreadcrumbSeparator>
