@@ -41,22 +41,22 @@ const navigationLinks = [
   {
     id: "navigation_links_001",
     label: "Home",
-    href: "#",
+    href: "/",
   },
   {
     id: "navigation_links_002",
     label: "About Us",
     subLinks: [
-      { id: "about_link_001", href: "#", label: "About us", icon: DesignIcon6 },
+      { id: "about_link_001", href: "/about-us", label: "About us", icon: DesignIcon6 },
       {
         id: "about_link_002",
-        href: "#",
+        href: "/about-us/career",
         label: "Life @ Trehan",
         icon: DesignIcon11,
       },
       {
         id: "about_link_003",
-        href: "#",
+        href: "/about-us/career/our-openings",
         label: "Our Openings",
         icon: DesignIcon11,
       },
@@ -68,31 +68,31 @@ const navigationLinks = [
     subLinks: [
       {
         id: "service_link_001",
-        href: "#",
+        href: "/services/bulk-hiring-solutions",
         label: "Bulk Hiring Solutions",
         icon: DesignIcon1,
       },
       {
         id: "service_link_002",
-        href: "#",
+        href: "/services/executive-search-and-selection",
         label: "Executive Search & Selection",
         icon: DesignIcon4,
       },
       {
         id: "service_link_003",
-        href: "#",
+        href: "/services/hr-management-system",
         label: "HR Management System (HRMS)",
         icon: DesignIcon2,
       },
       {
         id: "service_link_004",
-        href: "#",
+        href: "/services/project-and-turnkey-staffing-solutions",
         label: "Project & Turnkey Staffing Solutions",
         icon: DesignIcon5,
       },
       {
         id: "service_link_005",
-        href: "#",
+        href: "/services/contract-staffing",
         label: "Contract Staffing",
         icon: DesignIcon3,
       },
