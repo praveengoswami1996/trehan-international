@@ -1,5 +1,5 @@
 import React from "react";
-import { AttestationIcon, InterHiringIcon, LocalHiringIcon } from "../icons";
+import { AttestationIcon, InterHiringIcon, LocalHiringIcon } from "./icons";
 
 const features = [
   {
@@ -25,7 +25,7 @@ const features = [
 const FeatureSection = () => {
   return (
     <div className="w-full bg-[#1A1A1A]">
-      <section className="w-full max-w-[1440px] mx-auto px-2 sm:px-5 lg:px-10 xl:px-14 2xl:px-24 pt-12 md:pt-16 xl:pt-24 pb-14">
+      <section className="website-container section-padding-x section-padding-y pb-14">
         <h1 className="section-title leading-[3rem] text-[#FFFFFF]">
           A single destination to manage all things frontline
         </h1>

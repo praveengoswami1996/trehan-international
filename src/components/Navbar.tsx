@@ -26,11 +26,11 @@ const aboutLinks: DropdownLink[] = [
 ];
 
 const serviceLinks: DropdownLink[] = [
-  { href: "#", title: "Bulk Hiring Solutions", icon: DesignIcon1 },
-  { href: "#", title: "Executive Search & Selection", icon: DesignIcon4 },
-  { href: "#", title: "HR Management System (HRMS)", icon: DesignIcon2 },
-  { href: "#", title: "Project & Turnkey Staffing Solutions", icon: DesignIcon5 },
-  { href: "#", title: "Contract Staffing", icon: DesignIcon3 },
+  { href: "/services/bulk-hiring-solutions", title: "Bulk Hiring Solutions", icon: DesignIcon1 },
+  { href: "/services/executive-search-and-selection", title: "Executive Search & Selection", icon: DesignIcon4 },
+  { href: "/services/hr-management-system", title: "HR Management System (HRMS)", icon: DesignIcon2 },
+  { href: "/services/project-and-turnkey-staffing-solutions", title: "Project & Turnkey Staffing Solutions", icon: DesignIcon5 },
+  { href: "/services/contract-staffing", title: "Contract Staffing", icon: DesignIcon3 },
 ];
 
 const approachLinks: DropdownLink[] = [

@@ -1,20 +1,10 @@
 import FeatureSection from "@/components/FeatureSection";
-import {
-  LSCMIcon,
-  ANTIcon,
-  EICIcon,
-  FMIcon,
-  HCIcon,
-  IMIcon,
-  OGEIcon,
-  QuotationIcon,
-  RFBIcon,
-} from "@/components/icons";
+import { QuotationIcon } from "@/components/icons";
+import IndustriesWeServe from "@/components/IndustriesWeServe";
+import LocationsWeServe from "@/components/LocationsWeServe";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
-import { cn } from "@/lib/utils";
 import Image from "next/image";
-import { ComponentType } from "react";
 import { PiUser } from "react-icons/pi";
 
 const trustedPartners = [
@@ -52,49 +42,6 @@ const ourServices = [
   },
 ];
 
-const industriesWeServe = [
-  {
-    id: "industry_001",
-    icon: EICIcon,
-    label: "Engineering, Infrastructure and Construction",
-  },
-  {
-    id: "industry_002",
-    icon: OGEIcon,
-    label: "Oil, Gas and Energy",
-  },
-  {
-    id: "industry_003",
-    icon: FMIcon,
-    label: "Facility Management",
-  },
-  {
-    id: "industry_004",
-    icon: IMIcon,
-    label: "Industrial Manufacturing",
-  },
-  {
-    id: "industry_005",
-    icon: HCIcon,
-    label: "Healthcare",
-  },
-  {
-    id: "industry_006",
-    icon: ANTIcon,
-    label: "Automotive and Transportation",
-  },
-  {
-    id: "industry_007",
-    icon: LSCMIcon,
-    label: "Logistic & Supply Chain Management",
-  },
-  {
-    id: "industry_008",
-    icon: RFBIcon,
-    label: "Retail, Food and Beverage",
-  },
-];
-
 const ourApproachData = [
   {
     id: "our_approach_001",
@@ -116,39 +63,6 @@ const ourApproachData = [
     label: "Compliance: Navigating the Regulatory Landscape",
     desc: "At Trehan International, we understand the importance of adhering to all relevant laws and regulations throughout the recruitment process. We maintain a rigorous compliance framework to ensure ethical and legal practices.",
     imageURL: "/approach/approach-3.png",
-  },
-];
-
-const locationsWeServe = [
-  {
-    id: "location_001",
-    name: "Europe",
-    flagUrl: "/flags/europe.png",
-    altText: "Europe Flag",
-  },
-  {
-    id: "location_002",
-    name: "Russia",
-    flagUrl: "/flags/russia.png",
-    altText: "Russia Flag",
-  },
-  {
-    id: "location_003",
-    name: "GCC",
-    flagUrl: "/flags/gcc.png",
-    altText: "GCC Flag",
-  },
-  {
-    id: "location_004",
-    name: "USA",
-    flagUrl: "/flags/usa.png",
-    altText: "USA Flag",
-  },
-  {
-    id: "location_005",
-    name: "Japan",
-    flagUrl: "/flags/japan.png",
-    altText: "Japan Flag",
   },
 ];
 
@@ -205,17 +119,9 @@ const trendingBlogs = [
   },
 ];
 
-
 interface AboutDataItemProps {
   data: string;
   desc: string;
-}
-
-interface IndustryItemProps {
-  icon: ComponentType<{ className?: string }>;
-  label: string;
-  position: string;
-  labelClasses: string;
 }
 
 interface ApproachItem {
@@ -243,34 +149,6 @@ const AboutDataItem: React.FC<AboutDataItemProps> = ({ data, desc }) => {
   );
 };
 
-const IndustryItem: React.FC<IndustryItemProps> = ({
-  icon,
-  label,
-  position,
-  labelClasses,
-}) => {
-  const Icon = icon;
-
-  return (
-    <div className={cn("absolute", position)}>
-      <div
-        className="flex-none p-5 rounded-full bg-[#E2AF45] flex items-center justify-center relative size-[6.25rem]"
-        style={{ boxShadow: "0px 0px 60px 0px #00000026" }}
-      >
-        <Icon className="text-white" />
-        <h5
-          className={cn(
-            "absolute text-xl text-center font-sintony font-bold",
-            labelClasses
-          )}
-        >
-          {label}
-        </h5>
-      </div>
-    </div>
-  );
-};
-
 const ApproachItem: React.FC<ApproachItemProps> = ({ data }) => {
   return (
     <div className="flex flex-col lg:flex-row items-center">
@@ -280,7 +158,7 @@ const ApproachItem: React.FC<ApproachItemProps> = ({ data }) => {
             src={data.imageURL}
             alt={data.label}
             fill
-            className="object-cover object-center md:object-left-top bg-green-600"
+            className="object-cover object-center md:object-left-top"
           />
 
           <div className="absolute right-4 -top-[4.5rem] sm:-right-24 sm:top-0 text-[6.25rem] text-[#599F99] font-sintony font-regular">
@@ -315,16 +193,16 @@ export default function Home() {
   return (
     <div className="min-h-screen pt-28 md:pt-32 lg:pt-36 xl:pt-44 bg-white">
       {/* Hero Section */}
-      <section className="px-2 sm:px-5 lg:pl-10 xl:pl-14 2xl:pl-24 pb-10 xl:pb-20 max-w-[1440px] mx-auto relative overflow-hidden">
+      <section className="website-container section-padding-x pb-10 xl:pb-20 relative overflow-hidden">
         <div>
           <h2 className="font-sintony text-[1.5rem] lg:text-[2rem] leading-[2.2rem] lg:leading-[3rem] font-normal text-[#C6485D]">
             Precision Talent Acquisition
           </h2>
-          <h1 className="font-sintony text-[2.4rem] lg:text-[3.25rem] leading-[3rem] lg:leading-[4.88rem] mt-3 lg:mt-0 font-bold">
+          <h1 className="hero-text mt-3 lg:mt-0">
             Where Expertise Meets Innovation
           </h1>
           <div className="mt-3 max-w-[39rem]">
-            <p className="text-base lg:text-[1.125rem] lg:leading-[1.69rem] font-regular text-[#535353]">
+            <p className="paragraph">
               At Trehan International, we believe that the perfect hire is more
               than just a candidate; it&apos;s a strategic partner in your
               success. With our decades of industry expertise and a bespoke
@@ -388,7 +266,7 @@ export default function Home() {
 
       {/* Trusted Partners Section */}
       <div className="w-full bg-[#F1F1F1]">
-        <div className="max-w-[1440px] mx-auto pt-10 pb-6">
+        <div className="website-container pt-10 pb-6">
           <h6 className="font-poppins font-medium italic text-base text-[#212121] text-center uppercase">
             Trusted by Renowned Partners:
           </h6>
@@ -435,13 +313,13 @@ export default function Home() {
       </div>
 
       {/* About Us Section */}
-      <section className="min-h-screen max-w-[1440px] mx-auto pt-12 md:pt-16 xl:pt-24 px-2 sm:px-5 lg:pl-10 xl:pl-14 2xl:pl-20 relative">
+      <section className="website-container section-padding-x min-h-screen pt-12 md:pt-16 xl:pt-24 relative">
         <div className="w-full h-full flex flex-col xl:flex-row">
           <div className="flex-1 flex flex-col gap-12 justify-between">
             <div className="flex flex-col gap-3">
               <h1 className="section-title">About us</h1>
               <div className="pl-4 py-0 relative before:absolute before:w-[5px] before:h-[95%] before:left-0 before:top-1/2 before:-translate-y-1/2 before:bg-amber-500">
-                <p className="text-base lg:text-[1.125rem] lg:leading-[1.69rem] font-regular text-[#535353]">
+                <p className="paragraph">
                   Trehan International is a recruitment consultancy with a focus
                   on revolutionizing the field of recruitment. Over the past
                   four decades, Trehan International has transformed into a
@@ -518,12 +396,12 @@ export default function Home() {
 
       {/* Our Services Section */}
       <div className="w-full bg-[#000000]">
-        <section className="mt-12 md:mt-16 lg:mt-20 xl:mt-36 min-h-screen max-w-[1440px] mx-auto px-2 sm:px-5 lg:px-10 xl:px-14 2xl:px-24 pt-12 md:pt-16 xl:pt-24 pb-12 md:pb-16 xl:pb-24">
+        <section className="website-container section-padding-x section-padding-y mt-12 md:mt-16 lg:mt-20 xl:mt-36 min-h-screen">
           <div className="flex flex-col items-center">
             <h1 className="section-title text-white text-center">
               Our Services
             </h1>
-            <p className="mt-3 text-base md:text-[1.125rem] md:leading-[1.69rem] font-regular text-white text-center max-w-[22rem]">
+            <p className="mt-3 paragraph text-white text-center max-w-[22rem]">
               Building Workforce Excellence: Tailored Recruitment Solutions
             </p>
             <div className="mt-10 w-full grid justify-items-center grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
@@ -577,150 +455,14 @@ export default function Home() {
       </div>
 
       {/* Industries We Serve Section */}
-      <div className="w-full bg-[#F2F3F4]">
-        <section className="min-h-screen max-w-[1440px] mx-auto px-2 sm:px-5 lg:px-10 xl:px-14 2xl:px-24 pt-12 md:pt-16 xl:pt-24 pb-12 md:pb-16 xl:pb-24">
-          <div className="flex flex-col items-center">
-            <h1 className="section-title text-center">
-              Industries We Serve
-            </h1>
-            <p className="mt-3 text-base md:text-[1.125rem] md:leading-[1.69rem] font-regular text-center max-w-[60rem]">
-              Trehan International is a recruitment consultancy with a focus on
-              revolutionizing the field of recruitment. Over the past four
-              decades, Trehan International has transformed into a prominent and
-              highly respected recruitment consultancy in India and Southeast
-              Asia.
-            </p>
-
-            <div className="lg:hidden overflow-hidden relative size-[15rem]  mobile-sm:size-[19rem] mobile-md:size-[22rem] mobile-lg:size-[24rem] sm:size-[30rem] mx-auto flex items-center justify-center mt-10">
-                <Image
-                  src={"/bg-pattern.svg"}
-                  alt="Background Pattern Image"
-                  fill
-                />
-                <div className="w-4/5 h-4/5 rounded-full relative overflow-hidden">
-                  <Image
-                    src={"/industries.png"}
-                    alt={"Industries Representation Image"}
-                    fill
-                    className="object-cover object-left"
-                  />
-                </div>
-            </div>
-
-            <div className="mt-10 w-full grid grid-cols-1 sm:grid-cols-2 gap-5 lg:hidden">
-              {industriesWeServe.map((item) => {
-                const Icon = item.icon;
-                return (
-                  <div
-                    key={item.id}
-                    className="flex flex-col items-center gap-2 bg-white p-5 rounded-md shadow-sm"
-                  >
-                    <div
-                      className="flex-none p-5 rounded-full bg-[#E2AF45] flex items-center justify-center relative size-[6.25rem]"
-                      style={{ boxShadow: "0px 0px 60px 0px #00000026" }}
-                    >
-                      <Icon className="text-white" />
-                    </div>
-                    <p className="font-sintony font-bold text-xl text-center">
-                      {item.label}
-                    </p>
-                  </div>
-                );
-              })}
-            </div>
-
-            <div className="hidden mt-28 w-full lg:flex justify-center">
-              <div className="size-[34rem] xl:size-[37.5rem] relative flex items-center justify-center p-8 mx-auto">
-                <Image
-                  src={"/bg-pattern.svg"}
-                  alt="Background Pattern Image"
-                  fill
-                />
-                <div className="w-full h-full rounded-full border border-[#599F99] relative p-[4.5rem]">
-                  <Image
-                    src={"/bg-star.svg"}
-                    alt={"Background Pattern Image"}
-                    fill
-                  />
-                  <div className="w-full h-full rounded-full relative overflow-hidden">
-                    <Image
-                      src={"/industries.png"}
-                      alt={"Industries Representation Image"}
-                      fill
-                      className="object-cover object-left"
-                    />
-                  </div>
-
-                  <IndustryItem
-                    icon={EICIcon}
-                    label={"Engineering, Infrastructure and Construction"}
-                    position="-top-12 left-1/2 -translate-x-1/2"
-                    labelClasses="bottom-full mb-2 w-[20rem]"
-                  />
-                  <IndustryItem
-                    icon={OGEIcon}
-                    label={"Oil, Gas and Energy"}
-                    position="top-[5rem] left-7 -translate-y-1/2"
-                    labelClasses="top-1/2 -translate-y-1/2 right-full mr-2 w-[8rem] text-right"
-                  />
-                  <IndustryItem
-                    icon={FMIcon}
-                    label={"Facility Management"}
-                    position="top-1/2 -translate-y-1/2 -left-12"
-                    labelClasses="top-1/2 -translate-y-1/2 right-full mr-2 w-[8.5rem] text-right"
-                  />
-                  <IndustryItem
-                    icon={IMIcon}
-                    label={"Industrial Manufacturing"}
-                    position="bottom-9 left-7"
-                    labelClasses="top-1/2 -translate-y-1/2 right-full mr-2 w-[9.5rem] text-right"
-                  />
-                  <IndustryItem
-                    icon={HCIcon}
-                    label={"Healthcare"}
-                    position="-bottom-12 left-1/2 -translate-x-1/2"
-                    labelClasses="top-full mt-2 w-[10rem]"
-                  />
-                  <IndustryItem
-                    icon={ANTIcon}
-                    label={"Automotive and Transportation"}
-                    position="bottom-9 right-7"
-                    labelClasses="top-1/2 -translate-y-1/2 left-full ml-2 w-[10rem] text-left"
-                  />
-                  <IndustryItem
-                    icon={LSCMIcon}
-                    label={"Logistic & Supply Chain Management"}
-                    position="top-1/2 -translate-y-1/2 -right-12"
-                    labelClasses="top-1/2 -translate-y-1/2 left-full ml-2 w-[13rem] text-left"
-                  />
-                  <IndustryItem
-                    icon={RFBIcon}
-                    label={"Retail, Food and Beverage"}
-                    position="top-[5rem] right-7 -translate-y-1/2"
-                    labelClasses="top-1/2 -translate-y-1/2 left-full ml-2 w-[9rem] text-left"
-                  />
-                </div>
-              </div>
-            </div>
-
-            <div className="mt-10 lg:mt-28">
-              <Button
-                variant={"outline"}
-                className={"w-fit border-[#1A1A1A] bg-[#F2F3F4]"}
-              >
-                Explore All
-              </Button>
-            </div>
-          </div>
-        </section>
-      </div>
+      <IndustriesWeServe />
 
       {/* Our Approach Section */}
       <div className="w-full bg-[#FAFAFA]">
-        <section className="min-h-screen max-w-[1440px] mx-auto px-2 sm:px-5 lg:px-10 xl:px-14 2xl:pl-24 pt-12 md:pt-16 xl:pt-24 pb-12 md:pb-16 xl:pb-24 md:pr-20 relative overflow-hidden">
+        <section className="website-container section-padding-x section-padding-y md:pr-20 min-h-screen relative overflow-hidden">
           <div className="flex flex-col">
             <h1 className="section-title">Our Approach</h1>
-            <p className="mt-2.5 text-base md:text-[1.125rem] md:leading-[1.69rem] font-regular">
+            <p className="mt-2.5 paragraph">
               We follow a 3 phase approach consisting
             </p>
 
@@ -743,52 +485,11 @@ export default function Home() {
       </div>
 
       {/* Locations we serve Section */}
-      <div className="w-full bg-[#1A1A1A]">
-        <section className="w-full max-w-[1440px] mx-auto px-2 sm:px-5 lg:px-10 xl:px-14 2xl:px-24 pt-12 md:pt-16 xl:pt-24 pb-12">
-          <div className="flex flex-col items-center justify-between">
-            <h1 className="section-title text-[#ffffff] text-center">
-              Locations We Serve
-            </h1>
-            <p className="mt-2.5 text-base md:text-[1.125rem] md:leading-[1.69rem] font-regular text-[#ffffff] text-center max-w-2xl">
-              Our extensive history across industrial verticals/sectors has
-              provided us with a rich tapestry of knowledge, allowing...
-            </p>
-
-            <div className="mt-12 w-full max-w-[756px] h-[10rem] md:h-[436px] relative">
-              <Image
-                src={"/world-map.svg"}
-                alt={"World Map"}
-                fill
-                className="object-contain"
-              />
-            </div>
-
-            <div className="mt-12 flex items-center justify-center flex-wrap gap-x-6 gap-y-3">
-              {locationsWeServe.map((location) => {
-                return (
-                  <div key={location.id} className="flex items-center gap-2">
-                    <div className="flex-none w-9 h-6 relative">
-                      <Image
-                        src={location.flagUrl}
-                        alt={location.altText}
-                        fill
-                        className="object-cover"
-                      />
-                    </div>
-                    <div className="font-sintony text-[1.125rem] font-normal text-white">
-                      {location.name}
-                    </div>
-                  </div>
-                );
-              })}
-            </div>
-          </div>
-        </section>
-      </div>
+      <LocationsWeServe />
 
       {/* Case Studies Section */}
       <div className="w-full bg-[#C6485D]">
-        <section className="w-full max-w-[1440px] mx-auto px-2 sm:px-5 lg:px-10 xl:pl-14 2xl:px-24 pt-12 md:pt-16 xl:pt-24 pb-12 md:pb-16 xl:pb-24">
+        <section className="website-container section-padding-x section-padding-y">
           <div className="flex flex-col items-center">
             <h1 className="section-title text-[#ffffff] text-center">
               Case Studies
@@ -846,7 +547,7 @@ export default function Home() {
 
       {/* Client Outcomes & Impact Section */}
       <div className="w-full bg-[#FAFAFA]">
-        <section className="w-full max-w-[1440px] mx-auto px-2 sm:px-5 lg:px-10 xl:px-14 2xl:px-24 pt-12 md:pt-16 xl:pt-24 pb-12 md:pb-16 xl:pb-24">
+        <section className="website-container section-padding-x section-padding-y">
           <div className="flex flex-col items-center">
             <h1 className="section-title text-[#1A1A1A] text-center">
               Client Outcomes & Impact
@@ -901,7 +602,7 @@ export default function Home() {
 
       {/* Trending Blogs & Article Section */}
       <div className="w-full">
-        <section className="w-full max-w-[1440px] mx-auto px-2 sm:px-5 lg:px-10 xl:px-14 2xl:px-24 pt-12 md:pt-16 xl:pt-24 pb-12 md:pb-16 xl:pb-24">
+        <section className="website-container section-padding-x section-padding-y">
           <div className="flex flex-col">
             <h1 className="section-title text-[#1A1A1A]">
               Trending Blog & Articles

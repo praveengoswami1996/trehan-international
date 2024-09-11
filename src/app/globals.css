@@ -67,7 +67,27 @@
     @apply bg-background text-foreground;
   }
 
+  .website-container {
+    @apply w-full max-w-[1440px] mx-auto;
+  }
+
   .section-title {
     @apply font-sintony font-bold text-4xl lg:text-[2.75rem] lg:leading-[4.125rem];
+  }
+
+  .section-padding-x {
+    @apply px-2 sm:px-5 lg:px-10 xl:px-14 2xl:px-24;  
+  }
+
+  .section-padding-y {
+    @apply py-12 md:py-16 xl:py-24;
+  }
+
+  .hero-text {
+    @apply font-sintony text-[2.4rem] lg:text-[3.25rem] leading-[3rem] lg:leading-[4.88rem] font-bold;
+  }
+
+  .paragraph {
+    @apply text-base lg:text-[1.125rem] lg:leading-[1.69rem] font-normal text-[#535353];
   }
 }

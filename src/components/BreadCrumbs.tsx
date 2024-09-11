@@ -16,6 +16,12 @@ const BreadcrumbLabels = {
     '/about-us': 'About Us',
     '/career': 'Career',
     '/our-openings': 'Open Positions',
+    '/services': 'Services',
+    '/bulk-hiring-solutions': 'Bulk Hiring Solutions',
+    '/executive-search-and-selection': 'Executive Search & Selection',
+    '/hr-management-system': 'HR Management System (HRMS)',
+    '/project-and-turnkey-staffing-solutions': 'Project & Turnkey Staffing Solutions',
+    '/contract-staffing': 'Contract Staffing',
 } as const;
 
 type BreadcrumbKeys = keyof typeof BreadcrumbLabels;
@@ -32,7 +38,7 @@ const BreadCrumbs = () => {
       <BreadcrumbList>
         <BreadcrumbItem>
           <BreadcrumbLink asChild>
-            <Link href="/" className="text-base font-normal tracking-[0.02em]">
+            <Link href="/" className="text-xs md:text-base font-normal tracking-[0.02em]">
               Home
             </Link>
           </BreadcrumbLink>
@@ -45,7 +51,7 @@ const BreadCrumbs = () => {
             <React.Fragment key={segment}>
               <BreadcrumbItem>
                 <BreadcrumbLink asChild>
-                  <Link href={segment} className={cn("text-base font-normal tracking-[0.02em] text-[#1A1A1A]", index === urlSegments.length - 1 && "font-semibold")}>{BreadcrumbLabels[segment as BreadcrumbKeys]}</Link>
+                  <Link href={segment} className={cn("text-xs md:text-base font-normal tracking-[0.02em] text-[#1A1A1A]", index === urlSegments.length - 1 && "font-semibold")}>{BreadcrumbLabels[segment as BreadcrumbKeys]}</Link>
                 </BreadcrumbLink>
               </BreadcrumbItem>
               {index < urlSegments.length - 1 && (
