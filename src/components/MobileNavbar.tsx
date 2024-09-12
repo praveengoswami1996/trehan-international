@@ -218,7 +218,7 @@ const MobileNavbar = () => {
                   <CollapsibleContent>
                     <div className="flex flex-col divide-y pl-5">
                         {item.subLinks.map((item) => (
-                        <Link href={item.href} key={item.id} className="py-2 flex gap-3 items-center">
+                        <Link href={item.href} key={item.id} onClick={() => toggleNavbar()} className="py-2 flex gap-3 items-center">
                             {item.label}
                             <span>
                                 <RxExternalLink />
@@ -229,7 +229,7 @@ const MobileNavbar = () => {
                   </CollapsibleContent>
                 </Collapsible>
               ) : (
-                <Link href={item.href} key={item.id} className="py-3">
+                <Link href={item.href} key={item.id} onClick={() => toggleNavbar()} className="py-3">
                   {item.label}
                 </Link>
               );
