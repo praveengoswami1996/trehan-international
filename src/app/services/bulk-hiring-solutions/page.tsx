@@ -1,3 +1,4 @@
+import WhyChooseTrehan from "@/components/AboutUs/WhyChooseTrehan";
 import BenefitCard from "@/components/BenefitCard";
 import {
   DesignIcon12,
@@ -67,6 +68,11 @@ const BulkHiringSolutions = () => {
       {/* Benefits Section */}
       <BenefitsSectionWrapper
         benefits={benefits}
+      />
+
+      {/* Why Choose Trehan International Section */}
+      <WhyChooseTrehan 
+        backgroundColor="#C6485D"
       />
     </>
   );

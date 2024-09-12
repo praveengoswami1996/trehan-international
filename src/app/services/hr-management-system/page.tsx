@@ -1,3 +1,4 @@
+import WhyChooseTrehan from "@/components/AboutUs/WhyChooseTrehan";
 import DesignIcon20 from "@/components/icons/DesignIcon20";
 import DesignIcon21 from "@/components/icons/DesignIcon21";
 import BannerImageWrapper from "@/components/services/BannerImageWrapper";
@@ -43,6 +44,9 @@ const HRManagementSystem = () => {
         cardContainerClasses="max-w-4xl mx-auto"
         infoPanel="Elevate your HR processes to new heights of efficiency and clarity, transforming the way you connect with your team from day one to retirement, with Trehan International's HRMS, your all-in-one solution."
       />
+
+      {/* Why Choose Trehan Internation Section */}
+      <WhyChooseTrehan backgroundColor="#C6485D" />
     </>
   );
 };

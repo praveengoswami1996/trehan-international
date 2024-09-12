@@ -1,3 +1,4 @@
+import WhyChooseTrehan from "@/components/AboutUs/WhyChooseTrehan";
 import { DesignIcon13 } from "@/components/icons";
 import DesignIcon18 from "@/components/icons/DesignIcon18";
 import DesignIcon19 from "@/components/icons/DesignIcon19";
@@ -11,8 +12,7 @@ const benefits = [
   {
     id: "benefits_001",
     title: "Customized Hiring",
-    description:
-      "Crafting and implementing tailored recruitment strategies.",
+    description: "Crafting and implementing tailored recruitment strategies.",
     icon: DesignIcon18,
   },
   {
@@ -35,7 +35,7 @@ const benefits = [
     description:
       "Designing recruitment processes and panels for precise skill assessment.",
     icon: DesignIcon13,
-  }
+  },
 ];
 
 const ContractStaffing = () => {
@@ -48,7 +48,7 @@ const ContractStaffing = () => {
       />
 
       {/* Banner Image Section */}
-      <BannerImageWrapper 
+      <BannerImageWrapper
         imageURL="/services/banner-1.png"
         altText="People going upstairs"
       />
@@ -59,6 +59,9 @@ const ContractStaffing = () => {
         cardContainerClasses="max-w-4xl mx-auto"
         infoPanel="With our proven success in metros and beyond, Trehan International is your go-to partner for efficient, scalable staffing solutions that align with your project goals. Transform your staffing strategy with our expert support."
       />
+
+      {/* Why Choose Trehan Internation Section */}
+      <WhyChooseTrehan backgroundColor="#C6485D" />
     </>
   );
 };

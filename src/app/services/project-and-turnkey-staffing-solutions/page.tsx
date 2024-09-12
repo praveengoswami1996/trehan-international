@@ -1,3 +1,4 @@
+import WhyChooseTrehan from "@/components/AboutUs/WhyChooseTrehan";
 import { DesignIcon13 } from "@/components/icons";
 import DesignIcon18 from "@/components/icons/DesignIcon18";
 import DesignIcon19 from "@/components/icons/DesignIcon19";
@@ -59,6 +60,9 @@ const ProjectAndTurnkeyStaffingSolutions = () => {
         cardContainerClasses="max-w-4xl mx-auto"
         infoPanel="With our proven success in metros and beyond, Trehan International is your go-to partner for efficient, scalable staffing solutions that align with your project goals. Transform your staffing strategy with our expert support."
       />
+
+      {/* Why Choose Trehan Internation Section */}
+      <WhyChooseTrehan backgroundColor="#C6485D" />
     </>
   );
 };

@@ -1,3 +1,4 @@
+import WhyChooseTrehan from "@/components/AboutUs/WhyChooseTrehan";
 import { DesignIcon13 } from "@/components/icons";
 import DesignIcon16 from "@/components/icons/DesignIcon16";
 import DesignIcon17 from "@/components/icons/DesignIcon17";
@@ -51,6 +52,9 @@ const ExecutiveSearchAndSelection = () => {
         benefits={benefits}
         infoPanel={"Let Trehan International navigate the complexities of executive selection for you. Discover leadership that doesn’t just fill a position but propels your organization towards its vision."}
       />
+
+      {/* Why Choose Trehan Internation Section */}
+      <WhyChooseTrehan backgroundColor="#C6485D" />
     </>
   );
 };
