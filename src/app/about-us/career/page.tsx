@@ -1,4 +1,5 @@
 import TeamCelebration from "@/components/AboutUs/TeamCelebration";
+import BenefitCard from "@/components/BenefitCard";
 import BreadCrumbs from "@/components/BreadCrumbs";
 import {
   DesignIcon12,
@@ -119,25 +120,13 @@ const Career = () => {
 
             <div className="w-full mt-10 flex justify-center flex-wrap gap-6">
               {benefits.map((item) => {
-                const Icon = item.icon;
                 return (
-                  <div
+                  <BenefitCard 
                     key={item.id}
-                    style={{ boxShadow: "0px 0px 100px 0px #0000000D" }}
-                    className="bg-white w-full max-w-[23rem] h-[19rem] flex flex-col items-center justify-between p-10"
-                  >
-                    <div className="bg-[#FDF7ED] size-20 flex items-center justify-center rounded-full">
-                      <Icon className="text-[#E2AF45] size-12" />
-                    </div>
-                    <div className="w-full">
-                      <h4 className="font-sintony font-bold text-2xl leading-[2.25rem] text-center text-[#1A1A1A]">
-                        {item.title}
-                      </h4>
-                      <p className="mt-2 text-base font-normal text-center text-[#535353]">
-                        {item.description}
-                      </p>
-                    </div>
-                  </div>
+                    title={item.title}
+                    description={item.description}
+                    icon={item.icon}
+                  />
                 );
               })}
             </div>

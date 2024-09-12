@@ -1,6 +1,26 @@
+import DesignIcon20 from "@/components/icons/DesignIcon20";
+import DesignIcon21 from "@/components/icons/DesignIcon21";
 import BannerImageWrapper from "@/components/services/BannerImageWrapper";
+import BenefitsSectionWrapper from "@/components/services/BenefitsSectionWrapper";
 import HeroSectionWrapper from "@/components/services/HeroSectionWrapper";
 import React from "react";
+
+const benefits = [
+  {
+    id: "benefits_001",
+    title: "End-to-End Process Management",
+    description:
+      "Automate and streamline your hiring process, from candidate sourcing and onboarding to performance management and 	offboarding.",
+    icon: DesignIcon20,
+  },
+  {
+    id: "benefits_002",
+    title: "Streamlined Attendance & Leave Management",
+    description:
+      "Track employee attendance, leave requests, and approvals effortlessly, promoting transparency and efficiency.",
+    icon: DesignIcon21,
+  }
+];
 
 const HRManagementSystem = () => {
   return (
@@ -15,6 +35,13 @@ const HRManagementSystem = () => {
       <BannerImageWrapper 
         imageURL="/services/banner-4.png"
         altText="A man and a woman looking at a laptop"
+      />
+
+      {/* Benefits Section */}
+      <BenefitsSectionWrapper
+        benefits={benefits}
+        cardContainerClasses="max-w-4xl mx-auto"
+        infoPanel="Elevate your HR processes to new heights of efficiency and clarity, transforming the way you connect with your team from day one to retirement, with Trehan International's HRMS, your all-in-one solution."
       />
     </>
   );
