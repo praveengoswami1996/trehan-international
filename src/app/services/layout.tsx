@@ -9,11 +9,11 @@ export default function ServicesLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <>
-      { children }
+    <div className="min-h-screen bg-white pt-28 md:pt-32 lg:pt-36 xl:pt-40 relative">
+      {children}
       <LocationsWeServe />
       <IndustriesWeServe />
       <FeatureSection />
-    </>
+    </div>
   );
 }

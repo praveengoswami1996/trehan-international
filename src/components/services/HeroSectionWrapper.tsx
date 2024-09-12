@@ -14,15 +14,15 @@ const HeroSectionWrapper: React.FC<HeroSectionWrapperProps> = ({ title, descript
       <section className="website-container section-padding-x section-padding-y 2xl:pb-32 pt-0 relative overflow-hidden">
         <div className="flex flex-col items-center">
           <BreadCrumbs />
-          <div className="mt-3 mobile-xl:mt-5 w-full flex flex-col items-center">
+          <div className="mt-5 w-full flex flex-col items-center">
             <h1 className="hero-text text-center mx-auto">
               {title}
             </h1>
-            <p className="paragraph text-center mt-3 mobile-xl:mt-5 max-w-[52rem] mx-auto">
+            <p className="paragraph text-center mt-5 max-w-[52rem] mx-auto">
               {description}
             </p>
 
-            <div className="mt-7 mobile-xl:mt-14">
+            <div className="mt-14">
               <Button type="button">
                 Partner with us
               </Button>
