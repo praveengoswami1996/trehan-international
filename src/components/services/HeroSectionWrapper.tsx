@@ -30,7 +30,7 @@ const HeroSectionWrapper: React.FC<HeroSectionWrapperProps> = ({ title, descript
           </div>
         </div>
 
-        <div className="hidden sm:block absolute -left-60 md:-left-52 top-56 md:top-48 size-[33.25rem] ">
+        <div className="hidden sm:block absolute -left-60 xl:-left-52 top-56 xl:top-48 size-[33.25rem] ">
           <Image
             src="/bg-pattern-003246.svg"
             alt="Background Pattern Image"
