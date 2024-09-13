@@ -143,12 +143,12 @@ const navigationLinks = [
   {
     id: "navigation_links_005",
     label: "Industries",
-    href: "#",
+    href: "/industries",
   },
   {
     id: "navigation_links_006",
     label: "Job Search",
-    href: "#",
+    href: "/job-search",
   },
   {
     id: "navigation_links_007",

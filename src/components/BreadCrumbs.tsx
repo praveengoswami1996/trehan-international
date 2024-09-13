@@ -22,6 +22,7 @@ const BreadcrumbLabels = {
     '/hr-management-system': 'HR Management System (HRMS)',
     '/project-and-turnkey-staffing-solutions': 'Project & Turnkey Staffing Solutions',
     '/contract-staffing': 'Contract Staffing',
+    '/industries': 'Industries',
 } as const;
 
 type BreadcrumbKeys = keyof typeof BreadcrumbLabels;

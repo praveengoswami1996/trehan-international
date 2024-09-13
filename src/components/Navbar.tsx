@@ -108,7 +108,7 @@ const Navbar = () => {
         </NavigationMenuItem>
 
         <NavigationMenuItem>
-          <Link href="#" legacyBehavior passHref>
+          <Link href="/industries" legacyBehavior passHref>
             <NavigationMenuLink className={navigationMenuTriggerStyle()}>
               Industries
             </NavigationMenuLink>
