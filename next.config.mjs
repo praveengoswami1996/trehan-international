@@ -8,6 +8,11 @@ const nextConfig = {
                 destination: '/services/bulk-hiring-solutions',
                 permanent: false,
             },
+            {
+                source: '/approach',
+                destination: '/approach/consultative-approach',
+                permanent: false,
+            },
         ]
     },
 }

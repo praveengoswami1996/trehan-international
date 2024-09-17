@@ -34,12 +34,12 @@ const serviceLinks: DropdownLink[] = [
 ];
 
 const approachLinks: DropdownLink[] = [
-  { href: "#", title: "Consultative Approach", icon: DesignIcon6 },
-  { href: "#", title: "Customized Solutions", icon: DesignIcon9 },
-  { href: "#", title: "Quality Screening", icon: DesignIcon7 },
-  { href: "#", title: "Compliance", icon: DesignIcon10 },
-  { href: "#", title: "Recruitment Flow", icon: DesignIcon8 },
-  { href: "#", title: "Mobilization Flow", icon: DesignIcon1 },
+  { href: "/approach/consultative-approach", title: "Consultative Approach", icon: DesignIcon6 },
+  { href: "/approach/customized-solutions", title: "Customized Solutions", icon: DesignIcon9 },
+  { href: "/approach/quality-screening", title: "Quality Screening", icon: DesignIcon7 },
+  { href: "/approach/compliance", title: "Compliance", icon: DesignIcon10 },
+  { href: "/approach/recruitment-flow", title: "Recruitment Flow", icon: DesignIcon8 },
+  { href: "/approach/mobilization-flow", title: "Mobilization Flow", icon: DesignIcon1 },
 ];
 
 const resourceLinks: DropdownLink[] = [

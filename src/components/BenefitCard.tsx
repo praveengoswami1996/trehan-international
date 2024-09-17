@@ -11,7 +11,7 @@ const BenefitCard: React.FC<BenefitCardProps> = ({ icon, title, description }) =
   return (
     <div
       style={{ boxShadow: "0px 0px 100px 0px #0000000D" }}
-      className="bg-white w-full max-w-[23rem] flex flex-col items-center py-10 px-8 gap-6"
+      className="bg-white w-full max-w-[23rem] flex flex-col items-center p-4 md:py-10 md:px-8 gap-6"
     >
       <div className="bg-[#FDF7ED] flex-none size-20 flex items-center justify-center rounded-full">
         <Icon className="text-[#E2AF45] size-12" />

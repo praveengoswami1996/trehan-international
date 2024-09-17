@@ -22,6 +22,13 @@ const BreadcrumbLabels = {
     '/hr-management-system': 'HR Management System (HRMS)',
     '/project-and-turnkey-staffing-solutions': 'Project & Turnkey Staffing Solutions',
     '/contract-staffing': 'Contract Staffing',
+    '/approach': 'Approach',
+    '/consultative-approach': 'Consultative Approach',
+    '/customized-solutions': 'Customized Solutions',
+    '/quality-screening': 'Quality Screening',
+    '/compliance': 'Compliance',
+    '/recruitment-flow': 'Recruitment Flow',
+    '/mobilization-flow': 'Mobilization Flow',
     '/industries': 'Industries',
 } as const;
 

@@ -104,37 +104,37 @@ const navigationLinks = [
     subLinks: [
       {
         id: "approach_link_001",
-        href: "#",
+        href: "/approach/consultative-approach",
         label: "Consultative Approach",
         icon: DesignIcon6,
       },
       {
         id: "approach_link_002",
-        href: "#",
+        href: "/approach/customized-solutions",
         label: "Customized Solutions",
         icon: DesignIcon9,
       },
       {
         id: "approach_link_003",
-        href: "#",
+        href: "/approach/quality-screening",
         label: "Quality Screening",
         icon: DesignIcon7,
       },
       {
         id: "approach_link_004",
-        href: "#",
+        href: "/approach/compliance",
         label: "Compliance",
         icon: DesignIcon10,
       },
       {
         id: "approach_link_005",
-        href: "#",
+        href: "/approach/recruitment-flow",
         label: "Recruitment Flow",
         icon: DesignIcon8,
       },
       {
         id: "approach_link_006",
-        href: "#",
+        href: "/approach/mobilization-flow",
         label: "Mobilization Flow",
         icon: DesignIcon1,
       },
