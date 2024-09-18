@@ -7,6 +7,7 @@ import { Button } from "@/components/ui/button";
 import { cn } from "@/lib/utils";
 import Image from "next/image";
 import React from "react";
+import ImageContentPanel from "@/components/ImageContentPanel";
 
 interface StoryContentItem {
   id: string;
@@ -180,10 +181,13 @@ const ourPartners = [
 
 const TimeLineMobile: React.FC<TimeLineProps> = ({ storyContent }) => {
   return (
-    <div className="flex flex-col xl:hidden">
+    <div className="flex flex-col md:hidden">
       {storyContent.map((item, index) => {
         return (
-          <div key={item.id} className="ml-2 pl-5 pb-8 border-l-2 border-[#E2C886] relative">
+          <div
+            key={item.id}
+            className="ml-2 mobile-xl:ml-5 pl-5 mobile-xl:pl-10 pb-8 border-l-2 border-[#E2C886] relative"
+          >
             <div className="flex-none w-full max-w-[17.125rem] h-[10.5rem] relative rounded-lg overflow-hidden">
               <Image
                 src={item.imageURL}
@@ -193,7 +197,11 @@ const TimeLineMobile: React.FC<TimeLineProps> = ({ storyContent }) => {
               />
             </div>
             <div className="mt-2">
-              <h5 className={"font-sintony font-bold text-white text-xl leading-[1.875rem]"}>
+              <h5
+                className={
+                  "font-sintony font-bold text-white text-xl leading-[1.875rem]"
+                }
+              >
                 {item.storyTitle}
               </h5>
               <p className={"text-[1.125rem] text-white leading-7 font-medium"}>
@@ -214,7 +222,7 @@ const TimeLineMobile: React.FC<TimeLineProps> = ({ storyContent }) => {
 
 const TimeLine: React.FC<TimeLineProps> = ({ storyContent }) => {
   return (
-    <div className="hidden xl:flex flex-col">
+    <div className="hidden md:flex flex-col">
       {storyContent.map((item, index) => {
         const isOddItem = index % 2 !== 0;
         return (
@@ -296,12 +304,12 @@ const AboutUs = () => {
     <div className="page">
       {/* About Data Section */}
       <div className="w-full">
-        <section className="w-full max-w-[1440px] mx-auto px-2 sm:px-5 lg:px-10 xl:px-14 2xl:px-24 pb-12 md:pb-16 xl:pb-24">
+        <section className="website-container section-padding-x section-padding-bottom">
           <div className="flex flex-col items-center">
             <BreadCrumbs />
 
             {/* About Us Stats */}
-            <div className="mt-8 md:mt-16 w-full grid grid-cols-1 mobile-2xl:grid-cols-2 lg:grid-cols-3 gap-5 max-w-6xl mx-auto">
+            <div className="mt-8 lg:mt-16 w-full grid grid-cols-1 mobile-2xl:grid-cols-2 lg:grid-cols-3 gap-5 max-w-6xl mx-auto">
               {AboutData.map((item) => {
                 return (
                   <div
@@ -319,8 +327,8 @@ const AboutUs = () => {
               })}
             </div>
 
-            <div className="mt-8 md:mt-16 w-full">
-              <h1 className="hero-text text-center max-w-4xl mx-auto">
+            <div className="mt-8 lg:mt-16 w-full">
+              <h1 className="hero-text text-center max-w-2xl lg:max-w-4xl mx-auto">
                 Pioneering Human Mobility and Client Success
               </h1>
               <p className="paragraph text-center mt-5 max-w-[52rem] mx-auto">
@@ -333,7 +341,7 @@ const AboutUs = () => {
               </p>
             </div>
 
-            <div className="mt-7 md:mt-14">
+            <div className="mt-7 lg:mt-14">
               <Button type="submit">Unlock Talent Supply</Button>
             </div>
           </div>
@@ -341,7 +349,7 @@ const AboutUs = () => {
       </div>
 
       {/* Sample Video Section */}
-      <div className="h-[24rem] xl:h-screen w-full relative">
+      <div className="h-[28rem] lg:h-screen w-full relative">
         <section className="website-container section-padding-x h-full relative z-[1]">
           <IntroVideo />
         </section>
@@ -351,12 +359,12 @@ const AboutUs = () => {
 
       {/* Director's Message Section */}
       <div className="w-full bg-[#FAFAFA]">
-        <section className="xl:h-screen website-container section-padding-x max-xl:section-padding-y pt-12 md:pt-16 xl:pt-24 relative">
-          <div className="w-full h-full flex flex-col xl:flex-row">
-            <div className="hidden xl:block flex-1" />
+        <section className="lg:h-screen website-container section-padding-x max-lg:section-padding-y section-padding-top relative">
+          <div className="w-full h-full flex flex-col lg:flex-row">
+            <div className="hidden lg:block flex-1" />
 
             {/* Director's Image for Smaller Screens */}
-            <div className="xl:hidden overflow-hidden relative size-[15rem] mobile-sm:size-[19rem] mobile-md:size-[22rem] mobile-lg:size-[24rem] sm:size-[30rem] mx-auto flex items-center justify-center">
+            <div className="lg:hidden overflow-hidden relative size-[15rem] mobile-sm:size-[19rem] mobile-md:size-[22rem] mobile-lg:size-[24rem] sm:size-[30rem] mx-auto flex items-center justify-center">
               <Image
                 src={"/bg-pattern.svg"}
                 alt="Background Pattern Image"
@@ -374,13 +382,13 @@ const AboutUs = () => {
               </div>
             </div>
 
-            <div className="max-xl:mt-3 flex-1 flex flex-col gap-6 xl:gap-12 justify-center">
+            <div className="max-lg:mt-3 flex-1 flex flex-col gap-6 lg:gap-12 justify-center">
               <div className="flex flex-col gap-3">
-                <h1 className="section-title xl:-ml-8 min">
+                <h1 className="section-title lg:-ml-8 min">
                   Director&apos;s Message
                 </h1>
-                <div className="pl-4 py-0 relative before:absolute before:w-[5px] before:h-[95%] before:left-0 before:top-1/2 before:-translate-y-1/2 before:bg-amber-500">
-                  <p className="text-sm lg:text-[1.125rem] lg:leading-[1.69rem] font-normal text-[#535353]">
+                <div className="max-xl:ml-2 pl-4 py-0 relative before:absolute before:w-[5px] before:h-[95%] before:left-0 before:top-1/2 before:-translate-y-1/2 before:bg-amber-500">
+                  <p className="text-sm md:text-base lg:text-[1.125rem] lg:leading-[1.69rem] font-normal text-[#535353]">
                     Lorem ipsum dolor sit amet consectetur. Maecenas aenean
                     facilisi ut adipiscing dictumst eget eget tellus. Neque
                     tincidunt enim auctor augue. Nullam id sed condimentum
@@ -406,14 +414,14 @@ const AboutUs = () => {
           </div>
 
           {/* Director's Image for Larger Screens */}
-          <div className="hidden xl:block absolute w-1/2 h-full left-0 top-1/2 -translate-y-1/2 mt-14">
+          <div className="hidden lg:block absolute w-1/2 h-full left-0 top-1/2 -translate-y-1/2 mt-14">
             <div className="w-full h-full relative flex items-center justify-center">
               <Image
                 src={"/bg-pattern.svg"}
                 alt="Background Pattern Image"
                 fill
               />
-              <div className="flex-none w-[30rem] h-[30rem] rounded-full bg-[#E1E1E1] p-2 z-10">
+              <div className="flex-none size-[24rem] xl:size-[30rem] rounded-full bg-[#E1E1E1] p-2 z-10">
                 <div className="relative w-full h-full rounded-full overflow-hidden">
                   <Image
                     src={"/director.png"}
@@ -429,7 +437,7 @@ const AboutUs = () => {
       </div>
 
       {/* Our Vision/Our Mission Section */}
-      <div className="bg-[#FAFAFA] xl:pt-20">
+      <div className="bg-[#FAFAFA] lg:pt-20">
         <div className="w-full bg-[#ffffff]">
           <section className="website-container section-padding-x section-padding-y relative overflow-hidden">
             <div className="hidden xl:block absolute -left-[18.5rem] -bottom-32 size-[45rem]">
@@ -442,47 +450,29 @@ const AboutUs = () => {
             </div>
 
             <div className="flex flex-col gap-10 xl:gap-20">
-              <div className="flex flex-col md:flex-row">
-                <div className="w-full flex flex-col justify-center items-start">
-                  <h1 className="section-title">Our Vision</h1>
-                  <p className="mt-2.5 paragraph">
+              <ImageContentPanel
+                title={"Our Vision"}
+                content={
+                  <>
                     To emerge as the foremost global partner for organizations
                     in pursuit of Top-tier manpower, distinguished by our
                     unwavering commitment to integrity, expertise, and the
-                    success of our clients. <br />
+                    success of our clients.
                     <br />
-                    Through seamless mobility, we strive to foster economic
-                    growth, personal development, and a deeper cross-cultural
-                    understanding, contributing to a more connected and
-                    prosperous world.
-                  </p>
-                </div>
-                <div className="w-full flex justify-end">
-                  <div className="max-xl:mt-5 lex-none w-full max-w-[31.25rem] h-[20rem] xl:h-[37.5rem] relative">
-                    <Image
-                      src={"/our-vision.png"}
-                      alt={"A hand holding a puzzle piece"}
-                      fill
-                      className="object-cover"
-                    />
-                  </div>
-                </div>
-              </div>
+                    <br /> Through seamless mobility, we strive to foster
+                    economic growth, personal development, and a deeper
+                    cross-cultural understanding, contributing to a more
+                    connected and prosperous world.
+                  </>
+                }
+                imageUrl="/our-vision.png"
+                altText="A hand holding a puzzle piece"
+              />
 
-              <div className="flex flex-col-reverse xl:flex-row">
-                <div className="w-full flex justify-start">
-                  <div className="max-xl:mt-5 flex-none w-full max-w-[31.25rem] h-[20rem] xl:h-[37.5rem] relative">
-                    <Image
-                      src={"/our-mission.png"}
-                      alt={"A hand holding a puzzle piece"}
-                      fill
-                      className="object-cover"
-                    />
-                  </div>
-                </div>
-                <div className="w-full flex flex-col justify-center items-start">
-                  <h1 className="section-title">Our Mission</h1>
-                  <p className="mt-2.5 text-base md:text-[1.125rem] md:leading-[1.69rem] font-regular text-[#535353]">
+              <ImageContentPanel
+                title={"Our Mission"}
+                content={
+                  <>
                     To revolutionize the recruitment industry by prioritizing
                     our client&apos;s interests, connecting global businesses
                     with Exceptional talent pool, from South East Asian
@@ -493,9 +483,12 @@ const AboutUs = () => {
                     solutions and forging partnerships that are mutually
                     beneficial, ensuring the success of our clients and the
                     professional growth of our candidates.
-                  </p>
-                </div>
-              </div>
+                  </>
+                }
+                imageUrl="/our-mission.png"
+                altText="A hand holding a puzzle piece"
+                imagePlacement="left"
+              />
             </div>
           </section>
         </div>
@@ -524,7 +517,7 @@ const AboutUs = () => {
                   return (
                     <div
                       key={item.id}
-                      className="w-full xl:w-[18.75rem] bg-[#373737] relative before:absolute before:top-0 before:left-0 before:h-full before:w-[7px] before:bg-[#599F99] p-3 pl-8"
+                      className="w-full mobile-xl:w-[18.75rem] bg-[#373737] relative before:absolute before:top-0 before:left-0 before:h-full before:w-[7px] before:bg-[#599F99] p-3 pl-8"
                       role="button"
                     >
                       <p className="text-[1.125rem] leading-7 text-white font-medium">
@@ -596,7 +589,7 @@ const AboutUs = () => {
             <h5 className="font-sintony font-bold text-xl leading-[1.875rem] text-center text-[#535353]">
               Companies We&apos;ve Worked With
             </h5>
-            <div className="w-full mt-8 md:mt-16 grid justify-items-center grid-cols-1 mobile-sm:grid-cols-2 md:grid-cols-6 gap-8 md:gap-16">
+            <div className="w-full mt-8 md:mt-16 grid justify-items-center grid-cols-1 mobile-sm:grid-cols-2 sm:grid-cols-3 md:grid-cols-4 xl:grid-cols-6 gap-8 md:gap-16">
               {ourPartners.map((item) => {
                 return (
                   <div
@@ -610,7 +603,7 @@ const AboutUs = () => {
                       className="object-contain"
                     />
                   </div>
-                )
+                );
               })}
             </div>
           </div>

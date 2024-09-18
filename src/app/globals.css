@@ -83,6 +83,14 @@
     @apply px-2 sm:px-5 lg:px-10 xl:px-14 2xl:px-24;  
   }
 
+  .section-padding-top {
+    @apply pt-12 md:pt-16 lg:pt-24;
+  }
+
+  .section-padding-bottom {
+    @apply pb-12 md:pb-16 lg:pb-24;
+  }
+
   .section-padding-y {
     @apply py-12 md:py-16 xl:py-24;
   }
