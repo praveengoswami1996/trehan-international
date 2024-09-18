@@ -129,7 +129,7 @@ const ourPartners = [
   {
     id: "our_partners_003",
     brandImageURL: "/partners/jtc.png",
-    alt: "JTC Brand Logo"
+    alt: "JTC Brand Logo",
   },
   {
     id: "our_partners_004",
@@ -149,41 +149,74 @@ const ourPartners = [
   {
     id: "our_partners_007",
     brandImageURL: "/partners/ues.png",
-    alt: "UES Mechanical Brand Logo"
+    alt: "UES Mechanical Brand Logo",
   },
   {
     id: "our_partners_008",
     brandImageURL: "/partners/kptc.png",
-    alt: "KPTC Brand Logo"
+    alt: "KPTC Brand Logo",
   },
   {
     id: "our_partners_009",
     brandImageURL: "/partners/heisco.png",
-    alt: "HEISCO Brand Logo"
+    alt: "HEISCO Brand Logo",
   },
   {
     id: "our_partners_010",
     brandImageURL: "/partners/galfar.png",
-    alt: "Galfar brand Logo"
+    alt: "Galfar brand Logo",
   },
   {
     id: "our_partners_011",
     brandImageURL: "/partners/asco.png",
-    alt: "ASCO Brand Logo"
+    alt: "ASCO Brand Logo",
   },
   {
     id: "our_partners_012",
     brandImageURL: "/partners/krh.png",
-    alt: "KRH Brand Logo"
+    alt: "KRH Brand Logo",
   },
 ];
 
+const TimeLineMobile: React.FC<TimeLineProps> = ({ storyContent }) => {
+  return (
+    <div className="flex flex-col xl:hidden">
+      {storyContent.map((item, index) => {
+        return (
+          <div key={item.id} className="ml-2 pl-5 pb-8 border-l-2 border-[#E2C886] relative">
+            <div className="flex-none w-full max-w-[17.125rem] h-[10.5rem] relative rounded-lg overflow-hidden">
+              <Image
+                src={item.imageURL}
+                alt="a typewriter"
+                fill
+                className="object-cover"
+              />
+            </div>
+            <div className="mt-2">
+              <h5 className={"font-sintony font-bold text-white text-xl leading-[1.875rem]"}>
+                {item.storyTitle}
+              </h5>
+              <p className={"text-[1.125rem] text-white leading-7 font-medium"}>
+                {item.year}
+              </p>
+              <p className={"mt-3 text-base text-white font-normal"}>
+                {item.description}
+              </p>
+            </div>
+
+            <div className="size-[17px] bg-[#E2AF45] rounded-full absolute -top-2 -left-2.5" />
+          </div>
+        );
+      })}
+    </div>
+  );
+};
+
 const TimeLine: React.FC<TimeLineProps> = ({ storyContent }) => {
   return (
-    <div className="flex flex-col">
+    <div className="hidden xl:flex flex-col">
       {storyContent.map((item, index) => {
         const isOddItem = index % 2 !== 0;
-
         return (
           <div
             key={item.id}
@@ -253,7 +286,6 @@ const TimeLine: React.FC<TimeLineProps> = ({ storyContent }) => {
   );
 };
 
-
 export const metadata: Metadata = {
   title: "Trehan International | About Us",
   description: "Recruitment Consultancy",
@@ -261,14 +293,15 @@ export const metadata: Metadata = {
 
 const AboutUs = () => {
   return (
-    <div className="min-h-screen bg-white pt-28 md:pt-32 lg:pt-36 xl:pt-40">
+    <div className="page">
       {/* About Data Section */}
       <div className="w-full">
         <section className="w-full max-w-[1440px] mx-auto px-2 sm:px-5 lg:px-10 xl:px-14 2xl:px-24 pb-12 md:pb-16 xl:pb-24">
           <div className="flex flex-col items-center">
             <BreadCrumbs />
 
-            <div className="mt-16 w-full grid grid-cols-1 mobile-2xl:grid-cols-2 lg:grid-cols-3 gap-5 max-w-6xl mx-auto">
+            {/* About Us Stats */}
+            <div className="mt-8 md:mt-16 w-full grid grid-cols-1 mobile-2xl:grid-cols-2 lg:grid-cols-3 gap-5 max-w-6xl mx-auto">
               {AboutData.map((item) => {
                 return (
                   <div
@@ -278,7 +311,7 @@ const AboutUs = () => {
                     <h3 className="font-sintony font-bold text-[2rem] leading-[3rem] text-center text-[#000000]">
                       {item.title}
                     </h3>
-                    <p className="text-[1.125rem] font-normal leading-[1.69rem] text-center text-[#535353] max-w-48">
+                    <p className="paragraph text-center max-w-48">
                       {item.subtitle}
                     </p>
                   </div>
@@ -286,11 +319,11 @@ const AboutUs = () => {
               })}
             </div>
 
-            <div className="mt-16 w-full">
-              <h1 className="font-sintony text-[2.4rem] lg:text-[3.25rem] leading-[3rem] lg:leading-[4.88rem] font-bold text-center max-w-4xl mx-auto">
+            <div className="mt-8 md:mt-16 w-full">
+              <h1 className="hero-text text-center max-w-4xl mx-auto">
                 Pioneering Human Mobility and Client Success
               </h1>
-              <p className="text-base lg:text-[1.125rem] lg:leading-[1.69rem] font-regular text-[#535353] text-center mt-5 max-w-[52rem] mx-auto">
+              <p className="paragraph text-center mt-5 max-w-[52rem] mx-auto">
                 At Trehan International, our vision is to redefine the landscape
                 of global recruitment by empowering human mobility, thus
                 unlocking economic opportunities and facilitating cultural
@@ -300,7 +333,7 @@ const AboutUs = () => {
               </p>
             </div>
 
-            <div className="mt-14">
+            <div className="mt-7 md:mt-14">
               <Button type="submit">Unlock Talent Supply</Button>
             </div>
           </div>
@@ -308,8 +341,8 @@ const AboutUs = () => {
       </div>
 
       {/* Sample Video Section */}
-      <div className="h-screen w-full relative">
-        <section className="w-full max-w-[1440px] mx-auto px-2 sm:px-5 lg:px-10 xl:px-14 2xl:px-24 h-full relative z-[1]">
+      <div className="h-[24rem] xl:h-screen w-full relative">
+        <section className="website-container section-padding-x h-full relative z-[1]">
           <IntroVideo />
         </section>
         <div className="absolute w-full h-1/2 bg-[#FFFFFF] top-0 left-0" />
@@ -318,14 +351,36 @@ const AboutUs = () => {
 
       {/* Director's Message Section */}
       <div className="w-full bg-[#FAFAFA]">
-        <section className="h-screen max-w-[1440px] mx-auto pt-12 md:pt-16 xl:pt-24 px-2 sm:px-5 lg:px-10 xl:px-14 2xl:px-20 relative">
+        <section className="xl:h-screen website-container section-padding-x max-xl:section-padding-y pt-12 md:pt-16 xl:pt-24 relative">
           <div className="w-full h-full flex flex-col xl:flex-row">
-            <div className="xl:block flex-1" />
-            <div className="flex-1 flex flex-col gap-12 justify-center">
+            <div className="hidden xl:block flex-1" />
+
+            {/* Director's Image for Smaller Screens */}
+            <div className="xl:hidden overflow-hidden relative size-[15rem] mobile-sm:size-[19rem] mobile-md:size-[22rem] mobile-lg:size-[24rem] sm:size-[30rem] mx-auto flex items-center justify-center">
+              <Image
+                src={"/bg-pattern.svg"}
+                alt="Background Pattern Image"
+                fill
+              />
+              <div className="flex-none w-4/5 h-4/5 rounded-full bg-[#E1E1E1] p-2 z-10">
+                <div className="relative w-full h-full rounded-full overflow-hidden">
+                  <Image
+                    src={"/director.png"}
+                    alt={"Director of Trehan International"}
+                    fill
+                    className="object-cover object-center"
+                  />
+                </div>
+              </div>
+            </div>
+
+            <div className="max-xl:mt-3 flex-1 flex flex-col gap-6 xl:gap-12 justify-center">
               <div className="flex flex-col gap-3">
-                <h1 className="section-title -ml-8">Director&apos;s Message</h1>
+                <h1 className="section-title xl:-ml-8 min">
+                  Director&apos;s Message
+                </h1>
                 <div className="pl-4 py-0 relative before:absolute before:w-[5px] before:h-[95%] before:left-0 before:top-1/2 before:-translate-y-1/2 before:bg-amber-500">
-                  <p className="text-base lg:text-[1.125rem] lg:leading-[1.69rem] font-regular text-[#535353]">
+                  <p className="text-sm lg:text-[1.125rem] lg:leading-[1.69rem] font-normal text-[#535353]">
                     Lorem ipsum dolor sit amet consectetur. Maecenas aenean
                     facilisi ut adipiscing dictumst eget eget tellus. Neque
                     tincidunt enim auctor augue. Nullam id sed condimentum
@@ -339,24 +394,6 @@ const AboutUs = () => {
                 </div>
               </div>
 
-              <div className="xl:hidden overflow-hidden relative size-[15rem]  mobile-sm:size-[19rem] mobile-md:size-[22rem] mobile-lg:size-[24rem] sm:size-[30rem] mx-auto flex items-center justify-center">
-                <Image
-                  src={"/bg-pattern.svg"}
-                  alt="Background Pattern Image"
-                  fill
-                />
-                <div className="flex-none w-4/5 h-4/5 rounded-full bg-[#E1E1E1] p-2 z-10">
-                  <div className="relative w-full h-full rounded-full overflow-hidden">
-                    <Image
-                      src={"/director.png"}
-                      alt={"Director of Trehan International"}
-                      fill
-                      className="object-cover object-center"
-                    />
-                  </div>
-                </div>
-              </div>
-
               <div>
                 <h4 className="font-sintony font-bold text-2xl leading-[2.25rem] text-[#1A1A1A]">
                   Jacob Jones
@@ -367,6 +404,8 @@ const AboutUs = () => {
               </div>
             </div>
           </div>
+
+          {/* Director's Image for Larger Screens */}
           <div className="hidden xl:block absolute w-1/2 h-full left-0 top-1/2 -translate-y-1/2 mt-14">
             <div className="w-full h-full relative flex items-center justify-center">
               <Image
@@ -390,10 +429,10 @@ const AboutUs = () => {
       </div>
 
       {/* Our Vision/Our Mission Section */}
-      <div className="bg-[#FAFAFA] pt-12 md:pt-16 lg:pt-20">
+      <div className="bg-[#FAFAFA] xl:pt-20">
         <div className="w-full bg-[#ffffff]">
-          <section className="w-full max-w-[1440px] mx-auto px-2 sm:px-5 lg:px-10 xl:pl-14 2xl:px-24 pt-12 md:pt-16 xl:pt-24 pb-12 md:pb-16 xl:pb-24 relative overflow-hidden">
-            <div className="absolute -left-[18.5rem] -bottom-32 w-[45rem] h-[45rem]">
+          <section className="website-container section-padding-x section-padding-y relative overflow-hidden">
+            <div className="hidden xl:block absolute -left-[18.5rem] -bottom-32 size-[45rem]">
               <Image
                 src={"/bg-pattern.svg"}
                 alt="Background Pattern Image"
@@ -402,11 +441,11 @@ const AboutUs = () => {
               />
             </div>
 
-            <div className="flex flex-col gap-20">
-              <div className="flex">
+            <div className="flex flex-col gap-10 xl:gap-20">
+              <div className="flex flex-col md:flex-row">
                 <div className="w-full flex flex-col justify-center items-start">
                   <h1 className="section-title">Our Vision</h1>
-                  <p className="mt-2.5 text-base md:text-[1.125rem] md:leading-[1.69rem] font-regular text-[#535353]">
+                  <p className="mt-2.5 paragraph">
                     To emerge as the foremost global partner for organizations
                     in pursuit of Top-tier manpower, distinguished by our
                     unwavering commitment to integrity, expertise, and the
@@ -419,7 +458,7 @@ const AboutUs = () => {
                   </p>
                 </div>
                 <div className="w-full flex justify-end">
-                  <div className="flex-none w-full max-w-[31.25rem] h-[37.5rem] relative">
+                  <div className="max-xl:mt-5 lex-none w-full max-w-[31.25rem] h-[20rem] xl:h-[37.5rem] relative">
                     <Image
                       src={"/our-vision.png"}
                       alt={"A hand holding a puzzle piece"}
@@ -430,9 +469,9 @@ const AboutUs = () => {
                 </div>
               </div>
 
-              <div className="flex">
+              <div className="flex flex-col-reverse xl:flex-row">
                 <div className="w-full flex justify-start">
-                  <div className="flex-none w-full max-w-[31.25rem] h-[37.5rem] relative">
+                  <div className="max-xl:mt-5 flex-none w-full max-w-[31.25rem] h-[20rem] xl:h-[37.5rem] relative">
                     <Image
                       src={"/our-mission.png"}
                       alt={"A hand holding a puzzle piece"}
@@ -464,8 +503,8 @@ const AboutUs = () => {
 
       {/* Our Story Section */}
       <div className="w-full bg-[#000000]">
-        <section className="min-h-screen max-w-[1440px] mx-auto px-2 sm:px-5 lg:px-10 xl:px-14 2xl:px-36 pt-16 pb-0 relative overflow-hidden">
-          <div className="absolute size-[45rem] -right-[6rem] -top-[29rem]">
+        <section className="min-h-screen website-container px-2 sm:px-5 lg:px-10 xl:px-14 2xl:px-36 pt-16 pb-0 relative overflow-hidden">
+          <div className="hidden xl:block absolute size-[45rem] -right-[6rem] -top-[30rem]">
             <Image
               src={"/bg-pattern-black.svg"}
               alt={"Background Pattern Image"}
@@ -479,28 +518,27 @@ const AboutUs = () => {
               Pioneering Excellence in Talent Acquisition
             </h4>
 
-            <div className="mt-14 flex items-start gap-10">
+            <div className="mt-7 xl:mt-14 flex flex-col xl:flex-row xl:items-start gap-10">
               <div className="flex-none flex flex-col gap-5">
                 {ourStoryData.map((item) => {
                   return (
                     <div
                       key={item.id}
-                      className="h-[5.75rem] w-[18.75rem] bg-[#373737] relative before:absolute before:h-full before:w-[7px] before:bg-[#599F99]"
+                      className="w-full xl:w-[18.75rem] bg-[#373737] relative before:absolute before:top-0 before:left-0 before:h-full before:w-[7px] before:bg-[#599F99] p-3 pl-8"
                       role="button"
                     >
-                      <div className="w-full h-full flex justify-center flex-col pl-8">
-                        <p className="text-[1.125rem] leading-7 text-white font-medium">
-                          {item.title}
-                        </p>
-                        <p className="text-2xl leading-[2.25rem] text-[#599F99] font-bold">
-                          {item.timeSpan}
-                        </p>
-                      </div>
+                      <p className="text-[1.125rem] leading-7 text-white font-medium">
+                        {item.title}
+                      </p>
+                      <p className="text-2xl leading-[2.25rem] text-[#599F99] font-bold">
+                        {item.timeSpan}
+                      </p>
                     </div>
                   );
                 })}
               </div>
 
+              <TimeLineMobile storyContent={storyContent} />
               <TimeLine storyContent={storyContent} />
             </div>
           </div>
@@ -509,12 +547,12 @@ const AboutUs = () => {
 
       {/* Our Brands Section */}
       <div className="w-full bg-[#C6485D]">
-        <section className="w-full max-w-[1440px] mx-auto px-2 sm:px-5 lg:px-10 xl:pl-14 2xl:px-24 pt-12 md:pt-16 pb-12 md:pb-16 xl:pb-24">
+        <section className="website-container section-padding-x  section-padding-y">
           <div className="flex flex-col items-center">
             <h1 className="section-title text-[#ffffff] text-center">
               Our Brands
             </h1>
-            <div className="w-full mt-10 grid justify-items-center grid-cols-1 md:grid-cols-2 gap-16">
+            <div className="w-full mt-10 grid justify-items-center grid-cols-1 md:grid-cols-2 gap-8 sm:gap-16">
               {ourBrands.map((item) => {
                 return (
                   <div
@@ -529,7 +567,7 @@ const AboutUs = () => {
                         className="object-contain"
                       />
                     </div>
-                    <div className="flex-grow p-6 flex flex-col justify-between items-start">
+                    <div className="flex-grow p-3 sm:p-6 flex flex-col justify-between items-start">
                       <h4 className="font-sintony font-bold text-2xl leading-[2.25rem] text-[#000000]">
                         {item.brandName}
                       </h4>
@@ -553,12 +591,12 @@ const AboutUs = () => {
 
       {/* Companies We've Worked Section */}
       <div className="w-full">
-        <section className="w-full max-w-[1440px] mx-auto px-2 sm:px-5 lg:px-10 xl:pl-14 2xl:px-24 pt-12 md:pt-16 xl:pt-24 pb-12 md:pb-16 xl:pb-24">
+        <section className="website-container section-padding-x section-padding-y">
           <div className="flex flex-col items-center">
             <h5 className="font-sintony font-bold text-xl leading-[1.875rem] text-center text-[#535353]">
               Companies We&apos;ve Worked With
             </h5>
-            <div className="w-full mt-16 grid justify-items-center grid-cols-1 md:grid-cols-6 gap-16">
+            <div className="w-full mt-8 md:mt-16 grid justify-items-center grid-cols-1 mobile-sm:grid-cols-2 md:grid-cols-6 gap-8 md:gap-16">
               {ourPartners.map((item) => {
                 return (
                   <div

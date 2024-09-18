@@ -54,7 +54,7 @@ const openPositions = [
 
 const OpenOpenings = () => {
   return (
-    <div className="min-h-screen bg-white pt-28 md:pt-32 lg:pt-36 xl:pt-40 relative">
+    <div className="page">
       {/* Hero Section */}
       <div className="w-full">
         <section className="w-full max-w-[1440px] mx-auto px-2 sm:px-5 lg:px-10 xl:px-14 2xl:px-24">

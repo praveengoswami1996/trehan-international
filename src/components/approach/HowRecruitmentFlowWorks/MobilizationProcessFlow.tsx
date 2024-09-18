@@ -45,12 +45,12 @@ const MobilizationProcessFlow = () => {
           Lorem ipsum dolor sit amet consectetur. Risus sapien pharetra lobortis nisl fames eget. Mi nec at in viverra.
         </p>
       </div>
-      <div className="flex-1 pl-2 md:pl-10">
+      <div className="flex-1 pl-2 md:pl-10 max-md:mt-5">
         {mobilisationProcessFlow.map((item, index) => {
           return (
             <div
               key={item.id}
-              className="flex flex-col md:flex-row gap-8 md:items-center pl-8 md:pl-16 pb-10 border-l border-[#C9C9C9] relative"
+              className="flex flex-col md:flex-row gap-3 md:ap-8 md:items-center pl-6 md:pl-16 pb-6 md:pb-10 border-l border-[#C9C9C9] relative"
             >
               <div className="flex-none">
                 <Image

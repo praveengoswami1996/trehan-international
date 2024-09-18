@@ -71,6 +71,10 @@
     @apply w-full max-w-[1440px] mx-auto;
   }
 
+  .page {
+    @apply min-h-screen relative bg-white pt-28 md:pt-32 lg:pt-36 xl:pt-40;
+  }
+
   .section-title {
     @apply font-sintony font-bold text-4xl lg:text-[2.75rem] lg:leading-[4.125rem];
   }

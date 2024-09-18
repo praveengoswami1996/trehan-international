@@ -32,14 +32,14 @@ const IntroVideo = () => {
 
       <div className="absolute inset-0 bg-black bg-opacity-20 flex items-center justify-center">
         <div
-          className="size-[7.5rem] bg-white bg-opacity-30 rounded-full p-4 cursor-pointer"
+          className="size-[5.5rem] md:size-[7.5rem] bg-white bg-opacity-30 rounded-full p-4 cursor-pointer"
           onClick={handleVideo}
         >
           <div className="w-full h-full bg-[#E3B046] rounded-full flex items-center justify-center">
             {playVideo ? (
-                <PiPauseFill className="text-[#ffffff] size-12" />
+                <PiPauseFill className="text-[#ffffff] size-6 md:size-12" />
             ) : (
-                <IoPlay className="text-[#ffffff] size-12" />
+                <IoPlay className="text-[#ffffff] size-6 md:size-12" />
             )}
           </div>
         </div>

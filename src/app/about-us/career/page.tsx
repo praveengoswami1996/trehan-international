@@ -71,7 +71,7 @@ const openPositions = [
 
 const Career = () => {
   return (
-    <div className="min-h-screen bg-white pt-28 md:pt-32 lg:pt-36 xl:pt-40 relative">
+    <div className="page">
       <div className="absolute -top-40 left-1/2 -translate-x-1/2 size-[50.125rem]">
         <Image
           src="/bg-pattern-10.svg"
