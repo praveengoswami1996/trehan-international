@@ -30,6 +30,7 @@ const BreadcrumbLabels = {
     '/recruitment-flow': 'Recruitment Flow',
     '/mobilization-flow': 'Mobilization Flow',
     '/industries': 'Industries',
+    '/case-studies': 'Our Case Studies',
 } as const;
 
 type BreadcrumbKeys = keyof typeof BreadcrumbLabels;

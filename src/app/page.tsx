@@ -5,6 +5,7 @@ import LocationsWeServe from "@/components/LocationsWeServe";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import Image from "next/image";
+import Link from "next/link";
 import { PiUser } from "react-icons/pi";
 
 const trustedPartners = [
@@ -49,6 +50,7 @@ const ourApproachData = [
     label: "Consultative Approach",
     desc: "At Trehan International, our Consultative Approach is more than just a methodology; it's a testament to our dedication to not only meeting but exceeding the expectations of those we serve. We pride ourselves on being not just recruiters but Trusted Advisors, committed to delivering bespoke talent solutions that drive growth, foster innovation, and cultivate lasting success.",
     imageURL: "/approach/approach-1.png",
+    href: "/approach/consultative-approach",
   },
   {
     id: "our_approach_002",
@@ -56,6 +58,7 @@ const ourApproachData = [
     label: "Customized Solutions: Tailored Strategies for Your Unique Needs",
     desc: "We recognize that every organization has unique talent acquisition needs. Our customized solutions approach goes beyond a one-size-fits-all strategy. We take the time to understand your business goals, company culture, and specific hiring challenges.",
     imageURL: "/approach/approach-2.png",
+    href: "/approach/customized-solutions",
   },
   {
     id: "our_approach_003",
@@ -63,6 +66,7 @@ const ourApproachData = [
     label: "Compliance: Navigating the Regulatory Landscape",
     desc: "At Trehan International, we understand the importance of adhering to all relevant laws and regulations throughout the recruitment process. We maintain a rigorous compliance framework to ensure ethical and legal practices.",
     imageURL: "/approach/approach-3.png",
+    href: "/approach/compliance",
   },
 ];
 
@@ -130,6 +134,7 @@ interface ApproachItem {
   desc: string;
   imageURL: string;
   phase: string;
+  href: string;
 }
 
 interface ApproachItemProps {
@@ -175,14 +180,16 @@ const ApproachItem: React.FC<ApproachItemProps> = ({ data }) => {
         </p>
 
         <div className="mt-10">
-          <Button
-            variant={"outline"}
-            className={
-              "border-[#1A1A1A] text-base font-normal text-[#000000] leading-5 bg-[#FAFAFA]"
-            }
-          >
-            Learn More
-          </Button>
+          <Link href={data.href}>
+            <Button
+              variant={"outline"}
+              className={
+                "border-[#1A1A1A] text-base font-normal text-[#000000] leading-5 bg-[#FAFAFA]"
+              }
+            >
+              Learn More
+            </Button>
+          </Link>
         </div>
       </div>
     </div>
@@ -366,9 +373,14 @@ export default function Home() {
             </div>
 
             <div className="flex justify-center xl:justify-start">
-              <Button variant={"outline"} className={"w-fit border-[#1A1A1A]"}>
-                Know More About Us
-              </Button>
+              <Link href={"/about-us"}>
+                <Button
+                  variant={"outline"}
+                  className={"w-fit border-[#1A1A1A]"}
+                >
+                  Know More About Us
+                </Button>
+              </Link>
             </div>
           </div>
           <div className="xl:block flex-1" />
@@ -494,7 +506,7 @@ export default function Home() {
             <h1 className="section-title text-[#ffffff] text-center">
               Case Studies
             </h1>
-            <p className="mt-2.5 text-base md:text-[1.125rem] md:leading-[1.69rem] font-regular text-[#ffffff] text-center max-w-sm">
+            <p className="mt-2.5 paragraph text-[#ffffff] text-center max-w-sm">
               Talent Acquisition in Action: Our Sourcing Success Stories
             </p>
 
@@ -532,14 +544,16 @@ export default function Home() {
             </div>
 
             <div className="mt-12">
-              <Button
-                variant={"outline"}
-                className={
-                  "flex-none border-[#FFFFFF] text-[#FFFFFF] bg-[#C6485D]"
-                }
-              >
-                View All Case Studies
-              </Button>
+              <Link href="/case-studies">
+                <Button
+                  variant={"outline"}
+                  className={
+                    "flex-none border-[#FFFFFF] text-[#FFFFFF] bg-[#C6485D]"
+                  }
+                >
+                  View All Case Studies
+                </Button>
+              </Link>
             </div>
           </div>
         </section>

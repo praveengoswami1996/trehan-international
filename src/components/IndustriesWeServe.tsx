@@ -1,8 +1,18 @@
 import React, { ComponentType } from "react";
 import { Button } from "./ui/button";
 import { cn } from "@/lib/utils";
-import { ANTIcon, EICIcon, FMIcon, HCIcon, IMIcon, LSCMIcon, OGEIcon, RFBIcon } from "./icons";
+import {
+  ANTIcon,
+  EICIcon,
+  FMIcon,
+  HCIcon,
+  IMIcon,
+  LSCMIcon,
+  OGEIcon,
+  RFBIcon,
+} from "./icons";
 import Image from "next/image";
+import Link from "next/link";
 
 const industriesWeServe = [
   {
@@ -209,12 +219,14 @@ const IndustriesWeServe = () => {
           </div>
 
           <div className="mt-10 lg:mt-28">
-            <Button
-              variant={"outline"}
-              className={"w-fit border-[#1A1A1A] bg-[#F2F3F4]"}
-            >
-              Explore All
-            </Button>
+            <Link href={"/industries"}>
+              <Button
+                variant={"outline"}
+                className={"w-fit border-[#1A1A1A] bg-[#F2F3F4]"}
+              >
+                Explore All
+              </Button>
+            </Link>
           </div>
         </div>
       </section>
