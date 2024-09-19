@@ -95,12 +95,11 @@ const carouselData = [
 const TeamCelebration = () => {
   return (
     <div className="w-full">
-      <section className="w-full max-w-[1440px] mx-auto pt-12 md:pt-16 xl:pt-24 pb-12 md:pb-16 xl:pb-24">
+      <section className="website-container section-padding-y">
         <div className="flex flex-col items-center">
           <h1 className="section-title text-center">Team Celebration</h1>
-          <p className="mt-2.5 text-base md:text-[1.125rem] md:leading-[1.69rem] font-regular text-center max-w-2xl">
-            Lorem ipsum dolor sit amet consectetur. Faucibus lectus enim semper
-            sed. Tellus donec lectus at in sapien fermentum.
+          <p className="mt-2.5 paragraph text-center max-w-2xl">
+            Lorem ipsum dolor sit amet consectetur. Faucibus lectus enim semper sed. Tellus donec lectus at in sapien fermentum.
           </p>
 
           <Carousel 
@@ -110,9 +109,9 @@ const TeamCelebration = () => {
               {carouselData.map((item, index) => (
                 <CarouselItem
                   key={index}
-                  className="pl-1 md:basis-[23%] opacity-100"
+                  className="pl-1 mobile-lg:pl-3 md:pl-5 xl:pl-1 basis-full mobile-lg:basis-[70%] mobile-xl:basis-[60%] mobile-2xl:basis-[50%] sm:basis-[46%] md:basis-[40%] lg:basis-[30%] xl:basis-[23%] opacity-100"
                 >
-                  <div className="w-[17.5rem] h-[17.5rem] relative">
+                  <div className="w-full xl:w-[17.5rem] h-[17.5rem] relative">
                     <Image 
                         src={item.imageURL} 
                         alt={item.alt} 
@@ -125,10 +124,10 @@ const TeamCelebration = () => {
               ))}
             </CarouselContent>
             <CarouselPrevious 
-                style={{boxShadow: "0px 0px 40px 0px #00000066"}} className="left-20 size-20 bg-[#FFFFFFCC]"
+                style={{boxShadow: "0px 0px 40px 0px #00000066"}} className="left-5 xl:left-20 size-10 md:size-20 bg-[#FFFFFFCC]"
             />
             <CarouselNext 
-                style={{boxShadow: "0px 0px 40px 0px #00000066"}} className="right-20 size-20 bg-[#FFFFFFCC]"
+                style={{boxShadow: "0px 0px 40px 0px #00000066"}} className="right-5 xl:right-20 size-10 md:size-20 bg-[#FFFFFFCC]"
             />
           </Carousel>
         </div>

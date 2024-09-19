@@ -8,6 +8,7 @@ import {
   DesignIcon15,
   DesignIcon6,
 } from "@/components/icons";
+import ImageContentPanel from "@/components/ImageContentPanel";
 import { Button } from "@/components/ui/button";
 import Image from "next/image";
 import Link from "next/link";
@@ -72,7 +73,7 @@ const openPositions = [
 const Career = () => {
   return (
     <div className="page">
-      <div className="absolute -top-40 left-1/2 -translate-x-1/2 size-[50.125rem]">
+      <div className="hidden lg:block absolute -top-40 left-1/2 -translate-x-1/2 size-[50.125rem]">
         <Image
           src="/bg-pattern-10.svg"
           alt="Background Pattern Image"
@@ -83,7 +84,7 @@ const Career = () => {
 
       {/* Hero Section */}
       <div className="w-full">
-        <section className="w-full max-w-[1440px] mx-auto px-2 sm:px-5 lg:px-10 xl:px-14 2xl:px-24 pb-12 md:pb-16 xl:pb-24">
+        <section className="website-container section-padding-x section-padding-bottom">
           <div className="flex flex-col items-center">
             <BreadCrumbs />
             <div className="mt-5 w-full flex flex-col items-center">
@@ -91,7 +92,7 @@ const Career = () => {
                 Life{" "}
                 <span className="text-[#E2AF45]">@Trehan International</span>
               </h1>
-              <p className="text-base lg:text-[1.125rem] lg:leading-[1.69rem] font-regular text-[#535353] text-center mt-5 max-w-[52rem] mx-auto">
+              <p className="paragraph text-center mt-5 max-w-[52rem] mx-auto">
                 At Trehan International, our vision is to redefine the landscape
                 of global recruitment by empowering human mobility, thus
                 unlocking economic opportunities and facilitating cultural
@@ -100,7 +101,7 @@ const Career = () => {
                 enriched with diverse skills and perspectives.
               </p>
 
-              <div className="mt-14">
+              <div className="mt-7 xl:mt-14">
                 <Button type="submit">See Our Vacancies</Button>
               </div>
             </div>
@@ -110,10 +111,10 @@ const Career = () => {
 
       {/* Benefits Section */}
       <div className="w-full">
-        <section className="w-full max-w-[1440px] mx-auto px-2 sm:px-5 lg:px-10 xl:pl-14 2xl:px-24 pt-12 pb-12 md:pb-16 xl:pb-24">
+        <section className="website-container section-padding-x pt-12 section-padding-bottom">
           <div className="flex flex-col items-center">
             <h1 className="section-title text-center">Benefits</h1>
-            <p className="mt-2.5 text-base md:text-[1.125rem] md:leading-[1.69rem] font-regular text-center max-w-2xl">
+            <p className="mt-2.5 paragraph text-center max-w-2xl">
               Lorem ipsum dolor sit amet consectetur. Faucibus lectus enim
               semper sed. Tellus donec lectus at in sapien fermentum.
             </p>
@@ -121,7 +122,7 @@ const Career = () => {
             <div className="w-full mt-10 flex justify-center flex-wrap gap-6">
               {benefits.map((item) => {
                 return (
-                  <BenefitCard 
+                  <BenefitCard
                     key={item.id}
                     title={item.title}
                     description={item.description}
@@ -136,22 +137,12 @@ const Career = () => {
 
       {/* Our Mission/Our Vision Section */}
       <div className="w-full bg-[#FAFAFA]">
-        <section className="w-full max-w-[1440px] mx-auto px-2 sm:px-5 lg:px-10 xl:pl-14 2xl:px-24 pt-12 md:pt-16 xl:pt-24 pb-12 md:pb-16 xl:pb-24">
-          <div className="flex flex-col gap-20">
-            <div className="flex">
-              <div className="w-full flex justify-start">
-                <div className="flex-none w-full max-w-[31.25rem] h-[37.5rem] relative">
-                  <Image
-                    src={"/our-mission-2.png"}
-                    alt={"A hand holding a puzzle piece"}
-                    fill
-                    className="object-cover"
-                  />
-                </div>
-              </div>
-              <div className="w-full flex flex-col justify-center items-start">
-                <h1 className="section-title">Our Mission</h1>
-                <p className="mt-2.5 text-base md:text-[1.125rem] md:leading-[1.69rem] font-regular text-[#535353]">
+        <section className="website-container section-padding-x section-padding-y">
+          <div className="flex flex-col gap-10 xl:gap-20">
+            <ImageContentPanel
+              title={"Our Mission"}
+              content={
+                <>
                   To revolutionize the recruitment industry by prioritizing our
                   client&apos;s interests, connecting global businesses with
                   Exceptional talent pool, from South East Asian countries,
@@ -161,13 +152,17 @@ const Career = () => {
                   solutions and forging partnerships that are mutually
                   beneficial, ensuring the success of our clients and the
                   professional growth of our candidates.
-                </p>
-              </div>
-            </div>
-            <div className="flex">
-              <div className="w-full flex flex-col justify-center items-start">
-                <h1 className="section-title">Our Vision</h1>
-                <p className="mt-2.5 text-base md:text-[1.125rem] md:leading-[1.69rem] font-regular text-[#535353]">
+                </>
+              }
+              imageUrl="/our-mission-2.png"
+              altText="A corporate office"
+              imagePlacement="left"
+            />
+
+            <ImageContentPanel
+              title={"Our Vision"}
+              content={
+                <>
                   To emerge as the foremost global partner for organizations in
                   pursuit of Top-tier manpower, distinguished by our unwavering
                   commitment to integrity, expertise, and the success of our
@@ -177,19 +172,11 @@ const Career = () => {
                   growth, personal development, and a deeper cross-cultural
                   understanding, contributing to a more connected and prosperous
                   world.
-                </p>
-              </div>
-              <div className="w-full flex justify-end">
-                <div className="flex-none w-full max-w-[31.25rem] h-[37.5rem] relative">
-                  <Image
-                    src={"/our-vision-2.png"}
-                    alt={"A hand holding a puzzle piece"}
-                    fill
-                    className="object-cover"
-                  />
-                </div>
-              </div>
-            </div>
+                </>
+              }
+              imageUrl="/our-vision-2.png"
+              altText="People holding hands"
+            />
           </div>
         </section>
       </div>
@@ -199,7 +186,7 @@ const Career = () => {
 
       {/* Open Positions Section */}
       <div className="w-full">
-        <section className="w-full max-w-[1440px] mx-auto pt-12 pb-12">
+        <section className="website-container pt-12 pb-12 section-padding-x">
           <div className="flex flex-col items-center">
             <h1 className="section-title text-center">Open Positions</h1>
             <div className="mt-8 w-full flex flex-col gap-5">
@@ -207,7 +194,7 @@ const Career = () => {
                 return (
                   <div
                     key={item.id}
-                    className="w-full max-w-4xl mx-auto p-10 bg-[#FAFAFA] flex items-center justify-between"
+                    className="w-full max-w-4xl mx-auto p-3 mobile-lg:p-5 md:p-10 bg-[#FAFAFA] flex flex-col gap-5 md:flex-row md:items-center md:justify-between"
                   >
                     <div>
                       <h4 className="font-sintony font-bold text-2xl leading-[2.25rem] text-[#1A1A1A]">
@@ -229,8 +216,12 @@ const Career = () => {
             </div>
             <div className="mt-10">
               <Link href={"/about-us/career/our-openings"}>
-                <Button type="button" variant={"outline"} className={"w-fit border-[#1A1A1A]"}>
-                    View All Openings
+                <Button
+                  type="button"
+                  variant={"outline"}
+                  className={"w-fit border-[#1A1A1A]"}
+                >
+                  View All Openings
                 </Button>
               </Link>
             </div>
