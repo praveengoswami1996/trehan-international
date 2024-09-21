@@ -11,7 +11,7 @@ import MobileNavbar from "./MobileNavbar";
 const Header = () => {
   return (
     <header className="py-4 border-b shadow-header fixed top-0 left-0 w-full bg-white z-50">
-      <div className="max-w-[1440px] mx-auto px-3 sm:px-5 lg:px-10 xl:px-14 2xl:px-20 flex items-center justify-between gap-5">
+      <div className="website-container section-padding-x flex items-center justify-between gap-5">
         {/* Trehan International Brand Logo */}
         <div className="flex items-center justify-start gap-3 ">
           {/* Burger Menu Button */}

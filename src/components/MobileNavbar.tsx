@@ -154,8 +154,8 @@ const navigationLinks = [
     id: "navigation_links_007",
     label: "Resources",
     subLinks: [
-      { id: "resource_link_001", href: "#", label: "Blogs & Media", icon: DesignIcon1 },
-      { id: "resource_link_001", href: "#", label: "Events", icon: DesignIcon11 },
+      { id: "resource_link_001", href: "/resources/blogs-and-media", label: "Blogs & Media", icon: DesignIcon1 },
+      { id: "resource_link_001", href: "/resources/events", label: "Events", icon: DesignIcon11 },
     ],
   },
 ];

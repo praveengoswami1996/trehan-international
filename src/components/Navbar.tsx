@@ -43,8 +43,8 @@ const approachLinks: DropdownLink[] = [
 ];
 
 const resourceLinks: DropdownLink[] = [
-  { href: "#", title: "Blogs & Media", icon: DesignIcon1 },
-  { href: "#", title: "Events", icon: DesignIcon11 },
+  { href: "/resources/blogs-and-media", title: "Blogs & Media", icon: DesignIcon1 },
+  { href: "/resources/events", title: "Events", icon: DesignIcon11 },
 ];
 
 const Navbar = () => {
