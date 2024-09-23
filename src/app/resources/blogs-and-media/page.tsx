@@ -2,6 +2,7 @@ import BreadCrumbs from "@/components/BreadCrumbs";
 import { Button } from "@/components/ui/button";
 import Image from "next/image";
 import React from "react";
+import BlogCard from "@/components/resources/BlogCard";
 
 const blogs = [
   {
@@ -104,8 +105,7 @@ const BlogsAndMedia = () => {
                 Blogs
               </h1>
               <p className="paragraph text-center mt-5 max-w-[34rem] mx-auto">
-                Lorem ipsum dolor sit amet consectetur. Sit in nec sagittis amet
-                sed convallis nibh.
+                Lorem ipsum dolor sit amet consectetur. Sit in nec sagittis amet sed convallis nibh.
               </p>
             </div>
           </div>
@@ -119,22 +119,7 @@ const BlogsAndMedia = () => {
             <div className="w-full grid justify-items-center grid-cols-1 mobile-2xl:grid-cols-2 lg:grid-cols-3 gap-6">
               {blogs.map((item) => {
                 return (
-                  <div
-                    key={item.id}
-                    className="w-full max-w-[24rem] bg-white overflow-hidden flex flex-col gap-2"
-                  >
-                    <div className="flex-none w-full h-[17.5rem] relative overflow-hidden">
-                      <Image
-                        src={item.blogImageUrl}
-                        alt={"Blog Image"}
-                        fill
-                        className="object-cover"
-                      />
-                    </div>
-                    <p className="font-sintony font-bold text-xl leading-[1.875rem] line-clamp-2">
-                      {item.title}
-                    </p>
-                  </div>
+                  <BlogCard key={item.id} data={item}/>
                 );
               })}
             </div>

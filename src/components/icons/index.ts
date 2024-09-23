@@ -51,3 +51,5 @@ export { default as LSCMIcon } from "./LSCMIcon";
 export { default as OGEIcon } from "./OGEIcon";
 export { default as QuotationIcon } from "./QuotationIcon";
 export { default as RFBIcon } from "./RFBIcon";
+export { default as CalendarIcon } from "./CalendarIcon";
+export { default as LeftArrowIcon } from "./LeftArrowIcon";
