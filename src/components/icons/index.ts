@@ -53,3 +53,4 @@ export { default as QuotationIcon } from "./QuotationIcon";
 export { default as RFBIcon } from "./RFBIcon";
 export { default as CalendarIcon } from "./CalendarIcon";
 export { default as LeftArrowIcon } from "./LeftArrowIcon";
+export { default as LocationIcon } from "./LocationIcon";

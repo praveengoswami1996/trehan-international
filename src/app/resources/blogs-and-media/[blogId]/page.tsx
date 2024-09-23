@@ -118,11 +118,18 @@ const BlogDetailsPage = ({ params }: { params: { blogId: string } }) => {
 
       <div className="website-container section-padding-x section-padding-bottom">
         <div className="w-full max-w-4xl mx-auto">
-          <Link href={"/resources/blogs-and-media"} className="inline-flex items-center gap-2.5">
+          <Link
+            href={"/resources/blogs-and-media"}
+            className="inline-flex items-center gap-2.5"
+          >
             <LeftArrowIcon />
-            <span className="text-sm tracking-wide font-normal text-[#535353]">Back</span>
+            <span className="text-sm tracking-wide font-normal text-[#535353]">
+              Back
+            </span>
           </Link>
-          <h3 className="mt-8 font-sintony font-bold text-[2rem] leading-[3rem] text-[#1A1A1A]">{blogData?.title}</h3>
+          <h3 className="mt-8 font-sintony font-bold text-[2rem] leading-[3rem] text-[#1A1A1A]">
+            {blogData?.title}
+          </h3>
           <div className="mt-2 flex items-center gap-2.5">
             <CalendarIcon />
             <p className="text-[1.125rem] leading-[1.69rem] text-[#1A1A1A] font-medium">
@@ -130,36 +137,121 @@ const BlogDetailsPage = ({ params }: { params: { blogId: string } }) => {
             </p>
           </div>
 
-          <div className="mt-10 w-full h-[26.25rem] relative">
-            <Image 
-                src={blogData?.blogImageUrl || "/blogs/blog-6.png"}
-                alt={blogData?.title || "Blog Image"}
-                fill
-                className="object-cover"
+          <div className="mt-10 w-full h-[20rem] md:h-[26.25rem] relative">
+            <Image
+              src={blogData?.blogImageUrl || "/blogs/blog-6.png"}
+              alt={blogData?.title || "Blog Image"}
+              fill
+              className="object-cover"
             />
           </div>
 
           <div className="mt-8">
-            <p className="text-[1.125rem] leading-[1.69rem] text-[#535353] font-normal">Lorem ipsum dolor sit amet consectetur. Molestie ut pellentesque pulvinar magna. In commodo massa blandit a fermentum. Tincidunt ultrices enim maecenas tincidunt. Non eget egestas proin odio aliquet pellentesque aliquam pellentesque gravida.</p>
+            <p className="text-[1.125rem] leading-[1.69rem] text-[#535353] font-normal">
+              Lorem ipsum dolor sit amet consectetur. Molestie ut pellentesque
+              pulvinar magna. In commodo massa blandit a fermentum. Tincidunt
+              ultrices enim maecenas tincidunt. Non eget egestas proin odio
+              aliquet pellentesque aliquam pellentesque gravida.
+            </p>
 
             <div className="mt-10">
-              <h5 className="font-sintony font-bold text-[#1A1A1A] text-xl">Heading</h5>
-              <p className="mt-5 text-[1.125rem] leading-[1.69rem] text-[#535353] font-normal">Lorem ipsum dolor sit amet consectetur. Massa facilisi aliquet non ipsum dui urna leo diam. Nisl amet sed quam maecenas proin. Scelerisque volutpat pharetra non fermentum eleifend nibh. Sed a imperdiet est ultricies gravida justo condimentum. Non in pharetra malesuada elementum eros vulputate blandit. Curabitur pellentesque sociis vulputate pharetra fames a.<br /><br />Lorem ipsum dolor sit amet consectetur. Massa facilisi aliquet non ipsum dui urna leo diam. Nisl amet sed quam maecenas proin. Scelerisque volutpat pharetra non fermentum eleifend nibh. Sed a imperdiet est ultricies gravida justo condimentum. Non in pharetra malesuada elementum eros vulputate blandit. Curabitur pellentesque sociis vulputate pharetra fames a.</p>
+              <h5 className="font-sintony font-bold text-[#1A1A1A] text-xl">
+                Heading
+              </h5>
+              <p className="mt-5 text-[1.125rem] leading-[1.69rem] text-[#535353] font-normal">
+                Lorem ipsum dolor sit amet consectetur. Massa facilisi aliquet
+                non ipsum dui urna leo diam. Nisl amet sed quam maecenas proin.
+                Scelerisque volutpat pharetra non fermentum eleifend nibh. Sed a
+                imperdiet est ultricies gravida justo condimentum. Non in
+                pharetra malesuada elementum eros vulputate blandit. Curabitur
+                pellentesque sociis vulputate pharetra fames a.
+                <br />
+                <br />
+                Lorem ipsum dolor sit amet consectetur. Massa facilisi aliquet
+                non ipsum dui urna leo diam. Nisl amet sed quam maecenas proin.
+                Scelerisque volutpat pharetra non fermentum eleifend nibh. Sed a
+                imperdiet est ultricies gravida justo condimentum. Non in
+                pharetra malesuada elementum eros vulputate blandit. Curabitur
+                pellentesque sociis vulputate pharetra fames a.
+              </p>
             </div>
 
             <div className="mt-10">
-              <h5 className="font-sintony font-bold text-[#1A1A1A] text-xl">Heading</h5>
-              <p className="mt-5 text-[1.125rem] leading-[1.69rem] text-[#535353] font-normal">Lorem ipsum dolor sit amet consectetur. Massa facilisi aliquet non ipsum dui urna leo diam. Nisl amet sed quam maecenas proin. Scelerisque volutpat pharetra non fermentum eleifend nibh. Sed a imperdiet est ultricies gravida justo condimentum. Non in pharetra malesuada elementum eros vulputate blandit. Curabitur pellentesque sociis vulputate pharetra fames a.<br /><br />Lorem ipsum dolor sit amet consectetur. Molestie ut pellentesque pulvinar magna. In commodo massa blandit a fermentum. Tincidunt ultrices enim maecenas tincidunt. Non eget egestas proin odio aliquet pellentesque aliquam pellentesque gravida.<br /><br />Lorem ipsum dolor sit amet consectetur. Massa facilisi aliquet non ipsum dui urna leo diam. Nisl amet sed quam maecenas proin. Scelerisque volutpat pharetra non fermentum eleifend nibh. Sed a imperdiet est ultricies gravida justo condimentum. Non in pharetra malesuada elementum eros vulputate blandit. Curabitur pellentesque sociis vulputate pharetra fames a.</p>
+              <h5 className="font-sintony font-bold text-[#1A1A1A] text-xl">
+                Heading
+              </h5>
+              <p className="mt-5 text-[1.125rem] leading-[1.69rem] text-[#535353] font-normal">
+                Lorem ipsum dolor sit amet consectetur. Massa facilisi aliquet
+                non ipsum dui urna leo diam. Nisl amet sed quam maecenas proin.
+                Scelerisque volutpat pharetra non fermentum eleifend nibh. Sed a
+                imperdiet est ultricies gravida justo condimentum. Non in
+                pharetra malesuada elementum eros vulputate blandit. Curabitur
+                pellentesque sociis vulputate pharetra fames a.
+                <br />
+                <br />
+                Lorem ipsum dolor sit amet consectetur. Molestie ut pellentesque
+                pulvinar magna. In commodo massa blandit a fermentum. Tincidunt
+                ultrices enim maecenas tincidunt. Non eget egestas proin odio
+                aliquet pellentesque aliquam pellentesque gravida.
+                <br />
+                <br />
+                Lorem ipsum dolor sit amet consectetur. Massa facilisi aliquet
+                non ipsum dui urna leo diam. Nisl amet sed quam maecenas proin.
+                Scelerisque volutpat pharetra non fermentum eleifend nibh. Sed a
+                imperdiet est ultricies gravida justo condimentum. Non in
+                pharetra malesuada elementum eros vulputate blandit. Curabitur
+                pellentesque sociis vulputate pharetra fames a.
+              </p>
             </div>
 
             <div className="mt-10">
-              <h5 className="font-sintony font-bold text-[#1A1A1A] text-xl">Heading</h5>
-              <p className="mt-5 text-[1.125rem] leading-[1.69rem] text-[#535353] font-normal">Lorem ipsum dolor sit amet consectetur. Massa facilisi aliquet non ipsum dui urna leo diam. Nisl amet sed quam maecenas proin. Scelerisque volutpat pharetra non fermentum eleifend nibh. Sed a imperdiet est ultricies gravida justo condimentum. Non in pharetra malesuada elementum eros vulputate blandit. Curabitur pellentesque sociis vulputate pharetra fames a.<br /><br />Lorem ipsum dolor sit amet consectetur. Massa facilisi aliquet non ipsum dui urna leo diam. Nisl amet sed quam maecenas proin. Scelerisque volutpat pharetra non fermentum eleifend nibh. Sed a imperdiet est ultricies gravida justo condimentum. Non in pharetra malesuada elementum eros vulputate blandit. Curabitur pellentesque sociis vulputate pharetra fames a.</p>
+              <h5 className="font-sintony font-bold text-[#1A1A1A] text-xl">
+                Heading
+              </h5>
+              <p className="mt-5 text-[1.125rem] leading-[1.69rem] text-[#535353] font-normal">
+                Lorem ipsum dolor sit amet consectetur. Massa facilisi aliquet
+                non ipsum dui urna leo diam. Nisl amet sed quam maecenas proin.
+                Scelerisque volutpat pharetra non fermentum eleifend nibh. Sed a
+                imperdiet est ultricies gravida justo condimentum. Non in
+                pharetra malesuada elementum eros vulputate blandit. Curabitur
+                pellentesque sociis vulputate pharetra fames a.
+                <br />
+                <br />
+                Lorem ipsum dolor sit amet consectetur. Massa facilisi aliquet
+                non ipsum dui urna leo diam. Nisl amet sed quam maecenas proin.
+                Scelerisque volutpat pharetra non fermentum eleifend nibh. Sed a
+                imperdiet est ultricies gravida justo condimentum. Non in
+                pharetra malesuada elementum eros vulputate blandit. Curabitur
+                pellentesque sociis vulputate pharetra fames a.
+              </p>
             </div>
 
             <div className="mt-10">
-              <h5 className="font-sintony font-bold text-[#1A1A1A] text-xl">Heading</h5>
-              <p className="mt-5 text-[1.125rem] leading-[1.69rem] text-[#535353] font-normal">Lorem ipsum dolor sit amet consectetur. Massa facilisi aliquet non ipsum dui urna leo diam. Nisl amet sed quam maecenas proin. Scelerisque volutpat pharetra non fermentum eleifend nibh. Sed a imperdiet est ultricies gravida justo condimentum. Non in pharetra malesuada elementum eros vulputate blandit. Curabitur pellentesque sociis vulputate pharetra fames a.<br /><br />Lorem ipsum dolor sit amet consectetur. Molestie ut pellentesque pulvinar magna. In commodo massa blandit a fermentum. Tincidunt ultrices enim maecenas tincidunt. Non eget egestas proin odio aliquet pellentesque aliquam pellentesque gravida.<br /><br />Lorem ipsum dolor sit amet consectetur. Massa facilisi aliquet non ipsum dui urna leo diam. Nisl amet sed quam maecenas proin. Scelerisque volutpat pharetra non fermentum eleifend nibh. Sed a imperdiet est ultricies gravida justo condimentum. Non in pharetra malesuada elementum eros vulputate blandit. Curabitur pellentesque sociis vulputate pharetra fames a.</p>
+              <h5 className="font-sintony font-bold text-[#1A1A1A] text-xl">
+                Heading
+              </h5>
+              <p className="mt-5 text-[1.125rem] leading-[1.69rem] text-[#535353] font-normal">
+                Lorem ipsum dolor sit amet consectetur. Massa facilisi aliquet
+                non ipsum dui urna leo diam. Nisl amet sed quam maecenas proin.
+                Scelerisque volutpat pharetra non fermentum eleifend nibh. Sed a
+                imperdiet est ultricies gravida justo condimentum. Non in
+                pharetra malesuada elementum eros vulputate blandit. Curabitur
+                pellentesque sociis vulputate pharetra fames a.
+                <br />
+                <br />
+                Lorem ipsum dolor sit amet consectetur. Molestie ut pellentesque
+                pulvinar magna. In commodo massa blandit a fermentum. Tincidunt
+                ultrices enim maecenas tincidunt. Non eget egestas proin odio
+                aliquet pellentesque aliquam pellentesque gravida.
+                <br />
+                <br />
+                Lorem ipsum dolor sit amet consectetur. Massa facilisi aliquet
+                non ipsum dui urna leo diam. Nisl amet sed quam maecenas proin.
+                Scelerisque volutpat pharetra non fermentum eleifend nibh. Sed a
+                imperdiet est ultricies gravida justo condimentum. Non in
+                pharetra malesuada elementum eros vulputate blandit. Curabitur
+                pellentesque sociis vulputate pharetra fames a.
+              </p>
             </div>
           </div>
         </div>
@@ -171,14 +263,16 @@ const BlogDetailsPage = ({ params }: { params: { blogId: string } }) => {
           <div>
             <div className="flex items-center justify-between">
               <h1 className="section-title text-white">Latest Blogs</h1>
-              <Button
-                variant={"outline"}
-                className={
-                  "border-white text-base font-bold text-white leading-5 bg-[#000000] w-fit"
-                }
-              >
-                View All Blogs
-              </Button>
+              <Link href={"/resources/blogs-and-media"}>
+                <Button
+                  variant={"outline"}
+                  className={
+                    "border-white text-base font-bold text-white leading-5 bg-[#000000] w-fit"
+                  }
+                >
+                  View All Blogs
+                </Button>
+              </Link>
             </div>
 
             <div className="w-full mt-10 grid justify-items-center grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
