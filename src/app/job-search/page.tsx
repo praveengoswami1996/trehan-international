@@ -331,7 +331,7 @@ const JobSearch = () => {
                 <div key={item.id}>
                   <div className="flex flex-col md:flex-row md:items-center md:justify-between gap-1">
                     <h4 className="font-sintony font-bold text-2xl leading-[2.25rem]">{item.industry} <span className="text-[#373737] font-light">({item.vacancies})</span></h4>
-                    <Link href={"#"} className="font-semibold text-base text-[#C6485D]">
+                    <Link href={"/job-search/all-openings"} className="font-semibold text-base text-[#C6485D]">
                       View All Openings
                     </Link>
                   </div>

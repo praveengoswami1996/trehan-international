@@ -34,13 +34,18 @@ const BreadcrumbLabels = {
     '/resources': 'Resources',
     '/blogs-and-media': 'Our Blogs',
     '/events': 'Our Events',
+    '/job-search': 'Job Search'
 } as const;
 
 type BreadcrumbKeys = keyof typeof BreadcrumbLabels;
 
-const BreadCrumbs = () => {
+interface BreadCrumbsProps {
+    customSegment?: string[];
+}
+
+const BreadCrumbs: React.FC<BreadCrumbsProps> = ({ customSegment }) => {
   const pathname = usePathname();
-  const urlSegments = pathname
+  const urlSegments = customSegment || pathname
     .split("/")
     .filter(Boolean)
     .map((segment) => `/${segment}`);
