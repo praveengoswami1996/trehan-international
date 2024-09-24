@@ -69,7 +69,7 @@ const StrategicSourcingData = [
 const StrategicSourcing = () => {
   return (
     <div>
-      <p className="text-white max-w-6xl text-[1.125rem] leading-[1.69rem] font-normal">
+      <p className="text-white max-w-6xl text-base md:text-[1.125rem] md:leading-[1.69rem] font-normal">
         Mixing the Right Ingredients for Your Talent Pool. We take a
         consultative approach to understand your talent needs and build a
         strategic sourcing mix that attracts the best candidates. This approach
@@ -77,26 +77,26 @@ const StrategicSourcing = () => {
         channels, including:
       </p>
 
-      <div className="mt-10 grid grid-cols-1 md:grid-cols-3 gap-5">
+      <div className="mt-5 md:mt-10 grid grid-cols-1 mobile-2xl:grid-cols-2 lg:grid-cols-3 gap-3 md:gap-5 justify-items-center">
         {StrategicSourcingData.map((item) => {
           const Icon = item.icon;
           return (
             <div
               key={item.id}
-              className="flex items-center gap-3 w-full max-w-[24.375rem] p-10 bg-[#FFFFFF1A]"
+              className="flex items-center gap-3 w-full max-w-[24.375rem] p-5 md:p-10 bg-[#FFFFFF1A]"
               style={{ boxShadow: "0px 0px 150px 0px #0000000D" }}
             >
               <div className="flex-none bg-[#FDF7ED] rounded-full w-fit h-fit p-4">
                 <Icon className="size-[2.625rem]" />
               </div>
-              <div className="font-sintony font-bold text-xl text-white">
+              <div className="font-sintony font-bold text-lg md:text-xl text-white">
                 <p>{item.title}</p>
               </div>
             </div>
           );
         })}
 
-        <div className="md:col-span-2 p-3 md:p-10 bg-[#ffffff] flex flex-col md:flex-row md:items-center justify-between gap-8">
+        <div className="mobile-2xl:col-span-2 p-3 md:p-10 bg-[#ffffff] flex flex-col md:flex-row md:items-center w-full justify-between gap-8">
           <h4 className="font-sintony font-bold text-2xl text-[#000000] max-w-sm">
             Hey! We can help you to take your business next level
           </h4>

@@ -31,25 +31,25 @@ const TabsArr = [
 const ConsultativeApproachTabs = () => {
   return (
     <Tabs defaultValue="strategic-sourcing" className="w-full">
-      <TabsList className="max-md:w-full flex-col md:flex-row gap-5 rounded-none bg-transparent">
+      <TabsList className="max-md:w-full flex-col md:flex-row gap-1 lg:gap-5 rounded-none bg-transparent">
         {TabsArr.map((tab) => (
-          <TabsTrigger key={tab.id} value={tab.value} className="w-full rounded-none px-4 py-3 text-[1.125rem] font-normal text-white data-[state=active]:bg-[#599F99] data-[state=active]:text-white">
+          <TabsTrigger key={tab.id} value={tab.value} className="w-full rounded-none px-4 py-3 text-sm lg:text-[1.125rem] font-normal text-white data-[state=active]:bg-[#599F99] data-[state=active]:text-white">
             {tab.label}
           </TabsTrigger>
         ))}
       </TabsList>
-      <TabsContent value="strategic-sourcing" className="mt-52">
+      <TabsContent value="strategic-sourcing" className="mt-24 md:mt-10 lg:mt-14">
         <StrategicSourcing />
       </TabsContent>
-      <TabsContent value="quality-screening" className="mt-14">
+      <TabsContent value="quality-screening" className="mt-24 md:mt-10 lg:mt-14">
         {/* <QualityScreening /> */}
         <StrategicSourcing />
       </TabsContent>
-      <TabsContent value="structured-interviews" className="mt-14">
+      <TabsContent value="structured-interviews" className="mt-24 md:mt-10 lg:mt-14">
         {/* <StructuredInterviews /> */}
         <StrategicSourcing />
       </TabsContent>
-      <TabsContent value="seamless-onboarding" className="mt-14">
+      <TabsContent value="seamless-onboarding" className="mt-24 md:mt-10 lg:mt-14">
         {/* <SeamlessOnboarding /> */}
         <StrategicSourcing />
       </TabsContent>

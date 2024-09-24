@@ -41,8 +41,9 @@ const MobilizationProcessFlow = () => {
         <h2 className="section-title max-md:text-center">
           How the Mobilisation Process Flow?
         </h2>
-        <p className="text-base md:text-[1.125rem] md:leading-[1.69rem] font-normal text-[#373737] max-md:text-center mt-3">
-          Lorem ipsum dolor sit amet consectetur. Risus sapien pharetra lobortis nisl fames eget. Mi nec at in viverra.
+        <p className="paragraph text-[#373737] max-md:text-center mt-3">
+          Lorem ipsum dolor sit amet consectetur. Risus sapien pharetra lobortis
+          nisl fames eget. Mi nec at in viverra.
         </p>
       </div>
       <div className="flex-1 pl-2 md:pl-10 max-md:mt-5">
@@ -50,25 +51,27 @@ const MobilizationProcessFlow = () => {
           return (
             <div
               key={item.id}
-              className="flex flex-col md:flex-row gap-3 md:ap-8 md:items-center pl-6 md:pl-16 pb-6 md:pb-10 border-l border-[#C9C9C9] relative"
+              className="pl-6 mobile-lg:pl-10 pb-6 md:pb-10 border-l border-[#C9C9C9] relative"
             >
-              <div className="flex-none">
-                <Image
-                  src={item.count}
-                  alt={`Process Flow Step ${index + 1}`}
-                  width={89}
-                  height={74}
-                  className="object-contain"
-                />
-              </div>
-              <div>
-                <h5 className="font-sintony font-bold text-xl text-[#272727] max-w-80">
-                  {item.title}
-                </h5>
-              </div>
+              <div className="flex flex-col mobile-lg:flex-row gap-3 mobile-lg:gap-5 lg:gap-8  mobile-lg:items-center relative">
+                <div className="flex-none">
+                  <Image
+                    src={item.count}
+                    alt={`Process Flow Step ${index + 1}`}
+                    width={89}
+                    height={74}
+                    className="object-contain"
+                  />
+                </div>
+                <div>
+                  <h5 className="font-sintony font-bold text-lg sm:text-xl text-[#272727] max-w-80">
+                    {item.title}
+                  </h5>
+                </div>
 
-              <div className="size-4 border border-[#08065F] rounded-full absolute -left-2 top-7 flex items-center justify-center bg-white">
-                <div className="size-2 bg-[#E2AF45] rounded-full" />
+                <div className="size-4 border border-[#08065F] rounded-full absolute -left-12 top-1/2 -translate-y-1/2 flex items-center justify-center bg-white">
+                  <div className="size-2 bg-[#E2AF45] rounded-full" />
+                </div>
               </div>
             </div>
           );
