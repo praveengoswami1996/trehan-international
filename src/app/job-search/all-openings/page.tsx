@@ -200,14 +200,14 @@ const SearchAllOpenings = () => {
         <section className="website-container section-padding-x section-padding-bottom">
           <div className="w-full flex flex-col items-center">
             <BreadCrumbs customSegment={["/job-search"]} />
-            <h1 className="mt-7 font-bold text-6xl text-center text-[#000000]">
+            <h1 className="mt-7 font-bold text-5xl md:text-6xl text-center text-[#000000]">
               Job Search
             </h1>
             <p className="mt-5 text-[1.125rem] leading-[1.69rem] font-normal text-[#000000] text-center">
               Find your next opportunity here.
             </p>
 
-            <div className="mt-12 w-full max-w-3xl mx-auto flex items-center gap-3">
+            <div className="mt-6 md:mt-12 w-full max-w-3xl mx-auto flex flex-col mobile-2xl:flex-row mobile-2xl:items-center gap-3">
               <Input
                 type="text"
                 placeholder="Enter Job Title"
@@ -220,7 +220,7 @@ const SearchAllOpenings = () => {
               />
               <Button
                 size={"icon"}
-                className="flex-none w-[3.5rem] h-[3.5rem] bg-[#C6485D] rounded-sm"
+                className="flex-none w-full mobile-2xl:w-[3.5rem] h-[3.5rem] bg-[#C6485D] rounded-sm"
               >
                 <SearchIcon className="text-white" />
               </Button>
@@ -231,11 +231,11 @@ const SearchAllOpenings = () => {
 
       {/* Job Filter Section */}
       <div className="w-full border-b border-[#D9D9D9]">
-        <div className="website-container section-padding-x section-padding-y flex flex-col md:flex-row gap-8">
+        <div className="website-container section-padding-x section-padding-y flex flex-col md:flex-row gap-8 overflow-auto">
           <aside>
             <Accordion
               type="multiple"
-              className="w-[21rem] flex flex-col gap-6"
+              className="w-full md:w-[16rem] lg:w-[21rem] flex flex-col gap-6"
               defaultValue={["search_by_category", "search_by_location"]}
             >
               {JobsFilterAccordion.map((item, index) => {
@@ -276,8 +276,8 @@ const SearchAllOpenings = () => {
               })}
             </Accordion>
           </aside>
-          <section className="lg:flex-1">
-            <Table>
+          <section className="max-md:w-[832px] lg:flex-1 overflow-auto">
+            <Table className="overflow-auto">
               <TableHeader>
                 <TableRow className="bg-[#F6F6F6] rounded-sm text-[13px] text-[#707070] font-medium border-none">
                   <TableHead>Job Title</TableHead>
