@@ -1,3 +1,4 @@
+'use client';
 import BreadCrumbs from "@/components/BreadCrumbs";
 import { SearchIcon } from "@/components/icons";
 import {
@@ -19,6 +20,7 @@ import {
   TableRow,
 } from "@/components/ui/table";
 import Image from "next/image";
+import { useRouter } from "next/navigation";
 import React from "react";
 
 const JobsFilterAccordion = [
@@ -194,6 +196,7 @@ const allOpeningsList = [
 ];
 
 const SearchAllOpenings = () => {
+  const router = useRouter();
   return (
     <div className="min-h-screen">
       <div className="w-full bg-[#EFF6F5] pt-28 md:pt-32 lg:pt-36 xl:pt-40 relative overflow-hidden">
@@ -288,7 +291,7 @@ const SearchAllOpenings = () => {
               <TableBody>
                 {allOpeningsList.map((item) => {
                   return (
-                    <TableRow key={item.id} className="h-[5.5rem]">
+                    <TableRow key={item.id} className="h-[5.5rem] cursor-pointer" onClick={() => router.push(`/job-search/all-openings/${item.id}`)}>
                       <TableCell className="font-medium">
                         <div className="flex items-center gap-3">
                           <div className="flex-none">
