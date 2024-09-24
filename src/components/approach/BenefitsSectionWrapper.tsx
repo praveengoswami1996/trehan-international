@@ -13,6 +13,7 @@ interface BenefitItem {
 interface BenefitsSectionWrapperProps {
   benefits: BenefitItem[];
   cardContainerClasses?: string;
+  containerClasses?: string;
   sectionTitle?: string;
   sectionSubTitle?: string;
   topPanel?: string;
@@ -26,14 +27,15 @@ const BenefitsSectionWrapper: React.FC<BenefitsSectionWrapperProps> = ({
   sectionSubTitle,
   topPanel,
   bottomPanel,
+  containerClasses,
 }) => {
   return (
     <div className="w-full bg-[#FAFAFA]">
-      <section className="website-container section-padding-x section-padding-y">
+      <section className={cn("website-container section-padding-x section-padding-y", containerClasses)}>
         { sectionTitle && <h1 className="section-title text-center">
           {sectionTitle}
         </h1> }
-        { sectionSubTitle && <p className="mt-3 paragraph text-center max-w-[60rem]">
+        { sectionSubTitle && <p className="mt-3 paragraph text-center max-w-[60rem] mx-auto">
           {sectionSubTitle}
         </p> }
         <div className="w-full">
