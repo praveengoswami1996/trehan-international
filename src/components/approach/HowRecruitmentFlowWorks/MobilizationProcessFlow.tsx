@@ -53,7 +53,7 @@ const MobilizationProcessFlow = () => {
               key={item.id}
               className="pl-6 mobile-lg:pl-10 pb-6 md:pb-10 border-l border-[#C9C9C9] relative"
             >
-              <div className="flex flex-col mobile-lg:flex-row gap-3 mobile-lg:gap-5 lg:gap-8  mobile-lg:items-center relative">
+              <div className="flex flex-col mobile-md:flex-row gap-3 mobile-mobile-md:gap-5 lg:gap-8 mobile-md:items-center relative">
                 <div className="flex-none">
                   <Image
                     src={item.count}
@@ -69,7 +69,7 @@ const MobilizationProcessFlow = () => {
                   </h5>
                 </div>
 
-                <div className="size-4 border border-[#08065F] rounded-full absolute -left-12 top-1/2 -translate-y-1/2 flex items-center justify-center bg-white">
+                <div className="size-4 border border-[#08065F] rounded-full absolute -left-8 mobile-lg:-left-12 top-7 mobile-md:top-1/2 mobile-md:-translate-y-1/2 flex items-center justify-center bg-white">
                   <div className="size-2 bg-[#E2AF45] rounded-full" />
                 </div>
               </div>
