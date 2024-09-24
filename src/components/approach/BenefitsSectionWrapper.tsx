@@ -4,28 +4,47 @@ import { cn } from "@/lib/utils";
 import InformationPanel from "../InformationPanel";
 
 interface BenefitItem {
-    id: string;
-    title: string;
-    description: string;
-    icon: ComponentType<{ className?: string }>;
+  id: string;
+  title: string;
+  description: string;
+  icon: ComponentType<{ className?: string }>;
 }
 
 interface BenefitsSectionWrapperProps {
-    benefits: BenefitItem[];
-    cardContainerClasses?: string;
-    topPanel?: string;
-    bottomPanel?: string;
+  benefits: BenefitItem[];
+  cardContainerClasses?: string;
+  sectionTitle?: string;
+  sectionSubTitle?: string;
+  topPanel?: string;
+  bottomPanel?: string;
 }
 
-const BenefitsSectionWrapper: React.FC<BenefitsSectionWrapperProps> = ({ benefits, cardContainerClasses, topPanel, bottomPanel }) => {
-
+const BenefitsSectionWrapper: React.FC<BenefitsSectionWrapperProps> = ({
+  benefits,
+  cardContainerClasses,
+  sectionTitle,
+  sectionSubTitle,
+  topPanel,
+  bottomPanel,
+}) => {
   return (
-    <div className="w-full bg-[#F9F9F9]">
+    <div className="w-full bg-[#FAFAFA]">
       <section className="website-container section-padding-x section-padding-y">
+        { sectionTitle && <h1 className="section-title text-center">
+          {sectionTitle}
+        </h1> }
+        { sectionSubTitle && <p className="mt-3 paragraph text-center max-w-[60rem]">
+          {sectionSubTitle}
+        </p> }
         <div className="w-full">
-          { topPanel && <InformationPanel content={topPanel}/> }
+          {topPanel && <InformationPanel content={topPanel} />}
         </div>
-        <div className={cn("mt-10 w-full flex justify-center flex-wrap gap-6", cardContainerClasses)}>
+        <div
+          className={cn(
+            "mt-10 w-full flex justify-center flex-wrap gap-6",
+            cardContainerClasses
+          )}
+        >
           {benefits.map((item) => {
             return (
               <BenefitCard
@@ -38,7 +57,7 @@ const BenefitsSectionWrapper: React.FC<BenefitsSectionWrapperProps> = ({ benefit
           })}
         </div>
         <div className="w-full mt-10">
-          { bottomPanel && <InformationPanel content={bottomPanel}/> }
+          {bottomPanel && <InformationPanel content={bottomPanel} />}
         </div>
       </section>
     </div>
