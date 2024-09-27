@@ -7,7 +7,6 @@ import { Button } from "./ui/button";
 import useMediaQuery from "@/hooks/useMediaQuery";
 import MobileNavbar from "./MobileNavbar";
 
-
 const Header = () => {
   return (
     <header className="py-4 border-b shadow-header fixed top-0 left-0 w-full bg-white z-50">
@@ -36,11 +35,13 @@ const Header = () => {
         <div className="hidden xl:block">
           <Navbar />
         </div>
-      
+
         {/* Action Buttons */}
-        <Button className="max-md:px-3 max-md:py-2 max-md:text-xs">
-          Contact us
-        </Button>
+        <Link href={"/contact-us"}>
+          <Button className="max-md:px-3 max-md:py-2 max-md:text-xs">
+            Contact us
+          </Button>
+        </Link>
       </div>
     </header>
   );
