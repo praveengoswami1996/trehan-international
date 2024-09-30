@@ -98,8 +98,8 @@ const ContactUs = () => {
   return (
     <div className="page">
       <div className="w-full">
-        <section className="website-container section-padding-x pt-10 pb-20 relative overflow-hidden">
-          <div className="w-full max-w-[61rem] mx-auto flex gap-14 items-center">
+        <section className="website-container section-padding-x pt-5 md:pt-10 pb-20 relative overflow-hidden">
+          <div className="w-full max-w-[61rem] mx-auto flex flex-col lg:flex-row gap-14 lg:items-center">
             <div className="flex-1">
               <h1 className="hero-text">Contact Us</h1>
               <p className="paragraph">
@@ -112,27 +112,27 @@ const ContactUs = () => {
                 {contactDetails.map((item) => {
                   const Icon = item.icon;
                   return (
-                    <div key={item.id} className="flex gap-5 items-center">
+                    <div key={item.id} className="flex flex-col mobile-md:flex-row gap-5 items-center">
                       <div className="flex-none bg-[#FDF7ED] rounded-full p-3">
                         <Icon className="size-[2.375rem] text-[#E2AF45]" />
                       </div>
                       <div>
-                        <h5 className="font-sintony font-bold text-xl text-[#1A1A1A]">
+                        <h5 className="max-mobile-md:text-center font-sintony font-bold text-xl text-[#1A1A1A]">
                           {item.value}
                         </h5>
-                        <p>{item.label}</p>
+                        <p className="max-mobile-md:text-center">{item.label}</p>
                       </div>
                     </div>
                   );
                 })}
               </div>
             </div>
-            <div className=" flex-1">
+            <div className="flex-1">
               <ContactUsForm />
             </div>
           </div>
 
-          <div className="absolute -bottom-48 -left-20 size-[33.25rem]">
+          <div className="hidden lg:block absolute -bottom-48 -left-20 size-[33.25rem]">
             <Image
               src={"/bg-pattern-20.svg"}
               alt="background pattern image"
@@ -151,18 +151,18 @@ const ContactUs = () => {
               Our Offices
             </h2>
 
-            <div className="mt-11 grid grid-cols-3 gap-8">
+            <div className="mt-11 grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-3 gap-4 md:gap-8">
               {ourOffices.map((item) => {
                 return (
                   <div
                     key={item.id}
-                    className="bg-[#141414] p-5 shadow-[0px_0px_100px_0px_#000000CC] flex flex-col gap-5 z-[1]"
+                    className="bg-[#141414] p-1 mobile-md:p-3 mobile-lg:p-5 sm:p-2 md:p-3 lg:p-5 shadow-[0px_0px_100px_0px_#000000CC] flex flex-col gap-5 z-[1]"
                   >
                     <h5 className="text-xl font-sintony font-bold text-white">
                       {item.location}
                     </h5>
                     
-                    <div className="flex items-start gap-3">
+                    <div className="flex flex-col mobile-sm:flex-row items-start gap-3">
                       <div>
                         <LocationIcon2 className="text-white size-6" />
                       </div>
@@ -171,18 +171,18 @@ const ContactUs = () => {
                       </div>
                     </div>
                    
-                    <div className="flex items-start gap-3">
+                    <div className="flex flex-col mobile-sm:flex-row items-start gap-3">
                       <div className="mt-1">
                         <PhoneIcon3 className="text-white size-4.5" />
                       </div>
                       <div className="w-full">
-                        <div className="text-white text-base font-normal flex">
+                        <div className="text-white text-sm mobile-sm:text-base font-normal flex">
                           <div className="basis-16">Job:</div>
                           <div className="inline-block flex-1 font-semibold">
                             {item.phone.job}
                           </div>
                         </div>
-                        <div className="w-full text-white text-base font-normal flex">
+                        <div className="w-full text-white text-sm mobile-sm:text-base font-normal flex">
                           <div className="basis-16">Client:</div>
                           <div className="inline-block flex-1 font-semibold">
                             {item.phone.client}
@@ -191,18 +191,18 @@ const ContactUs = () => {
                       </div>
                     </div>
 
-                    <div className="flex items-start gap-3">
+                    <div className="flex flex-col mobile-sm:flex-row items-start gap-3">
                       <div className="mt-1">
                         <EmailIcon2 className="text-white size-4.5" />
                       </div>
                       <div className="w-full">
-                        <div className="text-white text-base font-normal flex">
+                        <div className="text-white text-sm mobile-sm:text-base font-normal flex">
                           <div className="basis-16">Job:</div>
                           <div className="inline-block flex-1 font-semibold">
                             {item.email.job}
                           </div>
                         </div>
-                        <div className="w-full text-white text-base font-normal flex">
+                        <div className="w-full text-white text-sm mobile-sm:text-base font-normal flex">
                           <div className="basis-16">Client:</div>
                           <div className="inline-block flex-1 font-semibold">
                             {item.email.client}
@@ -215,7 +215,7 @@ const ContactUs = () => {
               })}
             </div>
 
-            <div className="-mt-24 flex-none size-[46.75rem] relative mx-auto">
+            <div className="-mt-10 mobile-sm:-mt-5 mobile-2xl:-mt-14 md:-mt-24 flex-none size-[14rem] mobile-sm:size-[19rem] mobile-md:size-[21rem] mobile-lg:size-[25rem] mobile-2xl:size-[32rem] md:size-[46.75rem] relative mx-auto">
               <Image
                 src={"/bg-pattern-white-10.svg"}
                 alt="background pattern image"
@@ -232,7 +232,7 @@ const ContactUs = () => {
                 />
               </div>
 
-              <div className="w-full absolute bottom-12 left-0 flex items-center justify-center gap-12">
+              {/* <div className="w-full absolute bottom-12 left-0 flex items-center justify-center gap-12">
                 {officeLocations.map((item) => {
                   return (
                     <div key={item.id} className="flex gap-4">
@@ -251,7 +251,7 @@ const ContactUs = () => {
                     </div>
                   )
                 })}
-              </div>
+              </div> */}
             </div>
           </div>
         </section>

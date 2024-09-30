@@ -6,7 +6,7 @@ import { Button } from "./ui/button";
 
 const ContactUsForm = () => {
   return (
-    <div className="w-full bg-[#FDF7ED] p-10">
+    <div className="w-full max-w-[40rem] mx-auto bg-[#FDF7ED] p-3 mobile-sm:p-5 mobile-lg:p-10">
       <h4 className="font-sintony font-bold text-2xl text-[#1A1A1A]">
         Send us a message
       </h4>
