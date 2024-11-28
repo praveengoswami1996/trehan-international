@@ -3,6 +3,13 @@ import React from "react";
 import { Input } from "./ui/input";
 import { Textarea } from "./ui/textarea";
 import { Button } from "./ui/button";
+import InputField from "@/core/ui/InputField";
+import SelectField from "@/core/ui/SelectField";
+
+const Roles = [
+  { value: "candidate", label: "Candidate" },
+  { value: "client", label: "Client" },
+] 
 
 const ContactUsForm = () => {
   return (
@@ -16,21 +23,24 @@ const ContactUsForm = () => {
 
       <form className="mt-4 flex flex-col gap-8">
         <div className="flex flex-col gap-5">
-          <Input
+          <InputField 
             type="text"
             placeholder="Full name"
-            className="border-none outline-none rounded-none shadow-[0px_0px_40px_0px_#0000000D] bg-white text-base text-[#1A1A1A] font-medium py-2.5 px-5 placeholder:text-sm placeholder:font-light placeholder:text-[#535353]"
           />
-          <Input
+          <InputField 
             type="email"
             placeholder="E-mail address"
-            className="border-none outline-none rounded-none shadow-[0px_0px_40px_0px_#0000000D] bg-white text-base text-[#1A1A1A] font-medium py-2.5 px-5 placeholder:text-sm placeholder:font-light placeholder:text-[#535353]"
           />
-          <Input
+          <InputField 
             type="text"
             placeholder="Phone"
-            className="border-none outline-none rounded-none shadow-[0px_0px_40px_0px_#0000000D] bg-white text-base text-[#1A1A1A] font-medium py-2.5 px-5 placeholder:text-sm placeholder:font-light placeholder:text-[#535353]"
           />
+
+          <SelectField 
+            placeholder="Are you a candidate or client?"
+            options={Roles}
+          />
+
           <Textarea
             placeholder="Your message"
             rows={6}

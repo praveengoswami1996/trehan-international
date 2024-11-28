@@ -39,7 +39,7 @@ const MobilizationProcessFlow = () => {
     <div className="mt-12 md:mt-24 flex flex-col md:flex-row w-full max-w-[68rem] mx-auto">
       <div className="flex-1">
         <h2 className="section-title max-md:text-center">
-          How the Mobilisation Process Flow?
+          Our Deployment Workflow
         </h2>
         <p className="paragraph text-[#373737] max-md:text-center mt-3">
           Lorem ipsum dolor sit amet consectetur. Risus sapien pharetra lobortis

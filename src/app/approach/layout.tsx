@@ -11,8 +11,8 @@ export default function ApproachLayout({
   return (
     <div className="min-h-screen bg-white pt-28 md:pt-32 lg:pt-36 xl:pt-40 relative">
       {children}
-      <WhyChooseTrehan backgroundColor="#000000" />
       <HowRecruitmentFlowWorks />
+      <WhyChooseTrehan backgroundColor="#000000" />
       <FeatureSection />
     </div>
   );

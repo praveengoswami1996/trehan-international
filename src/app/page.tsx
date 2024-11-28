@@ -25,21 +25,25 @@ const ourServices = [
     id: "our_services_001",
     src: "/services/services-1.png",
     label: "Bulk Hiring Solutions",
+    href: "/services/bulk-hiring-solutions",
   },
   {
     id: "our_services_002",
     src: "/services/services-2.png",
     label: "Turnkey Staffing Solutions",
+    href: "/services/project-and-turnkey-staffing-solutions",
   },
   {
     id: "our_services_003",
     src: "/services/services-3.png",
     label: "Executive Search & Selection",
+    href: "/services/executive-search-and-selection",
   },
   {
     id: "our_services_004",
     src: "/services/services-4.png",
     label: "HR Management System (HRMS)",
+    href: "/services/hr-management-system",
   },
 ];
 
@@ -92,16 +96,32 @@ const clientOutcomes = [
   {
     id: "client_outcomes_001",
     clientComment:
-      "Lorem ipsum dolor sit amet consectetur. Purus posuere ultricies semper adipiscing neque nulla. Dolor amet elit nisl netus nulla vitae. Scelerisque in et turpis dignissim fringilla. Habitasse sit a in vel. Lorem ipsum dolor sit amet consectetur. Purus posuere ultricies semper adipiscing neque nulla. Dolor amet elit nisl netus nulla vitae. Scelerisque in et turpis dignissim fringilla. Habitasse sit a in vel.",
-    clientName: "Robert Fox",
-    clientDesignation: "President, ABC Company",
+      "Trehan International has been instrumental in addressing our diverse hiring needs. They have a remarkable ability to source candidates from varied backgrounds who fit seamlessly into our company culture. Their meticulous process ensures that we onboard candidates who are neither too young nor too old but perfectly fit our requirements. The efficiency with which they handle the entire recruitment process, including visa and license formalities, is commendable. Thanks to Trehan International, we can focus on our operations without worrying about staffing delays.",
+    clientName: "HR Manager of a leading FMS company in Kuwait",
   },
   {
     id: "client_outcomes_002",
     clientComment:
-      "Lorem ipsum dolor sit amet consectetur. Purus posuere ultricies semper adipiscing neque nulla. Dolor amet elit nisl netus nulla vitae. Scelerisque in et turpis dignissim fringilla. Habitasse sit a in vel. Lorem ipsum dolor sit amet consectetur. Purus posuere ultricies semper adipiscing neque nulla. Dolor amet elit nisl netus nulla vitae. Scelerisque in et turpis dignissim fringilla. Habitasse sit a in vel.",
-    clientName: "John Doe",
-    clientDesignation: "CEO, XYZ Company",
+      "Partnering with Trehan International has significantly streamlined our recruitment process. They have a unique talent for bringing the right candidates to the table, making our interviews more productive. Their expertise in managing the pre-visa and immigration documentation ensures that our new hires are ready to be deployed without any operational hiccups. Trehan International's dedication to understanding our needs and delivering on time has made them an invaluable partner in our talent acquisition strategy.",
+    clientName: "CEO of a leading Heavy Equipment leasing company in Saudi",
+  },
+  {
+    id: "client_outcomes_003",
+    clientComment:
+      "Our collaboration with Trehan International has been a game-changer. They consistently deliver candidates who not only meet our skill requirements but also fit our cultural expectations. Their approach to sourcing candidates from diverse geographies has enriched our workforce. The seamless onboarding process, managed entirely by Trehan International, ensures that our operations are never disrupted. Their commitment to quality and timely delivery is unmatched.",
+    clientName: "Recruitment Director of a leading Construction Group in Kuwait",
+  },
+  {
+    id: "client_outcomes_004",
+    clientComment:
+      "Trehan International excels in addressing the complexities of international recruitment. Their ability to find candidates who are the right cultural fit and possess the necessary skills has been remarkable. They handle all aspects of the recruitment process, from pre-screening to visa formalities, ensuring that our new hires are ready to hit the ground running. Trehan International's professional and efficient approach has made our recruitment process smoother and more effective.",
+    clientName: "HR Specialist in an leading Engineering company in Qatar",
+  },
+  {
+    id: "client_outcomes_005",
+    clientComment:
+      "Working with Trehan International has been a game-changer for our recruitment strategy. Their team's ability to understand our operational demands and provide candidates with the right expertise in cranes has been outstanding. The recruitment consultants were thorough in their approach, ensuring that each candidate was meticulously vetted and matched to our requirements. Their dedication to meeting our expectations and their success in diversifying our workforce have had a significant positive impact on our operations.",
+    clientName: "Operations Director of a leading Facility Management company in Kuwait",
   },
 ];
 
@@ -226,7 +246,9 @@ export default function Home() {
               placeholder="Enter company email"
               className="bg-[#F8F8F8] text-base py-3 lg:py-0"
             />
-            <Button type="submit">Hire Right Talent</Button>
+            <Link href="/contact-us">
+              <Button type="submit">Hire Right Talent</Button>
+            </Link>
           </div>
         </div>
 
@@ -419,7 +441,7 @@ export default function Home() {
             <div className="mt-10 w-full grid justify-items-center grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
               {ourServices.map((item) => {
                 return (
-                  <div key={item.id} className="w-full max-w-[24rem]">
+                  <Link key={item.id} href={item.href} className="block w-full max-w-[24rem]">
                     <div className="w-full h-[18.75rem] relative overflow-hidden">
                       <Image
                         src={item.src}
@@ -433,7 +455,7 @@ export default function Home() {
                     <h4 className="mt-5 font-sintony font-bold text-white text-xl md:text-2xl md:leading-[2.25rem]">
                       {item.label}
                     </h4>
-                  </div>
+                  </Link>
                 );
               })}
               <div
@@ -448,7 +470,9 @@ export default function Home() {
                     Unlock your potential with our bespoke solutions
                   </h3>
                   <div>
-                    <Button>Hire with us</Button>
+                    <Link href="/contact-us">
+                      <Button>Hire with us</Button>
+                    </Link>
                   </div>
                 </div>
 
@@ -563,15 +587,14 @@ export default function Home() {
       <div className="w-full bg-[#FAFAFA]">
         <section className="website-container section-padding-x section-padding-y">
           <div className="flex flex-col items-center">
-            <h1 className="section-title text-[#1A1A1A] text-center">
+            {/* <h1 className="section-title text-[#1A1A1A] text-center">
               Client Outcomes & Impact
             </h1>
             <p className="mt-2.5 text-base md:text-[1.125rem] md:leading-[1.69rem] font-regular text-[#535353] text-center max-w-[35rem]">
-              Lorem ipsum dolor sit amet consectetur. Ac a tristique vitae et
-              lobortis ut risus ac.
-            </p>
+              Lorem ipsum dolor sit amet consectetur. Ac a tristique vitae et lobortis ut risus ac.
+            </p> */}
 
-            <div className="mt-10 grid grid-cols-1 md:grid-cols-2 gap-8">
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
               {clientOutcomes.map((item) => {
                 return (
                   <div

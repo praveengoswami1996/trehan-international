@@ -2,6 +2,7 @@ import BreadCrumbs from "@/components/BreadCrumbs";
 import { Button } from "@/components/ui/button";
 import { cn } from "@/lib/utils";
 import Image from "next/image";
+import Link from "next/link";
 import React from "react";
 
 const industriesData = [
@@ -291,7 +292,7 @@ const Industries = () => {
             <BreadCrumbs />
             <div className="mt-5 w-full flex flex-col items-center">
               <h1 className="font-sintony text-[2.4rem] lg:text-[3.25rem] leading-[3rem] lg:leading-[4.88rem] font-bold text-center max-w-3xl mx-auto">
-                Trehan International - Industry Expertise
+                Industry Expertise
               </h1>
               <p className="text-base lg:text-[1.125rem] lg:leading-[1.69rem] font-regular text-[#535353] text-center mt-5 max-w-[52rem] mx-auto">
                 At Trehan International, we harness over four decades of
@@ -303,7 +304,9 @@ const Industries = () => {
               </p>
 
               <div className="mt-14">
-                <Button type="submit">Partner with us</Button>
+                <Link href="/contact-us">
+                 <Button type="submit">Partner with us</Button>
+                </Link>
               </div>
             </div>
           </div>
@@ -339,7 +342,7 @@ const Industries = () => {
                     </div>
                   </div>
                   <div className="w-full flex flex-col justify-center items-start">
-                    <h3 className="mt-3 lg:mt-0 font-sintony font-bold text-[1.375rem] leading-[2rem] lg:text-[2rem] lg:leading-[3rem] text-[#1A1A1A]">
+                    <h3 id={item.id} className="mt-3 lg:mt-0 font-sintony font-bold text-[1.375rem] leading-[2rem] lg:text-[2rem] lg:leading-[3rem] text-[#1A1A1A]">
                       {item.title}
                     </h3>
                     <p className="mt-2.5 text-base font-normal text-[#1A1A1A]">
@@ -383,7 +386,10 @@ const Industries = () => {
               Ready to hire with a staffing expert?
             </h2>
             <div className="mt-5 mobile-lg:mt-8 flex items-center justify-center sm:justify-start">
-              <Button type="submit">Contact Us</Button>
+              <Link href="/contact-us">
+                <Button type="submit">Contact Us</Button>
+              </Link>
+
             </div>
             <div className="absolute size-[15rem] lg:size-[21.5rem] -bottom-20 -right-14">
               <Image

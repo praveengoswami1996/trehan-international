@@ -13,6 +13,16 @@ const nextConfig = {
                 destination: '/approach/consultative-approach',
                 permanent: false,
             },
+            {
+                source: '/resources/events',
+                destination: '/resources/blogs-and-media',
+                permanent: false,
+            },
+            {
+                source: '/resources',
+                destination: '/resources/blogs-and-media',
+                permanent: false,
+            },
         ]
     },
 }

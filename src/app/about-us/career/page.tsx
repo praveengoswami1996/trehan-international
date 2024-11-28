@@ -102,7 +102,7 @@ const Career = () => {
               </p>
 
               <div className="mt-7 xl:mt-14">
-                <Button type="submit">See Our Vacancies</Button>
+              <Button type="submit">Join our Team</Button>
               </div>
             </div>
           </div>
@@ -136,7 +136,7 @@ const Career = () => {
       </div>
 
       {/* Our Mission/Our Vision Section */}
-      <div className="w-full bg-[#FAFAFA]">
+      {/* <div className="w-full bg-[#FAFAFA]">
         <section className="website-container section-padding-x section-padding-y">
           <div className="flex flex-col gap-10 xl:gap-20">
             <ImageContentPanel
@@ -179,7 +179,7 @@ const Career = () => {
             />
           </div>
         </section>
-      </div>
+      </div> */}
 
       {/* Team Celebration Section */}
       <TeamCelebration />

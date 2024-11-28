@@ -61,7 +61,7 @@ const RecruitmentFlow = () => {
   return (
     <div className="w-full max-w-[68rem] mx-auto">
       <h2 className="section-title text-center">
-        How the Recruitment Flow Works?
+        Our Recruitment Workflow
       </h2>
 
       <div className="w-full flex flex-col md:flex-row mt-5 md:mt-10 relative before:hidden before:md:block before:absolute before:top-14 before:left-1/2 before:-translate-x-1/2 before:w-2/3 before:border before:border-dashed before:border-[#696969]">

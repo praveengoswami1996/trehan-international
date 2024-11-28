@@ -42,10 +42,6 @@ const LocationsWeServe = () => {
           <h1 className="section-title text-[#ffffff] text-center">
             Locations We Serve
           </h1>
-          <p className="mt-2.5 text-base md:text-[1.125rem] md:leading-[1.69rem] font-regular text-[#ffffff] text-center max-w-2xl">
-            Our extensive history across industrial verticals/sectors has
-            provided us with a rich tapestry of knowledge, allowing...
-          </p>
 
           <div className="mt-12 w-full max-w-[756px] h-[10rem] md:h-[436px] relative">
             <Image

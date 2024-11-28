@@ -1,3 +1,4 @@
+'use client';
 import React, { ComponentType } from "react";
 import { Button } from "./ui/button";
 import { cn } from "@/lib/utils";
@@ -13,6 +14,7 @@ import {
 } from "./icons";
 import Image from "next/image";
 import Link from "next/link";
+import { useRouter } from "next/navigation";
 
 const industriesWeServe = [
   {
@@ -62,6 +64,7 @@ interface IndustryItemProps {
   label: string;
   position: string;
   labelClasses: string;
+  onClick?: () => void;
 }
 
 const IndustryItem: React.FC<IndustryItemProps> = ({
@@ -69,11 +72,12 @@ const IndustryItem: React.FC<IndustryItemProps> = ({
   label,
   position,
   labelClasses,
+  onClick
 }) => {
   const Icon = icon;
 
   return (
-    <div className={cn("absolute", position)}>
+    <div className={cn("absolute", position)} onClick={onClick}>
       <div
         className="flex-none p-5 rounded-full bg-[#E2AF45] flex items-center justify-center relative size-[6.25rem]"
         style={{ boxShadow: "0px 0px 60px 0px #00000026" }}
@@ -93,6 +97,8 @@ const IndustryItem: React.FC<IndustryItemProps> = ({
 };
 
 const IndustriesWeServe = () => {
+  const router = useRouter();
+
   return (
     <div className="w-full bg-[#F2F3F4]">
       <section className="website-container section-padding-x section-padding-y min-h-screen">
@@ -171,48 +177,56 @@ const IndustriesWeServe = () => {
                   label={"Engineering, Infrastructure and Construction"}
                   position="-top-12 left-1/2 -translate-x-1/2"
                   labelClasses="bottom-full mb-2 w-[20rem]"
+                  onClick={() => router.push("/industries#industry_001")}
                 />
                 <IndustryItem
                   icon={OGEIcon}
                   label={"Oil, Gas and Energy"}
                   position="top-[5rem] left-7 -translate-y-1/2"
                   labelClasses="top-1/2 -translate-y-1/2 right-full mr-2 w-[8rem] text-right"
+                  onClick={() => router.push("/industries#industry_002")}
                 />
                 <IndustryItem
                   icon={FMIcon}
                   label={"Facility Management"}
                   position="top-1/2 -translate-y-1/2 -left-12"
                   labelClasses="top-1/2 -translate-y-1/2 right-full mr-2 w-[8.5rem] text-right"
+                  onClick={() => router.push("/industries#industry_004")}
                 />
                 <IndustryItem
                   icon={IMIcon}
                   label={"Industrial Manufacturing"}
                   position="bottom-9 left-7"
                   labelClasses="top-1/2 -translate-y-1/2 right-full mr-2 w-[9.5rem] text-right"
+                  onClick={() => router.push("/industries#industry_006")}
                 />
                 <IndustryItem
                   icon={HCIcon}
                   label={"Healthcare"}
                   position="-bottom-12 left-1/2 -translate-x-1/2"
                   labelClasses="top-full mt-2 w-[10rem]"
+                  onClick={() => router.push("/industries#industry_008")}
                 />
                 <IndustryItem
                   icon={ANTIcon}
                   label={"Automotive and Transportation"}
                   position="bottom-9 right-7"
                   labelClasses="top-1/2 -translate-y-1/2 left-full ml-2 w-[10rem] text-left"
+                  onClick={() => router.push("/industries#industry_007")}
                 />
                 <IndustryItem
                   icon={LSCMIcon}
                   label={"Logistic & Supply Chain Management"}
                   position="top-1/2 -translate-y-1/2 -right-12"
                   labelClasses="top-1/2 -translate-y-1/2 left-full ml-2 w-[13rem] text-left"
+                  onClick={() => router.push("/industries#industry_005")}
                 />
                 <IndustryItem
                   icon={RFBIcon}
                   label={"Retail, Food and Beverage"}
                   position="top-[5rem] right-7 -translate-y-1/2"
                   labelClasses="top-1/2 -translate-y-1/2 left-full ml-2 w-[9rem] text-left"
+                  onClick={() => router.push("/industries#industry_003")}
                 />
               </div>
             </div>

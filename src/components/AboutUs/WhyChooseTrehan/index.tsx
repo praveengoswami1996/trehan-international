@@ -12,7 +12,7 @@ import React from "react";
 const AccordionData = [
   {
     id: "accordion_001",
-    title: "Experties in Varied Section",
+    title: "Expertise in Varied Section",
     content:
       "Our deep industry knowledge across sectors enables us to understand and meet the nuanced demands of your projects.",
   },

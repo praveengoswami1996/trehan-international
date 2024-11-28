@@ -8,11 +8,12 @@ interface ImageContentPanelProps {
     content: string | React.ReactNode;
     imageUrl: string;
     altText: string;
+    id?: string;
 }
 
-const ImageContentPanel: React.FC<ImageContentPanelProps> = ({ title, content, imageUrl, altText, imagePlacement = "right" }) => {
+const ImageContentPanel: React.FC<ImageContentPanelProps> = ({ title, content, imageUrl, altText, imagePlacement = "right", id }) => {
   return (
-    <div className={cn("flex flex-col", imagePlacement === "left" ? "xl:flex-row-reverse" : "xl:flex-row")}>
+    <div id={id} className={cn("flex flex-col", imagePlacement === "left" ? "xl:flex-row-reverse" : "xl:flex-row")}>
       <div className="w-full flex flex-col justify-center items-start">
         <h1 className="section-title">
           {title}

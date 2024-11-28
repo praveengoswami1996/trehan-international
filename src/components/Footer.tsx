@@ -4,19 +4,50 @@ import React from "react";
 import { MailIcon, PhoneIcon } from "./icons";
 import { Input } from "./ui/input";
 import { Button } from "./ui/button";
+import { FaLinkedin } from "react-icons/fa";
+import { FaFacebookSquare } from "react-icons/fa";
 
 const servicesLinks = [
-  { id: "services_link_001", label: "Temporary Staffing", href: "#" },
-  { id: "services_link_002", label: "Direct Hire Recruiting", href: "#" },
-  { id: "services_link_003", label: "Executive Search", href: "#" },
-  { id: "services_link_004", label: "Contract-to-Hire", href: "#" },
+  {
+    id: "services_link_001",
+    label: "Bulk Hiring",
+    href: "/services/bulk-hiring-solutions",
+  },
+  {
+    id: "services_link_002",
+    label: "Contract Staffing",
+    href: "/services/contract-staffing",
+  },
+  {
+    id: "services_link_003",
+    label: "Executive Search",
+    href: "/services/executive-search-and-selection",
+  },
+  {
+    id: "services_link_004",
+    label: "HR Management System",
+    href: "/services/hr-management-system",
+  },
+  {
+    id: "services_link_005",
+    label: "Staffing Solutions",
+    href: "/services/project-and-turnkey-staffing-solutions",
+  },
 ];
 
 const aboutUsLinks = [
-  { id: "aboutus_link_001", label: "Our Mission", href: "#" },
-  { id: "aboutus_link_002", label: "Our Vision", href: "#" },
-  { id: "aboutus_link_003", label: "Resources", href: "#" },
-  { id: "aboutus_link_004", label: "Contact", href: "#" },
+  {
+    id: "aboutus_link_001",
+    label: "Our Mission",
+    href: "/about-us#ourmission",
+  },
+  { id: "aboutus_link_002", label: "Our Vision", href: "/about-us#ourvision" },
+  {
+    id: "aboutus_link_003",
+    label: "Resources",
+    href: "/resources/blogs-and-media",
+  },
+  { id: "aboutus_link_004", label: "Contact", href: "/contact-us" },
 ];
 
 const addresses = [
@@ -37,6 +68,23 @@ const addresses = [
     place: "Kuwait",
     address:
       "Salmiya Star Complex Unit 7 Floor 4 Salmiya Block 9 Salem Al Mubarak Street, Kuwait",
+  },
+];
+
+const socialMediaLinks = [
+  {
+    id: "social_001",
+    label: "Facebook",
+    href: "https://www.facebook.com/trehanint",
+    icon: FaFacebookSquare,
+    iconColor: "#3B5998",
+  },
+  {
+    id: "social_002",
+    label: "Linkedin",
+    href: "https://www.linkedin.com/in/trehan-international-a3644511b/",
+    icon: FaLinkedin,
+    iconColor: "#0077B5",
   },
 ];
 
@@ -66,7 +114,7 @@ const Footer = () => {
                   <PhoneIcon className="text-[#599F99]" />
                 </div>
                 <span className="text-base font-medium text-[#1A1A1A]">
-                  +088 (246) 642-27-10
+                  +965-98881865
                 </span>
               </div>
               <div className="flex items-center gap-3">
@@ -74,7 +122,7 @@ const Footer = () => {
                   <MailIcon className="text-[#599F99]" />
                 </div>
                 <span className="text-base font-medium text-[#1A1A1A]">
-                  example@mail.com
+                  jobs@trehanintl.com
                 </span>
               </div>
             </div>
@@ -89,8 +137,27 @@ const Footer = () => {
                 Send a Message
               </Button>
             </div>
+
+            <div className="mt-5 flex items-center justify-start gap-2">
+              {socialMediaLinks.map((item) => {
+                const Icon = item.icon;
+                return (
+                  <div key={item.id} className="flex-none">
+                    <a
+                      href={item.href}
+                      style={{ color: item.iconColor }}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                    >
+                      <Icon size={32} />
+                    </a>
+                  </div>
+                );
+              })}
+            </div>
           </div>
           <div className="w-full flex flex-col mobile-xl:flex-row justify-start md:justify-between lg:justify-start xl:justify-between gap-6 mobile-xl:gap-x-16 mobile-2xl:gap-x-28 md:gap-x-6 lg:gap-x-28 min-[1180px]:gap-x-6 mobile-xl:flex-wrap">
+            {/* Services Links */}
             <div>
               <h4 className="text-[1.625rem] leading-7 font-normal text-[#646464]">
                 Services
@@ -109,6 +176,7 @@ const Footer = () => {
                 })}
               </div>
             </div>
+            {/* About us Links */}
             <div>
               <h4 className="text-[1.625rem] leading-7 font-normal text-[#646464]">
                 About Us
@@ -127,6 +195,7 @@ const Footer = () => {
                 })}
               </div>
             </div>
+            {/* Contact Info */}
             <div>
               <h4 className="text-[1.625rem] leading-7 font-normal text-[#646464]">
                 Contact Info
@@ -151,7 +220,7 @@ const Footer = () => {
 
         <div className="w-full py-7">
           <p className="text-sm leading-6 font-normal text-[#535353] text-center">
-            &copy; 2024 Trehan International All Rights Reserved
+            &copy; 2024 Trehan International | All Rights Reserved.
           </p>
         </div>
       </div>

@@ -8,6 +8,7 @@ import { cn } from "@/lib/utils";
 import Image from "next/image";
 import React from "react";
 import ImageContentPanel from "@/components/ImageContentPanel";
+import Link from "next/link";
 
 interface StoryContentItem {
   id: string;
@@ -308,6 +309,20 @@ const AboutUs = () => {
           <div className="flex flex-col items-center">
             <BreadCrumbs />
 
+            <div className="mt-8 w-full">
+              <h1 className="hero-text text-center max-w-2xl lg:max-w-4xl mx-auto">
+                Pioneering Human Mobility and Client Success
+              </h1>
+              <p className="paragraph text-center mt-5 max-w-[52rem] mx-auto">
+                At Trehan International, our vision is to redefine the landscape
+                of global recruitment by empowering human mobility, thus
+                unlocking economic opportunities and facilitating cultural
+                exchange. We aim to create a world where talent knows no
+                borders, and every individual can thrive in a global community
+                enriched with diverse skills and perspectives.
+              </p>
+            </div>
+
             {/* About Us Stats */}
             <div className="mt-8 lg:mt-16 w-full grid grid-cols-1 mobile-2xl:grid-cols-2 lg:grid-cols-3 gap-5 max-w-6xl mx-auto">
               {AboutData.map((item) => {
@@ -327,24 +342,13 @@ const AboutUs = () => {
               })}
             </div>
 
-            <div className="mt-8 lg:mt-16 w-full">
-              <h1 className="hero-text text-center max-w-2xl lg:max-w-4xl mx-auto">
-                Pioneering Human Mobility and Client Success
-              </h1>
-              <p className="paragraph text-center mt-5 max-w-[52rem] mx-auto">
-                At Trehan International, our vision is to redefine the landscape
-                of global recruitment by empowering human mobility, thus
-                unlocking economic opportunities and facilitating cultural
-                exchange. We aim to create a world where talent knows no
-                borders, and every individual can thrive in a global community
-                enriched with diverse skills and perspectives.
-              </p>
+            <div className="mt-7 lg:mt-14">
+              <Link href="/contact-us">
+                <Button type="submit">Unlock Talent Supply</Button>
+              </Link>
             </div>
 
-            <div className="mt-7 lg:mt-14">
-              <Button type="submit">Unlock Talent Supply</Button>
-            </div>
-          </div>
+         </div>
         </section>
       </div>
 
@@ -451,6 +455,7 @@ const AboutUs = () => {
 
             <div className="flex flex-col gap-10 xl:gap-20">
               <ImageContentPanel
+                id="ourvision"
                 title={"Our Vision"}
                 content={
                   <>
@@ -470,6 +475,7 @@ const AboutUs = () => {
               />
 
               <ImageContentPanel
+                id="ourmission"
                 title={"Our Mission"}
                 content={
                   <>

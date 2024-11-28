@@ -4,7 +4,6 @@ import Link from "next/link";
 import React from "react";
 import Navbar from "./Navbar";
 import { Button } from "./ui/button";
-import useMediaQuery from "@/hooks/useMediaQuery";
 import MobileNavbar from "./MobileNavbar";
 
 const Header = () => {
