@@ -618,9 +618,7 @@ export default function Home() {
                             <span className="font-medium text-base text-[#1A1A1A]">
                               {item.clientName}
                             </span>
-                            <span className="font-light text-sm text-[#1A1A1A]">
-                              {item.clientDesignation}
-                            </span>
+              
                           </div>
                         </div>
 

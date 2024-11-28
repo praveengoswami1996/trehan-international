@@ -288,13 +288,13 @@ const Industries = () => {
       {/* Hero Section */}
       <div className="w-full">
         <section className="website-container section-padding-x section-padding-bottom">
-          <div className="flex flex-col items-center">
+          <div className="flex flex-col">
             <BreadCrumbs />
-            <div className="mt-5 w-full flex flex-col items-center">
-              <h1 className="font-sintony text-[2.4rem] lg:text-[3.25rem] leading-[3rem] lg:leading-[4.88rem] font-bold text-center max-w-3xl mx-auto">
+            <div className="mt-5 w-full flex flex-col">
+              <h1 className="font-sintony text-[2.4rem] lg:text-[3.25rem] leading-[3rem] lg:leading-[4.88rem] font-bold max-w-3xl">
                 Industry Expertise
               </h1>
-              <p className="text-base lg:text-[1.125rem] lg:leading-[1.69rem] font-regular text-[#535353] text-center mt-5 max-w-[52rem] mx-auto">
+              <p className="text-base lg:text-[1.125rem] lg:leading-[1.69rem] font-regular text-[#535353] mt-5 max-w-[52rem]">
                 At Trehan International, we harness over four decades of
                 expertise, deep industry insights, and a holistic approach to
                 Talent Acquisition to serve a diverse range of industries. Our
