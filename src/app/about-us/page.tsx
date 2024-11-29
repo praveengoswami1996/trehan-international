@@ -329,12 +329,12 @@ const AboutUs = () => {
                 return (
                   <div
                     key={item.id}
-                    className="border border-[#C5C5C5] p-4 flex flex-col items-center justify-center bg-[#FDFDFD] rounded-full"
+                    className="border border-[#C5C5C5] p-4 flex flex-col items-center justify-center bg-[#FDFDFD] hover:bg-[#000000] rounded-full group transform transition-all duration-500 hover:scale-110"
                   >
-                    <h3 className="font-sintony font-bold text-[2rem] leading-[3rem] text-center text-[#000000]">
+                    <h3 className="font-sintony font-bold text-[2rem] leading-[3rem] text-center text-[#000000] group-hover:text-white">
                       {item.title}
                     </h3>
-                    <p className="paragraph text-center max-w-48">
+                    <p className="paragraph text-center max-w-48 group-hover:text-white">
                       {item.subtitle}
                     </p>
                   </div>

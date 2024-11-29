@@ -1,12 +1,13 @@
+import DataCountUp from "@/components/DataCountUp";
 import FeatureSection from "@/components/FeatureSection";
 import { QuotationIcon } from "@/components/icons";
 import IndustriesWeServe from "@/components/IndustriesWeServe";
 import LocationsWeServe from "@/components/LocationsWeServe";
+import TestimonialCarousel from "@/components/TestimonialCarousel";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import Image from "next/image";
 import Link from "next/link";
-import { PiUser } from "react-icons/pi";
 
 const trustedPartners = [
   { id: "tp_001", src: "/partners/rt.png" },
@@ -26,24 +27,28 @@ const ourServices = [
     src: "/services/services-1.png",
     label: "Bulk Hiring Solutions",
     href: "/services/bulk-hiring-solutions",
+    hoverText: "Trehan International excels in Bulk Hiring Solutions, streamlining the recruitment process to efficiently address your large-scale staffing needs."
   },
   {
     id: "our_services_002",
     src: "/services/services-2.png",
     label: "Turnkey Staffing Solutions",
     href: "/services/project-and-turnkey-staffing-solutions",
+    hoverText: "Trehan International specializes in comprehensive staffing solutions for new verticals, expansions, and various projects.",
   },
   {
     id: "our_services_003",
     src: "/services/services-3.png",
     label: "Executive Search & Selection",
     href: "/services/executive-search-and-selection",
+    hoverText: "Leadership Tailored to Transform, In the realm of leadership, the right fit transcends qualifications—it's about vision, drive, and alignment with your organization's core values.",
   },
   {
     id: "our_services_004",
     src: "/services/services-4.png",
     label: "HR Management System (HRMS)",
     href: "/services/hr-management-system",
+    hoverText: "Streamline Your Workforce Management, Trehan International's HR Management System (HRMS) empowers you with a centralized platform to manage your entire workforce, from hire-to-retirement.",
   },
 ];
 
@@ -92,39 +97,6 @@ const caseStudies = [
   },
 ];
 
-const clientOutcomes = [
-  {
-    id: "client_outcomes_001",
-    clientComment:
-      "Trehan International has been instrumental in addressing our diverse hiring needs. They have a remarkable ability to source candidates from varied backgrounds who fit seamlessly into our company culture. Their meticulous process ensures that we onboard candidates who are neither too young nor too old but perfectly fit our requirements. The efficiency with which they handle the entire recruitment process, including visa and license formalities, is commendable. Thanks to Trehan International, we can focus on our operations without worrying about staffing delays.",
-    clientName: "HR Manager of a leading FMS company in Kuwait",
-  },
-  {
-    id: "client_outcomes_002",
-    clientComment:
-      "Partnering with Trehan International has significantly streamlined our recruitment process. They have a unique talent for bringing the right candidates to the table, making our interviews more productive. Their expertise in managing the pre-visa and immigration documentation ensures that our new hires are ready to be deployed without any operational hiccups. Trehan International's dedication to understanding our needs and delivering on time has made them an invaluable partner in our talent acquisition strategy.",
-    clientName: "CEO of a leading Heavy Equipment leasing company in Saudi",
-  },
-  {
-    id: "client_outcomes_003",
-    clientComment:
-      "Our collaboration with Trehan International has been a game-changer. They consistently deliver candidates who not only meet our skill requirements but also fit our cultural expectations. Their approach to sourcing candidates from diverse geographies has enriched our workforce. The seamless onboarding process, managed entirely by Trehan International, ensures that our operations are never disrupted. Their commitment to quality and timely delivery is unmatched.",
-    clientName: "Recruitment Director of a leading Construction Group in Kuwait",
-  },
-  {
-    id: "client_outcomes_004",
-    clientComment:
-      "Trehan International excels in addressing the complexities of international recruitment. Their ability to find candidates who are the right cultural fit and possess the necessary skills has been remarkable. They handle all aspects of the recruitment process, from pre-screening to visa formalities, ensuring that our new hires are ready to hit the ground running. Trehan International's professional and efficient approach has made our recruitment process smoother and more effective.",
-    clientName: "HR Specialist in an leading Engineering company in Qatar",
-  },
-  {
-    id: "client_outcomes_005",
-    clientComment:
-      "Working with Trehan International has been a game-changer for our recruitment strategy. Their team's ability to understand our operational demands and provide candidates with the right expertise in cranes has been outstanding. The recruitment consultants were thorough in their approach, ensuring that each candidate was meticulously vetted and matched to our requirements. Their dedication to meeting our expectations and their success in diversifying our workforce have had a significant positive impact on our operations.",
-    clientName: "Operations Director of a leading Facility Management company in Kuwait",
-  },
-];
-
 const trendingBlogs = [
   {
     id: "trending_blogs_001",
@@ -143,9 +115,49 @@ const trendingBlogs = [
   },
 ];
 
+const aboutSectionData = [
+  {
+    id: "about_001",
+    count: 45,
+    suffix: "+",
+    desc: "Years of Service",
+  },
+  {
+    id: "about_002",
+    count: 200000,
+    suffix: "+",
+    desc: "Successful Placements",
+  },
+  {
+    id: "about_003",
+    count: 10,
+    suffix: "+",
+    desc: "Recruitment Centers",
+  },
+  {
+    id: "about_004",
+    count: 80,
+    suffix: "+",
+    desc: "Clients with us over 10 years",
+  },
+  {
+    id: "about_005",
+    count: 8,
+    suffix: "",
+    desc: "Placements in Diversified Industries",
+  },
+  {
+    id: "about_006",
+    count: 100,
+    suffix: "%",
+    desc: "Compliances Government & other Regulatory Bodies",
+  }
+]
+
 interface AboutDataItemProps {
-  data: string;
+  data: number;
   desc: string;
+  suffix: string;
 }
 
 interface ApproachItem {
@@ -161,11 +173,14 @@ interface ApproachItemProps {
   data: ApproachItem;
 }
 
-const AboutDataItem: React.FC<AboutDataItemProps> = ({ data, desc }) => {
+const AboutDataItem: React.FC<AboutDataItemProps> = ({ data, suffix, desc }) => {
   return (
     <div className="flex flex-col items-center xl:items-start">
       <h2 className="font-sintony font-bold text-[2rem] leading-[2.61rem]">
-        {data}
+        <DataCountUp 
+          end={Number(data)}
+          suffix={suffix}
+        />
       </h2>
       <p className="w-full text-[1.125rem] leading-[1.69rem] font-regular text-[#535353] max-w-[16rem] text-center xl:text-start">
         {desc}
@@ -377,21 +392,11 @@ export default function Home() {
             </div>
 
             <div className="grid grid-cols-1 mobile-2xl:grid-cols-2 lg:grid-cols-3 xl:grid-cols-2 gap-y-10">
-              <AboutDataItem data={"45+"} desc={"Years of Service"} />
-              <AboutDataItem data={"200,000+"} desc={"Successful Placements"} />
-              <AboutDataItem data={"10+"} desc={"Recruitment Centers"} />
-              <AboutDataItem
-                data={"80+"}
-                desc={"Clients with us over 10 years"}
-              />
-              <AboutDataItem
-                data={"8"}
-                desc={"Placements in Diversified Industries"}
-              />
-              <AboutDataItem
-                data={"100%"}
-                desc={"Compliances Government & other Regulatory Bodies"}
-              />
+              {aboutSectionData.map((data) => {
+                return (
+                  <AboutDataItem key={data.id} data={data.count} suffix={data.suffix} desc={data.desc} />
+                )
+              })}
             </div>
 
             <div className="flex justify-center xl:justify-start">
@@ -441,8 +446,8 @@ export default function Home() {
             <div className="mt-10 w-full grid justify-items-center grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
               {ourServices.map((item) => {
                 return (
-                  <Link key={item.id} href={item.href} className="block w-full max-w-[24rem]">
-                    <div className="w-full h-[18.75rem] relative overflow-hidden">
+                  <Link key={item.id} href={item.href} className="block w-full max-w-[24rem] transform transition-transform duration-300 hover:scale-105">
+                    <div className="w-full h-[18.75rem] relative overflow-hidden group">
                       <Image
                         src={item.src}
                         alt={"Our Services Presentation Image"}
@@ -451,6 +456,12 @@ export default function Home() {
                         sizes=""
                         priority
                       />
+
+                      <div className="hidden group-hover:block absolute top-0 left-0 w-full h-full bg-black bg-opacity-60 transition-all duration-500 p-5">
+                        <div className="w-full h-full text-white flex items-center justify-center text-xl font-medium">
+                          <p>{item.hoverText}</p>
+                        </div>
+                      </div>
                     </div>
                     <h4 className="mt-5 font-sintony font-bold text-white text-xl md:text-2xl md:leading-[2.25rem]">
                       {item.label}
@@ -584,56 +595,7 @@ export default function Home() {
       </div>
 
       {/* Client Outcomes & Impact Section */}
-      <div className="w-full bg-[#FAFAFA]">
-        <section className="website-container section-padding-x section-padding-y">
-          <div className="flex flex-col items-center">
-            {/* <h1 className="section-title text-[#1A1A1A] text-center">
-              Client Outcomes & Impact
-            </h1>
-            <p className="mt-2.5 text-base md:text-[1.125rem] md:leading-[1.69rem] font-regular text-[#535353] text-center max-w-[35rem]">
-              Lorem ipsum dolor sit amet consectetur. Ac a tristique vitae et lobortis ut risus ac.
-            </p> */}
-
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-              {clientOutcomes.map((item) => {
-                return (
-                  <div
-                    key={item.id}
-                    className="w-full max-w-[592px] h-[340px] px-8 pt-9 pb-7 bg-white"
-                    style={{ boxShadow: "0px 0px 40px 0px #0000000D" }}
-                  >
-                    <div className="h-full flex flex-col justify-between">
-                      <div className="line-clamp-[7]">
-                        <p className="font-medium text-base text-[#1A1A1A]">
-                          {item.clientComment}
-                        </p>
-                      </div>
-
-                      <div className="flex justify-between items-center">
-                        <div className="flex items-center gap-3">
-                          <div className="flex-none w-16 h-16 bg-[#F6F6F6] flex items-center justify-center rounded-full">
-                            <PiUser className="size-8 text-[#000000]" />
-                          </div>
-                          <div className="flex flex-col">
-                            <span className="font-medium text-base text-[#1A1A1A]">
-                              {item.clientName}
-                            </span>
-              
-                          </div>
-                        </div>
-
-                        <div>
-                          <QuotationIcon />
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                );
-              })}
-            </div>
-          </div>
-        </section>
-      </div>
+      <TestimonialCarousel />
 
       {/* Trending Blogs & Article Section */}
       <div className="w-full">
@@ -644,8 +606,7 @@ export default function Home() {
             </h1>
             <div className="flex flex-col md:flex-row items-start md:items-end justify-between gap-5">
               <p className="mt-2.5 text-base md:text-[1.125rem] md:leading-[1.69rem] font-regular text-[#535353] max-w-[35rem]">
-                Read the blog and article inside of consulting. We share tips
-                and tricks to get more success
+                Read the blog and article inside of consulting. We share tips and tricks to get more success
               </p>
               <div>
                 <Button

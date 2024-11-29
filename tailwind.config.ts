@@ -25,7 +25,12 @@ const config = {
   		},
   		boxShadow: {
   			header: '0px 0px 20px 0px #00000026',
-  			dropdown: '0px 0px 80px 0px #00000026'
+  			dropdown: '0px 0px 80px 0px #00000026',
+			'glow-gold': `
+          		0 8px 20px rgba(226, 175, 69, 0.5), 
+          		0 0 30px rgba(226, 175, 69, 0.6), 
+          		0 0 60px rgba(226, 175, 69, 0.4)`,
+			'industry': '0px 0px 60px 0px #00000026'
   		},
   		colors: {
   			border: 'hsl(var(--border))',

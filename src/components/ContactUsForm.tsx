@@ -1,14 +1,14 @@
 "use client";
 import React from "react";
-import { Input } from "./ui/input";
 import { Textarea } from "./ui/textarea";
 import { Button } from "./ui/button";
 import InputField from "@/core/ui/InputField";
 import SelectField from "@/core/ui/SelectField";
 
 const Roles = [
-  { value: "candidate", label: "Candidate" },
-  { value: "client", label: "Client" },
+  { value: "candidate", label: "Looking for a job" },
+  { value: "client", label: "Looking to hire talent" },
+  { value: "internal_hire", label: "Looking to join our team" }
 ] 
 
 const ContactUsForm = () => {
@@ -18,7 +18,7 @@ const ContactUsForm = () => {
         Send us a message
       </h4>
       <p className="mt-1 text-base font-normal text-[#414042]">
-        Lorem ipsum dolor sit amet consectetur.
+        Feel free to reach out to us.
       </p>
 
       <form className="mt-4 flex flex-col gap-8">
@@ -35,12 +35,10 @@ const ContactUsForm = () => {
             type="text"
             placeholder="Phone"
           />
-
           <SelectField 
-            placeholder="Are you a candidate or client?"
+            placeholder="How can we help you?"
             options={Roles}
           />
-
           <Textarea
             placeholder="Your message"
             rows={6}

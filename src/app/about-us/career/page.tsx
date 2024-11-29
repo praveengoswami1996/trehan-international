@@ -18,36 +18,26 @@ const benefits = [
   {
     id: "benefits_001",
     title: "Friendly Environment",
-    description:
-      "Lorem ipsum dolor sit amet consectetur. Vitae purus volutpat rhoncus eu mattis",
     icon: DesignIcon12,
   },
   {
     id: "benefits_002",
     title: "Interest-based work",
-    description:
-      "Lorem ipsum dolor sit amet consectetur. Vitae purus volutpat rhoncus eu mattis",
     icon: DesignIcon13,
   },
   {
     id: "benefits_003",
     title: "Work ownerships",
-    description:
-      "Lorem ipsum dolor sit amet consectetur. Vitae purus volutpat rhoncus eu mattis",
     icon: DesignIcon14,
   },
   {
     id: "benefits_004",
     title: "Idea Tanks",
-    description:
-      "Lorem ipsum dolor sit amet consectetur. Vitae purus volutpat rhoncus eu mattis",
     icon: DesignIcon6,
   },
   {
     id: "benefits_005",
     title: "Exciting and varied domains",
-    description:
-      "Lorem ipsum dolor sit amet consectetur. Vitae purus volutpat rhoncus eu mattis",
     icon: DesignIcon15,
   },
 ];
@@ -73,7 +63,7 @@ const openPositions = [
 const Career = () => {
   return (
     <div className="page">
-      <div className="hidden lg:block absolute -top-40 left-1/2 -translate-x-1/2 size-[50.125rem]">
+      <div className="hidden lg:block absolute -top-40 left-1/2 -translate-x-1/2 size-[50.125rem] pointer-events-none z-0">
         <Image
           src="/bg-pattern-10.svg"
           alt="Background Pattern Image"
@@ -85,7 +75,7 @@ const Career = () => {
       {/* Hero Section */}
       <div className="w-full">
         <section className="website-container section-padding-x section-padding-bottom">
-          <div className="flex flex-col items-center">
+          <div className="flex flex-col items-center z-10">
             <BreadCrumbs />
             <div className="mt-5 w-full flex flex-col items-center">
               <h1 className="font-sintony text-[2.4rem] lg:text-[3.25rem] leading-[3rem] lg:leading-[4.88rem] font-bold text-center max-w-4xl mx-auto">
@@ -102,30 +92,37 @@ const Career = () => {
               </p>
 
               <div className="mt-7 xl:mt-14">
-              <Button type="submit">Join our Team</Button>
+                <a
+                  href={"https://forms.gle/fjSz2yVP7hWGmu5U7"}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center justify-center whitespace-nowrap text-[1.125rem] leading-[23.45px] font-sintony font-bold bg-[#1A1A1A] text-white h-9 px-8 py-7 cursor-pointer"
+                >
+                  Join our Team
+                </a>
+
+                {/* <Button type="submit">Join our Team</Button> */}
               </div>
             </div>
           </div>
         </section>
       </div>
 
+      {/* Team Celebration Section */}
+      <TeamCelebration />
+
       {/* Benefits Section */}
       <div className="w-full">
-        <section className="website-container section-padding-x pt-12 section-padding-bottom">
+        <section className="website-container section-padding-x section-padding-bottom">
           <div className="flex flex-col items-center">
             <h1 className="section-title text-center">Benefits</h1>
-            <p className="mt-2.5 paragraph text-center max-w-2xl">
-              Lorem ipsum dolor sit amet consectetur. Faucibus lectus enim
-              semper sed. Tellus donec lectus at in sapien fermentum.
-            </p>
-
-            <div className="w-full mt-10 flex justify-center flex-wrap gap-6">
+         
+            <div className="w-full mt-6 flex justify-center flex-wrap gap-6">
               {benefits.map((item) => {
                 return (
                   <BenefitCard
                     key={item.id}
                     title={item.title}
-                    description={item.description}
                     icon={item.icon}
                   />
                 );
@@ -180,9 +177,6 @@ const Career = () => {
           </div>
         </section>
       </div> */}
-
-      {/* Team Celebration Section */}
-      <TeamCelebration />
 
       {/* Open Positions Section */}
       <div className="w-full">

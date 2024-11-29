@@ -97,10 +97,7 @@ const TeamCelebration = () => {
     <div className="w-full">
       <section className="website-container section-padding-y">
         <div className="flex flex-col items-center">
-          <h1 className="section-title text-center">Team Celebration</h1>
-          <p className="mt-2.5 paragraph text-center max-w-2xl">
-            Lorem ipsum dolor sit amet consectetur. Faucibus lectus enim semper sed. Tellus donec lectus at in sapien fermentum.
-          </p>
+          <h1 className="section-title text-center">Our Work Culture</h1>
 
           <Carousel 
             className="mt-12 w-full"

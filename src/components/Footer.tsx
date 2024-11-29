@@ -103,10 +103,11 @@ const Footer = () => {
                 priority
               />
             </Link>
-            <p className="mt-3 text-base text-[#535353] font-normal max-w-96">
-              Lorem ipsum dolor sit amet consectetur. Semper arcu gravida
-              pretium tincidunt.
-            </p>
+            <div className="mt-3 text-base text-[#535353] font-normal max-w-96">
+              <p>We&apos;re here to help!</p>
+              <p>Feel free to connect with us.</p>
+            </div>
+          
 
             <div className="mt-6 flex flex-col gap-2">
               <div className="flex items-center gap-3">
@@ -122,7 +123,7 @@ const Footer = () => {
                   <MailIcon className="text-[#599F99]" />
                 </div>
                 <span className="text-base font-medium text-[#1A1A1A]">
-                  jobs@trehanintl.com
+                  info@trehanintl.com
                 </span>
               </div>
             </div>
@@ -133,9 +134,11 @@ const Footer = () => {
                 placeholder="Enter company email"
                 className="bg-[#F8F8F8] border-none outline-none bg-transparent shadow-none text-sm font-light py-3 md:py-0"
               />
-              <Button type="submit" className="text-sm bg-[#1A1A1A] px-5 py-6">
-                Send a Message
-              </Button>
+              <Link href="/contact-us">
+                <Button className="text-sm bg-[#1A1A1A] px-5 py-6">
+                  Send a Message
+                </Button>
+              </Link>
             </div>
 
             <div className="mt-5 flex items-center justify-start gap-2">

@@ -11,6 +11,7 @@ import {
   DesignIcon33,
 } from "@/components/icons";
 import { Button } from "@/components/ui/button";
+import Link from "next/link";
 import React from "react";
 
 const StrategicSourcingData = [
@@ -100,7 +101,9 @@ const StrategicSourcing = () => {
           <h4 className="font-sintony font-bold text-2xl text-[#000000] max-w-sm">
             Hey! We can help you to take your business next level
           </h4>
-          <Button type="button" className="w-fit">Partner with us</Button>
+          <Link href="/contact-us">
+            <Button type="button" className="w-fit">Partner with us</Button>
+          </Link>
         </div>
       </div>
     </div>

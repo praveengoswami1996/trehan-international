@@ -13,13 +13,13 @@ import React from "react";
 const contactDetails = [
   {
     id: "contact_detail_001",
-    value: "hello@sahana.com",
+    value: "info@trehanintl.com",
     label: "Share a detailed specification",
     icon: EmailIcon,
   },
   {
     id: "contact_detail_002",
-    value: "+91 123 456 7890",
+    value: "+965-98881865",
     label: "Connect on Phone",
     icon: PhoneIcon2,
   },
@@ -102,17 +102,21 @@ const ContactUs = () => {
           <div className="w-full max-w-[61rem] mx-auto flex flex-col lg:flex-row gap-14 lg:items-center">
             <div className="flex-1">
               <h1 className="hero-text">Contact Us</h1>
-              <p className="paragraph">
-                Lorem Ipsum is simply dummy text of the printing and typesetting
-                industry. Lorem Ipsum has been the industry&apos;s standard
-                dummy text ever since the 1500s.
-              </p>
+              <div className="paragraph">
+                <p>Need help? Feel free to reach out to us!</p>
+                <p>We appreciate the
+                opportunity to support you.</p>
+                <p>We look forward to hearing from you!</p>
+              </div>
 
               <div className="mt-10 flex flex-col gap-8">
                 {contactDetails.map((item) => {
                   const Icon = item.icon;
                   return (
-                    <div key={item.id} className="flex flex-col mobile-md:flex-row gap-5 items-center">
+                    <div
+                      key={item.id}
+                      className="flex flex-col mobile-md:flex-row gap-5 items-center"
+                    >
                       <div className="flex-none bg-[#FDF7ED] rounded-full p-3">
                         <Icon className="size-[2.375rem] text-[#E2AF45]" />
                       </div>
@@ -120,7 +124,9 @@ const ContactUs = () => {
                         <h5 className="max-mobile-md:text-center font-sintony font-bold text-xl text-[#1A1A1A]">
                           {item.value}
                         </h5>
-                        <p className="max-mobile-md:text-center">{item.label}</p>
+                        <p className="max-mobile-md:text-center">
+                          {item.label}
+                        </p>
                       </div>
                     </div>
                   );
@@ -161,7 +167,7 @@ const ContactUs = () => {
                     <h5 className="text-xl font-sintony font-bold text-white">
                       {item.location}
                     </h5>
-                    
+
                     <div className="flex flex-col mobile-sm:flex-row items-start gap-3">
                       <div>
                         <LocationIcon2 className="text-white size-6" />
@@ -170,7 +176,7 @@ const ContactUs = () => {
                         {item.address}
                       </div>
                     </div>
-                   
+
                     <div className="flex flex-col mobile-sm:flex-row items-start gap-3">
                       <div className="mt-1">
                         <PhoneIcon3 className="text-white size-4.5" />

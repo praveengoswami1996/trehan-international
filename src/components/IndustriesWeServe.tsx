@@ -79,8 +79,7 @@ const IndustryItem: React.FC<IndustryItemProps> = ({
   return (
     <div className={cn("absolute", position)} onClick={onClick}>
       <div
-        className="flex-none p-5 rounded-full bg-[#E2AF45] flex items-center justify-center relative size-[6.25rem]"
-        style={{ boxShadow: "0px 0px 60px 0px #00000026" }}
+        className="flex-none p-5 rounded-full bg-[#E2AF45] flex items-center justify-center relative size-[6.25rem] shadow-industry transform transition-transform duration-150 hover:scale-110 cursor-pointer  hover:shadow-glow-gold"
       >
         <Icon className="text-white" />
         <h5
@@ -103,15 +102,14 @@ const IndustriesWeServe = () => {
     <div className="w-full bg-[#F2F3F4]">
       <section className="website-container section-padding-x section-padding-y min-h-screen">
         <div className="flex flex-col items-center">
-          <h1 className="section-title text-center">Industries We Serve</h1>
+          <h1 className="section-title text-center">
+            Industries We Serve
+          </h1>
           <p className="mt-3 paragraph text-center max-w-[60rem]">
-            Trehan International is a recruitment consultancy with a focus on
-            revolutionizing the field of recruitment. Over the past four
-            decades, Trehan International has transformed into a prominent and
-            highly respected recruitment consultancy in India and Southeast
-            Asia.
+            Trehan International is a recruitment consultancy with a focus on revolutionizing the field of recruitment. Over the past four decades, Trehan International has transformed into a prominent and highly respected recruitment consultancy in India and Southeast Asia.
           </p>
 
+          {/* Image - for smaller screens */}
           <div className="lg:hidden overflow-hidden relative size-[15rem]  mobile-sm:size-[19rem] mobile-md:size-[22rem] mobile-lg:size-[24rem] sm:size-[30rem] mx-auto flex items-center justify-center mt-10">
             <Image
               src={"/bg-pattern.svg"}
@@ -128,6 +126,7 @@ const IndustriesWeServe = () => {
             </div>
           </div>
 
+          {/* industries cards - for smaller screens */}
           <div className="mt-10 w-full grid grid-cols-1 sm:grid-cols-2 gap-5 lg:hidden">
             {industriesWeServe.map((item) => {
               const Icon = item.icon;
@@ -150,6 +149,7 @@ const IndustriesWeServe = () => {
             })}
           </div>
 
+          {/* industries circular wheel - for larger screens */}
           <div className="hidden mt-28 w-full lg:flex justify-center">
             <div className="size-[34rem] xl:size-[37.5rem] relative flex items-center justify-center p-8 mx-auto">
               <Image
@@ -232,6 +232,7 @@ const IndustriesWeServe = () => {
             </div>
           </div>
 
+          {/* CTA button - navigates to Industries Page */}
           <div className="mt-10 lg:mt-28">
             <Link href={"/industries"}>
               <Button

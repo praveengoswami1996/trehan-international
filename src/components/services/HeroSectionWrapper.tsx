@@ -2,6 +2,7 @@ import React from "react";
 import BreadCrumbs from "../BreadCrumbs";
 import { Button } from "../ui/button";
 import Image from "next/image";
+import Link from "next/link";
 
 interface HeroSectionWrapperProps {
     title: string;
@@ -23,9 +24,11 @@ const HeroSectionWrapper: React.FC<HeroSectionWrapperProps> = ({ title, descript
             </p>
 
             <div className="mt-14">
-              <Button type="button">
-                Partner with us
-              </Button>
+              <Link href="/contact-us">
+                <Button type="button">
+                  Partner with us
+                </Button>
+              </Link>
             </div>
           </div>
         </div>
