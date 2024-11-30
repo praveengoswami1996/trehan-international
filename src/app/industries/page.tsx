@@ -320,9 +320,10 @@ const Industries = () => {
             {industriesData.map((item, index) => {
               return (
                 <div
+                  id={item.id}
                   key={item.id}
                   className={cn(
-                    "flex flex-col lg:flex-row gap-5 xl:gap-0",
+                    "flex flex-col lg:flex-row gap-5 xl:gap-0 scroll-mt-24",
                     index % 2 !== 0 && "lg:flex-row-reverse"
                   )}
                 >
@@ -342,7 +343,7 @@ const Industries = () => {
                     </div>
                   </div>
                   <div className="w-full flex flex-col justify-center items-start">
-                    <h3 id={item.id} className="mt-3 lg:mt-0 font-sintony font-bold text-[1.375rem] leading-[2rem] lg:text-[2rem] lg:leading-[3rem] text-[#1A1A1A]">
+                    <h3 className="mt-3 lg:mt-0 font-sintony font-bold text-[1.375rem] leading-[2rem] lg:text-[2rem] lg:leading-[3rem] text-[#1A1A1A]">
                       {item.title}
                     </h3>
                     <p className="mt-2.5 text-base font-normal text-[#1A1A1A]">

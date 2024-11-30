@@ -116,27 +116,9 @@ const navigationLinks = [
       },
       {
         id: "approach_link_003",
-        href: "/approach/quality-screening",
-        label: "Quality Screening",
-        icon: DesignIcon7,
-      },
-      {
-        id: "approach_link_004",
         href: "/approach/compliance",
         label: "Compliance",
         icon: DesignIcon10,
-      },
-      {
-        id: "approach_link_005",
-        href: "/approach/recruitment-flow",
-        label: "Recruitment Flow",
-        icon: DesignIcon8,
-      },
-      {
-        id: "approach_link_006",
-        href: "/approach/mobilization-flow",
-        label: "Mobilization Flow",
-        icon: DesignIcon1,
       },
     ],
   },
@@ -152,11 +134,8 @@ const navigationLinks = [
   },
   {
     id: "navigation_links_007",
-    label: "Resources",
-    subLinks: [
-      { id: "resource_link_001", href: "/resources/blogs-and-media", label: "Blogs & Media", icon: DesignIcon1 },
-      { id: "resource_link_001", href: "/resources/events", label: "Events", icon: DesignIcon11 },
-    ],
+    label: "Blogs & Media",
+    href: "/resources/blogs-and-media",
   },
 ];
 

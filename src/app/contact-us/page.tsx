@@ -106,7 +106,6 @@ const ContactUs = () => {
                 <p>Need help? Feel free to reach out to us!</p>
                 <p>We appreciate the
                 opportunity to support you.</p>
-                <p>We look forward to hearing from you!</p>
               </div>
 
               <div className="mt-10 flex flex-col gap-8">

@@ -1,3 +1,4 @@
+"use client";
 import React from "react";
 import {
   Carousel,
@@ -7,6 +8,7 @@ import {
   CarouselPrevious,
 } from "@/components/ui/carousel";
 import Image from "next/image";
+import Autoplay from "embla-carousel-autoplay";
 
 
 const carouselData = [
@@ -93,6 +95,10 @@ const carouselData = [
 ]
 
 const TeamCelebration = () => {
+  const plugin = React.useRef(
+    Autoplay({ delay: 3000, playOnInit: true, stopOnInteraction: true, })
+  );
+
   return (
     <div className="w-full">
       <section className="website-container section-padding-y">
@@ -100,7 +106,12 @@ const TeamCelebration = () => {
           <h1 className="section-title text-center">Our Work Culture</h1>
 
           <Carousel 
+            //@ts-ignore
+            plugins={[plugin.current]}
             className="mt-12 w-full"
+            onMouseEnter={plugin.current.stop}
+            //@ts-ignore
+            onMouseLeave={plugin.current.play}
           >
             <CarouselContent className="-ml-1">
               {carouselData.map((item, index) => (

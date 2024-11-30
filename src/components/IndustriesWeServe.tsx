@@ -128,12 +128,13 @@ const IndustriesWeServe = () => {
 
           {/* industries cards - for smaller screens */}
           <div className="mt-10 w-full grid grid-cols-1 sm:grid-cols-2 gap-5 lg:hidden">
-            {industriesWeServe.map((item) => {
+            {industriesWeServe.map((item, index) => {
               const Icon = item.icon;
               return (
                 <div
                   key={item.id}
                   className="flex flex-col items-center gap-2 bg-white p-5 rounded-md shadow-sm"
+                  onClick={() => router.push(`/industries#industry_00${index + 1}`)}
                 >
                   <div
                     className="flex-none p-5 rounded-full bg-[#E2AF45] flex items-center justify-center relative size-[6.25rem]"
