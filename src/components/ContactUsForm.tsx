@@ -6,9 +6,9 @@ import InputField from "@/core/ui/InputField";
 import SelectField from "@/core/ui/SelectField";
 
 const Roles = [
-  { value: "candidate", label: "Looking for a job" },
-  { value: "client", label: "Looking to hire talent" },
-  { value: "internal_hire", label: "Looking to join our team" }
+  { value: "job_seeker", label: "I'm a Job Seeker" },
+  { value: "employer", label: "I'm an Employer" },
+  { value: "prospective_employee", label: "I'm a Prospective Employee" }
 ] 
 
 const ContactUsForm = () => {

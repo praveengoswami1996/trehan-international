@@ -294,18 +294,16 @@ const Industries = () => {
               <h1 className="font-sintony text-[2.4rem] lg:text-[3.25rem] leading-[3rem] lg:leading-[4.88rem] font-bold max-w-3xl">
                 Industry Expertise
               </h1>
-              <p className="text-base lg:text-[1.125rem] lg:leading-[1.69rem] font-regular text-[#535353] mt-5 max-w-[52rem]">
-                At Trehan International, we harness over four decades of
-                expertise, deep industry insights, and a holistic approach to
-                Talent Acquisition to serve a diverse range of industries. Our
-                unparalleled business acumen and the ability to navigate the
-                intricacies of various sectors set us apart as a preferred
-                partner for leading companies worldwide.
-              </p>
+              <div className="pl-4 py-0 relative before:absolute before:w-[5px] before:h-[95%] before:left-0 before:top-1/2 before:-translate-y-1/2 before:bg-amber-500 mt-5">
+                <p className="paragraph max-w-[52rem]">
+                  At Trehan International, we harness over four decades of
+                  expertise, deep industry insights, and a holistic approach to Talent Acquisition to serve a diverse range of industries. Our unparalleled business acumen and the ability to navigate the intricacies of various sectors set us apart as a preferred partner for leading companies worldwide.
+                </p>
+              </div>
 
-              <div className="mt-14">
+              <div className="mt-14 flex items-center justify-center">
                 <Link href="/contact-us">
-                 <Button type="submit">Partner with us</Button>
+                  <Button type="submit">Partner with us</Button>
                 </Link>
               </div>
             </div>
@@ -390,7 +388,6 @@ const Industries = () => {
               <Link href="/contact-us">
                 <Button type="submit">Contact Us</Button>
               </Link>
-
             </div>
             <div className="absolute size-[15rem] lg:size-[21.5rem] -bottom-20 -right-14">
               <Image

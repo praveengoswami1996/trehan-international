@@ -19,7 +19,7 @@ const trustedPartners = [
   { id: "tp_007", src: "/partners/kptc.png" },
   { id: "tp_008", src: "/partners/heisco.png" },
   { id: "tp_009", src: "/partners/galfar.png" },
-];
+];  
 
 const ourServices = [
   {
@@ -27,28 +27,28 @@ const ourServices = [
     src: "/services/services-1.png",
     label: "Bulk Hiring Solutions",
     href: "/services/bulk-hiring-solutions",
-    hoverText: "Trehan International excels in Bulk Hiring Solutions, streamlining the recruitment process to efficiently address your large-scale staffing needs."
+    hoverText: "Streamlining the recruitment process to efficiently address your large-scale staffing needs."
   },
   {
     id: "our_services_002",
     src: "/services/services-2.png",
     label: "Turnkey Staffing Solutions",
     href: "/services/project-and-turnkey-staffing-solutions",
-    hoverText: "Trehan International specializes in comprehensive staffing solutions for new verticals, expansions, and various projects.",
+    hoverText: "End-to-end Recruitment, assembling full teams under tight timelines.",
   },
   {
     id: "our_services_003",
     src: "/services/services-3.png",
     label: "Executive Search & Selection",
     href: "/services/executive-search-and-selection",
-    hoverText: "Leadership Tailored to Transform, In the realm of leadership, the right fit transcends qualifications—it's about vision, drive, and alignment with your organization's core values.",
+    hoverText: "Pinpoint the right leader for your unique trajectory.",
   },
   {
     id: "our_services_004",
     src: "/services/services-4.png",
     label: "HR Management System (HRMS)",
     href: "/services/hr-management-system",
-    hoverText: "Streamline Your Workforce Management, Trehan International's HR Management System (HRMS) empowers you with a centralized platform to manage your entire workforce, from hire-to-retirement.",
+    hoverText: "Centralized platform to manage your entire workforce, from hire-to-retirement.",
   },
 ];
 
@@ -457,8 +457,8 @@ export default function Home() {
                         priority
                       />
 
-                      <div className="hidden group-hover:block absolute top-0 left-0 w-full h-full bg-black bg-opacity-60 transition-all duration-500 p-5">
-                        <div className="w-full h-full text-white flex items-center justify-center text-xl font-medium">
+                      <div className="hidden group-hover:block absolute top-0 left-0 w-full h-full bg-black bg-opacity-60 transition-all duration-500 p-2">
+                        <div className="w-full h-full text-white flex items-end justify-center text-xl font-medium">
                           <p>{item.hoverText}</p>
                         </div>
                       </div>
