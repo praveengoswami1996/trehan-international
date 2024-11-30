@@ -29,33 +29,33 @@ const industriesWeServe = [
   },
   {
     id: "industry_003",
+    icon: RFBIcon,
+    label: "Retail, Food and Beverage",
+  },
+  {
+    id: "industry_004",
     icon: FMIcon,
     label: "Facility Management",
   },
   {
-    id: "industry_004",
-    icon: IMIcon,
-    label: "Industrial Manufacturing",
-  },
-  {
     id: "industry_005",
-    icon: HCIcon,
-    label: "Healthcare",
-  },
-  {
-    id: "industry_006",
-    icon: ANTIcon,
-    label: "Automotive and Transportation",
-  },
-  {
-    id: "industry_007",
     icon: LSCMIcon,
     label: "Logistic & Supply Chain Management",
   },
   {
+    id: "industry_006",
+    icon: IMIcon,
+    label: "Industrial Manufacturing",
+  },
+  {
+    id: "industry_007",
+    icon: ANTIcon,
+    label: "Automotive and Transportation",
+  },
+  {
     id: "industry_008",
-    icon: RFBIcon,
-    label: "Retail, Food and Beverage",
+    icon: HCIcon,
+    label: "Healthcare",
   },
 ];
 
