@@ -1,5 +1,6 @@
 import Image from "next/image";
 import React from "react";
+import WorldMap from "./SVGs/WorldMap";
 
 const locationsWeServe = [
   {
@@ -43,13 +44,17 @@ const LocationsWeServe = () => {
             Locations We Serve
           </h1>
 
-          <div className="mt-12 w-full max-w-[756px] h-[10rem] md:h-[436px] relative">
+          {/* <div className="mt-12 w-full max-w-[756px] h-[10rem] md:h-[436px] relative">
             <Image
               src={"/world-map.svg"}
               alt={"World Map"}
               fill
               className="object-contain"
             />
+          </div> */}
+
+          <div className="mt-12 w-full max-w-[756px] h-[10rem] md:h-[436px] relative">
+            <WorldMap className="w-full h-full"/>
           </div>
 
           <div className="mt-12 flex items-center justify-center flex-wrap gap-x-6 gap-y-3">

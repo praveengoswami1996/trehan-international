@@ -1,13 +1,15 @@
+'use client';
 import DataCountUp from "@/components/DataCountUp";
 import FeatureSection from "@/components/FeatureSection";
-import { QuotationIcon } from "@/components/icons";
 import IndustriesWeServe from "@/components/IndustriesWeServe";
 import LocationsWeServe from "@/components/LocationsWeServe";
+import IndustriesSVG from "@/components/SVGs/IndustriesSVG";
 import TestimonialCarousel from "@/components/TestimonialCarousel";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import Image from "next/image";
 import Link from "next/link";
+import  { motion } from "framer-motion";
 
 const trustedPartners = [
   { id: "tp_001", src: "/partners/rt.png" },
@@ -237,13 +239,28 @@ export default function Home() {
       {/* Hero Section */}
       <section className="website-container section-padding-x pb-10 xl:pb-20 relative overflow-hidden">
         <div>
-          <h2 className="font-sintony text-[1.5rem] lg:text-[2rem] leading-[2.2rem] lg:leading-[3rem] font-normal text-[#C6485D]">
+          <motion.h2 
+            className="font-sintony text-[1.5rem] lg:text-[2rem] leading-[2.2rem] lg:leading-[3rem] font-normal text-[#C6485D]"
+            initial={{ opacity: 0, x: 100 }}
+            animate={{ opacity: 1, x: 0 }}
+            transition={{ duration: 0.7 }}
+          >
             Precision Talent Acquisition
-          </h2>
-          <h1 className="hero-text mt-3 lg:mt-0">
+          </motion.h2>
+          <motion.h1 
+            className="hero-text mt-3 lg:mt-0"
+            initial={{ opacity: 0, x: 100 }}
+            animate={{ opacity: 1, x: 0 }}
+            transition={{ duration: 0.7, delay: 0.4 }}
+          >
             Where Expertise Meets Innovation
-          </h1>
-          <div className="mt-3 max-w-[39rem]">
+          </motion.h1>
+          <motion.div 
+            className="mt-3 max-w-[39rem]"
+            initial={{ opacity: 0, x: 100 }}
+            animate={{ opacity: 1, x: 0 }}
+            transition={{ duration: 0.7, delay: 0.8 }}
+          >
             <p className="paragraph">
               At Trehan International, we believe that the perfect hire is more
               than just a candidate; it&apos;s a strategic partner in your
@@ -253,9 +270,14 @@ export default function Home() {
               adaptable strategies, and unwavering commitment to compliance. Let
               us help you build a team that transforms your vision into reality.
             </p>
-          </div>
+          </motion.div>
 
-          <div className="mt-6 lg:mt-10 flex flex-col mobile-2xl:flex-row gap-3 w-full max-w-xl">
+          <motion.div 
+            className="mt-6 lg:mt-10 flex flex-col mobile-2xl:flex-row gap-3 w-full max-w-xl"
+            initial={{ opacity: 0, y: 100 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.7, delay: 1.2 }}
+          >
             <Input
               type="email"
               placeholder="Enter company email"
@@ -264,7 +286,7 @@ export default function Home() {
             <Link href="/contact-us">
               <Button type="submit">Hire Right Talent</Button>
             </Link>
-          </div>
+          </motion.div>
         </div>
 
         <div className="hidden xl:block absolute size-[33.25rem] right-8 top-32 overflow-hidden">
@@ -277,12 +299,13 @@ export default function Home() {
           />
           <div className="w-full h-full relative">
             <div className="absolute w-full h-full top-8">
-              <Image
+              {/* <Image
                 src={"/hero.svg"}
                 alt="Hero Image"
                 fill
                 className="object-contain object-top"
-              />
+              /> */}
+              <IndustriesSVG />
             </div>
           </div>
         </div>
