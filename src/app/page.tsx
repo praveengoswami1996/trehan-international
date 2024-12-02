@@ -160,6 +160,7 @@ interface AboutDataItemProps {
   data: number;
   desc: string;
   suffix: string;
+  index: number;
 }
 
 interface ApproachItem {
@@ -175,9 +176,14 @@ interface ApproachItemProps {
   data: ApproachItem;
 }
 
-const AboutDataItem: React.FC<AboutDataItemProps> = ({ data, suffix, desc }) => {
+const AboutDataItem: React.FC<AboutDataItemProps> = ({ data, suffix, desc, index }) => {
   return (
-    <div className="flex flex-col items-center xl:items-start">
+    <motion.div 
+      className="flex flex-col items-center xl:items-start"
+      initial={{ opacity: 0, y: 100 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      transition={{ duration: 0.5, delay: index * 0.2 }}
+    >
       <h2 className="font-sintony font-bold text-[2rem] leading-[2.61rem]">
         <DataCountUp 
           end={Number(data)}
@@ -187,7 +193,7 @@ const AboutDataItem: React.FC<AboutDataItemProps> = ({ data, suffix, desc }) => 
       <p className="w-full text-[1.125rem] leading-[1.69rem] font-regular text-[#535353] max-w-[16rem] text-center xl:text-start">
         {desc}
       </p>
-    </div>
+    </motion.div>
   );
 };
 
@@ -289,7 +295,12 @@ export default function Home() {
           </motion.div>
         </div>
 
-        <div className="hidden xl:block absolute size-[33.25rem] right-8 top-32 overflow-hidden">
+        <motion.div 
+          className="hidden xl:block absolute size-[33.25rem] right-8 top-32 overflow-hidden"
+          initial={{ opacity: 0, y: 100 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.7, delay: 1.6 }}
+        >
           <Image
             src={"/bg-pattern.svg"}
             alt={"Background Pattern"}
@@ -299,16 +310,10 @@ export default function Home() {
           />
           <div className="w-full h-full relative">
             <div className="absolute w-full h-full top-8">
-              {/* <Image
-                src={"/hero.svg"}
-                alt="Hero Image"
-                fill
-                className="object-contain object-top"
-              /> */}
               <IndustriesSVG />
             </div>
           </div>
-        </div>
+        </motion.div>
 
         <div className="xl:hidden overflow-hidden relative size-[15rem]  mobile-sm:size-[19rem] mobile-md:size-[22rem] mobile-lg:size-[24rem] sm:size-[30rem] mx-auto mt-10">
           <Image
@@ -384,8 +389,18 @@ export default function Home() {
         <div className="w-full h-full flex flex-col xl:flex-row">
           <div className="flex-1 flex flex-col gap-12 justify-between">
             <div className="flex flex-col gap-3">
-              <h1 className="section-title">About us</h1>
-              <div className="pl-4 py-0 relative before:absolute before:w-[5px] before:h-[95%] before:left-0 before:top-1/2 before:-translate-y-1/2 before:bg-amber-500">
+              <motion.h1 
+                className="section-title"
+                initial={{ opacity: 0, x: 100 }}
+                whileInView={{ opacity: 1, x: 0 }}
+                transition={{ duration: 0.8 }}
+              >About us</motion.h1>
+              <motion.div 
+                initial={{ opacity: 0, x: 100 }}
+                whileInView={{ opacity: 1, x: 0 }}
+                transition={{ duration: 0.8, delay: 0.5 }}
+                className="pl-4 py-0 relative before:absolute before:w-[5px] before:h-[95%] before:left-0 before:top-1/2 before:-translate-y-1/2 before:bg-amber-500"
+              >
                 <p className="paragraph">
                   Trehan International is a recruitment consultancy with a focus
                   on revolutionizing the field of recruitment. Over the past
@@ -393,7 +408,7 @@ export default function Home() {
                   prominent and highly respected recruitment consultancy in
                   India and Southeast Asia.
                 </p>
-              </div>
+              </motion.div>
             </div>
 
             <div className="xl:hidden overflow-hidden relative size-[15rem]  mobile-sm:size-[19rem] mobile-md:size-[22rem] mobile-lg:size-[24rem] sm:size-[30rem] mx-auto flex items-center justify-center">
@@ -415,9 +430,9 @@ export default function Home() {
             </div>
 
             <div className="grid grid-cols-1 mobile-2xl:grid-cols-2 lg:grid-cols-3 xl:grid-cols-2 gap-y-10">
-              {aboutSectionData.map((data) => {
+              {aboutSectionData.map((data, index) => {
                 return (
-                  <AboutDataItem key={data.id} data={data.count} suffix={data.suffix} desc={data.desc} />
+                  <AboutDataItem key={data.id} data={data.count} suffix={data.suffix} desc={data.desc} index={index + 1} />
                 )
               })}
             </div>
