@@ -90,7 +90,7 @@ const OpenOpenings = () => {
                         {item.jobDetails}
                       </p>
                     </div>
-                    <Link href={"#"}>
+                    <Link href={"/contact-us"}>
                       <Button type="button" variant={"outline"} className={"w-fit border-[#1A1A1A] bg-[#FAFAFA]"}>
                         Learn more & Apply
                       </Button>
