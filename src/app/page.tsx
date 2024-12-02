@@ -1,4 +1,4 @@
-'use client';
+"use client";
 import DataCountUp from "@/components/DataCountUp";
 import FeatureSection from "@/components/FeatureSection";
 import IndustriesWeServe from "@/components/IndustriesWeServe";
@@ -9,7 +9,7 @@ import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import Image from "next/image";
 import Link from "next/link";
-import  { motion } from "framer-motion";
+import { motion } from "framer-motion";
 
 const trustedPartners = [
   { id: "tp_001", src: "/partners/rt.png" },
@@ -21,7 +21,7 @@ const trustedPartners = [
   { id: "tp_007", src: "/partners/kptc.png" },
   { id: "tp_008", src: "/partners/heisco.png" },
   { id: "tp_009", src: "/partners/galfar.png" },
-];  
+];
 
 const ourServices = [
   {
@@ -29,14 +29,16 @@ const ourServices = [
     src: "/services/services-1.png",
     label: "Bulk Hiring Solutions",
     href: "/services/bulk-hiring-solutions",
-    hoverText: "Streamlining the recruitment process to efficiently address your large-scale staffing needs."
+    hoverText:
+      "Streamlining the recruitment process to efficiently address your large-scale staffing needs.",
   },
   {
     id: "our_services_002",
     src: "/services/services-2.png",
     label: "Turnkey Staffing Solutions",
     href: "/services/project-and-turnkey-staffing-solutions",
-    hoverText: "End-to-end Recruitment, assembling full teams under tight timelines.",
+    hoverText:
+      "End-to-end Recruitment, assembling full teams under tight timelines.",
   },
   {
     id: "our_services_003",
@@ -50,7 +52,8 @@ const ourServices = [
     src: "/services/services-4.png",
     label: "HR Management System (HRMS)",
     href: "/services/hr-management-system",
-    hoverText: "Centralized platform to manage your entire workforce, from hire-to-retirement.",
+    hoverText:
+      "Centralized platform to manage your entire workforce, from hire-to-retirement.",
   },
 ];
 
@@ -153,8 +156,8 @@ const aboutSectionData = [
     count: 100,
     suffix: "%",
     desc: "Compliances Government & other Regulatory Bodies",
-  }
-]
+  },
+];
 
 interface AboutDataItemProps {
   data: number;
@@ -176,19 +179,22 @@ interface ApproachItemProps {
   data: ApproachItem;
 }
 
-const AboutDataItem: React.FC<AboutDataItemProps> = ({ data, suffix, desc, index }) => {
+const AboutDataItem: React.FC<AboutDataItemProps> = ({
+  data,
+  suffix,
+  desc,
+  index,
+}) => {
   return (
-    <motion.div 
+    <motion.div
       className="flex flex-col items-center xl:items-start"
       initial={{ opacity: 0, y: 100 }}
       whileInView={{ opacity: 1, y: 0 }}
-      transition={{ duration: 0.5, delay: index * 0.2 }}
+      transition={{ type: "spring", damping: 10, duration: 0.5, delay: 0.2 }}
+      viewport={{ once: true, margin: "-100px" }}
     >
       <h2 className="font-sintony font-bold text-[2rem] leading-[2.61rem]">
-        <DataCountUp 
-          end={Number(data)}
-          suffix={suffix}
-        />
+        <DataCountUp end={Number(data)} suffix={suffix} />
       </h2>
       <p className="w-full text-[1.125rem] leading-[1.69rem] font-regular text-[#535353] max-w-[16rem] text-center xl:text-start">
         {desc}
@@ -245,27 +251,27 @@ export default function Home() {
       {/* Hero Section */}
       <section className="website-container section-padding-x pb-10 xl:pb-20 relative overflow-hidden">
         <div>
-          <motion.h2 
+          <motion.h2
             className="font-sintony text-[1.5rem] lg:text-[2rem] leading-[2.2rem] lg:leading-[3rem] font-normal text-[#C6485D]"
             initial={{ opacity: 0, x: 100 }}
             animate={{ opacity: 1, x: 0 }}
-            transition={{ duration: 0.7 }}
+            transition={{ type: "spring", duration: 0.8, damping: 10 }}
           >
             Precision Talent Acquisition
           </motion.h2>
-          <motion.h1 
+          <motion.h1
             className="hero-text mt-3 lg:mt-0"
             initial={{ opacity: 0, x: 100 }}
             animate={{ opacity: 1, x: 0 }}
-            transition={{ duration: 0.7, delay: 0.4 }}
+            transition={{ type: "spring", duration: 0.8, damping: 10, delay: 0.4 }}
           >
             Where Expertise Meets Innovation
           </motion.h1>
-          <motion.div 
+          <motion.div
             className="mt-3 max-w-[39rem]"
             initial={{ opacity: 0, x: 100 }}
             animate={{ opacity: 1, x: 0 }}
-            transition={{ duration: 0.7, delay: 0.8 }}
+            transition={{ type: "spring", duration: 0.8, damping: 10, delay: 0.8 }}
           >
             <p className="paragraph">
               At Trehan International, we believe that the perfect hire is more
@@ -278,11 +284,11 @@ export default function Home() {
             </p>
           </motion.div>
 
-          <motion.div 
+          <motion.div
             className="mt-6 lg:mt-10 flex flex-col mobile-2xl:flex-row gap-3 w-full max-w-xl"
             initial={{ opacity: 0, y: 100 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.7, delay: 1.2 }}
+            transition={{ type: "spring", duration: 0.8, damping: 10, delay: 1.2 }}
           >
             <Input
               type="email"
@@ -295,11 +301,11 @@ export default function Home() {
           </motion.div>
         </div>
 
-        <motion.div 
+        <motion.div
           className="hidden xl:block absolute size-[33.25rem] right-8 top-32 overflow-hidden"
           initial={{ opacity: 0, y: 100 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.7, delay: 1.6 }}
+          transition={{ duration: 0.8, delay: 1.2 }}
         >
           <Image
             src={"/bg-pattern.svg"}
@@ -337,7 +343,13 @@ export default function Home() {
       </section>
 
       {/* Trusted Partners Section */}
-      <div className="w-full bg-[#F1F1F1]">
+      <motion.div 
+        className="w-full bg-[#F1F1F1]"
+        initial={{ opacity: 0 }}
+        whileInView={{ opacity: 1 }}
+        transition={{ duration: 0.8 }}
+        viewport={{ once: true, margin: "-100px" }}
+      >
         <div className="website-container pt-10 pb-6">
           <h6 className="font-poppins font-medium italic text-base text-[#212121] text-center uppercase">
             Trusted by Renowned Partners:
@@ -382,23 +394,27 @@ export default function Home() {
             </div>
           </div>
         </div>
-      </div>
+      </motion.div>
 
       {/* About Us Section */}
       <section className="website-container section-padding-x min-h-screen pt-12 md:pt-16 xl:pt-24 relative">
         <div className="w-full h-full flex flex-col xl:flex-row">
           <div className="flex-1 flex flex-col gap-12 justify-between">
             <div className="flex flex-col gap-3">
-              <motion.h1 
+              <motion.h1
                 className="section-title"
                 initial={{ opacity: 0, x: 100 }}
                 whileInView={{ opacity: 1, x: 0 }}
                 transition={{ duration: 0.8 }}
-              >About us</motion.h1>
-              <motion.div 
+                viewport={{ once: true, margin: "-150px" }}
+              >
+                About us
+              </motion.h1>
+              <motion.div
                 initial={{ opacity: 0, x: 100 }}
                 whileInView={{ opacity: 1, x: 0 }}
                 transition={{ duration: 0.8, delay: 0.5 }}
+                viewport={{ once: true, margin: "-150px" }}
                 className="pl-4 py-0 relative before:absolute before:w-[5px] before:h-[95%] before:left-0 before:top-1/2 before:-translate-y-1/2 before:bg-amber-500"
               >
                 <p className="paragraph">
@@ -432,8 +448,14 @@ export default function Home() {
             <div className="grid grid-cols-1 mobile-2xl:grid-cols-2 lg:grid-cols-3 xl:grid-cols-2 gap-y-10">
               {aboutSectionData.map((data, index) => {
                 return (
-                  <AboutDataItem key={data.id} data={data.count} suffix={data.suffix} desc={data.desc} index={index + 1} />
-                )
+                  <AboutDataItem
+                    key={data.id}
+                    data={data.count}
+                    suffix={data.suffix}
+                    desc={data.desc}
+                    index={index + 1}
+                  />
+                );
               })}
             </div>
 
@@ -475,36 +497,64 @@ export default function Home() {
       <div className="w-full bg-[#000000]">
         <section className="website-container section-padding-x section-padding-y mt-12 md:mt-16 lg:mt-20 xl:mt-36 min-h-screen">
           <div className="flex flex-col items-center">
-            <h1 className="section-title text-white text-center">
+            <motion.h1
+              initial={{ opacity: 0, x: 100 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              transition={{ duration: 0.8 }}
+              className="section-title text-white text-center"
+            >
               Our Services
-            </h1>
-            <p className="mt-3 paragraph text-white text-center max-w-[22rem]">
+            </motion.h1>
+            <motion.p
+              initial={{ opacity: 0, x: -100 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              transition={{ duration: 0.8, delay: 0.5 }}
+              className="mt-3 paragraph text-white text-center max-w-[22rem]"
+            >
               Building Workforce Excellence: Tailored Recruitment Solutions
-            </p>
+            </motion.p>
             <div className="mt-10 w-full grid justify-items-center grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-              {ourServices.map((item) => {
+              {ourServices.map((item, index) => {
                 return (
-                  <Link key={item.id} href={item.href} className="block w-full max-w-[24rem] transform transition-transform duration-300 hover:scale-105">
-                    <div className="w-full h-[18.75rem] relative overflow-hidden group">
-                      <Image
-                        src={item.src}
-                        alt={"Our Services Presentation Image"}
-                        fill
-                        className="object-cover object-center"
-                        sizes=""
-                        priority
-                      />
+                  <motion.div
+                    key={item.id}
+                    className="w-full max-w-[24rem]"
+                    initial={{ opacity: 0, scale: 0.8 }}
+                    whileInView={{ opacity: 1, scale: 1 }}
+                    transition={{
+                      type: "spring",
+                      stiffness: 300,
+                      damping: 20,
+                      duration: 1,
+                      delay: index * 0.1,
+                    }}
+                    viewport={{ margin: "-250px" }}
+                  >
+                    <Link
+                      href={item.href}
+                      className="block w-full max-w-[24rem] transform transition-transform duration-300 hover:scale-105"
+                    >
+                      <div className="w-full h-[18.75rem] relative overflow-hidden group">
+                        <Image
+                          src={item.src}
+                          alt={"Our Services Presentation Image"}
+                          fill
+                          className="object-cover object-center"
+                          sizes=""
+                          priority
+                        />
 
-                      <div className="hidden group-hover:block absolute top-0 left-0 w-full h-full bg-black bg-opacity-60 transition-all duration-500 p-2">
-                        <div className="w-full h-full text-white flex items-end justify-center text-xl font-medium">
-                          <p>{item.hoverText}</p>
+                        <div className="hidden group-hover:block absolute top-0 left-0 w-full h-full bg-black bg-opacity-60 transition-all duration-500 p-2">
+                          <div className="w-full h-full text-white flex items-end justify-center text-xl font-medium">
+                            <p>{item.hoverText}</p>
+                          </div>
                         </div>
                       </div>
-                    </div>
-                    <h4 className="mt-5 font-sintony font-bold text-white text-xl md:text-2xl md:leading-[2.25rem]">
-                      {item.label}
-                    </h4>
-                  </Link>
+                      <h4 className="mt-5 font-sintony font-bold text-white text-xl md:text-2xl md:leading-[2.25rem]">
+                        {item.label}
+                      </h4>
+                    </Link>
+                  </motion.div>
                 );
               })}
               <div
@@ -576,19 +626,35 @@ export default function Home() {
       <div className="w-full bg-[#C6485D]">
         <section className="website-container section-padding-x section-padding-y">
           <div className="flex flex-col items-center">
-            <h1 className="section-title text-[#ffffff] text-center">
+            <motion.h1 
+              className="section-title text-[#ffffff] text-center"
+              initial={{ opacity: 0, x: 100 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              transition={{ duration: 0.8 }}
+              viewport={{ margin: "-150px" }}
+            >
               Case Studies
-            </h1>
-            <p className="mt-2.5 paragraph text-[#ffffff] text-center max-w-sm">
+            </motion.h1>
+            <motion.p 
+              className="mt-2.5 paragraph text-[#ffffff] text-center max-w-sm"
+              initial={{ opacity: 0, x: 100 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              transition={{ duration: 0.8, delay: 0.5 }}
+              viewport={{ margin: "-150px" }}
+            >
               Talent Acquisition in Action: Our Sourcing Success Stories
-            </p>
+            </motion.p>
 
             <div className="w-full mt-10 grid justify-items-center grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-              {caseStudies.map((item) => {
+              {caseStudies.map((item, index) => {
                 return (
-                  <div
+                  <motion.div
                     key={item.id}
                     className="w-full max-w-[24rem] h-[26.125rem] bg-white rounded-md overflow-hidden flex flex-col"
+                    initial={{ opacity: 0, x: 100 }}
+                    whileInView={{ opacity: 1, x: 0 }}
+                    transition={{ type: "spring", damping: 10, duration: 0.8, delay: index * 0.5 }}
+                    viewport={{ margin: "-150px" }}
                   >
                     <div className="flex-none w-full h-[15rem] relative overflow-hidden">
                       <Image
@@ -611,7 +677,7 @@ export default function Home() {
                         Download PDF Case Study
                       </button>
                     </div>
-                  </div>
+                  </motion.div>
                 );
               })}
             </div>
@@ -644,7 +710,8 @@ export default function Home() {
             </h1>
             <div className="flex flex-col md:flex-row items-start md:items-end justify-between gap-5">
               <p className="mt-2.5 text-base md:text-[1.125rem] md:leading-[1.69rem] font-regular text-[#535353] max-w-[35rem]">
-                Read the blog and article inside of consulting. We share tips and tricks to get more success
+                Read the blog and article inside of consulting. We share tips
+                and tricks to get more success
               </p>
               <div>
                 <Button
