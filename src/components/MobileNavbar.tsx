@@ -90,12 +90,6 @@ const navigationLinks = [
         label: "Project & Turnkey Staffing Solutions",
         icon: DesignIcon5,
       },
-      {
-        id: "service_link_005",
-        href: "/services/contract-staffing",
-        label: "Contract Staffing",
-        icon: DesignIcon3,
-      },
     ],
   },
   {

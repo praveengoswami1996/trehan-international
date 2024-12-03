@@ -21,7 +21,6 @@ const BreadcrumbLabels = {
     '/executive-search-and-selection': 'Executive Search & Selection',
     '/hr-management-system': 'HR Management System (HRMS)',
     '/project-and-turnkey-staffing-solutions': 'Project & Turnkey Staffing Solutions',
-    '/contract-staffing': 'Contract Staffing',
     '/approach': 'Approach',
     '/consultative-approach': 'Consultative Approach',
     '/customized-solutions': 'Customized Solutions',

@@ -20,19 +20,19 @@ const AccordionData = [
     id: "accordion_002",
     title: "Customized Recruitment Frameworks",
     content:
-      "Our deep industry knowledge across sectors enables us to understand and meet the nuanced demands of your projects.",
+      "Tailored strategies that align with your project's specific needs, ensuring optimal team composition.",
   },
   {
     id: "accordion_003",
     title: "Efficient Scalability",
     content:
-      "Our deep industry knowledge across sectors enables us to understand and meet the nuanced demands of your projects.",
+      "Capability to manage recruitment volumes, from a handful of specialists to entire teams, across locations.",
   },
   {
     id: "accordion_004",
     title: "Proven Success",
     content:
-      "Our deep industry knowledge across sectors enables us to understand and meet the nuanced demands of your projects.",
+      "A track record of successful team formations for projects in both metropolitan and remote locations.",
   },
 ];
 

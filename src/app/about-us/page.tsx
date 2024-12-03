@@ -105,14 +105,14 @@ const ourBrands = [
     id: "our_brands_001",
     brandName: "Frontline Express",
     brandDescription:
-      "Catering to Manpower Needs of one of the largest hypermarket chains in India Client: A...",
+      "FLEX is a dynamic brand that embodies a result-oriented approach to recruitment, managing our clients’ hiring needs from sourcing to onboarding. Whether it’s bulk hiring or niche talent acquisition, FLEX ensures timely delivery with unmatched quality, aligning perfectly with the unique needs of every industry.",
     brandImageURL: "/our-brands-1.png",
   },
   {
     id: "our_brands_002",
     brandName: "Attest My Doc",
     brandDescription:
-      "Catering to Manpower Needs of one of the largest hypermarket chains in India Client: A...",
+      "AMD is our dedicated business vertical that provides comprehensive attestation and documentation solutions, ensuring seamless processing of all your legal and administrative requirements. From degree attestation to visa stamping, we offer end-to-end services, ensuring accuracy, timeliness, and peace of mind for our clients.",
     brandImageURL: "/our-brands-2.png",
   },
 ];
@@ -556,7 +556,7 @@ const AboutUs = () => {
                 return (
                   <div
                     key={item.id}
-                    className="w-full max-w-[35.75rem] h-[26.875rem] bg-white flex flex-col"
+                    className="w-full max-w-[35.75rem] bg-white flex flex-col"
                   >
                     <div className="flex-none w-full h-[15rem] bg-[#000000] relative flex">
                       <Image
@@ -573,12 +573,6 @@ const AboutUs = () => {
                       <p className="font-normal text-base text-[#000000]">
                         {item.brandDescription}
                       </p>
-                      <button
-                        type="button"
-                        className="font-semibold text-base text-[#2157BF] underline"
-                      >
-                        Learn More
-                      </button>
                     </div>
                   </div>
                 );

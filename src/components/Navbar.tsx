@@ -62,11 +62,6 @@ const serviceLinks: DropdownLink[] = [
     title: "Project & Turnkey Staffing Solutions",
     icon: DesignIcon5,
   },
-  {
-    href: "/services/contract-staffing",
-    title: "Contract Staffing",
-    icon: DesignIcon3,
-  },
 ];
 
 const approachLinks: DropdownLink[] = [

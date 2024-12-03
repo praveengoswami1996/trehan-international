@@ -15,21 +15,16 @@ const servicesLinks = [
   },
   {
     id: "services_link_002",
-    label: "Contract Staffing",
-    href: "/services/contract-staffing",
-  },
-  {
-    id: "services_link_003",
     label: "Executive Search",
     href: "/services/executive-search-and-selection",
   },
   {
-    id: "services_link_004",
+    id: "services_link_003",
     label: "HR Management System",
     href: "/services/hr-management-system",
   },
   {
-    id: "services_link_005",
+    id: "services_link_004",
     label: "Staffing Solutions",
     href: "/services/project-and-turnkey-staffing-solutions",
   },
