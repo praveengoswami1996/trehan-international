@@ -100,11 +100,10 @@ const Compliance = () => {
                 return (
                   <div
                     key={item.id}
-                    className="flex flex-col mobile-xl:flex-row items-center gap-3 w-full max-w-[37rem] p-5 md:p-10 bg-[#FFFFFF1A]"
-                    style={{ boxShadow: "0px 0px 150px 0px #0000000D" }}
+                    className="flex flex-col mobile-xl:flex-row items-center gap-3 w-full max-w-[37rem] p-5 md:p-10 bg-[#FFFFFF1A] shadow-approach-tabs-card hover:bg-[#C6485D] hover:shadow-approach-tabs-card-hover group transition-all duration-300 hover:scale-[1.02]"
                   >
-                    <div className="flex-none bg-[#FDF7ED] rounded-full w-fit h-fit p-4">
-                      <Icon className="size-[2.625rem]" />
+                    <div className="flex-none bg-[#FDF7ED] rounded-full w-fit h-fit p-4 group-hover:bg-[#E2AF45]">
+                      <Icon className="size-[2.625rem] group-hover:text-white" />
                     </div>
                     <div className="flex flex-col gap-1">
                       <p className="max-mobile-xl:text-center font-sintony font-bold text-lg md:text-xl text-white">{item.title}</p>

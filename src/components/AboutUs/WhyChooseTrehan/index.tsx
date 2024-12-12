@@ -78,8 +78,7 @@ const WhyChooseTrehan: React.FC<WhyChooseTrehanProps> = ({
                         <AccordionTrigger className="font-sintony font-bold text-base lg:text-2xl lg:leading-[2.25rem] text-[#1A1A1A] hover:no-underline text-left hover:text-[#C6485D] data-[state=open]:text-[#C6485D]">
                           {item.title}
                         </AccordionTrigger>
-                        <AccordionContent className="text-sm lg:text-[1.125rem] lg:leading-[1.69rem] text-[#C6485D]
-                        ">
+                        <AccordionContent className="text-sm lg:text-[1.125rem] lg:leading-[1.69rem]">
                           {item.content}
                         </AccordionContent>
                       </AccordionItem>
