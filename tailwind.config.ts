@@ -30,7 +30,9 @@ const config = {
           		0 8px 20px rgba(226, 175, 69, 0.5), 
           		0 0 30px rgba(226, 175, 69, 0.6), 
           		0 0 60px rgba(226, 175, 69, 0.4)`,
-			'industry': '0px 0px 60px 0px #00000026'
+			'industry': '0px 0px 60px 0px #00000026',
+			'approach-tabs-card': '0px 0px 150px 0px #0000000D',
+			'approach-tabs-card-hover': '4px 4px 55px 0px #0000002B',
   		},
   		colors: {
   			border: 'hsl(var(--border))',

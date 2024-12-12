@@ -118,12 +118,13 @@ const Career = () => {
             <h1 className="section-title text-center">Benefits</h1>
          
             <div className="w-full mt-6 flex justify-center flex-wrap gap-6">
-              {benefits.map((item) => {
+              {benefits.map((item, index) => {
                 return (
                   <BenefitCard
                     key={item.id}
                     title={item.title}
                     icon={item.icon}
+                    index={index}
                   />
                 );
               })}

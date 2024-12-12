@@ -1,20 +1,28 @@
+import { cn } from "@/lib/utils";
 import React, { ComponentType } from "react";
 
 interface BenefitCardProps {
     icon: ComponentType<{ className?: string }>
     title: string;
     description?: string;
+    index?: number;
 }
 
-const BenefitCard: React.FC<BenefitCardProps> = ({ icon, title, description }) => {
+const cardColors = [
+  { bgColor: "bg-[#E2AF45]",  cardHoverColor:"hover:bg-[#FAEDD7]", iconBg: "group-hover:bg-[#E2AF45]" },
+  { bgColor: "bg-[#C6485D]",  cardHoverColor:"hover:bg-[#F9DADC]", iconBg: "group-hover:bg-[#C6485D]" },
+  { bgColor: "bg-[#599F99]",  cardHoverColor:"hover:bg-[#E9F7F6]", iconBg: "group-hover:bg-[#599F99]" },   
+];
+
+const BenefitCard: React.FC<BenefitCardProps> = ({ icon, title, description, index = 0 }) => {
   const Icon = icon;
   return (
     <div
       style={{ boxShadow: "0px 0px 100px 0px #0000000D" }}
-      className="bg-white w-full max-w-[23rem] flex flex-col items-center p-4 md:py-10 md:px-8 gap-6 transform transition-transform duration-300 hover:scale-105"
+      className={cn("bg-white w-full max-w-[23rem] flex flex-col items-center p-4 md:py-10 md:px-8 gap-6 transform transition-transform duration-300 hover:scale-105 group", cardColors[index % cardColors.length].cardHoverColor)}
     >
-      <div className="bg-[#FDF7ED] flex-none size-20 flex items-center justify-center rounded-full">
-        <Icon className="text-[#E2AF45] size-12" />
+      <div className={cn("bg-[#FDF7ED] flex-none size-20 flex items-center justify-center rounded-full", cardColors[index % cardColors.length].iconBg)}>
+        <Icon className="text-[#E2AF45] size-12 group-hover:text-white" />
       </div>
       <div className="w-full">
         <h4 className="font-sintony font-bold text-2xl leading-[2.25rem] text-center text-[#1A1A1A]">

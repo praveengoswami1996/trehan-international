@@ -22,13 +22,14 @@ const BenefitsSectionWrapper: React.FC<BenefitsSectionWrapperProps> = ({ benefit
     <div className="w-full bg-[#F9F9F9]">
       <section className="website-container section-padding-x section-padding-y">
         <div className={cn("w-full flex justify-center flex-wrap gap-6", cardContainerClasses)}>
-          {benefits.map((item) => {
+          {benefits.map((item, index) => {
             return (
               <BenefitCard
                 key={item.id}
                 title={item.title}
                 description={item.description}
                 icon={item.icon}
+                index={index}
               />
             );
           })}

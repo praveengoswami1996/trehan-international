@@ -14,16 +14,14 @@ import { cn } from "@/lib/utils";
 import {
   DesignIcon1,
   DesignIcon2,
-  DesignIcon3,
   DesignIcon4,
   DesignIcon5,
   DesignIcon6,
-  DesignIcon7,
-  DesignIcon8,
   DesignIcon9,
   DesignIcon10,
   DesignIcon11,
 } from "./icons";
+import { usePathname } from "next/navigation";
 
 interface DropdownLink {
   title: string;
@@ -92,19 +90,25 @@ const approachLinks: DropdownLink[] = [
 // ];
 
 const Navbar = () => {
+  const pathname = usePathname();
+
   return (
     <NavigationMenu>
       <NavigationMenuList>
         <NavigationMenuItem>
           <Link href="/" legacyBehavior passHref>
-            <NavigationMenuLink className={navigationMenuTriggerStyle()}>
+            <NavigationMenuLink 
+              className={navigationMenuTriggerStyle()} 
+              active={pathname === "/"}
+            >
               Home
             </NavigationMenuLink>
           </Link>
         </NavigationMenuItem>
 
         <NavigationMenuItem>
-          <NavigationMenuTrigger>About Us</NavigationMenuTrigger>
+          <NavigationMenuTrigger 
+            className={cn(pathname.includes("/about-us") && "bg-[#599F99] text-white")}>About Us</NavigationMenuTrigger>
           <NavigationMenuContent>
             <div className="p-5">
               <h6 className="font-normal text-[1.125rem] leading-[1.688rem] text-[#535353]">
@@ -118,6 +122,7 @@ const Navbar = () => {
                       href={item.href}
                       title={item.title}
                       icon={item.icon}
+                      active={pathname === item.href}
                     />
                   );
                 })}
@@ -127,7 +132,7 @@ const Navbar = () => {
         </NavigationMenuItem>
 
         <NavigationMenuItem>
-          <NavigationMenuTrigger>Services</NavigationMenuTrigger>
+          <NavigationMenuTrigger className={cn(pathname.includes("/services") && "bg-[#599F99] text-white")}>Services</NavigationMenuTrigger>
           <NavigationMenuContent>
             <div className="p-5">
               <h6 className="font-normal text-[1.125rem] leading-[1.688rem] text-[#535353]">
@@ -141,6 +146,7 @@ const Navbar = () => {
                       href={item.href}
                       title={item.title}
                       icon={item.icon}
+                      active={pathname === item.href}
                     />
                   );
                 })}
@@ -150,7 +156,7 @@ const Navbar = () => {
         </NavigationMenuItem>
 
         <NavigationMenuItem>
-          <NavigationMenuTrigger>Approach</NavigationMenuTrigger>
+          <NavigationMenuTrigger className={cn(pathname.includes("/approach") && "bg-[#599F99] text-white")}>Approach</NavigationMenuTrigger>
           <NavigationMenuContent>
             <div className="p-5">
               <h6 className="font-normal text-[1.125rem] leading-[1.688rem] text-[#535353]">
@@ -164,6 +170,7 @@ const Navbar = () => {
                       href={item.href}
                       title={item.title}
                       icon={item.icon}
+                      active={pathname === item.href}
                     />
                   );
                 })}
@@ -174,7 +181,10 @@ const Navbar = () => {
 
         <NavigationMenuItem>
           <Link href="/industries" legacyBehavior passHref>
-            <NavigationMenuLink className={navigationMenuTriggerStyle()}>
+            <NavigationMenuLink 
+              className={navigationMenuTriggerStyle()}
+              active={pathname === "/industries"}
+            >
               Industries
             </NavigationMenuLink>
           </Link>
@@ -182,7 +192,10 @@ const Navbar = () => {
 
         <NavigationMenuItem>
           <Link href="/job-search" legacyBehavior passHref>
-            <NavigationMenuLink className={navigationMenuTriggerStyle()}>
+            <NavigationMenuLink 
+              className={navigationMenuTriggerStyle()}
+              active={pathname === "/job-search"}
+            >
               Job Search
             </NavigationMenuLink>
           </Link>
@@ -206,7 +219,10 @@ const Navbar = () => {
 
         <NavigationMenuItem>
           <Link href="/resources/blogs-and-media" legacyBehavior passHref>
-            <NavigationMenuLink className={navigationMenuTriggerStyle()}>
+            <NavigationMenuLink 
+              className={navigationMenuTriggerStyle()}
+              active={pathname === "/resources/blogs-and-media"}
+            >
               Blogs & Media
             </NavigationMenuLink>
           </Link>
@@ -224,24 +240,29 @@ interface ListItemProps {
   href: string;
   title: string;
   icon: ComponentType<{ className?: string }>;
+  active: boolean
 }
 
-const ListItem: React.FC<ListItemProps> = ({ href, title, icon }) => {
+const ListItem: React.FC<ListItemProps> = ({ href, title, icon, active }) => {
   const Icon = icon;
   return (
     <li>
-      <Link href={href} legacyBehavior passHref>
+      <Link 
+        href={href} 
+        legacyBehavior 
+        passHref
+      >
         <NavigationMenuLink
           className={cn(
             navigationMenuTriggerStyle(),
             "w-full rounded-none justify-between h-full hover:bg-[#E2AF45] px-1 group"
           )}
-          
+          active={active}
         >
           <div className="flex items-center justify-start gap-3">
-            <div className="flex-none size-12 flex items-center justify-center rounded-full bg-[#FDF7ED] group-hover:bg-transparent shadow-[0px 0px 12px 0px #0000001] transition-all duration-300">
+            <div className={cn("flex-none size-12 flex items-center justify-center rounded-full bg-[#FDF7ED] group-hover:bg-transparent shadow-[0px 0px 12px 0px #0000001] transition-all duration-300", active && "bg-[#e5f6f6]")}>
               <Icon
-                className={"size-7 text-[#E2AF45] group-hover:text-[#1A1A1A]"}
+                className={cn("size-7 text-[#E2AF45] group-hover:text-[#1A1A1A]", active && "text-[#599F99]")}
               />
             </div>
             <div className="text-[1.125rem] leading-[1.688rem] font-medium">

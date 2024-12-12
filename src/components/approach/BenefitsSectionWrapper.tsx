@@ -47,13 +47,14 @@ const BenefitsSectionWrapper: React.FC<BenefitsSectionWrapperProps> = ({
             cardContainerClasses
           )}
         >
-          {benefits.map((item) => {
+          {benefits.map((item, index) => {
             return (
               <BenefitCard
                 key={item.id}
                 title={item.title}
                 description={item.description}
                 icon={item.icon}
+                index={index}
               />
             );
           })}

@@ -75,10 +75,11 @@ const WhyChooseTrehan: React.FC<WhyChooseTrehanProps> = ({
                         key={item.id}
                         value={`item-${index + 1}`}
                       >
-                        <AccordionTrigger className="font-sintony font-bold text-base lg:text-2xl lg:leading-[2.25rem] text-[#1A1A1A] hover:no-underline text-left">
+                        <AccordionTrigger className="font-sintony font-bold text-base lg:text-2xl lg:leading-[2.25rem] text-[#1A1A1A] hover:no-underline text-left hover:text-[#C6485D] data-[state=open]:text-[#C6485D]">
                           {item.title}
                         </AccordionTrigger>
-                        <AccordionContent className="text-sm lg:text-[1.125rem] lg:leading-[1.69rem] text-[#535353]">
+                        <AccordionContent className="text-sm lg:text-[1.125rem] lg:leading-[1.69rem] text-[#C6485D]
+                        ">
                           {item.content}
                         </AccordionContent>
                       </AccordionItem>
