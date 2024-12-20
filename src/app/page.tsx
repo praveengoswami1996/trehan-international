@@ -10,6 +10,7 @@ import { Input } from "@/components/ui/input";
 import Image from "next/image";
 import Link from "next/link";
 import { motion } from "framer-motion";
+import useMediaQuery from "@/hooks/useMediaQuery";
 
 const trustedPartners = [
   { id: "tp_001", src: "/partners/rt.png" },
@@ -246,6 +247,8 @@ const ApproachItem: React.FC<ApproachItemProps> = ({ data }) => {
 };
 
 export default function Home() {
+  const width = useMediaQuery();
+
   return (
     <div className="min-h-screen pt-28 md:pt-32 lg:pt-36 xl:pt-44 bg-white">
       {/* Hero Section */}
@@ -274,12 +277,7 @@ export default function Home() {
             transition={{ type: "spring", duration: 0.8, damping: 10, delay: 0.8 }}
           >
             <p className="paragraph">
-              At Trehan International, we believe that the perfect hire is more
-              than just a candidate; it&apos;s a strategic partner in your
-              success. With our decades of industry expertise and a bespoke
-              consultative approach, we connect you with exceptional talent that
-              drives innovation and growth. Trust in our refined processes,
-              adaptable strategies, and unwavering commitment to compliance. Let
+              At Trehan International, we believe that the perfect hire is more than just a candidate; it&apos;s a strategic partner in your success. With our decades of industry expertise and a bespoke consultative approach, we connect you with exceptional talent that drives innovation and growth. Trust in our refined processes, adaptable strategies, and unwavering commitment to compliance. Let
               us help you build a team that transforms your vision into reality.
             </p>
           </motion.div>
@@ -343,13 +341,7 @@ export default function Home() {
       </section>
 
       {/* Trusted Partners Section */}
-      <motion.div 
-        className="w-full bg-[#F1F1F1]"
-        initial={{ opacity: 0 }}
-        whileInView={{ opacity: 1 }}
-        transition={{ duration: 0.8 }}
-        viewport={{ once: true, margin: "-100px" }}
-      >
+      <div className="w-full bg-[#F1F1F1]">
         <div className="website-container pt-10 pb-6">
           <h6 className="font-poppins font-medium italic text-base text-[#212121] text-center uppercase">
             Trusted by Renowned Partners:
@@ -394,7 +386,7 @@ export default function Home() {
             </div>
           </div>
         </div>
-      </motion.div>
+      </div>
 
       {/* About Us Section */}
       <section className="website-container section-padding-x min-h-screen pt-12 md:pt-16 xl:pt-24 relative">
