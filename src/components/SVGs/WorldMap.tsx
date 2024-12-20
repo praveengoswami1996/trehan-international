@@ -1,3 +1,4 @@
+"use client";
 import { IconProps } from "@radix-ui/react-icons/dist/types";
 import React, { useState } from "react";
 
