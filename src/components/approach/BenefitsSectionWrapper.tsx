@@ -7,7 +7,7 @@ interface BenefitItem {
   id: string;
   title: string;
   description: string;
-  icon: ComponentType<{ className?: string }>;
+  icon: string;
 }
 
 interface BenefitsSectionWrapperProps {

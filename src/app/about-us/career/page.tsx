@@ -8,7 +8,6 @@ import {
   DesignIcon15,
   DesignIcon6,
 } from "@/components/icons";
-import ImageContentPanel from "@/components/ImageContentPanel";
 import { Button } from "@/components/ui/button";
 import Image from "next/image";
 import Link from "next/link";
@@ -18,27 +17,27 @@ const benefits = [
   {
     id: "benefits_001",
     title: "Friendly Environment",
-    icon: DesignIcon12,
+    icon: "DesignIcon12",
   },
   {
     id: "benefits_002",
     title: "Interest-based work",
-    icon: DesignIcon13,
+    icon: "DesignIcon13",
   },
   {
     id: "benefits_003",
     title: "Work ownerships",
-    icon: DesignIcon14,
+    icon: "DesignIcon14",
   },
   {
     id: "benefits_004",
     title: "Idea Tanks",
-    icon: DesignIcon6,
+    icon: "DesignIcon6",
   },
   {
     id: "benefits_005",
     title: "Exciting and varied domains",
-    icon: DesignIcon15,
+    icon: "DesignIcon15",
   },
 ];
 

@@ -1,6 +1,4 @@
 import WhyChooseTrehan from "@/components/AboutUs/WhyChooseTrehan";
-import DesignIcon20 from "@/components/icons/DesignIcon20";
-import DesignIcon21 from "@/components/icons/DesignIcon21";
 import BannerImageWrapper from "@/components/services/BannerImageWrapper";
 import BenefitsSectionWrapper from "@/components/services/BenefitsSectionWrapper";
 import HeroSectionWrapper from "@/components/services/HeroSectionWrapper";
@@ -12,14 +10,14 @@ const benefits = [
     title: "End-to-End Process Management",
     description:
       "Automate and streamline your hiring process, from candidate sourcing and onboarding to performance management and 	offboarding.",
-    icon: DesignIcon20,
+    icon: "DesignIcon20",
   },
   {
     id: "benefits_002",
     title: "Streamlined Attendance & Leave Management",
     description:
       "Track employee attendance, leave requests, and approvals effortlessly, promoting transparency and efficiency.",
-    icon: DesignIcon21,
+    icon: "DesignIcon21",
   }
 ];
 

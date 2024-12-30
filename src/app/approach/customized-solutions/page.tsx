@@ -2,13 +2,10 @@ import BannerImageWrapper from "@/components/approach/BannerImageWrapper";
 import BenefitsSectionWrapper from "@/components/approach/BenefitsSectionWrapper";
 import HeroSectionWrapper from "@/components/approach/HeroSectionWrapper";
 import {
-  DesignIcon13,
   DesignIcon14,
-  DesignIcon17,
   DesignIcon46,
   DesignIcon47,
   DesignIcon48,
-  DesignIcon49,
 } from "@/components/icons";
 import Image from "next/image";
 
@@ -18,21 +15,21 @@ const collaboration = [
     title: "Identify your specific needs",
     description:
       "We delve into your current talent landscape, future talent requirements, and desired outcomes.",
-    icon: DesignIcon49,
+    icon: "DesignIcon49",
   },
   {
     id: "commitment_002",
     title: "Develop tailored strategies",
     description:
       "We create customized recruitment plans based on your budget, timeline, and target audience.",
-    icon: DesignIcon17,
+    icon: "DesignIcon17",
   },
   {
     id: "commitment_003",
     title: "Leverage our expertise",
     description:
       "We utilize our extensive knowledge and industry-specific insights to recommend the most effective solutions.",
-    icon: DesignIcon13,
+    icon: "DesignIcon13",
   },
 ];
 

@@ -1,8 +1,4 @@
 import WhyChooseTrehan from "@/components/AboutUs/WhyChooseTrehan";
-import { DesignIcon13 } from "@/components/icons";
-import DesignIcon18 from "@/components/icons/DesignIcon18";
-import DesignIcon19 from "@/components/icons/DesignIcon19";
-import DesignIcon20 from "@/components/icons/DesignIcon20";
 import BannerImageWrapper from "@/components/services/BannerImageWrapper";
 import BenefitsSectionWrapper from "@/components/services/BenefitsSectionWrapper";
 import HeroSectionWrapper from "@/components/services/HeroSectionWrapper";
@@ -14,28 +10,28 @@ const benefits = [
     title: "Customized Hiring",
     description:
       "Crafting and implementing tailored recruitment strategies.",
-    icon: DesignIcon18,
+    icon: "DesignIcon18",
   },
   {
     id: "benefits_002",
     title: "Nationwide Reach",
     description:
       "Conducting recruitment drives across cities, even in remote locations.",
-    icon: DesignIcon19,
+    icon: "DesignIcon19",
   },
   {
     id: "benefits_003",
     title: "Complete Process Management",
     description:
       "From organizational structuring, JD creation, to streamlined onboarding.",
-    icon: DesignIcon20,
+    icon: "DesignIcon20",
   },
   {
     id: "benefits_004",
     title: "Expert Teams",
     description:
       "Designing recruitment processes and panels for precise skill assessment.",
-    icon: DesignIcon13,
+    icon: "DesignIcon13",
   }
 ];
 

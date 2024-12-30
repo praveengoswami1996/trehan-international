@@ -1,12 +1,23 @@
 "use client";
 import { cn } from "@/lib/utils";
-import React, { ComponentType } from "react";
+import React from "react";
 import { motion } from "framer-motion";
 import {
   DesignIcon12,
   DesignIcon13,
   DesignIcon14,
   DesignIcon15,
+  DesignIcon16,
+  DesignIcon17,
+  DesignIcon18,
+  DesignIcon19,
+  DesignIcon20,
+  DesignIcon21,
+  DesignIcon22,
+  DesignIcon23,
+  DesignIcon40,
+  DesignIcon41,
+  DesignIcon49,
   DesignIcon6,
 } from "@/components/icons";
 
@@ -18,11 +29,22 @@ interface BenefitCardProps {
 }
 
 const iconsMap = {
+  DesignIcon6,
   DesignIcon12,
   DesignIcon13,
   DesignIcon14,
   DesignIcon15,
-  DesignIcon6,
+  DesignIcon16,
+  DesignIcon17,
+  DesignIcon18,
+  DesignIcon19,
+  DesignIcon20,
+  DesignIcon21,
+  DesignIcon22,
+  DesignIcon23,
+  DesignIcon40,
+  DesignIcon41,
+  DesignIcon49,
 };
 
 const cardColors = [

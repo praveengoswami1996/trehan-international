@@ -2,9 +2,6 @@ import BannerImageWrapper from "@/components/approach/BannerImageWrapper";
 import BenefitsSectionWrapper from "@/components/approach/BenefitsSectionWrapper";
 import HeroSectionWrapper from "@/components/approach/HeroSectionWrapper";
 import {
-  DesignIcon23,
-  DesignIcon40,
-  DesignIcon41,
   DesignIcon42,
   DesignIcon43,
   DesignIcon44,
@@ -17,21 +14,21 @@ const benefits = [
     title: "Decades of Insight",
     description:
       "We are committed to conducting business ethically and with integrity throughout the recruitment process.",
-    icon: DesignIcon23,
+    icon: "DesignIcon23",
   },
   {
     id: "benefits_002",
     title: "Ensuring Legal Compliance",
     description:
       "We stay updated on the latest employment laws and regulations to ensure all our practices comply with applicable legal frameworks.",
-    icon: DesignIcon40,
+    icon: "DesignIcon40",
   },
   {
     id: "benefits_003",
     title: "Protecting Candidate Rights",
     description:
       "We ensure fair and non-discriminatory treatment of all candidates throughout the recruitment process.",
-    icon: DesignIcon41,
+    icon: "DesignIcon41",
   },
 ];
 
