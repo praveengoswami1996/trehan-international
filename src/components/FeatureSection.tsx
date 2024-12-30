@@ -1,5 +1,7 @@
+"use client";
 import React from "react";
 import { AttestationIcon, InterHiringIcon, LocalHiringIcon } from "./icons";
+import { delay, motion } from "framer-motion";
 
 const features = [
   {
@@ -23,18 +25,80 @@ const features = [
 ];
 
 const FeatureSection = () => {
+  const text = "A single destination to manage all things frontline";
+  const words = text.split(" "); // Split the text into words
+
+  // Variants for animation
+  const containerVariantsHeroText = {
+    hidden: { opacity: 1 },
+    visible: {
+      opacity: 1,
+      transition: {
+        staggerChildren: 0.2, // Delay between each word
+      },
+    },
+  };
+
+  const wordVariants = {
+    hidden: { opacity: 0, y: 20 }, // Start hidden and slightly below
+    visible: {
+      opacity: 1,
+      y: 0,
+      transition: { duration: 0.4 }, // Animate into view
+    },
+  };
+
+  const containerVariantsMainContent = {
+    hidden: { opacity: 1 },
+    visible: {
+      opacity: 1,
+      transition: {
+        staggerChildren: 0.3, // Delay between each word
+      },
+    },
+  };
+
+  const childrenVariantsMainContent = {
+    hidden: { opacity: 0, x: 20 }, // Start hidden and slightly below
+    visible: {
+      opacity: 1,
+      x: 0,
+      transition: { duration: 0.4 }, // Animate into view
+    },
+  };
+
   return (
     <div className="w-full bg-[#1A1A1A]">
       <section className="website-container section-padding-x section-padding-y pb-14">
-        <h1 className="section-title leading-[3rem] text-[#FFFFFF]">
-          A single destination to manage all things frontline
-        </h1>
-
-        <div className="mt-10 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-12">
+        <motion.h1
+          className="section-title leading-[3rem] text-[#FFFFFF] flex flex-wrap"
+          variants={containerVariantsHeroText}
+          initial="hidden"
+          whileInView="visible" // Trigger animation on scroll
+          viewport={{ once: true, amount: 1 }} // Trigger when 50% of the container is in view
+        >
+          {words.map((word, index) => (
+            <motion.span key={index} variants={wordVariants} className="mr-2">
+              {word}
+            </motion.span>
+          ))}
+        </motion.h1>
+  
+        <motion.div 
+          className="mt-10 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-12"
+          variants={containerVariantsMainContent}
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true, amount: 1 }}
+        >
           {features.map((item) => {
             const Icon = item.icon;
             return (
-              <div key={item.id} className="flex items-start gap-5">
+              <motion.div 
+                key={item.id} 
+                className="flex items-start gap-5"
+                variants={childrenVariantsMainContent}
+              >
                 <div>
                   <Icon className="text-[#FFFFFF] size-10 md:size-12" />
                 </div>
@@ -46,10 +110,10 @@ const FeatureSection = () => {
                     {item.desc}
                   </p>
                 </div>
-              </div>
+              </motion.div>
             );
           })}
-        </div>
+        </motion.div>
       </section>
     </div>
   );

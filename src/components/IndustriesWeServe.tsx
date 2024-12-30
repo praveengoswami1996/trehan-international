@@ -15,6 +15,7 @@ import {
 import Image from "next/image";
 import Link from "next/link";
 import { useRouter } from "next/navigation";
+import { motion } from "framer-motion";
 
 const industriesWeServe = [
   {
@@ -102,12 +103,24 @@ const IndustriesWeServe = () => {
     <div className="w-full bg-[#F2F3F4]">
       <section className="website-container section-padding-x section-padding-y min-h-screen">
         <div className="flex flex-col items-center">
-          <h1 className="section-title text-center">
+          <motion.h1 
+            initial={{ opacity: 0, x: 50 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            transition={{ duration: 0.5 }}
+            viewport={{ once: true, amount: 0.5 }}
+            className="section-title text-center"
+          >
             Industries We Serve
-          </h1>
-          <p className="mt-3 paragraph text-center max-w-[60rem]">
+          </motion.h1>
+          <motion.p 
+            initial={{ opacity: 0, x: -50 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            transition={{ duration: 0.5, delay: 0.3 }}
+            viewport={{ once: true, amount: 0.5 }}
+            className="mt-3 paragraph text-center max-w-[60rem]"
+          >
             Trehan International is a recruitment consultancy with a focus on revolutionizing the field of recruitment. Over the past four decades, Trehan International has transformed into a prominent and highly respected recruitment consultancy in India and Southeast Asia.
-          </p>
+          </motion.p>
 
           {/* Image - for smaller screens */}
           <div className="lg:hidden overflow-hidden relative size-[15rem]  mobile-sm:size-[19rem] mobile-md:size-[22rem] mobile-lg:size-[24rem] sm:size-[30rem] mx-auto flex items-center justify-center mt-10">

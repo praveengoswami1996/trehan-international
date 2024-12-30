@@ -1,12 +1,4 @@
 import WhyChooseTrehan from "@/components/AboutUs/WhyChooseTrehan";
-import BenefitCard from "@/components/BenefitCard";
-import {
-  DesignIcon12,
-  DesignIcon13,
-  DesignIcon14,
-  DesignIcon15,
-  DesignIcon6,
-} from "@/components/icons";
 import BannerImageWrapper from "@/components/services/BannerImageWrapper";
 import BenefitsSectionWrapper from "@/components/services/BenefitsSectionWrapper";
 import HeroSectionWrapper from "@/components/services/HeroSectionWrapper";
@@ -18,35 +10,35 @@ const benefits = [
     title: "High-Speed Screening",
     description:
       "Utilizing cutting-edge technology and a robust IT infrastructure for efficient candidate processing",
-    icon: DesignIcon12,
+    icon: "DesignIcon12",
   },
   {
     id: "benefits_002",
     title: "Targeted Talent Acquisition",
     description:
       "Leveraging our vast networks and digital presence to attract and identify the ideal candidates for long-term and seasonal projects.",
-    icon: DesignIcon13,
+    icon: "DesignIcon13",
   },
   {
     id: "benefits_003",
     title: "Unique Referral Program",
     description:
       "Accessing over 40,000 annual interactions to pool relevant candidates quickly through our innovative referral system.",
-    icon: DesignIcon14,
+    icon: "DesignIcon14",
   },
   {
     id: "benefits_004",
     title: "Flexible Staffing",
     description:
       "Offering scalable solutions, we provide qualified personnel on a contractual or freelance basis, adapting to your project's evolving demands.",
-    icon: DesignIcon6,
+    icon: "DesignIcon6",
   },
   {
     id: "benefits_005",
     title: "Adaptable Talent Pool",
     description:
       "Our agile talent pool is ready to meet both short-term and long-term project requirements, ensuring seamless workforce scaling.",
-    icon: DesignIcon15,
+    icon: "DesignIcon15",
   },
 ];
 

@@ -10,7 +10,7 @@ import { Input } from "@/components/ui/input";
 import Image from "next/image";
 import Link from "next/link";
 import { motion } from "framer-motion";
-import useMediaQuery from "@/hooks/useMediaQuery";
+import { useMediaQuery } from "react-responsive";
 
 const trustedPartners = [
   { id: "tp_001", src: "/partners/rt.png" },
@@ -247,7 +247,29 @@ const ApproachItem: React.FC<ApproachItemProps> = ({ data }) => {
 };
 
 export default function Home() {
-  const width = useMediaQuery();
+  const isTabletOrMobile = useMediaQuery({ query: "(max-width: 768px)" });
+
+  const variants = isTabletOrMobile
+    ? {
+        initial: {
+          opacity: 0,
+          y: 50,
+        },
+        animate: {
+          opacity: 1,
+          y: 0,
+        },
+      }
+    : {
+        initial: {
+          opacity: 0,
+          x: 50,
+        },
+        animate: {
+          opacity: 1,
+          x: 0,
+        },
+      };
 
   return (
     <div className="min-h-screen pt-28 md:pt-32 lg:pt-36 xl:pt-44 bg-white">
@@ -256,37 +278,60 @@ export default function Home() {
         <div>
           <motion.h2
             className="font-sintony text-[1.5rem] lg:text-[2rem] leading-[2.2rem] lg:leading-[3rem] font-normal text-[#C6485D]"
-            initial={{ opacity: 0, x: 100 }}
-            animate={{ opacity: 1, x: 0 }}
+            variants={variants}
+            initial={variants.initial}
+            animate={variants.animate}
+            // initial={{ opacity: 0, y: 50}}
+            // animate={{ opacity: 1, y: 0 }}
             transition={{ type: "spring", duration: 0.8, damping: 10 }}
           >
             Precision Talent Acquisition
           </motion.h2>
           <motion.h1
             className="hero-text mt-3 lg:mt-0"
-            initial={{ opacity: 0, x: 100 }}
-            animate={{ opacity: 1, x: 0 }}
-            transition={{ type: "spring", duration: 0.8, damping: 10, delay: 0.4 }}
+            initial={{ opacity: 0, y: 50 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{
+              type: "spring",
+              duration: 0.8,
+              damping: 10,
+              delay: 0.4,
+            }}
           >
             Where Expertise Meets Innovation
           </motion.h1>
           <motion.div
             className="mt-3 max-w-[39rem]"
-            initial={{ opacity: 0, x: 100 }}
-            animate={{ opacity: 1, x: 0 }}
-            transition={{ type: "spring", duration: 0.8, damping: 10, delay: 0.8 }}
+            initial={{ opacity: 0, y: 50 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{
+              type: "spring",
+              duration: 0.8,
+              damping: 10,
+              delay: 0.8,
+            }}
           >
             <p className="paragraph">
-              At Trehan International, we believe that the perfect hire is more than just a candidate; it&apos;s a strategic partner in your success. With our decades of industry expertise and a bespoke consultative approach, we connect you with exceptional talent that drives innovation and growth. Trust in our refined processes, adaptable strategies, and unwavering commitment to compliance. Let
+              At Trehan International, we believe that the perfect hire is more
+              than just a candidate; it&apos;s a strategic partner in your
+              success. With our decades of industry expertise and a bespoke
+              consultative approach, we connect you with exceptional talent that
+              drives innovation and growth. Trust in our refined processes,
+              adaptable strategies, and unwavering commitment to compliance. Let
               us help you build a team that transforms your vision into reality.
             </p>
           </motion.div>
 
           <motion.div
             className="mt-6 lg:mt-10 flex flex-col mobile-2xl:flex-row gap-3 w-full max-w-xl"
-            initial={{ opacity: 0, y: 100 }}
+            initial={{ opacity: 0, y: 50 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ type: "spring", duration: 0.8, damping: 10, delay: 1.2 }}
+            transition={{
+              type: "spring",
+              duration: 0.8,
+              damping: 10,
+              delay: 1.2,
+            }}
           >
             <Input
               type="email"
@@ -492,7 +537,8 @@ export default function Home() {
             <motion.h1
               initial={{ opacity: 0, x: 100 }}
               whileInView={{ opacity: 1, x: 0 }}
-              transition={{ duration: 0.8 }}
+              transition={{ duration: 0.5 }}
+              viewport={{ once: true, margin: "-200px" }}
               className="section-title text-white text-center"
             >
               Our Services
@@ -500,7 +546,8 @@ export default function Home() {
             <motion.p
               initial={{ opacity: 0, x: -100 }}
               whileInView={{ opacity: 1, x: 0 }}
-              transition={{ duration: 0.8, delay: 0.5 }}
+              transition={{ duration: 0.5, delay: 0.3 }}
+              viewport={{ once: true, margin: "-200px" }}
               className="mt-3 paragraph text-white text-center max-w-[22rem]"
             >
               Building Workforce Excellence: Tailored Recruitment Solutions
@@ -515,12 +562,12 @@ export default function Home() {
                     whileInView={{ opacity: 1, scale: 1 }}
                     transition={{
                       type: "spring",
-                      stiffness: 300,
-                      damping: 20,
-                      duration: 1,
+                      stiffness: 500,
+                      damping: 25,
+                      duration: 1.5,
                       delay: index * 0.1,
                     }}
-                    viewport={{ margin: "-250px" }}
+                    viewport={{ once: true, margin: "-200px" }}
                   >
                     <Link
                       href={item.href}
@@ -588,10 +635,24 @@ export default function Home() {
       <div className="w-full bg-[#FAFAFA]">
         <section className="website-container section-padding-x section-padding-y md:pr-20 min-h-screen relative overflow-hidden">
           <div className="flex flex-col">
-            <h1 className="section-title">Our Approach</h1>
-            <p className="mt-2.5 paragraph">
+            <motion.h1
+              initial={{ opacity: 0, x: 100 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              transition={{ duration: 0.5 }}
+              viewport={{ once: true, margin: "-200px" }}
+              className="section-title"
+            >
+              Our Approach
+            </motion.h1>
+            <motion.p
+              initial={{ opacity: 0, x: -100 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              transition={{ duration: 0.5, delay: 0.3 }}
+              viewport={{ once: true, margin: "-200px" }}
+              className="mt-2.5 paragraph"
+            >
               We follow a 3 phase approach consisting
-            </p>
+            </motion.p>
 
             <div className="mt-14 flex flex-col gap-12 mobile-2xl:gap-14 md:gap-20">
               {ourApproachData.map((item) => {
@@ -615,10 +676,10 @@ export default function Home() {
       <LocationsWeServe />
 
       {/* Case Studies Section */}
-      <div className="w-full bg-[#C6485D]">
+      {/* <div className="w-full bg-[#C6485D]">
         <section className="website-container section-padding-x section-padding-y">
           <div className="flex flex-col items-center">
-            <motion.h1 
+            <motion.h1
               className="section-title text-[#ffffff] text-center"
               initial={{ opacity: 0, x: 100 }}
               whileInView={{ opacity: 1, x: 0 }}
@@ -627,11 +688,11 @@ export default function Home() {
             >
               Case Studies
             </motion.h1>
-            <motion.p 
+            <motion.p
               className="mt-2.5 paragraph text-[#ffffff] text-center max-w-sm"
               initial={{ opacity: 0, x: 100 }}
               whileInView={{ opacity: 1, x: 0 }}
-              transition={{ duration: 0.8, delay: 0.5 }}
+              transition={{ duration: 0.8, delay: 0.3 }}
               viewport={{ margin: "-150px" }}
             >
               Talent Acquisition in Action: Our Sourcing Success Stories
@@ -643,9 +704,14 @@ export default function Home() {
                   <motion.div
                     key={item.id}
                     className="w-full max-w-[24rem] h-[26.125rem] bg-white rounded-md overflow-hidden flex flex-col"
-                    initial={{ opacity: 0, x: 100 }}
+                    initial={{ opacity: 0, x: 30 }}
                     whileInView={{ opacity: 1, x: 0 }}
-                    transition={{ type: "spring", damping: 10, duration: 0.8, delay: index * 0.5 }}
+                    transition={{
+                      type: "spring",
+                      damping: 10,
+                      duration: 0.8,
+                      delay: index * 0.5,
+                    }}
                     viewport={{ margin: "-150px" }}
                   >
                     <div className="flex-none w-full h-[15rem] relative overflow-hidden">
@@ -688,7 +754,7 @@ export default function Home() {
             </div>
           </div>
         </section>
-      </div>
+      </div> */}
 
       {/* Client Outcomes & Impact Section */}
       <TestimonialCarousel />
