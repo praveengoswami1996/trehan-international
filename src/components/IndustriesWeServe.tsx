@@ -180,7 +180,11 @@ const IndustriesWeServe = () => {
             {industriesWeServe.map((item, index) => {
               const Icon = item.icon;
               return (
-                <div
+                <motion.div
+                  initial={{ opacity: 0, y: 50 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  transition={{ duration: 0.5 }}
+                  viewport={{ once: true, amount: 1 }}
                   key={item.id}
                   className="flex flex-col items-center gap-2 bg-white p-5 rounded-md shadow-sm"
                   onClick={() =>
@@ -196,7 +200,7 @@ const IndustriesWeServe = () => {
                   <p className="font-sintony font-bold text-xl text-center">
                     {item.label}
                   </p>
-                </div>
+                </motion.div>
               );
             })}
           </div>

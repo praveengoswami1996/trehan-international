@@ -285,47 +285,39 @@ const ApproachItem: React.FC<ApproachItemProps> = ({ data }) => {
 export default function Home() {
   const isTabletOrMobile = useMediaQuery({ query: "(max-width: 1279px)" });
 
-  const heroSectionVariants = isTabletOrMobile
-    ? {
-        initial: { opacity: 0, y: 50 },
-        animate: { opacity: 1, y: 0 },
-      }
-    : {
-        initial: { opacity: 0, x: 50 },
-        animate: { opacity: 1, x: 0 },
-      };
+  const heroSectionContainerVariants = {
+    hidden: { opacity: 1 },
+    visible: {
+      opacity: 1,
+      transition: {
+        staggerChildren: 0.5, // Delay between each word
+      },
+    },
+  };
 
-  const heroSectionMainTextVariants = isTabletOrMobile
-    ? {
-        initial: { opacity: 0, y: 50 },
-        animate: {
-          opacity: 1,
-          y: 0,
-          color: ["#E2AF45", "#C6485D", "#599F99", "#E2AF45"], // Color animation
-          transition: {
-            color: {
-              duration: 10, // Total duration for color cycle
-              repeat: Infinity, // Infinite looping
-              ease: "linear", // Smooth transition
-            },
-          },
-        },
-      }
-    : {
-        initial: { opacity: 0, x: 50 },
-        animate: {
-          opacity: 1,
-          x: 0,
-          color: ["#E2AF45", "#C6485D", "#599F99", "#E2AF45"], // Color animation
-          transition: {
-            color: {
-              duration: 10, // Total duration for color cycle
-              repeat: Infinity, // Infinite looping
-              ease: "linear", // Smooth transition
-            },
-          },
-        },
-      };
+  const heroSectionChildrenVariants = isTabletOrMobile ? {
+    hidden: { opacity: 0, y: 50 },
+    visible: {
+      opacity: 1,
+      y: 0,
+      transition: { 
+        type: "spring",
+        damping: 20,
+        stiffness: 400,
+      },
+    },
+  } : {
+    hidden: { opacity: 0, x: 50 },
+    visible: {
+      opacity: 1,
+      x: 0,
+      transition: { 
+        type: "spring",
+        damping: 20,
+        stiffness: 400,
+      },
+    },
+  }
 
   const aboutSectionVariants = isTabletOrMobile
     ? {
@@ -397,41 +389,26 @@ export default function Home() {
     <div className="min-h-screen pt-28 md:pt-32 lg:pt-36 xl:pt-44 bg-white">
       {/* Hero Section */}
       <section className="website-container section-padding-x pb-10 xl:pb-20 relative overflow-hidden">
-        <div>
+        <motion.div
+          variants={heroSectionContainerVariants}
+          initial="hidden"
+          animate="visible"
+        >
           <motion.h2
             className="font-sintony text-[1.5rem] lg:text-[2rem] leading-[2.2rem] lg:leading-[3rem] font-normal text-[#C6485D]"
-            variants={heroSectionVariants}
-            initial={heroSectionVariants.initial}
-            animate={heroSectionVariants.animate}
-            transition={{ type: "spring", duration: 0.8, damping: 10 }}
+            variants={heroSectionChildrenVariants}
           >
             Precision Talent Acquisition
           </motion.h2>
           <motion.h1
             className="hero-text mt-3 lg:mt-0"
-            variants={heroSectionMainTextVariants}
-            initial={heroSectionMainTextVariants.initial}
-            animate={heroSectionMainTextVariants.animate}
-            transition={{
-              type: "spring",
-              duration: 0.8,
-              damping: 10,
-              delay: 0.4,
-            }}
+            variants={heroSectionChildrenVariants}
           >
             Where Expertise Meets Innovation
           </motion.h1>
           <motion.div
             className="mt-3 max-w-[39rem]"
-            variants={heroSectionVariants}
-            initial={heroSectionVariants.initial}
-            animate={heroSectionVariants.animate}
-            transition={{
-              type: "spring",
-              duration: 0.8,
-              damping: 10,
-              delay: 0.8,
-            }}
+            variants={heroSectionChildrenVariants}
           >
             <p className="paragraph">
               At Trehan International, we believe that the perfect hire is more
@@ -445,15 +422,7 @@ export default function Home() {
           </motion.div>
           <motion.div
             className="mt-6 lg:mt-10 flex flex-col mobile-2xl:flex-row gap-3 w-full max-w-xl"
-            variants={heroSectionVariants}
-            initial={heroSectionVariants.initial}
-            animate={heroSectionVariants.animate}
-            transition={{
-              type: "spring",
-              duration: 0.8,
-              damping: 10,
-              delay: 1.2,
-            }}
+            variants={heroSectionChildrenVariants}
           >
             <Input
               type="email"
@@ -464,7 +433,7 @@ export default function Home() {
               <Button type="submit">Hire Right Talent</Button>
             </Link>
           </motion.div>
-        </div>
+        </motion.div>
 
         <motion.div
           className="hidden xl:block absolute size-[33.25rem] right-8 top-32 overflow-hidden"
@@ -859,7 +828,6 @@ export default function Home() {
               variants={caseStudiesContainerVariants}
               initial="initial"
               whileInView="whileInView"
-              viewport={{ once: true, amount: 1 }}
               transition={{ duration: 0.8 }}
             >
               {caseStudies.map((item) => {
@@ -868,6 +836,7 @@ export default function Home() {
                     key={item.id}
                     className="w-full max-w-[24rem] h-[26.125rem] bg-white rounded-md overflow-hidden flex flex-col"
                     variants={caseStudiesChildrenVariants}
+                    viewport={{ once: true, amount: 1 }}
                   >
                     <div className="flex-none w-full h-[15rem] relative overflow-hidden">
                       <Image
