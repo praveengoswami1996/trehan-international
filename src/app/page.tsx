@@ -191,8 +191,8 @@ const AboutDataItem: React.FC<AboutDataItemProps> = ({
       className="flex flex-col items-center xl:items-start"
       initial={{ opacity: 0, y: 100 }}
       whileInView={{ opacity: 1, y: 0 }}
-      transition={{ type: "spring", damping: 10, duration: 0.5, delay: 0.2 }}
-      viewport={{ once: true, margin: "-100px" }}
+      transition={{ type: "spring", damping: 10, delay: 0.1 }}
+      viewport={{ once: true, margin: "-160px" }}
     >
       <h2 className="font-sintony font-bold text-[2rem] leading-[2.61rem]">
         <DataCountUp end={Number(data)} suffix={suffix} />
@@ -205,9 +205,38 @@ const AboutDataItem: React.FC<AboutDataItemProps> = ({
 };
 
 const ApproachItem: React.FC<ApproachItemProps> = ({ data }) => {
+  const isTabletOrMobile = useMediaQuery({ query: "(max-width: 1279px)" });
+
+  const approachImageVariants = isTabletOrMobile
+    ? {
+        initial: { opacity: 0, y: 50 },
+        whileInView: { opacity: 1, y: 0 },
+      }
+    : {
+        initial: { opacity: 0, x: 50 },
+        whileInView: { opacity: 1, x: 0 },
+      };
+
+  const approachContentVariants = isTabletOrMobile
+    ? {
+        initial: { opacity: 0, y: 50 },
+        whileInView: { opacity: 1, y: 0 },
+      }
+    : {
+        initial: { opacity: 0, x: -50 },
+        whileInView: { opacity: 1, x: 0 },
+      };
+
   return (
     <div className="flex flex-col lg:flex-row items-center">
-      <div className="flex-1 w-full">
+      <motion.div
+        className="flex-1 w-full"
+        variants={approachImageVariants}
+        initial={approachImageVariants.initial}
+        whileInView={approachImageVariants.whileInView}
+        transition={{ duration: 0.8 }}
+        viewport={{ once: true, amount: 0.8 }}
+      >
         <div className="w-full max-w-[30.5rem] h-[15rem] lg:h-[20rem] relative">
           <Image
             src={data.imageURL}
@@ -220,8 +249,15 @@ const ApproachItem: React.FC<ApproachItemProps> = ({ data }) => {
             {data.phase}
           </div>
         </div>
-      </div>
-      <div className="flex-1 pl-0 lg:pl-24">
+      </motion.div>
+      <motion.div
+        className="flex-1 pl-0 lg:pl-24"
+        variants={approachContentVariants}
+        initial={approachContentVariants.initial}
+        whileInView={approachContentVariants.whileInView}
+        transition={{ duration: 0.8 }}
+        viewport={{ once: true, amount: 0.8 }}
+      >
         <h2 className="mt-2 font-sintony font-bold text-2xl leading-9 text-[#1A1A1A]">
           {data.label}
         </h2>
@@ -241,33 +277,119 @@ const ApproachItem: React.FC<ApproachItemProps> = ({ data }) => {
             </Button>
           </Link>
         </div>
-      </div>
+      </motion.div>
     </div>
   );
 };
 
 export default function Home() {
-  const isTabletOrMobile = useMediaQuery({ query: "(max-width: 768px)" });
+  const isTabletOrMobile = useMediaQuery({ query: "(max-width: 1279px)" });
 
-  const variants = isTabletOrMobile
+  const heroSectionVariants = isTabletOrMobile
     ? {
-        initial: {
-          opacity: 0,
-          y: 50,
-        },
+        initial: { opacity: 0, y: 50 },
+        animate: { opacity: 1, y: 0 },
+      }
+    : {
+        initial: { opacity: 0, x: 50 },
+        animate: { opacity: 1, x: 0 },
+      };
+
+  const heroSectionMainTextVariants = isTabletOrMobile
+    ? {
+        initial: { opacity: 0, y: 50 },
         animate: {
           opacity: 1,
           y: 0,
+          color: ["#E2AF45", "#C6485D", "#599F99", "#E2AF45"], // Color animation
+          transition: {
+            color: {
+              duration: 10, // Total duration for color cycle
+              repeat: Infinity, // Infinite looping
+              ease: "linear", // Smooth transition
+            },
+          },
         },
       }
     : {
-        initial: {
-          opacity: 0,
-          x: 50,
-        },
+        initial: { opacity: 0, x: 50 },
         animate: {
           opacity: 1,
           x: 0,
+          color: ["#E2AF45", "#C6485D", "#599F99", "#E2AF45"], // Color animation
+          transition: {
+            color: {
+              duration: 10, // Total duration for color cycle
+              repeat: Infinity, // Infinite looping
+              ease: "linear", // Smooth transition
+            },
+          },
+        },
+      };
+
+  const aboutSectionVariants = isTabletOrMobile
+    ? {
+        initial: { opacity: 0, y: 50 },
+        whileInView: { opacity: 1, y: 0 },
+      }
+    : {
+        initial: { opacity: 0, x: 50 },
+        whileInView: { opacity: 1, x: 0 },
+      };
+
+  const sectionHeadingVariant = isTabletOrMobile
+    ? {
+        initial: { opacity: 0, y: 50 },
+        whileInView: { opacity: 1, y: 0 },
+      }
+    : {
+        initial: { opacity: 0, x: 50 },
+        whileInView: { opacity: 1, x: 0 },
+      };
+
+  const sectionSubHeadingVariant = isTabletOrMobile
+    ? {
+        initial: { opacity: 0, y: 50 },
+        whileInView: { opacity: 1, y: 0 },
+      }
+    : {
+        initial: { opacity: 0, x: -50 },
+        whileInView: { opacity: 1, x: 0 },
+      };
+
+  const caseStudiesContainerVariants = {
+    initial: { opacity: 1 },
+    whileInView: {
+      opacity: 1,
+      transition: {
+        staggerChildren: 0.3, // Delay between each word
+      },
+    },
+  };
+
+  const caseStudiesChildrenVariants = isTabletOrMobile
+    ? {
+        initial: { opacity: 0, y: 25 },
+        whileInView: {
+          opacity: 1,
+          y: 0,
+          transition: {
+            type: "spring",
+            damping: 20,
+            stiffness: 300,
+          },
+        },
+      }
+    : {
+        initial: { opacity: 0, x: 25 },
+        whileInView: {
+          opacity: 1,
+          x: 0,
+          transition: {
+            type: "spring",
+            damping: 20,
+            stiffness: 300,
+          },
         },
       };
 
@@ -278,19 +400,18 @@ export default function Home() {
         <div>
           <motion.h2
             className="font-sintony text-[1.5rem] lg:text-[2rem] leading-[2.2rem] lg:leading-[3rem] font-normal text-[#C6485D]"
-            variants={variants}
-            initial={variants.initial}
-            animate={variants.animate}
-            // initial={{ opacity: 0, y: 50}}
-            // animate={{ opacity: 1, y: 0 }}
+            variants={heroSectionVariants}
+            initial={heroSectionVariants.initial}
+            animate={heroSectionVariants.animate}
             transition={{ type: "spring", duration: 0.8, damping: 10 }}
           >
             Precision Talent Acquisition
           </motion.h2>
           <motion.h1
             className="hero-text mt-3 lg:mt-0"
-            initial={{ opacity: 0, y: 50 }}
-            animate={{ opacity: 1, y: 0 }}
+            variants={heroSectionMainTextVariants}
+            initial={heroSectionMainTextVariants.initial}
+            animate={heroSectionMainTextVariants.animate}
             transition={{
               type: "spring",
               duration: 0.8,
@@ -302,8 +423,9 @@ export default function Home() {
           </motion.h1>
           <motion.div
             className="mt-3 max-w-[39rem]"
-            initial={{ opacity: 0, y: 50 }}
-            animate={{ opacity: 1, y: 0 }}
+            variants={heroSectionVariants}
+            initial={heroSectionVariants.initial}
+            animate={heroSectionVariants.animate}
             transition={{
               type: "spring",
               duration: 0.8,
@@ -321,11 +443,11 @@ export default function Home() {
               us help you build a team that transforms your vision into reality.
             </p>
           </motion.div>
-
           <motion.div
             className="mt-6 lg:mt-10 flex flex-col mobile-2xl:flex-row gap-3 w-full max-w-xl"
-            initial={{ opacity: 0, y: 50 }}
-            animate={{ opacity: 1, y: 0 }}
+            variants={heroSectionVariants}
+            initial={heroSectionVariants.initial}
+            animate={heroSectionVariants.animate}
             transition={{
               type: "spring",
               duration: 0.8,
@@ -364,7 +486,13 @@ export default function Home() {
           </div>
         </motion.div>
 
-        <div className="xl:hidden overflow-hidden relative size-[15rem]  mobile-sm:size-[19rem] mobile-md:size-[22rem] mobile-lg:size-[24rem] sm:size-[30rem] mx-auto mt-10">
+        <motion.div
+          className="xl:hidden overflow-hidden relative size-[15rem]  mobile-sm:size-[19rem] mobile-md:size-[22rem] mobile-lg:size-[24rem] sm:size-[30rem] mx-auto mt-10"
+          initial={{ scale: 0 }}
+          whileInView={{ scale: 1 }}
+          transition={{ duration: 0.8 }}
+          viewport={{ once: true, amount: 1 }}
+        >
           <Image
             src={"/bg-pattern.svg"}
             alt={"Background Pattern"}
@@ -382,7 +510,7 @@ export default function Home() {
               />
             </div>
           </div>
-        </div>
+        </motion.div>
       </section>
 
       {/* Trusted Partners Section */}
@@ -440,19 +568,21 @@ export default function Home() {
             <div className="flex flex-col gap-3">
               <motion.h1
                 className="section-title"
-                initial={{ opacity: 0, x: 100 }}
-                whileInView={{ opacity: 1, x: 0 }}
+                variants={aboutSectionVariants}
+                initial={aboutSectionVariants.initial}
+                whileInView={aboutSectionVariants.whileInView}
                 transition={{ duration: 0.8 }}
-                viewport={{ once: true, margin: "-150px" }}
+                viewport={{ once: true, margin: "-160px" }}
               >
                 About us
               </motion.h1>
               <motion.div
-                initial={{ opacity: 0, x: 100 }}
-                whileInView={{ opacity: 1, x: 0 }}
-                transition={{ duration: 0.8, delay: 0.5 }}
-                viewport={{ once: true, margin: "-150px" }}
                 className="pl-4 py-0 relative before:absolute before:w-[5px] before:h-[95%] before:left-0 before:top-1/2 before:-translate-y-1/2 before:bg-amber-500"
+                variants={aboutSectionVariants}
+                initial={aboutSectionVariants.initial}
+                whileInView={aboutSectionVariants.whileInView}
+                transition={{ duration: 0.8, delay: 0.5 }}
+                viewport={{ once: true, margin: "-160px" }}
               >
                 <p className="paragraph">
                   Trehan International is a recruitment consultancy with a focus
@@ -464,7 +594,14 @@ export default function Home() {
               </motion.div>
             </div>
 
-            <div className="xl:hidden overflow-hidden relative size-[15rem]  mobile-sm:size-[19rem] mobile-md:size-[22rem] mobile-lg:size-[24rem] sm:size-[30rem] mx-auto flex items-center justify-center">
+            {/* Small Screen About us Section Image */}
+            <motion.div
+              className="xl:hidden overflow-hidden relative size-[15rem]  mobile-sm:size-[19rem] mobile-md:size-[22rem] mobile-lg:size-[24rem] sm:size-[30rem] mx-auto flex items-center justify-center"
+              initial={{ scale: 0 }}
+              whileInView={{ scale: 1 }}
+              transition={{ duration: 0.8 }}
+              viewport={{ once: true, amount: 1 }}
+            >
               <Image
                 src={"/bg-pattern.svg"}
                 alt="Background Pattern Image"
@@ -480,7 +617,7 @@ export default function Home() {
                   />
                 </div>
               </div>
-            </div>
+            </motion.div>
 
             <div className="grid grid-cols-1 mobile-2xl:grid-cols-2 lg:grid-cols-3 xl:grid-cols-2 gap-y-10">
               {aboutSectionData.map((data, index) => {
@@ -496,7 +633,14 @@ export default function Home() {
               })}
             </div>
 
-            <div className="flex justify-center xl:justify-start">
+            <motion.div
+              variants={aboutSectionVariants}
+              initial={aboutSectionVariants.initial}
+              whileInView={aboutSectionVariants.whileInView}
+              transition={{ duration: 0.8, delay: 0.5 }}
+              viewport={{ once: true, margin: "-160px" }}
+              className="flex justify-center xl:justify-start"
+            >
               <Link href={"/about-us"}>
                 <Button
                   variant={"outline"}
@@ -505,12 +649,20 @@ export default function Home() {
                   Know More About Us
                 </Button>
               </Link>
-            </div>
+            </motion.div>
           </div>
           <div className="xl:block flex-1" />
         </div>
+
+        {/* Large Screen About us Section Image */}
         <div className="hidden xl:block absolute w-1/2 h-full right-5 top-1/2 -translate-y-1/2 mt-20">
-          <div className="w-full h-full relative flex items-center justify-center">
+          <motion.div
+            initial={{ scale: 0 }}
+            whileInView={{ scale: 1 }}
+            transition={{ duration: 0.8 }}
+            viewport={{ once: true, amount: 1 }}
+            className="w-full h-full relative flex items-center justify-center"
+          >
             <Image
               src={"/bg-pattern.svg"}
               alt="Background Pattern Image"
@@ -526,7 +678,7 @@ export default function Home() {
                 />
               </div>
             </div>
-          </div>
+          </motion.div>
         </div>
       </section>
 
@@ -535,20 +687,22 @@ export default function Home() {
         <section className="website-container section-padding-x section-padding-y mt-12 md:mt-16 lg:mt-20 xl:mt-36 min-h-screen">
           <div className="flex flex-col items-center">
             <motion.h1
-              initial={{ opacity: 0, x: 100 }}
-              whileInView={{ opacity: 1, x: 0 }}
-              transition={{ duration: 0.5 }}
-              viewport={{ once: true, margin: "-200px" }}
               className="section-title text-white text-center"
+              variants={sectionHeadingVariant}
+              initial={sectionHeadingVariant.initial}
+              whileInView={sectionHeadingVariant.whileInView}
+              transition={{ duration: 0.8 }}
+              viewport={{ once: true, margin: "-160px" }}
             >
               Our Services
             </motion.h1>
             <motion.p
-              initial={{ opacity: 0, x: -100 }}
-              whileInView={{ opacity: 1, x: 0 }}
-              transition={{ duration: 0.5, delay: 0.3 }}
-              viewport={{ once: true, margin: "-200px" }}
               className="mt-3 paragraph text-white text-center max-w-[22rem]"
+              variants={sectionSubHeadingVariant}
+              initial={sectionSubHeadingVariant.initial}
+              whileInView={sectionSubHeadingVariant.whileInView}
+              transition={{ duration: 0.8 }}
+              viewport={{ once: true, margin: "-160px" }}
             >
               Building Workforce Excellence: Tailored Recruitment Solutions
             </motion.p>
@@ -562,10 +716,8 @@ export default function Home() {
                     whileInView={{ opacity: 1, scale: 1 }}
                     transition={{
                       type: "spring",
-                      stiffness: 500,
-                      damping: 25,
-                      duration: 1.5,
-                      delay: index * 0.1,
+                      stiffness: 200,
+                      damping: 30,
                     }}
                     viewport={{ once: true, margin: "-200px" }}
                   >
@@ -636,20 +788,22 @@ export default function Home() {
         <section className="website-container section-padding-x section-padding-y md:pr-20 min-h-screen relative overflow-hidden">
           <div className="flex flex-col">
             <motion.h1
-              initial={{ opacity: 0, x: 100 }}
-              whileInView={{ opacity: 1, x: 0 }}
-              transition={{ duration: 0.5 }}
-              viewport={{ once: true, margin: "-200px" }}
               className="section-title"
+              variants={sectionHeadingVariant}
+              initial={sectionHeadingVariant.initial}
+              whileInView={sectionHeadingVariant.whileInView}
+              transition={{ duration: 0.8 }}
+              viewport={{ once: true, margin: "-160px" }}
             >
               Our Approach
             </motion.h1>
             <motion.p
-              initial={{ opacity: 0, x: -100 }}
-              whileInView={{ opacity: 1, x: 0 }}
-              transition={{ duration: 0.5, delay: 0.3 }}
-              viewport={{ once: true, margin: "-200px" }}
               className="mt-2.5 paragraph"
+              variants={sectionSubHeadingVariant}
+              initial={sectionSubHeadingVariant.initial}
+              whileInView={sectionSubHeadingVariant.whileInView}
+              transition={{ duration: 0.8 }}
+              viewport={{ once: true, margin: "-160px" }}
             >
               We follow a 3 phase approach consisting
             </motion.p>
@@ -676,43 +830,44 @@ export default function Home() {
       <LocationsWeServe />
 
       {/* Case Studies Section */}
-      {/* <div className="w-full bg-[#C6485D]">
+      <div className="w-full bg-[#C6485D]">
         <section className="website-container section-padding-x section-padding-y">
           <div className="flex flex-col items-center">
             <motion.h1
               className="section-title text-[#ffffff] text-center"
-              initial={{ opacity: 0, x: 100 }}
-              whileInView={{ opacity: 1, x: 0 }}
+              variants={sectionHeadingVariant}
+              initial={sectionHeadingVariant.initial}
+              whileInView={sectionHeadingVariant.whileInView}
               transition={{ duration: 0.8 }}
-              viewport={{ margin: "-150px" }}
+              viewport={{ once: true, margin: "-160px" }}
             >
               Case Studies
             </motion.h1>
             <motion.p
               className="mt-2.5 paragraph text-[#ffffff] text-center max-w-sm"
-              initial={{ opacity: 0, x: 100 }}
-              whileInView={{ opacity: 1, x: 0 }}
-              transition={{ duration: 0.8, delay: 0.3 }}
-              viewport={{ margin: "-150px" }}
+              variants={sectionSubHeadingVariant}
+              initial={sectionSubHeadingVariant.initial}
+              whileInView={sectionSubHeadingVariant.whileInView}
+              transition={{ duration: 0.8 }}
+              viewport={{ once: true, margin: "-160px" }}
             >
               Talent Acquisition in Action: Our Sourcing Success Stories
             </motion.p>
 
-            <div className="w-full mt-10 grid justify-items-center grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-              {caseStudies.map((item, index) => {
+            <motion.div
+              className="w-full mt-10 grid justify-items-center grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8"
+              variants={caseStudiesContainerVariants}
+              initial="initial"
+              whileInView="whileInView"
+              viewport={{ once: true, amount: 1 }}
+              transition={{ duration: 0.8 }}
+            >
+              {caseStudies.map((item) => {
                 return (
                   <motion.div
                     key={item.id}
                     className="w-full max-w-[24rem] h-[26.125rem] bg-white rounded-md overflow-hidden flex flex-col"
-                    initial={{ opacity: 0, x: 30 }}
-                    whileInView={{ opacity: 1, x: 0 }}
-                    transition={{
-                      type: "spring",
-                      damping: 10,
-                      duration: 0.8,
-                      delay: index * 0.5,
-                    }}
-                    viewport={{ margin: "-150px" }}
+                    variants={caseStudiesChildrenVariants}
                   >
                     <div className="flex-none w-full h-[15rem] relative overflow-hidden">
                       <Image
@@ -738,9 +893,16 @@ export default function Home() {
                   </motion.div>
                 );
               })}
-            </div>
+            </motion.div>
 
-            <div className="mt-12">
+            <motion.div
+              className="mt-12"
+              variants={aboutSectionVariants}
+              initial={aboutSectionVariants.initial}
+              whileInView={aboutSectionVariants.whileInView}
+              transition={{ duration: 0.8 }}
+              viewport={{ once: true, margin: "-160px" }}
+            >
               <Link href="/case-studies">
                 <Button
                   variant={"outline"}
@@ -751,10 +913,10 @@ export default function Home() {
                   View All Case Studies
                 </Button>
               </Link>
-            </div>
+            </motion.div>
           </div>
         </section>
-      </div> */}
+      </div>
 
       {/* Client Outcomes & Impact Section */}
       <TestimonialCarousel />
@@ -763,15 +925,40 @@ export default function Home() {
       <div className="w-full">
         <section className="website-container section-padding-x section-padding-y">
           <div className="flex flex-col">
-            <h1 className="section-title text-[#1A1A1A]">
+            <motion.h1
+              className="section-title text-[#1A1A1A]"
+              variants={sectionHeadingVariant}
+              initial={sectionHeadingVariant.initial}
+              whileInView={sectionHeadingVariant.whileInView}
+              transition={{ duration: 0.8 }}
+              viewport={{ once: true, margin: "-160px" }}
+            >
               Trending Blog & Articles
-            </h1>
+            </motion.h1>
             <div className="flex flex-col md:flex-row items-start md:items-end justify-between gap-5">
-              <p className="mt-2.5 text-base md:text-[1.125rem] md:leading-[1.69rem] font-regular text-[#535353] max-w-[35rem]">
+              <motion.p
+                className="mt-2.5 text-base md:text-[1.125rem] md:leading-[1.69rem] font-regular text-[#535353] max-w-[35rem]"
+                variants={sectionSubHeadingVariant}
+                initial={sectionSubHeadingVariant.initial}
+                whileInView={sectionSubHeadingVariant.whileInView}
+                transition={{ duration: 0.8 }}
+                viewport={{ once: true, margin: "-160px" }}
+              >
                 Read the blog and article inside of consulting. We share tips
                 and tricks to get more success
-              </p>
-              <div>
+              </motion.p>
+              <motion.div
+                initial={
+                  isTabletOrMobile
+                    ? { opacity: 0, y: 30 }
+                    : { opacity: 0, x: -30 }
+                }
+                whileInView={
+                  isTabletOrMobile ? { opacity: 1, y: 0 } : { opacity: 1, x: 0 }
+                }
+                transition={{ duration: 0.8, delay: 0.8 }}
+                viewport={{ once: true, margin: "-160px" }}
+              >
                 <Button
                   variant={"outline"}
                   className={
@@ -780,13 +967,20 @@ export default function Home() {
                 >
                   View All
                 </Button>
-              </div>
+              </motion.div>
             </div>
 
             <div className="w-full mt-12 grid justify-items-center grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
               {trendingBlogs.map((item) => {
                 return (
-                  <div
+                  <motion.div
+                    initial={{ opacity: 0, scale: 0.9 }}
+                    whileInView={{ opacity: 1, scale: 1 }}
+                    transition={{
+                      type: "tween",
+                      duration: 0.5,
+                    }}
+                    viewport={{ once: true, amount: 0.8 }}
                     key={item.id}
                     className="w-full max-w-[24rem] bg-white overflow-hidden flex flex-col gap-5"
                   >
@@ -801,7 +995,7 @@ export default function Home() {
                     <p className="font-sintony font-bold text-xl leading-[1.875rem]">
                       {item.desc}
                     </p>
-                  </div>
+                  </motion.div>
                 );
               })}
             </div>

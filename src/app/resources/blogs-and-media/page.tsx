@@ -4,7 +4,6 @@ import { Button } from "@/components/ui/button";
 import Image from "next/image";
 import React from "react";
 import BlogCard from "@/components/resources/BlogCard";
-import { useMediaQuery } from "react-responsive";
 import { motion } from "framer-motion";
 
 const blogs = [
@@ -87,7 +86,6 @@ const blogs = [
 ];
 
 const BlogsAndMedia = () => {
-  const isTabletOrMobile = useMediaQuery({ query: "(max-width: 768px)" });
 
   const containerVariants = {
     hidden: { opacity: 1 },
@@ -112,16 +110,6 @@ const BlogsAndMedia = () => {
       },
     },
   };
-
-  const variants = isTabletOrMobile
-    ? {
-        initial: { opacity: 0, y: 50 },
-        animate: { opacity: 1, y: 0 },
-      }
-    : {
-        initial: { opacity: 0, x: 50 },
-        animate: { opacity: 1, x: 0 },
-      };
 
   return (
     <div className="page">

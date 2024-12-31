@@ -59,10 +59,10 @@ const FeatureSection = () => {
   };
 
   const childrenVariantsMainContent = {
-    hidden: { opacity: 0, x: 20 }, // Start hidden and slightly below
+    hidden: { opacity: 0, y: 20 }, // Start hidden and slightly below
     visible: {
       opacity: 1,
-      x: 0,
+      y: 0,
       transition: { duration: 0.4 }, // Animate into view
     },
   };

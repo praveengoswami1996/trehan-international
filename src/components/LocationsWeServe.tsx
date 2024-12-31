@@ -1,6 +1,9 @@
+"use client";
 import Image from "next/image";
 import React from "react";
 import WorldMap from "./SVGs/WorldMap";
+import { motion } from "framer-motion";
+import { useMediaQuery } from "react-responsive";
 
 const locationsWeServe = [
   {
@@ -36,13 +39,55 @@ const locationsWeServe = [
 ];
 
 const LocationsWeServe = () => {
+  const isTabletOrMobile = useMediaQuery({ query: "(max-width: 1279px)" });
+
+  const sectionHeadingVariant = isTabletOrMobile
+    ? {
+        initial: { opacity: 0, y: 50 },
+        whileInView: { opacity: 1, y: 0 },
+      }
+    : {
+        initial: { opacity: 0, x: 50 },
+        whileInView: { opacity: 1, x: 0 },
+      };
+
+  const flagContainerVariants = {
+    initial: { opacity: 1 },
+    whileInView: {
+      opacity: 1,
+      transition: {
+        staggerChildren: 0.3, // Delay between each word
+      },
+    },
+  };
+
+  const flagChildrenVariants = {
+    initial: { opacity: 0, x: -10 }, // Start hidden and slightly below
+    whileInView: {
+      opacity: 1,
+      x: 0,
+      transition: {
+        type: "spring",
+        damping: 20,
+        stiffness: 300,
+      },
+    },
+  };
+
   return (
     <div className="w-full bg-[#1A1A1A]">
       <section className="website-container section-padding-x section-padding-y pb-12">
         <div className="flex flex-col items-center justify-between">
-          <h1 className="section-title text-[#ffffff] text-center">
+          <motion.h1
+            className="section-title text-[#ffffff] text-center"
+            variants={sectionHeadingVariant}
+            initial={sectionHeadingVariant.initial}
+            whileInView={sectionHeadingVariant.whileInView}
+            transition={{ duration: 0.8 }}
+            viewport={{ once: true, margin: "-160px" }}
+          >
             Locations We Serve
-          </h1>
+          </motion.h1>
 
           {/* <div className="mt-12 w-full max-w-[756px] h-[10rem] md:h-[436px] relative">
             <Image
@@ -54,13 +99,23 @@ const LocationsWeServe = () => {
           </div> */}
 
           <div className="mt-12 w-full max-w-[756px] h-[10rem] md:h-[436px] relative">
-            <WorldMap className="w-full h-full"/>
+            <WorldMap className="w-full h-full" />
           </div>
 
-          <div className="mt-12 flex items-center justify-center flex-wrap gap-x-6 gap-y-3">
+          <motion.div
+            className="mt-12 flex items-center justify-center flex-wrap gap-x-6 gap-y-3"
+            variants={flagContainerVariants}
+            initial="initial"
+            whileInView="whileInView"
+            viewport={{ once: true, margin: "-160px" }}
+          >
             {locationsWeServe.map((location) => {
               return (
-                <div key={location.id} className="flex items-center gap-2">
+                <motion.div
+                  key={location.id}
+                  className="flex items-center gap-2"
+                  variants={flagChildrenVariants}
+                >
                   <div className="flex-none w-9 h-6 relative">
                     <Image
                       src={location.flagUrl}
@@ -72,10 +127,10 @@ const LocationsWeServe = () => {
                   <div className="font-sintony text-[1.125rem] font-normal text-white">
                     {location.name}
                   </div>
-                </div>
+                </motion.div>
               );
             })}
-          </div>
+          </motion.div>
         </div>
       </section>
     </div>

@@ -1,4 +1,4 @@
-'use client';
+"use client";
 import React, { ComponentType } from "react";
 import { Button } from "./ui/button";
 import { cn } from "@/lib/utils";
@@ -16,6 +16,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { useRouter } from "next/navigation";
 import { motion } from "framer-motion";
+import { useMediaQuery } from "react-responsive";
 
 const industriesWeServe = [
   {
@@ -73,15 +74,13 @@ const IndustryItem: React.FC<IndustryItemProps> = ({
   label,
   position,
   labelClasses,
-  onClick
+  onClick,
 }) => {
   const Icon = icon;
 
   return (
     <div className={cn("absolute", position)} onClick={onClick}>
-      <div
-        className="flex-none p-5 rounded-full bg-[#E2AF45] flex items-center justify-center relative size-[6.25rem] shadow-industry transform transition-transform duration-150 hover:scale-110 cursor-pointer  hover:shadow-glow-gold"
-      >
+      <div className="flex-none p-5 rounded-full bg-[#E2AF45] flex items-center justify-center relative size-[6.25rem] shadow-industry transform transition-transform duration-150 hover:scale-110 cursor-pointer  hover:shadow-glow-gold">
         <Icon className="text-white" />
         <h5
           className={cn(
@@ -98,28 +97,65 @@ const IndustryItem: React.FC<IndustryItemProps> = ({
 
 const IndustriesWeServe = () => {
   const router = useRouter();
+  const isTabletOrMobile = useMediaQuery({ query: "(max-width: 1279px)" });
+
+  const sectionHeadingVariant = isTabletOrMobile
+    ? {
+        initial: { opacity: 0, y: 50 },
+        whileInView: { opacity: 1, y: 0 },
+      }
+    : {
+        initial: { opacity: 0, x: 50 },
+        whileInView: { opacity: 1, x: 0 },
+      };
+
+  const sectionSubHeadingVariant = isTabletOrMobile
+    ? {
+        initial: { opacity: 0, y: 50 },
+        whileInView: { opacity: 1, y: 0 },
+      }
+    : {
+        initial: { opacity: 0, x: -50 },
+        whileInView: { opacity: 1, x: 0 },
+      };
+
+  const buttonVariants = isTabletOrMobile
+    ? {
+        initial: { opacity: 0, y: 50 },
+        whileInView: { opacity: 1, y: 0 },
+      }
+    : {
+        initial: { opacity: 0, x: 50 },
+        whileInView: { opacity: 1, x: 0 },
+      };
 
   return (
     <div className="w-full bg-[#F2F3F4]">
       <section className="website-container section-padding-x section-padding-y min-h-screen">
         <div className="flex flex-col items-center">
-          <motion.h1 
-            initial={{ opacity: 0, x: 50 }}
-            whileInView={{ opacity: 1, x: 0 }}
-            transition={{ duration: 0.5 }}
-            viewport={{ once: true, amount: 0.5 }}
+          <motion.h1
             className="section-title text-center"
+            variants={sectionHeadingVariant}
+            initial={sectionHeadingVariant.initial}
+            whileInView={sectionHeadingVariant.whileInView}
+            transition={{ duration: 0.8 }}
+            viewport={{ once: true, margin: "-160px" }}
           >
             Industries We Serve
           </motion.h1>
-          <motion.p 
-            initial={{ opacity: 0, x: -50 }}
-            whileInView={{ opacity: 1, x: 0 }}
-            transition={{ duration: 0.5, delay: 0.3 }}
-            viewport={{ once: true, amount: 0.5 }}
+          <motion.p
             className="mt-3 paragraph text-center max-w-[60rem]"
+            variants={sectionSubHeadingVariant}
+            initial={sectionSubHeadingVariant.initial}
+            whileInView={sectionSubHeadingVariant.whileInView}
+            transition={{ duration: 0.8 }}
+            viewport={{ once: true, margin: "-160px" }}
           >
-            Trehan International is a recruitment consultancy with a focus on revolutionizing the field of recruitment. Over the past four decades, Trehan International has transformed into a prominent and highly respected recruitment consultancy in India and Southeast Asia.
+            Trehan International is a recruitment consultancy with a focus on
+            revolutionizing the field of recruitment. Over the past four
+            decades, Trehan International has transformed into a prominent and
+            highly respected recruitment consultancy in India and Southeast
+            Asia.
           </motion.p>
 
           {/* Image - for smaller screens */}
@@ -147,7 +183,9 @@ const IndustriesWeServe = () => {
                 <div
                   key={item.id}
                   className="flex flex-col items-center gap-2 bg-white p-5 rounded-md shadow-sm"
-                  onClick={() => router.push(`/industries#industry_00${index + 1}`)}
+                  onClick={() =>
+                    router.push(`/industries#industry_00${index + 1}`)
+                  }
                 >
                   <div
                     className="flex-none p-5 rounded-full bg-[#E2AF45] flex items-center justify-center relative size-[6.25rem]"
@@ -247,7 +285,14 @@ const IndustriesWeServe = () => {
           </div>
 
           {/* CTA button - navigates to Industries Page */}
-          <div className="mt-10 lg:mt-28">
+          <motion.div
+            className="mt-10 lg:mt-28"
+            variants={buttonVariants}
+            initial={buttonVariants.initial}
+            whileInView={buttonVariants.whileInView}
+            transition={{ duration: 0.8 }}
+            viewport={{ once: true, margin: "-160px" }}
+          >
             <Link href={"/industries"}>
               <Button
                 variant={"outline"}
@@ -256,7 +301,7 @@ const IndustriesWeServe = () => {
                 Explore All
               </Button>
             </Link>
-          </div>
+          </motion.div>
         </div>
       </section>
     </div>
