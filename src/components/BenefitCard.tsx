@@ -77,16 +77,13 @@ const BenefitCard: React.FC<BenefitCardProps> = ({
       initial={{ opacity: 0, scale: 0.8 }}
       whileInView={{ opacity: 1, scale: 1 }}
       transition={{
-        type: "spring",
-        stiffness: 500,
-        damping: 25,
-        duration: 1.5,
-        delay: index * 0.1,
+        type: "tween",
+        duration: 0.5
       }}
-      viewport={{ once: true, margin: "-150px" }}
+      viewport={{ once: true, margin: "-100px" }}
       style={{ boxShadow: "0px 0px 100px 0px #0000000D" }}
       className={cn(
-        "bg-white w-full max-w-[23rem] flex flex-col items-center p-4 md:py-10 md:px-8 gap-6 transform transition-transform duration-300 hover:scale-105 group",
+        "bg-white w-full max-w-[23rem] flex flex-col items-center p-4 md:py-10 md:px-8 gap-6 transform transition-transform duration-300 group",
         cardColors[index % cardColors.length].cardHoverColor
       )}
     >

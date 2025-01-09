@@ -1,4 +1,4 @@
-import type { Metadata } from "next";
+"use client";
 import IntroVideo from "@/components/AboutUs/IntroVideo";
 import WhyChooseTrehan from "@/components/AboutUs/WhyChooseTrehan";
 import BreadCrumbs from "@/components/BreadCrumbs";
@@ -9,6 +9,8 @@ import Image from "next/image";
 import React from "react";
 import ImageContentPanel from "@/components/ImageContentPanel";
 import Link from "next/link";
+import { motion } from "framer-motion";
+import { useMediaQuery } from "react-responsive";
 
 interface StoryContentItem {
   id: string;
@@ -295,41 +297,88 @@ const TimeLine: React.FC<TimeLineProps> = ({ storyContent }) => {
   );
 };
 
-export const metadata: Metadata = {
-  title: "Trehan International | About Us",
-  description: "Recruitment Consultancy",
-};
-
 const AboutUs = () => {
+  const isTabletOrMobile = useMediaQuery({ query: "(max-width: 1279px)" });
+
+  const containerVariants = {
+    hidden: { opacity: 1 },
+    visible: {
+      opacity: 1,
+      transition: {
+        staggerChildren: 0.5, // Delay between each word
+      },
+    },
+  };
+
+  const childrenVariants = {
+    hidden: { opacity: 0, y: 20 }, // Start hidden and slightly below
+    visible: {
+      opacity: 1,
+      y: 0,
+      transition: {
+        type: "spring",
+        duration: 0.5,
+        damping: 20,
+        stiffness: 300,
+      },
+    },
+  };
+
+  const buttonVariants = isTabletOrMobile
+    ? {
+        initial: { opacity: 0, y: 50 },
+        whileInView: { opacity: 1, y: 0 },
+      }
+    : {
+        initial: { opacity: 0, x: 50 },
+        whileInView: { opacity: 1, x: 0 },
+      };
+
   return (
     <div className="page">
       {/* About Data Section */}
       <div className="w-full">
         <section className="website-container section-padding-x section-padding-bottom">
           <div className="flex flex-col items-center">
-            <BreadCrumbs />
+            <motion.div
+              className="flex flex-col items-center gap-5"
+              variants={containerVariants}
+              initial="hidden"
+              animate="visible"
+            >
+              <motion.div className="mx-auto" variants={childrenVariants}>
+                <BreadCrumbs />
+              </motion.div>
 
-            <div className="mt-8 w-full">
-              <h1 className="hero-text text-center max-w-2xl lg:max-w-4xl mx-auto">
+              <motion.h1
+                className="hero-text mt-3 text-center max-w-2xl lg:max-w-4xl mx-auto"
+                variants={childrenVariants}
+              >
                 Pioneering Human Mobility and Client Success
-              </h1>
-              <p className="paragraph text-center mt-5 max-w-[52rem] mx-auto">
+              </motion.h1>
+              <motion.p
+                className="paragraph text-center max-w-[52rem] mx-auto"
+                variants={childrenVariants}
+              >
                 At Trehan International, our vision is to redefine the landscape
                 of global recruitment by empowering human mobility, thus
                 unlocking economic opportunities and facilitating cultural
                 exchange. We aim to create a world where talent knows no
                 borders, and every individual can thrive in a global community
                 enriched with diverse skills and perspectives.
-              </p>
-            </div>
+              </motion.p>
+            </motion.div>
 
             {/* About Us Stats */}
             <div className="mt-8 lg:mt-16 w-full grid grid-cols-1 mobile-2xl:grid-cols-2 lg:grid-cols-3 gap-5 max-w-6xl mx-auto">
               {AboutData.map((item) => {
                 return (
-                  <div
+                  <motion.div
                     key={item.id}
                     className="border border-[#C5C5C5] p-4 flex flex-col items-center justify-center bg-[#FDFDFD] hover:bg-[#000000] rounded-full group transform transition-all duration-500 hover:scale-110"
+                    // initial={{ opacity: 0, y: 20, scale: 0 }}
+                    // whileInView={{ opacity: 1, y: 0, scale: 1 }}
+                    // viewport={{ once: true, margin: "-100px" }}
                   >
                     <h3 className="font-sintony font-bold text-[2rem] leading-[3rem] text-center text-[#000000] group-hover:text-white">
                       {item.title}
@@ -337,18 +386,24 @@ const AboutUs = () => {
                     <p className="paragraph text-center max-w-48 group-hover:text-white">
                       {item.subtitle}
                     </p>
-                  </div>
+                  </motion.div>
                 );
               })}
             </div>
 
-            <div className="mt-7 lg:mt-14">
+            <motion.div
+              className="mt-7 lg:mt-14"
+              variants={buttonVariants}
+              initial={buttonVariants.initial}
+              whileInView={buttonVariants.whileInView}
+              transition={{ duration: 0.8 }}
+              viewport={{ once: true, margin: "-160px" }}
+            >
               <Link href="/contact-us">
                 <Button type="submit">Unlock Talent Supply</Button>
               </Link>
-            </div>
-
-         </div>
+            </motion.div>
+          </div>
         </section>
       </div>
 
