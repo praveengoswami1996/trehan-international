@@ -1,7 +1,7 @@
 "use client";
 import React from "react";
 import { AttestationIcon, InterHiringIcon, LocalHiringIcon } from "./icons";
-import { delay, motion } from "framer-motion";
+import { motion } from "framer-motion";
 
 const features = [
   {

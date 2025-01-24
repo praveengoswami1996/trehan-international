@@ -1,4 +1,4 @@
-import React, { ComponentType } from "react";
+import React from "react";
 import BenefitCard from "../BenefitCard";
 import { cn } from "@/lib/utils";
 import InformationPanel from "../InformationPanel";

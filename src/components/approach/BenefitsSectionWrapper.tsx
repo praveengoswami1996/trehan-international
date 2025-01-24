@@ -40,15 +40,9 @@ const BenefitsSectionWrapper: React.FC<BenefitsSectionWrapperProps> = ({
         { sectionSubTitle && <p className="mt-3 paragraph text-center max-w-[60rem] mx-auto">
           {sectionSubTitle}
         </p> }
-        <motion.div 
-          className="w-full"
-          initial={{ opacity: 0, y: 50 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8 }}
-          viewport={{ once: true, margin: "-160px" }}
-        >
+      
           {topPanel && <InformationPanel content={topPanel} />}
-        </motion.div>
+      
         <div
           className={cn(
             "mt-10 w-full flex justify-center flex-wrap gap-6",
@@ -67,15 +61,11 @@ const BenefitsSectionWrapper: React.FC<BenefitsSectionWrapperProps> = ({
             );
           })}
         </div>
-        <motion.div 
+        <div 
           className="w-full mt-10"
-          initial={{ opacity: 0, y: -50 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8 }}
-          viewport={{ once: true, margin: "-160px" }}
         >
           {bottomPanel && <InformationPanel content={bottomPanel} />}
-        </motion.div>
+        </div>
       </section>
     </div>
   );

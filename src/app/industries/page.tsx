@@ -5,7 +5,6 @@ import { cn } from "@/lib/utils";
 import Image from "next/image";
 import Link from "next/link";
 import React from "react";
-import { motion } from "framer-motion";
 
 const industriesData = [
   {
@@ -285,49 +284,19 @@ const industriesData = [
 ];
 
 const Industries = () => {
-  const containerVariants = {
-    hidden: { opacity: 1 },
-    visible: {
-      opacity: 1,
-      transition: {
-        staggerChildren: 0.5, // Delay between each word
-      },
-    },
-  };
-
-  const childrenVariants = {
-    hidden: { opacity: 0, y: 20 }, // Start hidden and slightly below
-    visible: {
-      opacity: 1,
-      y: 0,
-      transition: { duration: 0.5},
-    },
-  };
-
   return (
     <div className="page">
       {/* Hero Section */}
       <div className="w-full">
         <section className="website-container section-padding-x section-padding-bottom">
-          <motion.div
-            className="w-full flex flex-col gap-5"
-            variants={containerVariants}
-            initial="hidden"
-            animate="visible"
-          >
-            <motion.div variants={childrenVariants}>
+          <div className="w-full flex flex-col gap-5">
+            <div>
               <BreadCrumbs />
-            </motion.div>
-            <motion.h1 
-              className="font-sintony text-[2.4rem] lg:text-[3.25rem] leading-[3rem] lg:leading-[4.88rem] font-bold max-w-3xl"
-              variants={childrenVariants}
-            >
+            </div>
+            <h1 className="font-sintony text-[2.4rem] lg:text-[3.25rem] leading-[3rem] lg:leading-[4.88rem] font-bold max-w-3xl">
               Industry Expertise
-            </motion.h1>
-            <motion.div 
-              className="pl-4 py-0 relative before:absolute before:w-[5px] before:h-[95%] before:left-0 before:top-1/2 before:-translate-y-1/2 before:bg-amber-500"
-              variants={childrenVariants}
-            >
+            </h1>
+            <div className="pl-4 py-0 relative before:absolute before:w-[5px] before:h-[95%] before:left-0 before:top-1/2 before:-translate-y-1/2 before:bg-amber-500">
               <p className="paragraph max-w-[52rem]">
                 At Trehan International, we harness over four decades of
                 expertise, deep industry insights, and a holistic approach to
@@ -336,17 +305,14 @@ const Industries = () => {
                 intricacies of various sectors set us apart as a preferred
                 partner for leading companies worldwide.
               </p>
-            </motion.div>
+            </div>
 
-            <motion.div 
-              className="mt-9 flex items-center justify-center"
-              variants={childrenVariants}
-            >
+            <div className="mt-9 flex items-center justify-center">
               <Link href="/contact-us">
                 <Button type="submit">Partner with us</Button>
               </Link>
-            </motion.div>
-          </motion.div>
+            </div>
+          </div>
         </section>
       </div>
 
@@ -370,28 +336,16 @@ const Industries = () => {
                       index % 2 !== 0 && "lg:justify-end"
                     )}
                   >
-                    <motion.div
-                      className="flex-none w-full max-w-[31.25rem] h-[20rem] lg:h-[37.5rem] relative"
-                      initial={{ opacity: 0, y: -100 }}
-                      whileInView={{ opacity: 1, y: 0 }}
-                      transition={{ duration: 1 }}
-                      viewport={{ once: true, amount: 0.3 }}
-                    >
+                    <div className="flex-none w-full max-w-[31.25rem] h-[20rem] lg:h-[37.5rem] relative">
                       <Image
                         src={item.image.src}
                         alt={item.image.alt}
                         fill
                         className="object-cover"
                       />
-                    </motion.div>
+                    </div>
                   </div>
-                  <motion.div
-                    className="w-full flex flex-col justify-center items-start"
-                    initial={{ opacity: 0, y: 100 }}
-                    whileInView={{ opacity: 1, y: 0 }}
-                    transition={{ duration: 1 }}
-                    viewport={{ once: true, amount: 0.2 }}
-                  >
+                  <div className="w-full flex flex-col justify-center items-start">
                     <h3 className="mt-3 lg:mt-0 font-sintony font-bold text-[1.375rem] leading-[2rem] lg:text-[2rem] lg:leading-[3rem] text-[#1A1A1A]">
                       {item.title}
                     </h3>
@@ -412,7 +366,7 @@ const Industries = () => {
                         );
                       })}
                     </ul>
-                  </motion.div>
+                  </div>
                 </div>
               );
             })}

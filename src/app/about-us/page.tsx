@@ -24,6 +24,10 @@ interface TimeLineProps {
   storyContent: StoryContentItem[];
 }
 
+interface DirectorMessageParagraphProps {
+  text: string;
+}
+
 const AboutData = [
   {
     id: "about_001",
@@ -297,88 +301,50 @@ const TimeLine: React.FC<TimeLineProps> = ({ storyContent }) => {
   );
 };
 
+const DirectorMessageParagraph: React.FC<DirectorMessageParagraphProps> = ({
+  text,
+}) => {
+  return (
+    <div className="max-xl:ml-2 pl-4 py-0 relative before:absolute before:w-[5px] before:h-[95%] before:left-0 before:top-1/2 before:-translate-y-1/2 before:bg-amber-500">
+      <p className="text-sm md:text-base lg:text-[1.125rem] lg:leading-[1.69rem] font-normal text-[#535353]">
+        {text}
+      </p>
+    </div>
+  );
+};
+
 const AboutUs = () => {
-  const isTabletOrMobile = useMediaQuery({ query: "(max-width: 1279px)" });
-
-  const containerVariants = {
-    hidden: { opacity: 1 },
-    visible: {
-      opacity: 1,
-      transition: {
-        staggerChildren: 0.5, // Delay between each word
-      },
-    },
-  };
-
-  const childrenVariants = {
-    hidden: { opacity: 0, y: 20 }, // Start hidden and slightly below
-    visible: {
-      opacity: 1,
-      y: 0,
-      transition: {
-        type: "spring",
-        duration: 0.5,
-        damping: 20,
-        stiffness: 300,
-      },
-    },
-  };
-
-  const buttonVariants = isTabletOrMobile
-    ? {
-        initial: { opacity: 0, y: 50 },
-        whileInView: { opacity: 1, y: 0 },
-      }
-    : {
-        initial: { opacity: 0, x: 50 },
-        whileInView: { opacity: 1, x: 0 },
-      };
-
   return (
     <div className="page">
       {/* About Data Section */}
       <div className="w-full">
         <section className="website-container section-padding-x section-padding-bottom">
           <div className="flex flex-col items-center">
-            <motion.div
-              className="flex flex-col items-center gap-5"
-              variants={containerVariants}
-              initial="hidden"
-              animate="visible"
-            >
-              <motion.div className="mx-auto" variants={childrenVariants}>
+            <div className="flex flex-col items-center gap-5">
+              <div className="mx-auto">
                 <BreadCrumbs />
-              </motion.div>
+              </div>
 
-              <motion.h1
-                className="hero-text mt-3 text-center max-w-2xl lg:max-w-4xl mx-auto"
-                variants={childrenVariants}
-              >
+              <h1 className="hero-text mt-3 text-center max-w-2xl lg:max-w-4xl mx-auto">
                 Pioneering Human Mobility and Client Success
-              </motion.h1>
-              <motion.p
-                className="paragraph text-center max-w-[52rem] mx-auto"
-                variants={childrenVariants}
-              >
+              </h1>
+              <p className="paragraph text-center max-w-[52rem] mx-auto">
                 At Trehan International, our vision is to redefine the landscape
                 of global recruitment by empowering human mobility, thus
                 unlocking economic opportunities and facilitating cultural
                 exchange. We aim to create a world where talent knows no
                 borders, and every individual can thrive in a global community
                 enriched with diverse skills and perspectives.
-              </motion.p>
-            </motion.div>
+              </p>
+            </div>
 
             {/* About Us Stats */}
             <div className="mt-8 lg:mt-16 w-full grid grid-cols-1 mobile-2xl:grid-cols-2 lg:grid-cols-3 gap-5 max-w-6xl mx-auto">
               {AboutData.map((item) => {
                 return (
-                  <motion.div
+                  <div
                     key={item.id}
                     className="border border-[#C5C5C5] p-4 flex flex-col items-center justify-center bg-[#FDFDFD] hover:bg-[#000000] rounded-full group transform transition-all duration-500 hover:scale-110"
-                    // initial={{ opacity: 0, y: 20, scale: 0 }}
-                    // whileInView={{ opacity: 1, y: 0, scale: 1 }}
-                    // viewport={{ once: true, margin: "-100px" }}
                   >
                     <h3 className="font-sintony font-bold text-[2rem] leading-[3rem] text-center text-[#000000] group-hover:text-white">
                       {item.title}
@@ -386,23 +352,16 @@ const AboutUs = () => {
                     <p className="paragraph text-center max-w-48 group-hover:text-white">
                       {item.subtitle}
                     </p>
-                  </motion.div>
+                  </div>
                 );
               })}
             </div>
 
-            <motion.div
-              className="mt-7 lg:mt-14"
-              variants={buttonVariants}
-              initial={buttonVariants.initial}
-              whileInView={buttonVariants.whileInView}
-              transition={{ duration: 0.8 }}
-              viewport={{ once: true, margin: "-160px" }}
-            >
+            <div className="mt-7 lg:mt-14">
               <Link href="/contact-us">
                 <Button type="submit">Unlock Talent Supply</Button>
               </Link>
-            </motion.div>
+            </div>
           </div>
         </section>
       </div>
@@ -418,12 +377,12 @@ const AboutUs = () => {
 
       {/* Director's Message Section */}
       <div className="w-full bg-[#FAFAFA]">
-        <section className="lg:h-screen website-container section-padding-x max-lg:section-padding-y section-padding-top relative">
-          <div className="w-full h-full flex flex-col lg:flex-row">
-            <div className="hidden lg:block flex-1" />
+        <section className="xl:min-h-screen website-container section-padding-x max-lg:section-padding-y section-padding-top relative">
+          <div className="w-full h-full flex flex-col xl:flex-row">
+            <div className="hidden xl:block flex-1" />
 
             {/* Director's Image for Smaller Screens */}
-            <div className="lg:hidden overflow-hidden relative size-[15rem] mobile-sm:size-[19rem] mobile-md:size-[22rem] mobile-lg:size-[24rem] sm:size-[30rem] mx-auto flex items-center justify-center">
+            <div className="xl:hidden overflow-hidden relative size-[15rem] mobile-sm:size-[19rem] mobile-md:size-[22rem] mobile-lg:size-[24rem] sm:size-[30rem] mx-auto flex items-center justify-center">
               <Image
                 src={"/bg-pattern.svg"}
                 alt="Background Pattern Image"
@@ -441,39 +400,28 @@ const AboutUs = () => {
               </div>
             </div>
 
-            <div className="max-lg:mt-3 flex-1 flex flex-col gap-6 lg:gap-12 justify-center">
+            <div className="max-xl:mt-3 flex-1 flex flex-col gap-6 xl:gap-12 justify-center">
               <div className="flex flex-col gap-3">
-                <h1 className="section-title lg:-ml-8 min">
+                <h1 className="section-title xl:-ml-8 min">
                   Director&apos;s Message
                 </h1>
-                <div className="max-xl:ml-2 pl-4 py-0 relative before:absolute before:w-[5px] before:h-[95%] before:left-0 before:top-1/2 before:-translate-y-1/2 before:bg-amber-500">
-                  <p className="text-sm md:text-base lg:text-[1.125rem] lg:leading-[1.69rem] font-normal text-[#535353]">
-                    Lorem ipsum dolor sit amet consectetur. Maecenas aenean
-                    facilisi ut adipiscing dictumst eget eget tellus. Neque
-                    tincidunt enim auctor augue. Nullam id sed condimentum
-                    ultrices vitae laoreet amet. Lectus rutrum sit egestas
-                    suspendisse aliquam sapien iaculis mattis.
-                    <br />
-                    <br />
-                    Lorem ipsum dolor sit amet consectetur. Maecenas aenean
-                    facilisi ut adipiscing dictumst eget eget tellus.
-                  </p>
-                </div>
-              </div>
-
-              <div>
-                <h4 className="font-sintony font-bold text-2xl leading-[2.25rem] text-[#1A1A1A]">
-                  Jacob Jones
-                </h4>
-                <p className="font-normal text-[1.125rem] leading-[1.69rem] text-[#535353]">
-                  CHAIR & CEO
-                </p>
+                <DirectorMessageParagraph
+                  text="In 1976, I established TI in a modest, single-room office in
+                    New Delhi with one clear objective: to bring the right
+                    people together. Over the last four decades, we have grown
+                    from those humble beginnings into a dynamic, global
+                    operation—successfully placing more than 150,000
+                    professionals across the GCC. Through every milestone, we
+                    have upheld our guiding belief: that our clients and
+                    candidates deserve nothing but the very best."
+                />
+                <DirectorMessageParagraph text="Our journey has been shaped by the passion, skill, and dedication of every individual who has joined hands with us. Today, TI stands as a testament to our core values—trust, integrity, compassion, and excellence—which continue to inform each of our decisions and every single placement. By understanding the unique needs of employers, be they Hiring Managers, CEOs, or COOs, and aligning these with the aspirations of talented professionals, we aim to foster meaningful relationships that drive growth and success on both sides." />
               </div>
             </div>
           </div>
 
           {/* Director's Image for Larger Screens */}
-          <div className="hidden lg:block absolute w-1/2 h-full left-0 top-1/2 -translate-y-1/2 mt-14">
+          <div className="hidden xl:block absolute w-1/2 h-full left-0 top-1/2 -translate-y-1/2 mt-10">
             <div className="w-full h-full relative flex items-center justify-center">
               <Image
                 src={"/bg-pattern.svg"}
@@ -493,6 +441,26 @@ const AboutUs = () => {
             </div>
           </div>
         </section>
+      </div>
+
+      <div className="pt-0 xl:pt-10 section-padding-x bg-[#FAFAFA]">
+        <DirectorMessageParagraph text="As we look to the future, we remain committed to the same spirit that sparked our beginnings. We will continue to evolve, embracing new technologies and practices, while never losing sight of what truly matters: genuine care for the people we serve. Whether you are seeking to build a high-performing team or explore new career horizons, know that TI stands ready to walk with you—offering unwavering support, expertise, and a dedication to helping you achieve your greatest goals." />
+        <br />
+        <DirectorMessageParagraph text="We invite you to be part of this legacy, one built on the belief that success is best shared. Let us work together to make lasting contributions that bring about a brighter future for all. Remember: our greatest wealth lies not just in numbers or achievements, but in the lives we touch and the opportunities we create for others." />
+
+        <div className="mt-5">
+          <p className="font-normal text-[1.125rem] leading-[1.69rem] text-gray-400">
+            --From my heart to yours
+          </p>
+          <div className="mt-3">
+            <h4 className="font-sintony font-bold text-2xl leading-[2.25rem] text-[#1A1A1A]">
+              Mr. Satish Trehan
+            </h4>
+            <p className="font-normal text-[1.125rem] leading-[1.69rem] text-[#535353]">
+              Founding Father
+            </p>
+          </div>
+        </div>
       </div>
 
       {/* Our Vision/Our Mission Section */}
