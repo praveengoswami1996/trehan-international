@@ -306,7 +306,7 @@ const DirectorMessageParagraph: React.FC<DirectorMessageParagraphProps> = ({
 }) => {
   return (
     <div className="max-xl:ml-2 pl-4 py-0 relative before:absolute before:w-[5px] before:h-[95%] before:left-0 before:top-1/2 before:-translate-y-1/2 before:bg-amber-500">
-      <p className="text-sm md:text-base lg:text-[1.125rem] lg:leading-[1.69rem] font-normal text-[#535353]">
+      <p className="text-base lg:text-[1.125rem] lg:leading-[1.69rem] font-normal text-[#535353]">
         {text}
       </p>
     </div>
