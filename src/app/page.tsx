@@ -3,14 +3,11 @@ import DataCountUp from "@/components/DataCountUp";
 import FeatureSection from "@/components/FeatureSection";
 import IndustriesWeServe from "@/components/IndustriesWeServe";
 import LocationsWeServe from "@/components/LocationsWeServe";
-import IndustriesSVG from "@/components/SVGs/IndustriesSVG";
 import TestimonialCarousel from "@/components/TestimonialCarousel";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import Image from "next/image";
 import Link from "next/link";
-import { motion } from "framer-motion";
-import { useMediaQuery } from "react-responsive";
 import HomeHeroImage from "@/components/SVGs/HomeHeroImage";
 
 const trustedPartners = [
