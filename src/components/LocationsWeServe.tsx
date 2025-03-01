@@ -42,21 +42,12 @@ const LocationsWeServe = () => {
   return (
     <div className="w-full bg-[#1A1A1A]">
       <section className="website-container section-padding-x section-padding-y pb-12">
-        <div className="flex flex-col items-center justify-between">
-          <h1 className="section-title text-[#ffffff] text-center">
+        <div className="flex flex-col justify-between">
+          <h1 className="section-title text-[#ffffff]">
             Locations We Serve
           </h1>
 
-          {/* <div className="mt-12 w-full max-w-[756px] h-[10rem] md:h-[436px] relative">
-            <Image
-              src={"/world-map.svg"}
-              alt={"World Map"}
-              fill
-              className="object-contain"
-            />
-          </div> */}
-
-          <div className="mt-12 w-full max-w-[756px] h-[10rem] md:h-[436px] relative">
+          <div className="mt-12 w-full max-w-[756px] h-[10rem] md:h-[436px] relative mx-auto">
             <WorldMap className="w-full h-full" />
           </div>
 

@@ -15,24 +15,28 @@ const AccordionData = [
     title: "Expertise in Varied Section",
     content:
       "Our deep industry knowledge across sectors enables us to understand and meet the nuanced demands of your projects.",
+    imageUrl: "/whyChooseTrehan/wct-1.png"
   },
   {
     id: "accordion_002",
     title: "Customized Recruitment Frameworks",
     content:
       "Tailored strategies that align with your project's specific needs, ensuring optimal team composition.",
+    imageUrl: "/whyChooseTrehan/wct-2.png"
   },
   {
     id: "accordion_003",
     title: "Efficient Scalability",
     content:
       "Capability to manage recruitment volumes, from a handful of specialists to entire teams, across locations.",
+    imageUrl: "/whyChooseTrehan/wct-3.jpeg"
   },
   {
     id: "accordion_004",
     title: "Proven Success",
     content:
       "A track record of successful team formations for projects in both metropolitan and remote locations.",
+    imageUrl: "/whyChooseTrehan/wct-4.jpeg"
   },
 ];
 
@@ -43,6 +47,8 @@ interface WhyChooseTrehanProps {
 const WhyChooseTrehan: React.FC<WhyChooseTrehanProps> = ({
   backgroundColor = "#535353",
 }) => {
+  const [imageURL, setImageURL] = React.useState<string>("/whyChooseTrehan/wct-1.png");
+
   return (
     <div className="w-full" style={{ backgroundColor }}>
       <section className="website-container section-padding-x section-padding-y">
@@ -59,8 +65,8 @@ const WhyChooseTrehan: React.FC<WhyChooseTrehanProps> = ({
           <div className="mt-8 lg:mt-14 w-full flex flex-col md:flex-row">
             <div className="w-full md:w-1/2 relative h-[20rem] sm:h-[24rem] lg:h-[32.5rem]">
               <Image
-                src={"/why-choose-trehan.png"}
-                alt="People Discussing in a meeting"
+                src={imageURL}
+                alt="FAQ Image"
                 fill
                 className="object-cover"
               />
@@ -75,7 +81,7 @@ const WhyChooseTrehan: React.FC<WhyChooseTrehanProps> = ({
                         key={item.id}
                         value={`item-${index + 1}`}
                       >
-                        <AccordionTrigger className="font-sintony font-bold text-base lg:text-2xl lg:leading-[2.25rem] text-[#1A1A1A] hover:no-underline text-left hover:text-[#C6485D] data-[state=open]:text-[#C6485D]">
+                        <AccordionTrigger onClick={() => setImageURL(item.imageUrl)} className="font-sintony font-bold text-base lg:text-2xl lg:leading-[2.25rem] text-[#1A1A1A] hover:no-underline text-left hover:text-[#C6485D] data-[state=open]:text-[#C6485D]">
                           {item.title}
                         </AccordionTrigger>
                         <AccordionContent className="text-sm lg:text-[1.125rem] lg:leading-[1.69rem]">

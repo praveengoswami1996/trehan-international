@@ -101,14 +101,15 @@ const IndustriesWeServe = () => {
   return (
     <div className="w-full bg-[#F2F3F4]">
       <section className="website-container section-padding-x section-padding-y min-h-screen">
-        <div className="flex flex-col items-center">
-          <h1 className="section-title text-center">Industries We Serve</h1>
-          <p className="mt-3 paragraph text-center max-w-[60rem]">
-            Trehan International is a recruitment consultancy with a focus on
-            revolutionizing the field of recruitment. Over the past four
-            decades, Trehan International has transformed into a prominent and
-            highly respected recruitment consultancy in India and Southeast
-            Asia.
+        <div className="flex flex-col">
+          <h1 className="section-title">Industries We Serve</h1>
+          <p className="mt-3 paragraph max-w-[66rem]">
+            At Trehan International, we harness over four decades of expertise,
+            deep industry insights, and a holistic approach to Talent
+            Acquisition to serve a diverse range of industries. Our unparalleled
+            business acumen and the ability to navigate the intricacies of
+            various sectors set us apart as a preferred partner for leading
+            companies worldwide.
           </p>
 
           {/* Image - for smaller screens */}
@@ -238,7 +239,7 @@ const IndustriesWeServe = () => {
           </div>
 
           {/* CTA button - navigates to Industries Page */}
-          <div className="mt-10 lg:mt-28">
+          <div className="mt-10 lg:mt-28 flex justify-center">
             <Link href={"/industries"}>
               <Button
                 variant={"outline"}

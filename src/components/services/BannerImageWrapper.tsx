@@ -17,7 +17,7 @@ const BannerImageWrapper: React.FC<BannerImageWrapperProps> = ({
             src={imageURL}
             alt={altText}
             fill
-            className="object-cover"
+            className="object-cover object-right-center"
             loading="lazy"
         />
       </div>

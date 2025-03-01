@@ -130,7 +130,7 @@ const Footer = () => {
                 className="bg-[#F8F8F8] border-none outline-none bg-transparent shadow-none text-sm font-light py-3 md:py-0"
               />
               <Link href="/contact-us">
-                <Button className="text-sm bg-[#1A1A1A] px-5 py-6">
+                <Button className="w-full text-sm bg-[#1A1A1A] px-5 py-6">
                   Send a Message
                 </Button>
               </Link>

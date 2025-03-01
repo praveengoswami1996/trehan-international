@@ -1,6 +1,7 @@
 import WhyChooseTrehan from "@/components/AboutUs/WhyChooseTrehan";
-import HowRecruitmentFlowWorks from "@/components/approach/HowRecruitmentFlowWorks";
 import FeatureSection from "@/components/FeatureSection";
+import HowRecruitmentFlowWorks from "@/components/SVGs/HowRecruitmentFlowWorks";
+import HowTheMobilisationProcessFlow from "@/components/SVGs/HowTheMobilisationProcessFlow";
 import React from "react";
 
 export default function ApproachLayout({
@@ -9,10 +10,11 @@ export default function ApproachLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <div className="min-h-screen bg-white pt-28 md:pt-32 lg:pt-36 xl:pt-40 relative">
+    <div className="min-h-screen bg-white pt-32 relative">
       {children}
+      <WhyChooseTrehan backgroundColor="#535353" />
       <HowRecruitmentFlowWorks />
-      <WhyChooseTrehan backgroundColor="#000000" />
+      <HowTheMobilisationProcessFlow />
       <FeatureSection />
     </div>
   );

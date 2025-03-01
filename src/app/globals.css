@@ -96,7 +96,7 @@
   }
 
   .hero-text {
-    @apply font-sintony text-[2.4rem] lg:text-[3.25rem] leading-[3rem] lg:leading-[4.88rem] font-bold;
+    @apply font-sintony text-[2.4rem] lg:text-[3.25rem] leading-[3rem] lg:leading-[4rem] font-bold;
   }
 
   .paragraph {

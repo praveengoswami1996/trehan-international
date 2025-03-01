@@ -15,23 +15,25 @@ const HeroSectionWrapper: React.FC<HeroSectionWrapperProps> = ({
 }) => {
   return (
     <div className="w-full">
-      <section className="website-container section-padding-x section-padding-y 2xl:pb-32 pt-0 relative overflow-hidden">
-        <div className="flex flex-col items-center gap-5">
-          <div className="mx-auto">
+      <section className="website-container section-padding-x section-padding-y 2xl:pb-40 pt-0 relative overflow-hidden">
+        <div className="flex flex-col gap-20">
+          <div>
             <BreadCrumbs />
           </div>
-          <h2 className="hero-text text-center mx-auto">{title}</h2>
-          <div className="max-w-[52rem] mx-auto">
-            <p className="paragraph text-center">{description}</p>
-          </div>
-          <div className="mt-9">
-            <Link href="/contact-us">
-              <Button type="button">Partner with us</Button>
-            </Link>
+          <div className="flex flex-col gap-3">
+            <h2 className="hero-text">{title}</h2>
+            <div className="max-w-[52rem]">
+              <p className="paragraph">{description}</p>
+            </div>
+            <div className="mt-12">
+              <Link href="/contact-us">
+                <Button type="button">Partner with us</Button>
+              </Link>
+            </div>
           </div>
         </div>
 
-        <div className="hidden sm:block absolute -left-60 xl:-left-52 top-56 xl:top-48 size-[33.25rem]">
+        <div className="hidden sm:block absolute -right-60 xl:-right-40 top-56 xl:top-60 size-[33.25rem]">
           <Image
             src="/bg-pattern-003246.svg"
             alt="Background Pattern Image"

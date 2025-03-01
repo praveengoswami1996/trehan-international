@@ -12,6 +12,7 @@ import {
   CarouselNext,
   CarouselPrevious,
 } from "@/components/ui/carousel";
+import Image from "next/image";
 
 const clientOutcomes = [
   {
@@ -60,14 +61,17 @@ const TestimonialCarousel = () => {
 
   return (
     <div className="w-full bg-[#FAFAFA]">
-      <section className="website-container section-padding-x section-padding-y">
-        <div className="flex flex-col lg:flex-row">
-          <div className="flex-1 flex items-center xl:pl-32">
-            <h1 className="section-title text-[#1A1A1A] lg:text-6xl lg:leading-[5rem] max-w-xs">
+      <section className="website-container section-padding-x section-padding-y relative">
+        <div className="flex flex-col xl:flex-row">
+          <div className="flex-1">
+            <h1 className="section-title max-xl:max-w-none xl:max-w-sm">
               Client Outcomes & Impact
             </h1>
+            <p className="mt-2.5 paragraph">
+              Real results. Real stories. Real impact.<br />See what our clients have achieved.
+            </p>
           </div>
-          <div className="mt-10">
+          <div className="h-full mt-10">
             <Carousel
               //@ts-ignore
               plugins={[plugin.current]}
@@ -117,16 +121,19 @@ const TestimonialCarousel = () => {
                   </CarouselItem>
                 ))}
               </CarouselContent>
-              <CarouselPrevious
-                style={{ boxShadow: "0px 0px 40px 0px #00000066" }}
-                className="left-1 top-60 -translate-y-0 size-10 bg-[#FFFFFFCC]"
-              />
-              <CarouselNext
-                style={{ boxShadow: "0px 0px 40px 0px #00000066" }}
-                className="right-1 top-60 -translate-y-0 size-10 bg-[#FFFFFFCC]"
-              />
+              <CarouselPrevious className="border-black size-9 max-md:absolute max-md:top-full max-md:left-28"/>
+              <CarouselNext className="border-black size-9 max-md:absolute max-md:top-full max-md:right-28"/>
             </Carousel>
           </div>
+        </div>
+
+        <div className="absolute bottom-0 max-xl:hidden">
+          <Image 
+            src="/half-colored-circle.svg"
+            alt="Colored Ring"
+            width={390}
+            height={390}
+          />
         </div>
       </section>
     </div>

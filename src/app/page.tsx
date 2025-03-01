@@ -11,6 +11,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { motion } from "framer-motion";
 import { useMediaQuery } from "react-responsive";
+import HomeHeroImage from "@/components/SVGs/HomeHeroImage";
 
 const trustedPartners = [
   { id: "tp_001", src: "/partners/rt.png" },
@@ -199,7 +200,6 @@ const AboutDataItem: React.FC<AboutDataItemProps> = ({
 };
 
 const ApproachItem: React.FC<ApproachItemProps> = ({ data }) => {
-
   return (
     <div className="flex flex-col lg:flex-row items-center">
       <div className="flex-1 w-full">
@@ -216,9 +216,7 @@ const ApproachItem: React.FC<ApproachItemProps> = ({ data }) => {
           </div>
         </div>
       </div>
-      <div
-        className="flex-1 pl-0 lg:pl-24"
-      >
+      <div className="flex-1 pl-0 lg:pl-24">
         <h2 className="mt-2 font-sintony font-bold text-2xl leading-9 text-[#1A1A1A]">
           {data.label}
         </h2>
@@ -247,17 +245,15 @@ export default function Home() {
   return (
     <div className="min-h-screen pt-28 md:pt-32 lg:pt-36 xl:pt-44 bg-white">
       {/* Hero Section */}
-      <section className="website-container section-padding-x pb-10 xl:pb-20 relative overflow-hidden">
+      <section className="website-container section-padding-x pb-10 xl:pb-20 relative overflow-hidden flex flex-col xl:flex-row max-mobile-lg:gap-0 gap-10">
         <div>
-          <h2
-            className="font-sintony text-[1.5rem] lg:text-[2rem] leading-[2.2rem] lg:leading-[3rem] font-normal text-[#C6485D]"
-          >
+          <h2 className="font-sintony text-[1.5rem] lg:text-[2rem] leading-[2.2rem] lg:leading-[3rem] font-normal text-[#C6485D]">
             Precision Talent Acquisition
           </h2>
-          <h1 className="hero-text mt-3 lg:mt-0">
+          <h1 className="hero-text mt-3">
             Where Expertise Meets Innovation
           </h1>
-          <div className="mt-3 max-w-[39rem]">
+          <div className="mt-3 max-w-[39.5rem]">
             <p className="paragraph">
               At Trehan International, we believe that the perfect hire is more
               than just a candidate; it&apos;s a strategic partner in your
@@ -280,39 +276,8 @@ export default function Home() {
           </div>
         </div>
 
-        <div className="hidden xl:block absolute size-[33.25rem] right-8 top-32 overflow-hidden">
-          <Image
-            src={"/bg-pattern.svg"}
-            alt={"Background Pattern"}
-            fill
-            priority
-            className="object-cover object-center"
-          />
-          <div className="w-full h-full relative">
-            <div className="absolute w-full h-full top-8">
-              <IndustriesSVG />
-            </div>
-          </div>
-        </div>
-
-        <div className="xl:hidden overflow-hidden relative size-[15rem]  mobile-sm:size-[19rem] mobile-md:size-[22rem] mobile-lg:size-[24rem] sm:size-[30rem] mx-auto mt-10">
-          <Image
-            src={"/bg-pattern.svg"}
-            alt={"Background Pattern"}
-            fill
-            priority
-            className="object-contain object-center"
-          />
-          <div className="w-full h-full relative">
-            <div className="absolute w-full h-full top-8">
-              <Image
-                src={"/hero.svg"}
-                alt="Hero Image"
-                fill
-                className="object-contain object-top"
-              />
-            </div>
-          </div>
+        <div className="flex-none relative flex items-center justify-center">
+          <HomeHeroImage />
         </div>
       </section>
 
@@ -369,12 +334,8 @@ export default function Home() {
         <div className="w-full h-full flex flex-col xl:flex-row">
           <div className="flex-1 flex flex-col gap-12 justify-between">
             <div className="flex flex-col gap-3">
-              <h1 className="section-title">
-                About us
-              </h1>
-              <div
-                className="pl-4 py-0 relative before:absolute before:w-[5px] before:h-[95%] before:left-0 before:top-1/2 before:-translate-y-1/2 before:bg-amber-500"
-              >
+              <h1 className="section-title">About us</h1>
+              <div className="pl-4 py-0 relative before:absolute before:w-[5px] before:h-[95%] before:left-0 before:top-1/2 before:-translate-y-1/2 before:bg-amber-500">
                 <p className="paragraph">
                   Trehan International is a recruitment consultancy with a focus
                   on revolutionizing the field of recruitment. Over the past
@@ -386,9 +347,7 @@ export default function Home() {
             </div>
 
             {/* Small Screen About us Section Image */}
-            <div
-              className="xl:hidden overflow-hidden relative size-[15rem]  mobile-sm:size-[19rem] mobile-md:size-[22rem] mobile-lg:size-[24rem] sm:size-[30rem] mx-auto flex items-center justify-center"
-            >
+            <div className="xl:hidden overflow-hidden relative size-[15rem]  mobile-sm:size-[19rem] mobile-md:size-[22rem] mobile-lg:size-[24rem] sm:size-[30rem] mx-auto flex items-center justify-center">
               <Image
                 src={"/bg-pattern.svg"}
                 alt="Background Pattern Image"
@@ -420,9 +379,7 @@ export default function Home() {
               })}
             </div>
 
-            <div
-              className="flex justify-center xl:justify-start"
-            >
+            <div className="flex justify-center xl:justify-start">
               <Link href={"/about-us"}>
                 <Button
                   variant={"outline"}
@@ -438,9 +395,7 @@ export default function Home() {
 
         {/* Large Screen About us Section Image */}
         <div className="hidden xl:block absolute w-1/2 h-full right-5 top-1/2 -translate-y-1/2 mt-20">
-          <div
-            className="w-full h-full relative flex items-center justify-center"
-          >
+          <div className="w-full h-full relative flex items-center justify-center">
             <Image
               src={"/bg-pattern.svg"}
               alt="Background Pattern Image"
@@ -463,24 +418,17 @@ export default function Home() {
       {/* Our Services Section */}
       <div className="w-full bg-[#000000]">
         <section className="website-container section-padding-x section-padding-y mt-12 md:mt-16 lg:mt-20 xl:mt-36 min-h-screen">
-          <div className="flex flex-col items-center">
-            <h1
-              className="section-title text-white text-center"
-            >
+          <div className="flex flex-col">
+            <h1 className="section-title text-white">
               Our Services
             </h1>
-            <p
-              className="mt-3 paragraph text-white text-center max-w-[22rem]"
-            >
+            <p className="mt-3 paragraph text-white">
               Building Workforce Excellence: Tailored Recruitment Solutions
             </p>
             <div className="mt-10 w-full grid justify-items-center grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
               {ourServices.map((item, index) => {
                 return (
-                  <div
-                    key={item.id}
-                    className="w-full max-w-[24rem]"
-                  >
+                  <div key={item.id} className="w-full max-w-[24rem]">
                     <Link
                       href={item.href}
                       className="block w-full max-w-[24rem] transform transition-transform duration-300 hover:scale-105"
@@ -547,14 +495,8 @@ export default function Home() {
       <div className="w-full bg-[#FAFAFA]">
         <section className="website-container section-padding-x section-padding-y md:pr-20 min-h-screen relative overflow-hidden">
           <div className="flex flex-col">
-            <h1
-              className="section-title"
-            >
-              Our Approach
-            </h1>
-            <p
-              className="mt-2.5 paragraph"
-            >
+            <h1 className="section-title">Our Approach</h1>
+            <p className="mt-2.5 paragraph">
               We follow a 3 phase approach consisting
             </p>
 
@@ -582,22 +524,15 @@ export default function Home() {
       {/* Case Studies Section */}
       <div className="w-full bg-[#C6485D]">
         <section className="website-container section-padding-x section-padding-y">
-          <div className="flex flex-col items-center">
-            <h1
-              className="section-title text-[#ffffff] text-center"
-            >
+          <div className="flex flex-col">
+            <h1 className="section-title text-[#ffffff]">
               Case Studies
             </h1>
-            <p
-              className="mt-2.5 paragraph text-[#ffffff] text-center max-w-sm"
-            >
+            <p className="mt-2.5 paragraph text-[#ffffff]">
               Talent Acquisition in Action: Our Sourcing Success Stories
             </p>
 
-            <div
-              className="w-full mt-10 grid justify-items-center grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8"
-             
-            >
+            <div className="w-full mt-10 grid justify-items-center grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
               {caseStudies.map((item) => {
                 return (
                   <div
@@ -630,9 +565,7 @@ export default function Home() {
               })}
             </div>
 
-            <div
-              className="mt-12"
-            >
+            <div className="mt-12 flex justify-center">
               <Link href="/case-studies">
                 <Button
                   variant={"outline"}
@@ -655,26 +588,22 @@ export default function Home() {
       <div className="w-full">
         <section className="website-container section-padding-x section-padding-y">
           <div className="flex flex-col">
-            <h1
-              className="section-title text-[#1A1A1A]"
-            >
+            <h1 className="section-title text-[#1A1A1A]">
               Trending Blog & Articles
             </h1>
             <div className="flex flex-col md:flex-row items-start md:items-end justify-between gap-5">
-              <p
-                className="mt-2.5 text-base md:text-[1.125rem] md:leading-[1.69rem] font-regular text-[#535353] max-w-[35rem]"
-              >
+              <p className="mt-2.5 text-base md:text-[1.125rem] md:leading-[1.69rem] font-regular text-[#535353] max-w-[35rem]">
                 Read the blog and article inside of consulting. We share tips
                 and tricks to get more success
               </p>
               <Button
-                  variant={"outline"}
-                  className={
-                    "border-[#1A1A1A] text-base font-bold text-[#000000] leading-5 bg-white"
-                  }
-                >
-                  View All
-                </Button>
+                variant={"outline"}
+                className={
+                  "border-[#1A1A1A] text-base font-bold text-[#000000] leading-5 bg-white"
+                }
+              >
+                View All
+              </Button>
             </div>
 
             <div className="w-full mt-12 grid justify-items-center grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
