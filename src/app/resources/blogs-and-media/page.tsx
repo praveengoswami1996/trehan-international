@@ -86,12 +86,9 @@ const blogs = [
 ];
 
 const BlogsAndMedia = () => {
-
   return (
-    <div className="page">
-      <div
-        className="hidden mobile-sm:block absolute top-10 md:-top-36 lg:-top-10 left-1/2 -translate-x-1/2 size-[15rem] mobile-sm:size-[20rem] md:size-[33.25rem]"
-      >
+    <div className="page pt-28">
+      <div className="hidden xl:block absolute top-10 md:-top-36 lg:-top-10 -right-5 size-[15rem] mobile-sm:size-[20rem] md:size-[33.25rem]">
         <Image
           src="/bg-pattern-20.svg"
           alt="Background Pattern Image"
@@ -103,32 +100,23 @@ const BlogsAndMedia = () => {
       {/* Hero Section */}
       <div className="w-full">
         <section className="website-container section-padding-x section-padding-bottom">
-          <div
-            className="flex flex-col items-center gap-5"
-            
-          >
-            <div className="mx-auto">
+          <div className="flex flex-col gap-5">
+            <div>
               <BreadCrumbs />
             </div>
-            <h1 
-              className="font-sintony text-[2.4rem] lg:text-[3.25rem] leading-[3rem] lg:leading-[4.88rem] font-bold text-center max-w-4xl mx-auto"
-              
-            >
+            <h1 className="mt-3 lg:mt-8 xl:mt-14 font-sintony text-[2.4rem] lg:text-[3.25rem] leading-[3rem] lg:leading-[4.88rem] font-bold max-w-4xl">
               Blogs
             </h1>
-            <p 
-              className="paragraph text-center max-w-[34rem] mx-auto"
-              
-            >
-              Lorem ipsum dolor sit amet consectetur. Sit in nec sagittis amet sed convallis nibh.
+            <p className="paragraph max-w-[34rem]">
+              Lorem ipsum dolor sit amet consectetur. Sit in nec sagittis amet
+              sed convallis nibh.
             </p>
           </div>
         </section>
       </div>
 
-      {/* Case Studies */}
       <div className="w-full border-b border-[#D9D9D9]">
-        <section className="website-container section-padding-x section-padding-bottom pt-0 mobile-sm:pt-16 mobile-md:pt-20">
+        <section className="website-container section-padding-x section-padding-bottom">
           <div className="flex flex-col items-center">
             <div className="w-full grid justify-items-center grid-cols-1 mobile-2xl:grid-cols-2 lg:grid-cols-3 gap-6">
               {blogs.map((item, index) => {
@@ -136,10 +124,7 @@ const BlogsAndMedia = () => {
               })}
             </div>
 
-            <div 
-              className="mt-14"
- 
-            >
+            <div className="mt-14">
               <Button variant={"outline"} className={"w-fit border-[#1A1A1A]"}>
                 Load More
               </Button>

@@ -53,7 +53,7 @@ const BulkHiringSolutions = () => {
 
       {/* Banner Image Section */}
       <BannerImageWrapper
-        imageURL="/services/services-menu-1.png"
+        imageURL="/services/banner-1.png"
         altText="People going upstairs"
       />
 

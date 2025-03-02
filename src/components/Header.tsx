@@ -19,7 +19,7 @@ const Header = () => {
             <Link href={"/"}>
               <div className="w-[110px] h-[60px] sm:w-[153px] sm:h-[68px] relative">
                 <Image
-                  src={"/logo.svg"}
+                  src={"/logo2.svg"}
                   alt={"Trehan International Logo"}
                   fill
                   sizes=""

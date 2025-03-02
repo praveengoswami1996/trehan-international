@@ -46,7 +46,7 @@ const ProjectAndTurnkeyStaffingSolutions = () => {
 
       {/* Banner Image Section */}
       <BannerImageWrapper 
-        imageURL="/services/services-menu-4.png"
+        imageURL="/services/banner-3.png"
         altText="A group of workers looking at something"
       />
 

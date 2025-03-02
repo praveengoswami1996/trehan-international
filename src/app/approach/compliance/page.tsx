@@ -88,7 +88,7 @@ const Compliance = () => {
       <div className="w-full bg-[#C6485D]">
         <section className="website-container section-padding-x section-padding-y">
           <div>
-            <h1 className="section-title text-center text-white">
+            <h1 className="section-title text-white">
               Key Compliance Areas
             </h1>
             <div className="mt-10 grid grid-cols-1 lg:grid-cols-2 justify-items-center gap-6 px-2">

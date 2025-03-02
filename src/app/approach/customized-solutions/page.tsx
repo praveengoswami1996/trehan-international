@@ -148,10 +148,10 @@ const CustomizedSolutions = () => {
       <div className="w-full bg-[#C6485D]">
         <section className="website-container section-padding-x section-padding-y">
           <div>
-            <h1 className="section-title text-center text-white">
+            <h1 className="section-title  text-white">
               Delivering Value
             </h1>
-            <p className="mt-3 paragraph text-center mx-auto max-w-[32rem] text-white">
+            <p className="mt-3 paragraph max-w-[32rem] text-white">
               Our customized solutions focus on delivering tangible value to
               your organization. We aim to:
             </p>

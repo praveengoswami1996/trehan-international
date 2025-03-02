@@ -164,7 +164,7 @@ const MobileNavbar = () => {
           <div>
             <Link href={"/"}>
               <Image
-                src={"/logo.svg"}
+                src={"/logo2.svg"}
                 alt={"Trehan International Logo"}
                 width={100}
                 height={68}

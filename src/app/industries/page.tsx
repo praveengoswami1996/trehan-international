@@ -1,12 +1,22 @@
 "use client";
 import BreadCrumbs from "@/components/BreadCrumbs";
+import {
+  ANTIcon,
+  EICIcon,
+  FMIcon,
+  HCIcon,
+  IMIcon,
+  LSCMIcon,
+  OGEIcon,
+  RFBIcon,
+} from "@/components/icons";
 import { Button } from "@/components/ui/button";
 import { cn } from "@/lib/utils";
 import Image from "next/image";
 import Link from "next/link";
 import React from "react";
 
-const industriesData = [
+const oldIndustriesData = [
   {
     id: "industry_001",
     title: "Engineering, Infrastructure & Construction",
@@ -283,41 +293,237 @@ const industriesData = [
   },
 ];
 
+const newIndustriesData = [
+  {
+    id: "industry_001",
+    title: "Engineering, Infrastructure and Construction",
+    icon: EICIcon,
+    bulletPoints: [
+      {
+        id: "bullet_001",
+        title: "Roadways, Bridges, and Expressways",
+      },
+      {
+        id: "bullet_002",
+        title: "Buildings, Hospitals, Hotels, and Malls",
+      },
+      {
+        id: "bullet_003",
+        title: "Rail, Metro, and Mono-Rail",
+      },
+      {
+        id: "bullet_004",
+        title:
+          "Electro-Mechanical (HVAC, Electrical, Plumbing & Fire Fighting)",
+      },
+      {
+        id: "bullet_005",
+        title: "Dams, Waterways, Pipelines, Water, Waste & Sewage Treatment",
+      },
+    ],
+  },
+  {
+    id: "industry_002",
+    title: "Retail, Food and Beverage",
+    icon: RFBIcon,
+    bulletPoints: [
+      {
+        id: "bullet_001",
+        title: "Upstream (Exploration & Production)",
+      },
+      {
+        id: "bullet_002",
+        title: "Midstream (Pipelines & Transportation)",
+      },
+      {
+        id: "bullet_003",
+        title: "Downstream (Refining & Petro-Chemicals)",
+      },
+      {
+        id: "bullet_004",
+        title: "Power Plants Rehabilitation / Maintenance Projects",
+      },
+      {
+        id: "bullet_005",
+        title: "Heavy Engineering & Fabrication, Electrical & Instrumentation",
+      },
+    ],
+  },
+  {
+    id: "industry_003",
+    title: "Logistic & Supply Chain Management",
+    icon: LSCMIcon,
+    bulletPoints: [
+      {
+        id: "bullet_001",
+        title: "Port Operations, Management & Technical Support",
+      },
+      {
+        id: "bullet_002",
+        title: "Warehousing, Stevedoring & Transportation",
+      },
+      {
+        id: "bullet_003",
+        title: "Freight Forwarding",
+      },
+    ],
+  },
+  {
+    id: "industry_004",
+    title: "Automotive and Transportation",
+    icon: ANTIcon,
+    bulletPoints: [
+      {
+        id: "bullet_001",
+        title: "Dealership: Sales & Servicing",
+      },
+      {
+        id: "bullet_002",
+        title: "Public Transport",
+      },
+      {
+        id: "bullet_003",
+        title: "Last Mile Delivery",
+      },
+    ],
+  },
+  {
+    id: "industry_005",
+    title: "Healthcare",
+    icon: HCIcon,
+    bulletPoints: [
+      {
+        id: "bullet_001",
+        title: "Nurse Hiring",
+      },
+      {
+        id: "bullet_002",
+        title: "Therapists",
+      },
+      {
+        id: "bullet_003",
+        title: "Medical Technicians",
+      },
+      {
+        id: "bullet_004",
+        title: "Medical Assistants",
+      },
+    ],
+  },
+  {
+    id: "industry_006",
+    title: "Industrial Manufacturing",
+    icon: IMIcon,
+    bulletPoints: [
+      {
+        id: "bullet_001",
+        title: "FMCG, Drinks & Bottling Plant",
+      },
+      {
+        id: "bullet_002",
+        title: "Factory (Steel Profiling, Furniture)",
+      },
+    ],
+  },
+  {
+    id: "industry_007",
+    title: "Facility Management",
+    icon: FMIcon,
+    bulletPoints: [
+      {
+        id: "bullet_001",
+        title: "Engineering",
+      },
+      {
+        id: "bullet_002",
+        title: "Lifts & Escalators",
+      },
+      {
+        id: "bullet_003",
+        title: "Front Desk, Administration, Security & Vigilance",
+      },
+      {
+        id: "bullet_004",
+        title: "Cleaning & House Keeping",
+      },
+    ],
+  },
+  {
+    id: "industry_008",
+    title: "Oil, Gas and energy",
+    icon: OGEIcon,
+    bulletPoints: [
+      {
+        id: "bullet_001",
+        title: "Upstream (Exploration & Production)",
+      },
+      {
+        id: "bullet_002",
+        title: "Midstream (Pipelines & Transportation)",
+      },
+      {
+        id: "bullet_003",
+        title: "Downstream (Refining & Petro-Chemicals)",
+      },
+      {
+        id: "bullet_004",
+        title: "Power Plants Rehabilitation / Maintenance Projects",
+      },
+      {
+        id: "bullet_005",
+        title: "Heavy Engineering & Fabrication, Electrical & Instrumentation",
+      },
+    ],
+  },
+];
+
 const Industries = () => {
   return (
-    <div className="page">
+    <div className="page pt-28">
       {/* Hero Section */}
       <div className="w-full">
         <section className="website-container section-padding-x section-padding-bottom">
-          <div className="w-full flex flex-col gap-5">
-            <div>
-              <BreadCrumbs />
-            </div>
-            <h1 className="font-sintony text-[2.4rem] lg:text-[3.25rem] leading-[3rem] lg:leading-[4.88rem] font-bold max-w-3xl">
-              Industry Expertise
-            </h1>
-            <div className="pl-4 py-0 relative before:absolute before:w-[5px] before:h-[95%] before:left-0 before:top-1/2 before:-translate-y-1/2 before:bg-amber-500">
-              <p className="paragraph max-w-[52rem]">
-                At Trehan International, we harness over four decades of
-                expertise, deep industry insights, and a holistic approach to
-                Talent Acquisition to serve a diverse range of industries. Our
-                unparalleled business acumen and the ability to navigate the
-                intricacies of various sectors set us apart as a preferred
-                partner for leading companies worldwide.
-              </p>
-            </div>
+          <div>
+            <BreadCrumbs />
+          </div>
+          <div className="max-xl:mt-5 flex flex-col xl:flex-row xl:items-center max-xl:gap-10">
+            <div className="w-full flex flex-col gap-5">
+              <h1 className="mt-3 lg:mt-8 xl:mt-14 font-sintony text-[2.4rem] lg:text-[3.25rem] leading-[3rem] lg:leading-[4rem] font-bold max-w-3xl">
+                Trehan International - Industry Expertise
+              </h1>
+              <div className="pl-4 py-0 relative before:absolute before:w-[5px] before:h-[95%] before:left-0 before:top-1/2 before:-translate-y-1/2 before:bg-amber-500">
+                <p className="paragraph max-w-[52rem]">
+                  At Trehan International, we harness over four decades of
+                  expertise, deep industry insights, and a holistic approach to
+                  Talent Acquisition to serve a diverse range of industries. Our
+                  unparalleled business acumen and the ability to navigate the
+                  intricacies of various sectors set us apart as a preferred
+                  partner for leading companies worldwide.
+                </p>
+              </div>
 
-            <div className="mt-9 flex items-center justify-center">
-              <Link href="/contact-us">
-                <Button type="submit">Partner with us</Button>
-              </Link>
+              <div className="mt-9">
+                <Link href="/contact-us">
+                  <Button type="submit">Partner with us</Button>
+                </Link>
+              </div>
+            </div>
+            <div className="max-xl:flex-none w-full flex justify-center xl:justify-end">
+              <div className="relative size-[20rem] mobile-lg:size-[26rem] md:size-[31.5rem]">
+                <Image src="/industry-outer.svg" alt="Industries Circle" fill />
+                <div className="absolute top-1/2 -translate-y-1/2 left-1/2 -translate-x-1/2 w-3/5 h-3/5">
+                  <div className="w-full h-full relative">
+                    <Image src="/industry-inner.svg" alt="Industries Circle" fill />
+                  </div>
+                </div>
+              </div>
             </div>
           </div>
         </section>
       </div>
 
-      {/* Our Mission/Our Vision Section */}
-      <div className="w-full bg-[#FAFAFA]">
+      {/* Old Indusries Section UI */}
+      {/* <div className="w-full bg-[#FAFAFA]">
         <section className="website-container section-padding-x section-padding-y">
           <div className="flex flex-col gap-8 lg:gap-16">
             {industriesData.map((item, index) => {
@@ -366,6 +572,48 @@ const Industries = () => {
                         );
                       })}
                     </ul>
+                  </div>
+                </div>
+              );
+            })}
+          </div>
+        </section>
+      </div> */}
+
+      {/* New Industries Section UI */}
+      <div className="w-full bg-[#FAFAFA]">
+        <section className="website-container section-padding-x section-padding-y">
+          <div className="flex justify-center flex-wrap gap-6">
+            {newIndustriesData.map((item) => {
+              return (
+                <div
+                  key={item.id}
+                  className="w-full max-w-[24.5rem] bg-white p-6 rounded-3xl"
+                >
+                  <div>
+                    <div className="flex items-center gap-5 pb-5 border-b border-[#E5E5E5]">
+                      <div>
+                        <item.icon className="size-[58px] text-[#C6485D]" />
+                      </div>
+                      <div className="text-[1.125rem] leading-[1.69rem] font-medium text-[#000000]">
+                        {item.title}
+                      </div>
+                    </div>
+
+                    <div className="pt-5">
+                      <ul className="flex flex-col gap-3 list-disc list-inside">
+                        {item.bulletPoints.map((item) => {
+                          return (
+                            <li
+                              key={item.id}
+                              className="text-sm text-[#373737] font-medium"
+                            >
+                              {item.title}
+                            </li>
+                          );
+                        })}
+                      </ul>
+                    </div>
                   </div>
                 </div>
               );

@@ -39,7 +39,7 @@ const ExecutiveSearchAndSelection = () => {
 
       {/* Banner Image Section */}
       <BannerImageWrapper
-        imageURL="/services/services-menu-2.png"
+        imageURL="/services/banner-2.png"
         altText="Four man discussing on a table"
       />
 

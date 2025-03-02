@@ -34,10 +34,10 @@ const BenefitsSectionWrapper: React.FC<BenefitsSectionWrapperProps> = ({
   return (
     <div className="w-full bg-[#FAFAFA]">
       <section className={cn("website-container section-padding-x section-padding-y", containerClasses)}>
-        { sectionTitle && <h1 className="section-title text-center">
+        { sectionTitle && <h1 className="section-title">
           {sectionTitle}
         </h1> }
-        { sectionSubTitle && <p className="mt-3 paragraph text-center max-w-[60rem] mx-auto">
+        { sectionSubTitle && <p className="mt-3 paragraph max-w-[60rem]">
           {sectionSubTitle}
         </p> }
       

@@ -54,24 +54,22 @@ const openPositions = [
 
 const OpenOpenings = () => {
   return (
-    <div className="page">
-      {/* Hero Section */}
-      <div className="w-full">
-        <section className="website-container px-2 sm:px-5 lg:px-10 xl:px-14 2xl:px-24">
-          <div className="flex justify-center">
-            <BreadCrumbs />
-          </div>
-        </section>
-      </div>
-
+    <div className="page pt-28">
       {/* Open Positions Section */}
       <div className="w-full border-b border-[#D9D9D9]">
+        <div className="max-w-[63rem] w-full mx-auto max-sm:px-3 max-lg:px-5 max-xl:px-10">
+          <BreadCrumbs />
+        </div>
         <section className="website-container pt-5 pb-12 md:pb-16 xl:pb-24">
-          <div className="flex flex-col items-center">
-            <h1 className="font-sintony text-[2.4rem] lg:text-[3.25rem] leading-[3rem] lg:leading-[4.88rem] font-bold text-center">Open Positions</h1>
-            <p className="mt-4 paragraph text-center">
-              Apply now, be a part of Our Super Team
-            </p>
+          <div className="flex flex-col">
+            <div className="w-full max-w-[63rem] mx-auto mt-3 lg:mt-8 max-sm:px-3 max-lg:px-5 max-xl:px-10">
+              <h1 className="font-sintony text-[2.4rem] lg:text-[3.25rem] leading-[3rem] lg:leading-[4.88rem] font-bold">
+                Open Positions
+              </h1>
+              <p className="mt-4 paragraph">
+                Apply now, be a part of Our Super Team
+              </p>
+            </div>
 
             <JobFilter />
 
@@ -91,7 +89,11 @@ const OpenOpenings = () => {
                       </p>
                     </div>
                     <Link href={"/contact-us"}>
-                      <Button type="button" variant={"outline"} className={"w-fit border-[#1A1A1A] bg-[#FAFAFA]"}>
+                      <Button
+                        type="button"
+                        variant={"outline"}
+                        className={"w-fit border-[#1A1A1A] bg-[#FAFAFA]"}
+                      >
                         Learn more & Apply
                       </Button>
                     </Link>

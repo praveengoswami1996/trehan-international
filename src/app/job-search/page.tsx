@@ -262,12 +262,12 @@ const JobSearch = () => {
           aria-label="Job Search"
           className="website-container section-padding-x section-padding-bottom"
         >
-          <div className="w-full">
-            <h1 className="section-title text-white text-center">
+          <div className="w-full md:max-w-[49.875rem] mx-auto">
+            <h1 className="section-title text-white">
               Find Your Dream Jobs
             </h1>
 
-            <div className="mt-5 flex flex-col gap-1 md:flex-row w-full md:max-w-[49.875rem] mx-auto p-3 rounded-sm bg-white z-10">
+            <div className="mt-5 flex flex-col gap-1 md:flex-row w-full p-3 rounded-sm bg-white z-10">
               <Input
                 type="email"
                 placeholder="Keyword, Company name, location, etc"
@@ -287,10 +287,10 @@ const JobSearch = () => {
       {/* Find Your Dream Job Section */}
       <div className="w-full bg-[#EFF6F5]">
         <section className="website-container section-padding-x section-padding-y">
-          <div className="w-full">
-            <h1 className="section-title text-center">Find Your Dream Jobs</h1>
+          <div className="w-full max-w-[50rem] mx-auto">
+            <h1 className="section-title">Find Your Dream Jobs</h1>
 
-            <div className="mt-5 md:mt-10 grid grid-cols-1 md:grid-cols-3 gap-3 md:gap-8 max-w-[50rem] mx-auto">
+            <div className="mt-5 md:mt-10 grid grid-cols-1 md:grid-cols-3 gap-3 md:gap-8">
               {jobs.map((item) => {
                 return (
                   <div

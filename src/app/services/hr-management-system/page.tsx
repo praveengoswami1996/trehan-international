@@ -32,7 +32,7 @@ const HRManagementSystem = () => {
 
       {/* Banner Image Section */}
       <BannerImageWrapper 
-        imageURL="/services/services-menu-3.png"
+        imageURL="/services/banner-4.png"
         altText="A man and a woman looking at a laptop"
       />
 

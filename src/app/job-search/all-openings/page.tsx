@@ -201,16 +201,16 @@ const SearchAllOpenings = () => {
     <div className="min-h-screen">
       <div className="w-full bg-[#EFF6F5] pt-28 md:pt-32 lg:pt-36 xl:pt-40 relative overflow-hidden">
         <section className="website-container section-padding-x section-padding-bottom">
-          <div className="w-full flex flex-col items-center">
+          <div className="w-full flex flex-col max-w-3xl mx-auto">
             <BreadCrumbs customSegment={["/job-search"]} />
-            <h1 className="mt-7 font-bold text-5xl md:text-6xl text-center text-[#000000]">
+            <h1 className="mt-7 font-bold text-5xl md:text-6xl text-[#000000]">
               Job Search
             </h1>
-            <p className="mt-5 text-[1.125rem] leading-[1.69rem] font-normal text-[#000000] text-center">
+            <p className="mt-5 text-[1.125rem] leading-[1.69rem] font-normal text-[#000000]">
               Find your next opportunity here.
             </p>
 
-            <div className="mt-6 md:mt-12 w-full max-w-3xl mx-auto flex flex-col mobile-2xl:flex-row mobile-2xl:items-center gap-3">
+            <div className="mt-6 md:mt-12 w-full flex flex-col mobile-2xl:flex-row mobile-2xl:items-center gap-3">
               <Input
                 type="text"
                 placeholder="Enter Job Title"

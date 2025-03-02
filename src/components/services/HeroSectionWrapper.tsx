@@ -16,11 +16,11 @@ const HeroSectionWrapper: React.FC<HeroSectionWrapperProps> = ({
   return (
     <div className="w-full">
       <section className="website-container section-padding-x section-padding-y 2xl:pb-40 pt-0 relative overflow-hidden">
-        <div className="flex flex-col gap-20">
+        <div className="flex flex-col gap-6">
           <div>
             <BreadCrumbs />
           </div>
-          <div className="flex flex-col gap-3">
+          <div className="flex flex-col gap-3 mt-3 lg:mt-8 xl:mt-16">
             <h2 className="hero-text">{title}</h2>
             <div className="max-w-[52rem]">
               <p className="paragraph">{description}</p>

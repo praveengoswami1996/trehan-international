@@ -26,11 +26,11 @@ const HeroSectionWrapper: React.FC<HeroSectionWrapperProps> = ({
           />
         </div>
 
-        <div className="flex flex-col gap-20 z-10">
+        <div className="flex flex-col gap-6 z-10">
           <div>
             <BreadCrumbs />
           </div>
-          <div className="flex flex-col gap-3">
+          <div className="flex flex-col gap-3 mt-3 lg:mt-8 xl:mt-16">
             <h1 className="hero-text">{title}</h1>
             <p className="paragraph max-w-[52rem]">
               {description}

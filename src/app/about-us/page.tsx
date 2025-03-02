@@ -11,6 +11,9 @@ import ImageContentPanel from "@/components/ImageContentPanel";
 import Link from "next/link";
 import { motion } from "framer-motion";
 import { useMediaQuery } from "react-responsive";
+import { DoubleQuotesIcon, QuotationIcon } from "@/components/icons";
+
+type StoryKey = "story_001" | "story_002" | "story_003";
 
 interface StoryContentItem {
   id: string;
@@ -18,14 +21,15 @@ interface StoryContentItem {
   year: string;
   description: string;
   imageURL: string;
+  overlayImageUrl?: string;
 }
+
+type StoryContent = {
+  [key in StoryKey]: StoryContentItem[];
+};
 
 interface TimeLineProps {
   storyContent: StoryContentItem[];
-}
-
-interface DirectorMessageParagraphProps {
-  text: string;
 }
 
 const AboutData = [
@@ -79,32 +83,112 @@ const ourStoryData = [
   },
 ];
 
-const storyContent = [
-  {
-    id: "story_001_001",
-    storyTitle: "Inception",
-    year: "1976",
-    description:
-      "Trehan International was established in Delhi, India, registered with the Ministry of Labour and Employment, Government of India.",
-    imageURL: "/story-1.png",
-  },
-  {
-    id: "story_001_002",
-    storyTitle: "Partnership",
-    year: "1980",
-    description:
-      "Partnership with M/s. Adam Dad Mohammed Al Raisi Trading in Muscat.",
-    imageURL: "/story-2.png",
-  },
-  {
-    id: "story_001_003",
-    storyTitle: "Meeting for skilled manpower",
-    year: "1986",
-    description:
-      "Meeting the demand for skilled manpower during the economic boom in the Middle East.",
-    imageURL: "/story-3.png",
-  },
-];
+const storyContent: StoryContent = {
+  story_001: [
+    {
+      id: "story_001_001",
+      storyTitle: "Inception",
+      year: "1976",
+      description:
+        "Trehan International was established in Delhi, India, registered with the Ministry of Labour and Employment, Government of India.",
+      imageURL: "/our-story/tab1-image1.png",
+    },
+    {
+      id: "story_001_002",
+      storyTitle: "Technological Advancement and Global Expansion",
+      year: "1980s & 1990s: The Rise of Recruitment Technology",
+      description:
+        "This period marked the introduction of job requisitions, active candidates, job boards, online resumes, and the beginning of tactical recruitment and process outsourcing. The advent of Applicant Tracking Systems (ATS) revolutionized the recruitment process, making it more organized and efficient.",
+      imageURL: "/our-story/tab1-image2.png",
+    },
+    {
+      id: "story_001_003",
+      storyTitle: "Expansion and Technological Adoption",
+      year: "1985",
+      description:
+        "We broadened our horizon, establishing a network of national and international offices, signalling our commitment to global talent solutions.",
+      imageURL: "/our-story/tab1-image3.png",
+    },
+  ],
+  story_002: [
+    {
+      id: "story_002_001",
+      storyTitle: "",
+      year: "1995",
+      description:
+        "Our mobilizations to employers across the GCC nations saw a significant increase,reflecting our growing influence and operational capacity.",
+      imageURL: "/our-story/tab2-image1.png",
+    },
+    {
+      id: "story_002_002",
+      storyTitle: "",
+      year: "1996",
+      description:
+        "The opening of our corporate office in Mumbai was a strategic move to better serve our expanding client base. Embracing new sourcing models, we positioned ourselves as pioneers, working directly with clients and candidates.",
+      imageURL: "/our-story/tab2-image2.png",
+    },
+    {
+      id: "story_002_003",
+      storyTitle: "Mastery of Talent Acquisition in the Digital Age",
+      year: "2000s - Present: The Age of Talent Acquisition",
+      description:
+        "The new millennium ushered in advanced practices such as social media recruiting, employment branding, engaging passive candidates, video interviewing, and integrated Talent Acquisition strategies. The focus shifted towards creating a compelling employer brand, leveraging technology for candidate relationship management, and virtual onboarding.",
+      imageURL: "/our-story/tab2-image3.png",
+    },
+  ],
+  story_003: [
+    {
+      id: "story_003_001",
+      storyTitle: "Innovation and Global Footprint",
+      year: "2003",
+      description:
+        "Adopting the Hub and Spoke model allowed us to expand geographically, enhancing our service delivery and reach",
+      imageURL: "/our-story/tab3-image1.png",
+    },
+    {
+      id: "story_003_002",
+      storyTitle: "",
+      year: "2008",
+      description:
+        "Even in the face of economic recession, Trehan International achieved record numbers, a testament to our resilience and strategic planning.",
+      imageURL: "/our-story/tab3-image2.png",
+    },
+    {
+      id: "story_003_003",
+      storyTitle: "",
+      year: "2014",
+      description:
+        "Marked our footprint in Kuwait, establishing international operations to tap into new markets.",
+      imageURL: "/our-story/tab3-image3.png",
+    },
+    {
+      id: "story_003_004",
+      storyTitle: "",
+      year: "2017",
+      description:
+        "The launch of Attest My Doc revolutionized document authentication and visa services, simplifying the process for clients and candidates alike.",
+      imageURL: "/our-story/tab3-image4.png",
+      overlayImageUrl: "/our-story/tab3-image4-overlay.png",
+    },
+    {
+      id: "story_003_005",
+      storyTitle: "",
+      year: "2020",
+      description:
+        "Amidst the global challenge of COVID-19, we initiated local hiring drives in Kuwait, showcasing our adaptability and commitment to meeting client needs.",
+      imageURL: "/our-story/tab3-image5.png",
+    },
+    {
+      id: "story_003_006",
+      storyTitle: "",
+      year: "2023",
+      description:
+        "Our expansion continued with the launch of Nurse Hiring Ventures and the introduction of new brands, FLEXR8 & Tezjobs, diversifying our services and reinforcing our global presence.",
+      imageURL: "/our-story/tab3-image6.png",
+      overlayImageUrl: "/our-story/tab3-image6-overlay.png",
+    },
+  ],
+};
 
 const ourBrands = [
   {
@@ -249,10 +333,22 @@ const TimeLine: React.FC<TimeLineProps> = ({ storyContent }) => {
               <div className="flex-none w-[17.125rem] h-[10.5rem] relative rounded-lg overflow-hidden">
                 <Image
                   src={item.imageURL}
-                  alt="a typewriter"
+                  alt="Our Story Image"
                   fill
                   className="object-cover"
                 />
+                {item?.overlayImageUrl && (
+                  <div className="absolute w-full h-full">
+                    <div className="w-full h-full relative">
+                      <Image
+                        src={item?.overlayImageUrl}
+                        alt="Overlay Image"
+                        fill
+                        className="object-contain scale-75"
+                      />
+                    </div>
+                  </div>
+                )}
               </div>
             </div>
             <div className="w-[2px] bg-[#E2C886] items-stretch" />
@@ -301,34 +397,25 @@ const TimeLine: React.FC<TimeLineProps> = ({ storyContent }) => {
   );
 };
 
-const DirectorMessageParagraph: React.FC<DirectorMessageParagraphProps> = ({
-  text,
-}) => {
-  return (
-    <div className="max-xl:ml-2 pl-4 py-0 relative before:absolute before:w-[5px] before:h-[95%] before:left-0 before:top-1/2 before:-translate-y-1/2 before:bg-amber-500">
-      <p className="text-base lg:text-[1.125rem] lg:leading-[1.69rem] font-normal text-[#535353]">
-        {text}
-      </p>
-    </div>
-  );
-};
-
 const AboutUs = () => {
+  const [activeStoryTab, setActiveStoryTab] =
+    React.useState<StoryKey>("story_001");
+
   return (
-    <div className="page">
+    <div className="page pt-28">
       {/* About Data Section */}
       <div className="w-full">
         <section className="website-container section-padding-x section-padding-bottom">
-          <div className="flex flex-col items-center">
-            <div className="flex flex-col items-center gap-5">
-              <div className="mx-auto">
+          <div className="flex flex-col">
+            <div className="flex flex-col gap-5">
+              <div>
                 <BreadCrumbs />
               </div>
 
-              <h1 className="hero-text mt-3 text-center max-w-2xl lg:max-w-4xl mx-auto">
+              <h1 className="hero-text mt-3 lg:mt-8 xl:mt-16 max-w-2xl lg:max-w-4xl">
                 Pioneering Human Mobility and Client Success
               </h1>
-              <p className="paragraph text-center max-w-[52rem] mx-auto">
+              <p className="paragraph max-w-[52rem]">
                 At Trehan International, our vision is to redefine the landscape
                 of global recruitment by empowering human mobility, thus
                 unlocking economic opportunities and facilitating cultural
@@ -357,7 +444,7 @@ const AboutUs = () => {
               })}
             </div>
 
-            <div className="mt-7 lg:mt-14">
+            <div className="mt-7 lg:mt-14 flex justify-center">
               <Link href="/contact-us">
                 <Button type="submit">Unlock Talent Supply</Button>
               </Link>
@@ -367,7 +454,7 @@ const AboutUs = () => {
       </div>
 
       {/* Sample Video Section */}
-      <div className="h-[28rem] lg:h-screen w-full relative">
+      <div className="h-[28rem] lg:h-[37.5rem] w-full relative">
         <section className="website-container section-padding-x h-full relative z-[1]">
           <IntroVideo />
         </section>
@@ -377,90 +464,93 @@ const AboutUs = () => {
 
       {/* Director's Message Section */}
       <div className="w-full bg-[#FAFAFA]">
-        <section className="xl:min-h-screen website-container section-padding-x max-lg:section-padding-y section-padding-top relative">
-          <div className="w-full h-full flex flex-col xl:flex-row">
-            <div className="hidden xl:block flex-1" />
+        <section className="xl:min-h-screen website-container section-padding-x max-lg:section-padding-y section-padding-top relative flex flex-col xl:flex-row xl:items-center gap-5">
+          <div className="hidden xl:block absolute -left-20 top-12 size-[41.5rem]">
+            <Image
+              src={"/bg-pattern-10.svg"}
+              alt="Background Pattern Image"
+              fill
+              className="w-full h-full object-cover object-center"
+            />
+          </div>
 
-            {/* Director's Image for Smaller Screens */}
-            <div className="xl:hidden overflow-hidden relative size-[15rem] mobile-sm:size-[19rem] mobile-md:size-[22rem] mobile-lg:size-[24rem] sm:size-[30rem] mx-auto flex items-center justify-center">
+          <div className="flex-1 flex justify-center mt-6 lg:mt-9 xl:mt-12">
+            <div className="flex-none w-full max-w-[513px] h-[400px] mobile-md:h-[500px] mobile-2xl:h-[640px] relative">
               <Image
-                src={"/bg-pattern.svg"}
-                alt="Background Pattern Image"
+                src="/director.jpg"
+                alt="Director's Image"
                 fill
+                className="object-cover border"
               />
-              <div className="flex-none w-4/5 h-4/5 rounded-full bg-[#E1E1E1] p-2 z-10">
-                <div className="relative w-full h-full rounded-full overflow-hidden">
-                  <Image
-                    src={"/director.png"}
-                    alt={"Director of Trehan International"}
-                    fill
-                    className="object-cover object-center"
-                  />
-                </div>
+              <div className="absolute right-1 sm:-right-12 -top-9 sm:top-10">
+                <DoubleQuotesIcon className="text-[#599F99] max-lg:size-20" />
               </div>
-            </div>
 
-            <div className="max-xl:mt-3 flex-1 flex flex-col gap-6 xl:gap-12 justify-center">
-              <div className="flex flex-col gap-3">
-                <h1 className="section-title xl:-ml-8 min">
-                  Director&apos;s Message
-                </h1>
-                <DirectorMessageParagraph
-                  text="In 1976, I established TI in a modest, single-room office in
-                    New Delhi with one clear objective: to bring the right
-                    people together. Over the last four decades, we have grown
-                    from those humble beginnings into a dynamic, global
-                    operation—successfully placing more than 150,000
-                    professionals across the GCC. Through every milestone, we
-                    have upheld our guiding belief: that our clients and
-                    candidates deserve nothing but the very best."
-                />
-                <DirectorMessageParagraph text="Our journey has been shaped by the passion, skill, and dedication of every individual who has joined hands with us. Today, TI stands as a testament to our core values—trust, integrity, compassion, and excellence—which continue to inform each of our decisions and every single placement. By understanding the unique needs of employers, be they Hiring Managers, CEOs, or COOs, and aligning these with the aspirations of talented professionals, we aim to foster meaningful relationships that drive growth and success on both sides." />
+              <div
+                className="absolute bottom-0 left-0 w-full p-5"
+                style={{
+                  background:
+                    "linear-gradient(180deg, rgba(0, 0, 0, 0) 0%, #000000 100%)",
+                }}
+              >
+                <p className="text-[#FFFFFF9E] text-base font-light">
+                  --From my heart to yours
+                </p>
+                <h5 className="text-xl font-bold font-sintony text-white">
+                  Mr. Satish Trehan
+                </h5>
+                <p className="text-[#FFFFFF9E] text-base font-light">
+                  Founding Father
+                </p>
               </div>
             </div>
           </div>
-
-          {/* Director's Image for Larger Screens */}
-          <div className="hidden xl:block absolute w-1/2 h-full left-0 top-1/2 -translate-y-1/2 mt-10">
-            <div className="w-full h-full relative flex items-center justify-center">
-              <Image
-                src={"/bg-pattern.svg"}
-                alt="Background Pattern Image"
-                fill
-              />
-              <div className="flex-none size-[24rem] xl:size-[30rem] rounded-full bg-[#E1E1E1] p-2 z-10">
-                <div className="relative w-full h-full rounded-full overflow-hidden">
-                  <Image
-                    src={"/director.png"}
-                    alt={"Director of Trehan International"}
-                    fill
-                    className="object-cover object-center"
-                  />
-                </div>
+          <div className="flex-1 mt-6 lg:mt-12">
+            <div className="flex flex-col gap-3">
+              <h3 className="text-2xl lg:text-[2rem] font-bold font-sintony">
+                Director&apos;s Message
+              </h3>
+              <div className="font-work-sans text-sm leading-[1.3125rem] text-[#535353] tracking-[2%] max-xl:ml-2 pl-4 py-0 relative before:absolute before:w-[2px] before:h-[98%] before:left-0 before:top-1/2 before:-translate-y-1/2 before:bg-amber-500">
+                In 1976, I established TI in a modest, single-room office in New
+                Delhi with one clear objective: to bring the right people
+                together. Over the last four decades, we have grown from those
+                humble beginnings into a dynamic, global operation—successfully
+                placing more than 150,000 professionals across the GCC. Through
+                every milestone, we have upheld our guiding belief: that our
+                clients and candidates deserve nothing but the very best.
+                <br />
+                <br />
+                Our journey has been shaped by the passion, skill, and
+                dedication of every individual who has joined hands with us.
+                Today, TI stands as a testament to our core values—trust,
+                integrity, compassion, and excellence—which continue to inform
+                each of our decisions and every single placement. By
+                understanding the unique needs of employers, be they Hiring
+                Managers, CEOs, or COOs, and aligning these with the aspirations
+                of talented professionals, we aim to foster meaningful
+                relationships that drive growth and success on both sides.
+                <br />
+                <br />
+                As we look to the future, we remain committed to the same spirit
+                that sparked our beginnings. We will continue to evolve,
+                embracing new technologies and practices, while never losing
+                sight of what truly matters: genuine care for the people we
+                serve. Whether you are seeking to build a high-performing team
+                or explore new career horizons, know that TI stands ready to
+                walk with you—offering unwavering support, expertise, and a
+                dedication to helping you achieve your greatest goals.
+                <br />
+                <br />
+                We invite you to be part of this legacy, one built on the belief
+                that success is best shared. Let us work together to make
+                lasting contributions that bring about a brighter future for
+                all. Remember: our greatest wealth lies not just in numbers or
+                achievements, but in the lives we touch and the opportunities we
+                create for others.
               </div>
             </div>
           </div>
         </section>
-      </div>
-
-      <div className="pt-0 xl:pt-10 section-padding-x bg-[#FAFAFA]">
-        <DirectorMessageParagraph text="As we look to the future, we remain committed to the same spirit that sparked our beginnings. We will continue to evolve, embracing new technologies and practices, while never losing sight of what truly matters: genuine care for the people we serve. Whether you are seeking to build a high-performing team or explore new career horizons, know that TI stands ready to walk with you—offering unwavering support, expertise, and a dedication to helping you achieve your greatest goals." />
-        <br />
-        <DirectorMessageParagraph text="We invite you to be part of this legacy, one built on the belief that success is best shared. Let us work together to make lasting contributions that bring about a brighter future for all. Remember: our greatest wealth lies not just in numbers or achievements, but in the lives we touch and the opportunities we create for others." />
-
-        <div className="mt-5">
-          <p className="font-normal text-[1.125rem] leading-[1.69rem] text-gray-400">
-            --From my heart to yours
-          </p>
-          <div className="mt-3">
-            <h4 className="font-sintony font-bold text-2xl leading-[2.25rem] text-[#1A1A1A]">
-              Mr. Satish Trehan
-            </h4>
-            <p className="font-normal text-[1.125rem] leading-[1.69rem] text-[#535353]">
-              Founding Father
-            </p>
-          </div>
-        </div>
       </div>
 
       {/* Our Vision/Our Mission Section */}
@@ -535,10 +625,12 @@ const AboutUs = () => {
             />
           </div>
           <div>
-            <h1 className="section-title text-[#ffffff]">Our Story</h1>
-            <h4 className="text-2xl leading-[2rem] font-sintony font-bold text-[#ffffff]">
-              Pioneering Excellence in Talent Acquisition
-            </h4>
+            <div className="space-y-3">
+              <h1 className="section-title text-[#ffffff]">Our Story</h1>
+              <h4 className="text-2xl leading-[2rem] font-sintony font-bold text-[#ffffff]">
+                Pioneering Excellence in Talent Acquisition
+              </h4>
+            </div>
 
             <div className="mt-7 xl:mt-14 flex flex-col xl:flex-row xl:items-start gap-10">
               <div className="flex-none flex flex-col gap-5">
@@ -546,13 +638,23 @@ const AboutUs = () => {
                   return (
                     <div
                       key={item.id}
-                      className="w-full mobile-xl:w-[18.75rem] bg-[#373737] relative before:absolute before:top-0 before:left-0 before:h-full before:w-[7px] before:bg-[#599F99] p-3 pl-8"
+                      className={cn(
+                        "w-full mobile-xl:w-[18.75rem] bg-[#373737] relative p-3 pl-8 transition-all duration-500",
+                        activeStoryTab === item.id &&
+                          "before:absolute before:top-0 before:left-0 before:h-full before:w-[7px] before:bg-[#599F99]"
+                      )}
                       role="button"
+                      onClick={() => setActiveStoryTab(item.id as StoryKey)}
                     >
                       <p className="text-[1.125rem] leading-7 text-white font-medium">
                         {item.title}
                       </p>
-                      <p className="text-2xl leading-[2.25rem] text-[#599F99] font-bold">
+                      <p
+                        className={cn(
+                          "text-2xl leading-[2.25rem] text-white font-bold transition-all duration-500",
+                          activeStoryTab === item.id && "text-[#599F99]"
+                        )}
+                      >
                         {item.timeSpan}
                       </p>
                     </div>
@@ -560,8 +662,8 @@ const AboutUs = () => {
                 })}
               </div>
 
-              <TimeLineMobile storyContent={storyContent} />
-              <TimeLine storyContent={storyContent} />
+              <TimeLineMobile storyContent={storyContent[activeStoryTab]} />
+              <TimeLine storyContent={storyContent[activeStoryTab]} />
             </div>
           </div>
         </section>

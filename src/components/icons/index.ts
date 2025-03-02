@@ -88,5 +88,6 @@ import DesignIcon59 from "./DesignIcon59";
 import DesignIcon60 from "./DesignIcon60";
 import DesignIcon61 from "./DesignIcon61";
 import DesignIcon62 from "./DesignIcon62";
+import DoubleQuotesIcon from "./DoubleQuotesIcon";
 
-export { StrategicSourcingIcon, QualityScreeningIcon, StructuredInterviewsIcon, SeamlessOnboardingIcon, DesignIcon50, DesignIcon51, DesignIcon52, DesignIcon53, DesignIcon54, DesignIcon55, DesignIcon56, DesignIcon57, DesignIcon58, DesignIcon59, DesignIcon60, DesignIcon61, DesignIcon62 };
+export { DoubleQuotesIcon, StrategicSourcingIcon, QualityScreeningIcon, StructuredInterviewsIcon, SeamlessOnboardingIcon, DesignIcon50, DesignIcon51, DesignIcon52, DesignIcon53, DesignIcon54, DesignIcon55, DesignIcon56, DesignIcon57, DesignIcon58, DesignIcon59, DesignIcon60, DesignIcon61, DesignIcon62 };

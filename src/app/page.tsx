@@ -247,9 +247,7 @@ export default function Home() {
           <h2 className="font-sintony text-[1.5rem] lg:text-[2rem] leading-[2.2rem] lg:leading-[3rem] font-normal text-[#C6485D]">
             Precision Talent Acquisition
           </h2>
-          <h1 className="hero-text mt-3">
-            Where Expertise Meets Innovation
-          </h1>
+          <h1 className="hero-text mt-3">Where Expertise Meets Innovation</h1>
           <div className="mt-3 max-w-[39.5rem]">
             <p className="paragraph">
               At Trehan International, we believe that the perfect hire is more
@@ -416,9 +414,7 @@ export default function Home() {
       <div className="w-full bg-[#000000]">
         <section className="website-container section-padding-x section-padding-y mt-12 md:mt-16 lg:mt-20 xl:mt-36 min-h-screen">
           <div className="flex flex-col">
-            <h1 className="section-title text-white">
-              Our Services
-            </h1>
+            <h1 className="section-title text-white">Our Services</h1>
             <p className="mt-3 paragraph text-white">
               Building Workforce Excellence: Tailored Recruitment Solutions
             </p>
@@ -522,9 +518,7 @@ export default function Home() {
       <div className="w-full bg-[#C6485D]">
         <section className="website-container section-padding-x section-padding-y">
           <div className="flex flex-col">
-            <h1 className="section-title text-[#ffffff]">
-              Case Studies
-            </h1>
+            <h1 className="section-title text-[#ffffff]">Case Studies</h1>
             <p className="mt-2.5 paragraph text-[#ffffff]">
               Talent Acquisition in Action: Our Sourcing Success Stories
             </p>
@@ -593,14 +587,16 @@ export default function Home() {
                 Read the blog and article inside of consulting. We share tips
                 and tricks to get more success
               </p>
-              <Button
-                variant={"outline"}
-                className={
-                  "border-[#1A1A1A] text-base font-bold text-[#000000] leading-5 bg-white"
-                }
-              >
-                View All
-              </Button>
+              <Link href="/resources/blogs-and-media">
+                <Button
+                  variant={"outline"}
+                  className={
+                    "border-[#1A1A1A] text-base font-bold text-[#000000] leading-5 bg-white"
+                  }
+                >
+                  View All
+                </Button>
+              </Link>
             </div>
 
             <div className="w-full mt-12 grid justify-items-center grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">

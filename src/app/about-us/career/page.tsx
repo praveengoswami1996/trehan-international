@@ -1,13 +1,6 @@
 import TeamCelebration from "@/components/AboutUs/TeamCelebration";
 import BenefitCard from "@/components/BenefitCard";
 import BreadCrumbs from "@/components/BreadCrumbs";
-import {
-  DesignIcon12,
-  DesignIcon13,
-  DesignIcon14,
-  DesignIcon15,
-  DesignIcon6,
-} from "@/components/icons";
 import { Button } from "@/components/ui/button";
 import Image from "next/image";
 import Link from "next/link";
@@ -61,8 +54,8 @@ const openPositions = [
 
 const Career = () => {
   return (
-    <div className="page">
-      <div className="hidden lg:block absolute -top-40 left-1/2 -translate-x-1/2 size-[50.125rem] pointer-events-none z-0">
+    <div className="page pt-28">
+      <div className="hidden lg:block absolute -top-36 -right-6 size-[50.125rem] pointer-events-none z-0">
         <Image
           src="/bg-pattern-10.svg"
           alt="Background Pattern Image"
@@ -74,14 +67,14 @@ const Career = () => {
       {/* Hero Section */}
       <div className="w-full">
         <section className="website-container section-padding-x section-padding-bottom">
-          <div className="flex flex-col items-center z-10">
+          <div className="flex flex-col z-10">
             <BreadCrumbs />
-            <div className="mt-5 w-full flex flex-col items-center">
-              <h1 className="font-sintony text-[2.4rem] lg:text-[3.25rem] leading-[3rem] lg:leading-[4.88rem] font-bold text-center max-w-4xl mx-auto">
+            <div className="mt-3 lg:mt-8 xl:mt-20 w-full flex flex-col">
+              <h1 className="font-sintony text-[2.4rem] lg:text-[3.25rem] leading-[3rem] lg:leading-[4.88rem] font-bold max-w-4xl">
                 Life{" "}
                 <span className="text-[#E2AF45]">@Trehan International</span>
               </h1>
-              <p className="paragraph text-center mt-5 max-w-[52rem] mx-auto">
+              <p className="paragraph mt-5 max-w-[52rem]">
                 At Trehan International, our vision is to redefine the landscape
                 of global recruitment by empowering human mobility, thus
                 unlocking economic opportunities and facilitating cultural
@@ -113,8 +106,8 @@ const Career = () => {
       {/* Benefits Section */}
       <div className="w-full">
         <section className="website-container section-padding-x section-padding-bottom">
-          <div className="flex flex-col items-center">
-            <h1 className="section-title text-center">Benefits</h1>
+          <div className="flex flex-col">
+            <h1 className="section-title">Benefits</h1>
          
             <div className="w-full mt-6 flex justify-center flex-wrap gap-6">
               {benefits.map((item, index) => {
@@ -181,8 +174,8 @@ const Career = () => {
       {/* Open Positions Section */}
       <div className="w-full">
         <section className="website-container pt-12 pb-12 section-padding-x">
-          <div className="flex flex-col items-center">
-            <h1 className="section-title text-center">Open Positions</h1>
+          <div className="flex flex-col">
+            <h1 className="section-title max-w-4xl mx-auto w-full">Open Positions</h1>
             <div className="mt-8 w-full flex flex-col gap-5">
               {openPositions.map((item) => {
                 return (
@@ -208,7 +201,7 @@ const Career = () => {
                 );
               })}
             </div>
-            <div className="mt-10">
+            <div className="mt-10 flex justify-center">
               <Link href={"/about-us/career/our-openings"}>
                 <Button
                   type="button"

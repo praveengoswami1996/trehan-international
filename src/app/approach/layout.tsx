@@ -10,7 +10,7 @@ export default function ApproachLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <div className="min-h-screen bg-white pt-32 relative">
+    <div className="min-h-screen bg-white pt-28 relative">
       {children}
       <WhyChooseTrehan backgroundColor="#535353" />
       <HowRecruitmentFlowWorks />
