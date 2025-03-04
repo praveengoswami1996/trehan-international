@@ -489,7 +489,7 @@ const Industries = () => {
           <div className="max-xl:mt-5 flex flex-col xl:flex-row xl:items-center max-xl:gap-10">
             <div className="w-full flex flex-col gap-5">
               <h1 className="mt-3 lg:mt-8 xl:mt-14 font-sintony text-[2.4rem] lg:text-[3.25rem] leading-[3rem] lg:leading-[4rem] font-bold max-w-3xl">
-                Trehan International - Industry Expertise
+                Industry Expertise
               </h1>
               <div className="pl-4 py-0 relative before:absolute before:w-[5px] before:h-[95%] before:left-0 before:top-1/2 before:-translate-y-1/2 before:bg-amber-500">
                 <p className="paragraph max-w-[52rem]">

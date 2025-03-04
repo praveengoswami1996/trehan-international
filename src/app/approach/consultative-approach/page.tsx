@@ -2,7 +2,6 @@ import BannerImageWrapper from "@/components/approach/BannerImageWrapper";
 import BenefitsSectionWrapper from "@/components/approach/BenefitsSectionWrapper";
 import ConsultativeApproachTabs from "@/components/approach/ConsultativeApproachTabs";
 import HeroSectionWrapper from "@/components/approach/HeroSectionWrapper";
-import HowRecruitmentFlowWorks from "@/components/SVGs/HowRecruitmentFlowWorks";
 
 const benefits = [
   {
