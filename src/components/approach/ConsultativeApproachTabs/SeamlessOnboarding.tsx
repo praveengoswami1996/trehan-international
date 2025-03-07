@@ -1,5 +1,13 @@
-import { DesignIcon57, DesignIcon58, DesignIcon59, DesignIcon60, DesignIcon61, DesignIcon62 } from "@/components/icons";
+import {
+  DesignIcon57,
+  DesignIcon58,
+  DesignIcon59,
+  DesignIcon60,
+  DesignIcon61,
+  DesignIcon62,
+} from "@/components/icons";
 import React from "react";
+import ConsultativeApproachTabsCard from "./ConsultativeApproachTabsCard";
 
 const content = [
   {
@@ -40,14 +48,13 @@ const content3 = [
   },
 ];
 
-
 const SeamlessOnboarding = () => {
   return (
     <div>
       <p className="text-white max-w-6xl text-[1.125rem] md:leading-[1.69rem] font-normal">
-        A Smooth Transition. We prioritize a seamless
-        onboarding / deployment / mobilization process to ensure new hires integrate
-        smoothly into your organization:
+        A Smooth Transition. We prioritize a seamless onboarding / deployment /
+        mobilization process to ensure new hires integrate smoothly into your
+        organization:
       </p>
 
       <div className="w-full mt-5 md:mt-10 space-y-10">
@@ -55,18 +62,9 @@ const SeamlessOnboarding = () => {
           <h6 className="font-sintony font-bold text-[1.125rem] leading-[1.69rem] text-white">
             Pre-Boarding
           </h6>
-          <div className="grid grid-cols-1 mobile-2xl:grid-cols-2 lg:grid-cols-3 gap-3 md:gap-9">
+          <div className="grid grid-cols-1 mobile-2xl:grid-cols-2 lg:grid-cols-3 gap-3 md:gap-5">
             {content.map((item) => {
-              return (
-                <div key={item.id} className="flex gap-3 items-center">
-                  <div className="flex-none">
-                    <item.icon className="text-white size-8" />
-                  </div>
-                  <div className="font-sintony font-medium text-[1.125rem] leading-[1.69rem] text-white max-w-xs">
-                    <p>{item.title}</p>
-                  </div>
-                </div>
-              );
+              return <ConsultativeApproachTabsCard key={item.id} data={item} />;
             })}
           </div>
         </div>
@@ -75,18 +73,9 @@ const SeamlessOnboarding = () => {
           <h6 className="font-sintony font-bold text-[1.125rem] leading-[1.69rem] text-white">
             Pre-Boarding
           </h6>
-          <div className="grid grid-cols-1 mobile-2xl:grid-cols-2 lg:grid-cols-3 gap-3 md:gap-9">
+          <div className="grid grid-cols-1 mobile-2xl:grid-cols-2 lg:grid-cols-3 gap-3 md:gap-5">
             {content2.map((item) => {
-              return (
-                <div key={item.id} className="flex gap-3 items-center">
-                  <div className="flex-none">
-                    <item.icon className="text-white size-8" />
-                  </div>
-                  <div className="font-sintony font-medium text-[1.125rem] leading-[1.69rem] text-white max-w-xs">
-                    <p>{item.title}</p>
-                  </div>
-                </div>
-              );
+              return <ConsultativeApproachTabsCard key={item.id} data={item} />;
             })}
           </div>
         </div>
@@ -95,18 +84,9 @@ const SeamlessOnboarding = () => {
           <h6 className="font-sintony font-bold text-[1.125rem] leading-[1.69rem] text-white">
             Pre-Boarding
           </h6>
-          <div className="grid grid-cols-1 mobile-2xl:grid-cols-2 lg:grid-cols-3 gap-3 md:gap-9">
+          <div className="grid grid-cols-1 mobile-2xl:grid-cols-2 lg:grid-cols-3 gap-3 md:gap-5">
             {content3.map((item) => {
-              return (
-                <div key={item.id} className="flex gap-3 items-center">
-                  <div className="flex-none">
-                    <item.icon className="text-white size-8" />
-                  </div>
-                  <div className="font-sintony font-medium text-[1.125rem] leading-[1.69rem] text-white max-w-xs">
-                    <p>{item.title}</p>
-                  </div>
-                </div>
-              );
+              return <ConsultativeApproachTabsCard key={item.id} data={item} />;
             })}
           </div>
         </div>

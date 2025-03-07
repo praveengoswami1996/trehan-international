@@ -1,5 +1,17 @@
-import { DesignIcon24, DesignIcon25, DesignIcon26, DesignIcon27, DesignIcon28, DesignIcon29, DesignIcon30, DesignIcon31, DesignIcon32, DesignIcon33  } from "@/components/icons";
+import {
+  DesignIcon24,
+  DesignIcon25,
+  DesignIcon26,
+  DesignIcon27,
+  DesignIcon28,
+  DesignIcon29,
+  DesignIcon30,
+  DesignIcon31,
+  DesignIcon32,
+  DesignIcon33,
+} from "@/components/icons";
 import React from "react";
+import ConsultativeApproachTabsCard from "./ConsultativeApproachTabsCard";
 
 const content = [
   {
@@ -54,7 +66,6 @@ const content = [
   },
 ];
 
-
 const StrategicSourcing = () => {
   return (
     <div>
@@ -66,18 +77,9 @@ const StrategicSourcing = () => {
         channels, including:
       </p>
 
-      <div className="mt-5 md:mt-10 grid grid-cols-1 mobile-2xl:grid-cols-2 lg:grid-cols-3 gap-3 md:gap-9">
+      <div className="mt-5 md:mt-10 grid grid-cols-1 mobile-2xl:grid-cols-2 lg:grid-cols-3 gap-3 md:gap-5">
         {content.map((item) => {
-          return (
-            <div key={item.id} className="flex gap-3 items-center">
-              <div className="flex-none">
-                <item.icon className="text-white size-8"/>
-              </div>
-              <div className="font-sintony font-medium text-[1.125rem] leading-[1.69rem] text-white max-w-xs">
-                <p>{item.title}</p>
-              </div>
-            </div>
-          );
+          return <ConsultativeApproachTabsCard key={item.id} data={item} />;
         })}
       </div>
     </div>

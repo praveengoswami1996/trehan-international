@@ -493,8 +493,8 @@ const AboutUs = () => {
                     "linear-gradient(180deg, rgba(0, 0, 0, 0) 0%, #000000 100%)",
                 }}
               >
-                <p className="text-[#FFFFFF9E] text-base font-light">
-                  --From my heart to yours
+                <p className="text-white text-xl font-bold font-sintony">
+                  From my heart to yours
                 </p>
                 <h5 className="text-xl font-bold font-sintony text-white">
                   Mr. Satish Trehan

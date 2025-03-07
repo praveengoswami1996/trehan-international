@@ -91,10 +91,10 @@ const Footer = () => {
           <div className="flex-none">
             <Link href={"/"}>
               <Image
-                src={"/logo.svg"}
+                src={"/logo2.svg"}
                 alt={"Trehan International Logo"}
-                width={111}
-                height={50}
+                width={153}
+                height={68}
                 priority
               />
             </Link>

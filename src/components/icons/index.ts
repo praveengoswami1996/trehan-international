@@ -88,6 +88,13 @@ import DesignIcon59 from "./DesignIcon59";
 import DesignIcon60 from "./DesignIcon60";
 import DesignIcon61 from "./DesignIcon61";
 import DesignIcon62 from "./DesignIcon62";
+import DesignIcon63 from "./DesignIcon63";
+import DesignIcon64 from "./DesignIcon64";
+import DesignIcon65 from "./DesignIcon65";
+import DesignIcon66 from "./DesignIcon66";
+import DesignIcon67 from "./DesignIcon67";
+import DesignIcon68 from "./DesignIcon68";
+import DesignIcon69 from "./DesignIcon69";
 import DoubleQuotesIcon from "./DoubleQuotesIcon";
 
-export { DoubleQuotesIcon, StrategicSourcingIcon, QualityScreeningIcon, StructuredInterviewsIcon, SeamlessOnboardingIcon, DesignIcon50, DesignIcon51, DesignIcon52, DesignIcon53, DesignIcon54, DesignIcon55, DesignIcon56, DesignIcon57, DesignIcon58, DesignIcon59, DesignIcon60, DesignIcon61, DesignIcon62 };
+export { DesignIcon69, DesignIcon63, DesignIcon64, DesignIcon65, DesignIcon66, DesignIcon67, DesignIcon68, DoubleQuotesIcon, StrategicSourcingIcon, QualityScreeningIcon, StructuredInterviewsIcon, SeamlessOnboardingIcon, DesignIcon50, DesignIcon51, DesignIcon52, DesignIcon53, DesignIcon54, DesignIcon55, DesignIcon56, DesignIcon57, DesignIcon58, DesignIcon59, DesignIcon60, DesignIcon61, DesignIcon62 };

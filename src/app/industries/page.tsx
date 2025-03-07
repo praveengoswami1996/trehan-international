@@ -297,6 +297,7 @@ const newIndustriesData = [
   {
     id: "industry_001",
     title: "Engineering, Infrastructure and Construction",
+    hoverText: "In the dynamic world of Engineering, Infrastructure, and Construction our tailored talent solutions leverage deep industry knowledge to source and place professionals who not only excel in their technical skills but also drive progress and efficiency on a global scale.",
     icon: EICIcon,
     bulletPoints: [
       {
@@ -325,33 +326,31 @@ const newIndustriesData = [
   {
     id: "industry_002",
     title: "Retail, Food and Beverage",
+    hoverText: "In the fast-paced Retail, Food & Beverage, our approach focuses on sourcing dynamic professionals who excel in fast-moving environments, enhancing brand loyalty and driving sales with innovative strategies and exceptional service.",
     icon: RFBIcon,
     bulletPoints: [
       {
         id: "bullet_001",
-        title: "Upstream (Exploration & Production)",
+        title: "Hyper Markets, Super Markets & Convenience Stores",
       },
       {
         id: "bullet_002",
-        title: "Midstream (Pipelines & Transportation)",
+        title: "Restaurants (Quick Service & Fine Dining)",
       },
       {
         id: "bullet_003",
-        title: "Downstream (Refining & Petro-Chemicals)",
+        title: "Home & Furniture",
       },
       {
         id: "bullet_004",
-        title: "Power Plants Rehabilitation / Maintenance Projects",
-      },
-      {
-        id: "bullet_005",
-        title: "Heavy Engineering & Fabrication, Electrical & Instrumentation",
+        title: "Fashion, Footwear & Accessories",
       },
     ],
   },
   {
     id: "industry_003",
     title: "Logistic & Supply Chain Management",
+    hoverText: "Our expertise in this sector enables us to provide talent solutions that enhance operational flow, reduce costs, and improve delivery times, thereby ensuring the global movement of goods is both smooth and cost-effective.",
     icon: LSCMIcon,
     bulletPoints: [
       {
@@ -371,6 +370,7 @@ const newIndustriesData = [
   {
     id: "industry_004",
     title: "Automotive and Transportation",
+    hoverText: "In the ever-evolving Automotive & Transportation, Trehan International is at the forefront of providing talent that drives advancements in vehicle technology, transportation systems, and logistic solutions, propelling the industry forward.",
     icon: ANTIcon,
     bulletPoints: [
       {
@@ -390,6 +390,7 @@ const newIndustriesData = [
   {
     id: "industry_005",
     title: "Healthcare",
+    hoverText: "Our comprehensive talent acquisition strategies focus on placing healthcare professionals who not only possess outstanding skills and knowledge but also a profound commitment to patient care and medical innovation.",
     icon: HCIcon,
     bulletPoints: [
       {
@@ -413,6 +414,7 @@ const newIndustriesData = [
   {
     id: "industry_006",
     title: "Industrial Manufacturing",
+    hoverText: "We specialize in staffing solutions that support manufacturing processes, from product development to production, ensuring our clients maintain a competitive edge through technological advancements and operational excellence.",
     icon: IMIcon,
     bulletPoints: [
       {
@@ -428,6 +430,7 @@ const newIndustriesData = [
   {
     id: "industry_007",
     title: "Facility Management",
+    hoverText: "We place professionals who excel in maintaining and improving the efficiency, safety, and sustainability of physical workplaces, ensuring seamless operations and optimal working environments.",
     icon: FMIcon,
     bulletPoints: [
       {
@@ -451,6 +454,7 @@ const newIndustriesData = [
   {
     id: "industry_008",
     title: "Oil, Gas and energy",
+    hoverText: "Trehan International taps into a vast network of professionals in energy production, renewable resources, and environmental conservation, ensuring our clients lead the way in energy innovation and resource management",
     icon: OGEIcon,
     bulletPoints: [
       {
@@ -513,7 +517,11 @@ const Industries = () => {
                 <Image src="/industry-outer.svg" alt="Industries Circle" fill />
                 <div className="absolute top-1/2 -translate-y-1/2 left-1/2 -translate-x-1/2 w-3/5 h-3/5">
                   <div className="w-full h-full relative">
-                    <Image src="/industry-inner.svg" alt="Industries Circle" fill />
+                    <Image
+                      src="/industry-inner.svg"
+                      alt="Industries Circle"
+                      fill
+                    />
                   </div>
                 </div>
               </div>
@@ -588,7 +596,7 @@ const Industries = () => {
               return (
                 <div
                   key={item.id}
-                  className="w-full max-w-[24.5rem] bg-white p-6 rounded-3xl"
+                  className="w-full max-w-[24.5rem] bg-white p-6 rounded-3xl relative group overflow-hidden hover:scale-105 transition-all duration-500"
                 >
                   <div>
                     <div className="flex items-center gap-5 pb-5 border-b border-[#E5E5E5]">
@@ -613,6 +621,12 @@ const Industries = () => {
                           );
                         })}
                       </ul>
+                    </div>
+                  </div>
+
+                  <div className="hidden group-hover:block absolute top-0 left-0 w-full h-full bg-black bg-opacity-60 transition-all duration-500 p-4">
+                    <div className="w-full h-full text-white flex items-end justify-center text-base lg:text-lg font-medium">
+                      <p>{item.hoverText}</p>
                     </div>
                   </div>
                 </div>

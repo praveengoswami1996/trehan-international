@@ -161,42 +161,55 @@ const Navbar = () => {
           </NavigationMenuTrigger>
           <NavigationMenuContent>
             <div
-              className="w-full fixed left-0 top-[6.25rem] bg-white border-t border-[#BDBDBD] px-24"
+              className="w-full fixed left-0 top-[6.25rem] bg-white border-t border-[#BDBDBD] px-24 overflow-hidden"
               style={{ boxShadow: "0px 40px 40px -20px #00000026" }}
             >
-              <div className="w-full h-[380px] max-w-[1440px] py-8">
-                <h6 className="font-normal text-[1.125rem] leading-[1.688rem] text-[#535353]">
-                  Our Services
-                </h6>
-                <div className="mt-4 flex gap-7">
-                  {serviceLinks.map((item, index) => {
-                    return (
-                      <div key={index} className="flex flex-col gap-3">
-                        <div className="flex flex-col gap-2">
-                          <div className="w-[221px] h-[180px] relative">
-                            <Image
-                              src={item.imageUrl}
-                              alt={item.title}
-                              fill
-                              className="flex-none object-cover"
-                            />
+              <div className="w-full h-[380px] max-w-[1440px] mx-auto py-8 relative flex gap-10">
+                <div className="w-fit">
+                  <h6 className="font-normal text-[1.125rem] leading-[1.688rem] text-[#535353]">
+                    Our Services
+                  </h6>
+                  <div className="mt-4 flex gap-7">
+                    {serviceLinks.map((item, index) => {
+                      return (
+                        <div key={index} className="flex flex-col gap-3">
+                          <div className="flex flex-col gap-2">
+                            <div className="w-[221px] h-[180px] relative">
+                              <Image
+                                src={item.imageUrl}
+                                alt={item.title}
+                                fill
+                                className="flex-none object-cover"
+                              />
+                            </div>
+                            <h6 className="text-base font-normal font-work-sans max-w-40">
+                              {item.title}
+                            </h6>
                           </div>
-                          <h6 className="text-base font-normal font-work-sans max-w-40">
-                            {item.title}
-                          </h6>
-                        </div>
 
-                        <Link href={item.href} legacyBehavior passHref>
-                          <NavigationMenuLink className="flex items-center gap-2 italic text-[#C6485D] text-xs">
-                            LEARN MORE
-                            <span>
-                              <ArrowIcon />
-                            </span>
-                          </NavigationMenuLink>
-                        </Link>
-                      </div>
-                    );
-                  })}
+                          <Link href={item.href} legacyBehavior passHref>
+                            <NavigationMenuLink className="flex items-center gap-2 italic text-[#C6485D] text-xs">
+                              LEARN MORE
+                              <span>
+                                <ArrowIcon />
+                              </span>
+                            </NavigationMenuLink>
+                          </Link>
+                        </div>
+                      );
+                    })}
+                  </div>
+                </div>
+
+                <div className="w-1/5 relative">
+                  <h4 className="text-xl font-sintony font-bold">
+                    Our services encompass end-to-end recruitment solutions,
+                    including sourcing, screening, documentation, and
+                    deployment.
+                  </h4>
+                  <div className="absolute -right-64 -bottom-20">
+                    <IndustriesSVG />
+                  </div>
                 </div>
               </div>
             </div>
@@ -268,21 +281,11 @@ const Navbar = () => {
                   </div>
                 </div>
                 <div className="w-1/3 p-8 flex flex-col gap-6 relative">
-                  <h4 className="text-2xl font-[#000000] leading-[2.25rem] font-bold max-w-xs">
-                    We can help you to take your business next level
+                  <h4 className="text-xl font-sintony font-bold">
+                    With a client-centric approach, we ensure personalized
+                    solutions tailored to meet unique business needs, backed by
+                    decades of expertise.
                   </h4>
-                  <div>
-                    <Link href={"/contact-us"} legacyBehavior passHref>
-                      <NavigationMenuLink>
-                        <Button
-                          variant={"outline"}
-                          className={"border-[#1A1A1A] py-6 font-light"}
-                        >
-                          Contact us
-                        </Button>
-                      </NavigationMenuLink>
-                    </Link>
-                  </div>
 
                   <div className="absolute w-full bottom-0">
                     <IndustriesSVG />
