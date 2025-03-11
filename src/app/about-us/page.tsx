@@ -9,9 +9,7 @@ import Image from "next/image";
 import React from "react";
 import ImageContentPanel from "@/components/ImageContentPanel";
 import Link from "next/link";
-import { motion } from "framer-motion";
-import { useMediaQuery } from "react-responsive";
-import { DoubleQuotesIcon, QuotationIcon } from "@/components/icons";
+import { DoubleQuotesIcon } from "@/components/icons";
 
 type StoryKey = "story_001" | "story_002" | "story_003";
 
@@ -463,7 +461,7 @@ const AboutUs = () => {
       </div>
 
       {/* Director's Message Section */}
-      <div className="w-full bg-[#FAFAFA]">
+      {/* <div className="w-full bg-[#FAFAFA]">
         <section className="xl:min-h-screen website-container section-padding-x max-lg:section-padding-y section-padding-top relative flex flex-col xl:flex-row xl:items-center gap-5">
           <div className="hidden xl:block absolute -left-20 top-12 size-[41.5rem]">
             <Image
@@ -547,6 +545,119 @@ const AboutUs = () => {
                 all. Remember: our greatest wealth lies not just in numbers or
                 achievements, but in the lives we touch and the opportunities we
                 create for others.
+              </div>
+            </div>
+          </div>
+        </section>
+      </div> */}
+
+      {/* New Director's Message Section */}
+      <div className="w-full bg-[#FAFAFA]">
+        <section className="website-container section-padding-x min-h-screen relative">
+          <div className="w-full h-full flex flex-col xl:flex-row xl:items-center">
+            <div className="xl:block flex-1" />
+            <div className="flex-1 flex flex-col gap-12 justify-between">
+              <div className="flex flex-col gap-3 pl-10 pt-24">
+                <h3 className="text-2xl lg:text-[2rem] font-bold font-sintony">
+                  Director&apos;s Message
+                </h3>
+                <div className="font-work-sans text-sm leading-[1.3125rem] text-[#535353] tracking-[2%] max-xl:ml-2 pl-4 py-0 relative before:absolute before:w-[2px] before:h-[98%] before:left-0 before:top-1/2 before:-translate-y-1/2 before:bg-amber-500">
+                  In 1976, I established TI in a modest, single-room office in
+                  New Delhi with one clear objective: to bring the right people
+                  together. Over the last four decades, we have grown from those
+                  humble beginnings into a dynamic, global
+                  operation—successfully placing more than 150,000 professionals
+                  across the GCC. Through every milestone, we have upheld our
+                  guiding belief: that our clients and candidates deserve
+                  nothing but the very best.
+                  <br />
+                  <br />
+                  Our journey has been shaped by the passion, skill, and
+                  dedication of every individual who has joined hands with us.
+                  Today, TI stands as a testament to our core values—trust,
+                  integrity, compassion, and excellence—which continue to inform
+                  each of our decisions and every single placement. By
+                  understanding the unique needs of employers, be they Hiring
+                  Managers, CEOs, or COOs, and aligning these with the
+                  aspirations of talented professionals, we aim to foster
+                  meaningful relationships that drive growth and success on both
+                  sides.
+                  <br />
+                  <br />
+                  As we look to the future, we remain committed to the same
+                  spirit that sparked our beginnings. We will continue to
+                  evolve, embracing new technologies and practices, while never
+                  losing sight of what truly matters: genuine care for the
+                  people we serve. Whether you are seeking to build a
+                  high-performing team or explore new career horizons, know that
+                  TI stands ready to walk with you—offering unwavering support,
+                  expertise, and a dedication to helping you achieve your
+                  greatest goals.
+                  <br />
+                  <br />
+                  We invite you to be part of this legacy, one built on the
+                  belief that success is best shared. Let us work together to
+                  make lasting contributions that bring about a brighter future
+                  for all. Remember: our greatest wealth lies not just in
+                  numbers or achievements, but in the lives we touch and the
+                  opportunities we create for others.
+                </div>
+
+                <div className="w-full p-5">
+                  <p className="text-xl font-bold font-sintony">
+                    From My Heart To Yours
+                  </p>
+                  <h5 className="text-[#181818] text-base font-light">
+                    Mr. Satish Trehan
+                  </h5>
+                  <p className="text-[#181818] text-base font-light">
+                    Founding Father
+                  </p>
+                </div>
+              </div>
+
+              {/* Small Screen About us Section Image */}
+              <div className="xl:hidden overflow-hidden relative size-[15rem]  mobile-sm:size-[19rem] mobile-md:size-[22rem] mobile-lg:size-[24rem] sm:size-[30rem] mx-auto flex items-center justify-center">
+                <Image
+                  src={"/bg-pattern.svg"}
+                  alt="Background Pattern Image"
+                  fill
+                />
+                <div className="flex-none w-4/5 h-4/5 rounded-full bg-[#E1E1E1] p-2 z-10">
+                  <div className="relative w-full h-full rounded-full overflow-hidden">
+                    <Image
+                      src={"/director.jpg"}
+                      alt={"About Us Section Image"}
+                      fill
+                      className="object-cover object-center"
+                    />
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          {/* Large Screen About us Section Image */}
+          <div className="hidden xl:block absolute w-1/2 h-full left-5 top-1/2 -translate-y-1/2 mt-10">
+            <div className="w-full h-full relative flex items-center justify-center">
+              <Image
+                src={"/bg-pattern.svg"}
+                alt="Background Pattern Image"
+                fill
+              />
+              <div className="flex-none w-[30rem] h-[30rem] rounded-full bg-[#E1E1E1] p-2 z-10">
+                <div className="relative w-full h-full rounded-full overflow-hidden">
+                  <Image
+                    src={"/director.jpg"}
+                    alt={"About Us Section Image"}
+                    fill
+                    className="object-cover object-center"
+                  />
+                </div>
+              </div>
+
+              <div className="absolute top-28 right-14">
+                <DoubleQuotesIcon className="text-[#599F99] max-lg:size-20" />
               </div>
             </div>
           </div>
