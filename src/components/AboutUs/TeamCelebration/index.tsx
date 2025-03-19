@@ -13,83 +13,38 @@ import Autoplay from "embla-carousel-autoplay";
 const carouselData = [
   {
     id: "carousel_001",
-    imageURL: "/celebrations/cele-1.png",
-    alt: "people celebrating together",
+    imageURL: "/work_culture/owc-1.jpeg",
+    alt: "Our Work Culture Image",
   },
   {
     id: "carousel_002",
-    imageURL: "/celebrations/cele-2.png",
-    alt: "people celebrating together",
+    imageURL: "/work_culture/owc-2.jpg",
+    alt: "Our Work Culture Image",
   },
   {
     id: "carousel_003",
-    imageURL: "/celebrations/cele-3.png",
-    alt: "people celebrating together",
+    imageURL: "/work_culture/owc-3.JPG",
+    alt: "Our Work Culture Image",
   },
   {
     id: "carousel_004",
-    imageURL: "/celebrations/cele-4.png",
-    alt: "people celebrating together",
+    imageURL: "/work_culture/owc-4.JPG",
+    alt: "Our Work Culture Image",
   },
   {
     id: "carousel_005",
-    imageURL: "/celebrations/cele-1.png",
-    alt: "people celebrating together",
+    imageURL: "/work_culture/owc-5.jpg",
+    alt: "Our Work Culture Image",
   },
   {
     id: "carousel_006",
-    imageURL: "/celebrations/cele-2.png",
-    alt: "people celebrating together",
+    imageURL: "/work_culture/owc-6.jpg",
+    alt: "Our Work Culture Image",
   },
   {
     id: "carousel_007",
-    imageURL: "/celebrations/cele-3.png",
-    alt: "people celebrating together",
-  },
-  {
-    id: "carousel_008",
-    imageURL: "/celebrations/cele-4.png",
-    alt: "people celebrating together",
-  },
-  {
-    id: "carousel_009",
-    imageURL: "/celebrations/cele-1.png",
-    alt: "people celebrating together",
-  },
-  {
-    id: "carousel_010",
-    imageURL: "/celebrations/cele-2.png",
-    alt: "people celebrating together",
-  },
-  {
-    id: "carousel_011",
-    imageURL: "/celebrations/cele-3.png",
-    alt: "people celebrating together",
-  },
-  {
-    id: "carousel_012",
-    imageURL: "/celebrations/cele-4.png",
-    alt: "people celebrating together",
-  },
-  {
-    id: "carousel_013",
-    imageURL: "/celebrations/cele-1.png",
-    alt: "people celebrating together",
-  },
-  {
-    id: "carousel_014",
-    imageURL: "/celebrations/cele-2.png",
-    alt: "people celebrating together",
-  },
-  {
-    id: "carousel_015",
-    imageURL: "/celebrations/cele-3.png",
-    alt: "people celebrating together",
-  },
-  {
-    id: "carousel_016",
-    imageURL: "/celebrations/cele-4.png",
-    alt: "people celebrating together",
+    imageURL: "/work_culture/owc-7.JPG",
+    alt: "Our Work Culture Image",
   },
 ];
 

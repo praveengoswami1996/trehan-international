@@ -435,7 +435,7 @@ const newIndustriesData = [
     bulletPoints: [
       {
         id: "bullet_001",
-        title: "Engineering",
+        title: "Engineering Services (HVAC, Electrical, Plumbing & Firefighting)",
       },
       {
         id: "bullet_002",

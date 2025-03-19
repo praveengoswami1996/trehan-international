@@ -243,11 +243,11 @@ const Navbar = () => {
                         className="object-cover"
                       />
 
-                      {pathname.includes("/approach") && (
+                      {/* {pathname.includes("/approach") && (
                         <div className="absolute left-5 right-5 bottom-5 bg-[#599F99] text-white p-5 text-[13px]">
                           <p className="line-clamp-2 ">{approachMenuDesc}</p>
                         </div>
-                      )}
+                      )} */}
                     </div>
                     <ul className="flex flex-col gap-5 flex-1">
                       {approachLinks.map((item, index) => {
