@@ -1,4 +1,6 @@
+"use client";
 import React from "react";
+import { motion } from "framer-motion";
 
 const OurRecruitmentWorkflow = () => {
   return (
@@ -20,40 +22,50 @@ const OurRecruitmentWorkflow = () => {
           fill="white"
         />
       </g>
-      <rect
-        x="454.548"
-        y="128.548"
-        width="531.315"
-        height="531.315"
-        rx="265.657"
-        stroke="black"
-        stroke-width="1.09549"
-        stroke-dasharray="5.48 5.48"
-      />
-      <path
-        d="M971.234 308.337L976.656 298.945L961.842 302.915L971.234 308.337Z"
-        fill="black"
-      />
-      <path
-        d="M967.579 489.989L977.703 486.103L963.692 479.864L967.579 489.989Z"
-        fill="black"
-      />
-      <path
-        d="M724.387 127.794L716.719 120.126V135.463L724.387 127.794Z"
-        fill="black"
-      />
-      <path
-        d="M716.714 660.206L724.383 652.537V667.874L716.714 660.206Z"
-        fill="black"
-      />
-      <path
-        d="M472.607 298.027L475.414 308.502L462.132 300.833L472.607 298.027Z"
-        fill="black"
-      />
-      <path
-        d="M467.678 478.784L464.871 489.26L478.153 481.591L467.678 478.784Z"
-        fill="black"
-      />
+      <motion.g
+        animate={{ rotate: 360 }}
+        transition={{
+          repeat: Infinity,
+          duration: 20,
+          ease: "linear",
+        }}
+      >
+        <rect
+          x="454.548"
+          y="128.548"
+          width="531.315"
+          height="531.315"
+          rx="265.657"
+          stroke="black"
+          stroke-width="1.09549"
+          stroke-dasharray="5.48 5.48"
+        />
+        <path
+          d="M971.234 308.337L976.656 298.945L961.842 302.915L971.234 308.337Z"
+          fill="black"
+        />
+        <path
+          d="M967.579 489.989L977.703 486.103L963.692 479.864L967.579 489.989Z"
+          fill="black"
+        />
+        <path
+          d="M724.387 127.794L716.719 120.126V135.463L724.387 127.794Z"
+          fill="black"
+        />
+        <path
+          d="M716.714 660.206L724.383 652.537V667.874L716.714 660.206Z"
+          fill="black"
+        />
+        <path
+          d="M472.607 298.027L475.414 308.502L462.132 300.833L472.607 298.027Z"
+          fill="black"
+        />
+        <path
+          d="M467.678 478.784L464.871 489.26L478.153 481.591L467.678 478.784Z"
+          fill="black"
+        />
+      </motion.g>
+
       <path
         d="M232.707 222.213H436.062C462.192 222.213 483.373 201.122 483.373 175.107C483.373 149.09 462.192 128 436.062 128H232.707C206.578 128 185.398 149.09 185.398 175.107C185.397 201.122 206.578 222.213 232.707 222.213Z"
         fill="#FDF7ED"
